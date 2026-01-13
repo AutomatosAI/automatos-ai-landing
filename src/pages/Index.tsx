@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { ToolsSection } from "@/components/sections/ToolsSection";
+import { MetricsSection } from "@/components/sections/MetricsSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { SupportSection } from "@/components/sections/SupportSection";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <SolutionsSection />
+        <HowItWorksSection />
+        <IndustriesSection />
+        <ToolsSection />
+        <MetricsSection />
+        <TestimonialsSection />
+        <SupportSection />
+        <PricingSection />
+        <IntegrationsSection />
+        <FAQSection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 };
