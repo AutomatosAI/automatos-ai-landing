@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Triangle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoDark from "@/assets/logo-dark.svg";
+import logoWhite from "@/assets/logo-white.svg";
 
 const navLinks = [
   { label: "Case Studies", href: "#case-studies" },
@@ -18,11 +20,17 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Triangle className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
-            </div>
-            <span className="font-bold text-lg tracking-tight">AUTOMATOS A.I.</span>
+          <a href="/" className="flex items-center">
+            <img 
+              src={logoDark} 
+              alt="Automatos AI" 
+              className="h-8 w-auto dark:hidden"
+            />
+            <img 
+              src={logoWhite} 
+              alt="Automatos AI" 
+              className="h-8 w-auto hidden dark:block"
+            />
           </a>
 
           {/* Desktop Navigation */}
