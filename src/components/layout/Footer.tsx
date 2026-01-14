@@ -1,4 +1,5 @@
-import { Triangle } from "lucide-react";
+import logoDark from "@/assets/logo-dark.svg";
+import logoWhite from "@/assets/logo-white.svg";
 
 const footerLinks = {
   solutions: [
@@ -33,11 +34,17 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Logo Column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Triangle className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
-              </div>
-              <span className="font-bold text-lg tracking-tight">AUTOMATOS</span>
+            <a href="/" className="flex items-center mb-4">
+              <img 
+                src={logoDark} 
+                alt="Automatos AI" 
+                className="h-7 w-auto dark:hidden"
+              />
+              <img 
+                src={logoWhite} 
+                alt="Automatos AI" 
+                className="h-7 w-auto hidden dark:block"
+              />
             </a>
             <p className="text-sm text-muted-foreground">
               Transforming businesses with AI-driven solutions.
