@@ -16,7 +16,7 @@ export const IntegrationsSection = () => {
     <section id="integrations" className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-primary font-mono text-sm">09</span>
           <span className="text-muted-foreground text-sm">Integrations</span>
         </div>

@@ -11,7 +11,7 @@ export const MetricsSection = () => {
     <section id="metrics" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-primary font-mono text-sm">05</span>
           <span className="text-muted-foreground text-sm">Key Metrics</span>
         </div>
@@ -21,9 +21,9 @@ export const MetricsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
             Powered by innovation and strategy, Automatos delivers AI-driven solutions that redefine how industries achieve success.
           </h2>
         </motion.div>

@@ -41,7 +41,7 @@ export const ToolsSection = () => {
     <section id="tools" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-primary font-mono text-sm">04</span>
           <span className="text-muted-foreground text-sm">Advanced Tools</span>
         </div>
@@ -51,12 +51,12 @@ export const ToolsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Everything Needed to Operate Smarter
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Access powerful, easy-to-use tools that let you track data, manage automations, and stay on top of every metric that matters.
           </p>
         </motion.div>

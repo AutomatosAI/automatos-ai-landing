@@ -61,7 +61,7 @@ export const PricingSection = () => {
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-primary font-mono text-sm">08</span>
           <span className="text-muted-foreground text-sm">Packages & Pricing</span>
         </div>
@@ -71,12 +71,12 @@ export const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Plans Designed for Every Stage
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Whether you're just starting out or ready to scale, our packages give you clear options without the confusion. Choose what fits your goals, and know exactly what you're getting.
           </p>
         </motion.div>
