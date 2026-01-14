@@ -82,7 +82,7 @@ export const IndustriesSection = () => {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);
 
   return (
-    <section id="industries" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="industries" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -134,7 +134,7 @@ export const IndustriesSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="bg-background border border-border rounded-3xl p-8"
+                className="bg-card border border-border rounded-2xl p-8"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <activeIndustry.icon className="w-8 h-8 text-primary" />

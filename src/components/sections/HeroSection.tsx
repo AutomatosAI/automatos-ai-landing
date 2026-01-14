@@ -203,7 +203,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="relative z-10 w-72 bg-card border-2 border-primary rounded-2xl p-6 shadow-xl"
+              className="relative z-10 w-72 bg-card border-2 border-primary rounded-xl p-6 shadow-xl"
             >
               <h3 className="font-semibold text-lg mb-4">Tasks Automated</h3>
               <div className="space-y-3">

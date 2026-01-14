@@ -4,7 +4,7 @@ import { ArrowRight, Zap, BarChart3, Code } from "lucide-react";
 
 export const SolutionsSection = () => {
   return (
-    <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -33,7 +33,7 @@ export const SolutionsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-background border border-border rounded-3xl p-8 lg:p-12"
+          className="bg-card border border-border rounded-2xl p-8 lg:p-12"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}

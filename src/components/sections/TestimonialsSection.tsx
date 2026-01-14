@@ -101,7 +101,7 @@ export const TestimonialsSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.3 }}
-              className="bg-card border border-border rounded-3xl p-8 lg:p-12"
+              className="bg-card border border-border rounded-2xl p-8 lg:p-12"
             >
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 {/* Image */}
