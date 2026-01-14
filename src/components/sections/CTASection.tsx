@@ -25,7 +25,7 @@ export const CTASection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
             From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.
           </p>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg">
+          <Button size="lg" className="px-8 py-6 text-lg">
             Connect With Us
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
