@@ -111,10 +111,10 @@ export const HeroSection = () => {
                   <animate attributeName="x2" values="0%;200%" dur="3.5s" repeatCount="indefinite" begin="1s" />
                 </linearGradient>
               </defs>
-              {/* White base curves */}
-              <path d="M300 200 Q250 200 200 180 Q120 150 50 80" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
-              <path d="M300 200 Q240 210 180 200 Q100 180 20 150" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
-              <path d="M300 200 Q240 220 180 240 Q100 270 30 320" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
+              {/* Base curves - visible in light mode, subtle in dark */}
+              <path d="M300 200 Q250 200 200 180 Q120 150 50 80" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
+              <path d="M300 200 Q240 210 180 200 Q100 180 20 150" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
+              <path d="M300 200 Q240 220 180 240 Q100 270 30 320" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
               {/* Orange shimmer overlay */}
               <path d="M300 200 Q250 200 200 180 Q120 150 50 80" stroke="url(#shimmerLeft1)" strokeWidth="3" fill="none" />
               <path d="M300 200 Q240 210 180 200 Q100 180 20 150" stroke="url(#shimmerLeft2)" strokeWidth="3" fill="none" />
@@ -155,10 +155,10 @@ export const HeroSection = () => {
                   <animate attributeName="x2" values="100%;-100%" dur="3.5s" repeatCount="indefinite" begin="1s" />
                 </linearGradient>
               </defs>
-              {/* White base curves */}
-              <path d="M0 200 Q50 200 100 180 Q180 150 250 80" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
-              <path d="M0 200 Q60 210 120 200 Q200 180 280 150" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
-              <path d="M0 200 Q60 220 120 240 Q200 270 270 320" stroke="white" strokeWidth="2" fill="none" opacity="0.6" />
+              {/* Base curves - visible in light mode, subtle in dark */}
+              <path d="M0 200 Q50 200 100 180 Q180 150 250 80" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
+              <path d="M0 200 Q60 210 120 200 Q200 180 280 150" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
+              <path d="M0 200 Q60 220 120 240 Q200 270 270 320" stroke="currentColor" strokeWidth="2" fill="none" className="text-muted-foreground/30" />
               {/* Orange shimmer overlay */}
               <path d="M0 200 Q50 200 100 180 Q180 150 250 80" stroke="url(#shimmerRight1)" strokeWidth="3" fill="none" />
               <path d="M0 200 Q60 210 120 200 Q200 180 280 150" stroke="url(#shimmerRight2)" strokeWidth="3" fill="none" />
