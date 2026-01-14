@@ -32,7 +32,7 @@ const supportFeatures = [
 
 export const SupportSection = () => {
   return (
-    <section id="support" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="support" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -75,7 +75,7 @@ export const SupportSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background border border-border rounded-2xl p-6 hover:border-primary/30 transition-all"
+                className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">

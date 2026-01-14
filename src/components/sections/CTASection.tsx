@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -17,7 +17,7 @@ export const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-3xl p-8 lg:p-16 text-center"
+          className="bg-card border border-primary/20 rounded-2xl p-8 lg:p-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Unlock the Power of AI for Your Business

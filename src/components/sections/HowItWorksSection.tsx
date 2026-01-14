@@ -63,7 +63,7 @@ export const HowItWorksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card border border-border rounded-3xl p-8 hover:border-primary/30 transition-all duration-300"
+              className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300"
             >
               {/* Step Number */}
               <div className="flex items-start gap-4 mb-6">
