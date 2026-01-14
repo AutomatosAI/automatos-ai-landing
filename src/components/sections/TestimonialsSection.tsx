@@ -55,7 +55,7 @@ export const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-primary font-mono text-sm">06</span>
           <span className="text-muted-foreground text-sm">Client Testimonials</span>
         </div>
@@ -65,12 +65,12 @@ export const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Trusted by Forward Thinking Businesses
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Hear directly from the people we've worked with. Their stories and experiences reflect the results we aim to deliver with every project.
           </p>
         </motion.div>
@@ -80,10 +80,10 @@ export const TestimonialsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
           <p className="text-sm text-muted-foreground mb-4">Our Partners</p>
-          <div className="flex flex-wrap gap-8 items-center">
+          <div className="flex flex-wrap gap-8 items-center justify-center">
             {partners.map((partner) => (
               <span key={partner} className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                 {partner}
