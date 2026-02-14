@@ -5,39 +5,15 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    quote: "The team at Automatos helped us implement predictive analytics that revolutionized our workflow. We're now making data-driven decisions faster and more confidently than ever.",
-    name: "David Mitchell",
-    role: "Head of Operations at Radiate",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    quote: "Automatos transformed our customer support with AI chatbots that reduced response times by 50%. Their solutions are smart, seamless, and delivered measurable results from day one.",
-    name: "Sarah Lawson",
-    role: "COO at TechNova",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    quote: "Automatos's AI-driven personalization tools completely enhanced our e-learning platform. Student engagement and course completion rates have improved dramatically.",
-    name: "Michael Stevenson",
-    role: "Founder of LearnSphere",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    quote: "Thanks to Automatos's AI solutions, our campaigns are more targeted and efficient. Their expertise turned complex data into actionable insights that boosted engagement and ROI.",
-    name: "Priya Kapoor",
-    role: "Marketing Director at RetailHub",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    quote: "Working with Automatos was seamless. Their AI solutions for predictive healthcare insights allowed us to optimize operations and provide better outcomes for patients.",
-    name: "Lina Thompson",
-    role: "Product Manager at HealthWorks",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    quote: "I am building Automatos into Budstack.to ... the ease of integration and power of the agents is incredible.",
+    name: "Scott",
+    role: "Founder at Budstack.to",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face", // Generic placeholder or user provided image if available
   },
 ];
 
 const partners = [
-  "TechNova", "Radiate", "LearnSphere", "RetailHub", "HealthWorks"
+  "Budstack",
 ];
 
 export const TestimonialsSection = () => {
@@ -68,10 +44,10 @@ export const TestimonialsSection = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Trusted by Forward Thinking Businesses
+            Building the Future of SaaS
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Hear directly from the people we've worked with. Their stories and experiences reflect the results we aim to deliver with every project.
+            Trusted by innovators building the next generation of platforms.
           </p>
         </motion.div>
 
@@ -145,9 +121,8 @@ export const TestimonialsSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? "bg-primary w-6" : "bg-muted-foreground/30"
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? "bg-primary w-6" : "bg-muted-foreground/30"
+                    }`}
                 />
               ))}
             </div>

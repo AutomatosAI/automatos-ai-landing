@@ -20,15 +20,17 @@ export const CTASection = () => {
           className="bg-card border border-primary/20 rounded-2xl p-8 lg:p-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Unlock the Power of AI for Your Business
+            Ready to Automate Your Success?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.
+            Join the future of work with Automatos. Start building your autonomous workforce today.
           </p>
-          <Button size="lg" className="px-8 py-6 text-lg">
-            Connect With Us
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="px-8 py-6 text-lg rounded-full">
+              Get Started Now
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>

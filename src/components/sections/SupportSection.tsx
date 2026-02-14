@@ -1,4 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, UserCheck, BookOpen, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -35,7 +36,7 @@ const supportFeatures = [
 const InteractiveBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
@@ -45,7 +46,7 @@ const InteractiveBackground = () => {
         y: (e.clientY - rect.top) / rect.height,
       });
     };
-    
+
     const container = containerRef.current;
     container?.addEventListener('mousemove', handleMouseMove);
     return () => container?.removeEventListener('mousemove', handleMouseMove);
@@ -55,7 +56,7 @@ const InteractiveBackground = () => {
     <div ref={containerRef} className="absolute inset-0 overflow-hidden rounded-2xl">
       {/* Gradient base */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent" />
-      
+
       {/* Animated grid lines */}
       <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -65,7 +66,7 @@ const InteractiveBackground = () => {
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
-      
+
       {/* Interactive glow that follows mouse */}
       <motion.div
         className="absolute w-96 h-96 rounded-full blur-3xl pointer-events-none"
@@ -84,7 +85,7 @@ const InteractiveBackground = () => {
           ease: "easeInOut",
         }}
       />
-      
+
       {/* Floating orbs */}
       {[...Array(6)].map((_, i) => (
         <motion.div
@@ -109,7 +110,7 @@ const InteractiveBackground = () => {
           }}
         />
       ))}
-      
+
       {/* Animated lines */}
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
         {[...Array(5)].map((_, i) => (
@@ -132,7 +133,7 @@ const InteractiveBackground = () => {
           />
         ))}
       </svg>
-      
+
       {/* Corner accents */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/30 to-transparent rounded-bl-full" />
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary/20 to-transparent rounded-tr-full" />
@@ -152,9 +153,8 @@ export const SupportSection = () => {
 
         <div className="relative bg-card border border-primary/20 rounded-2xl p-8 lg:p-12 overflow-hidden">
           <InteractiveBackground />
-          
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Content */}
+
+          <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -162,46 +162,18 @@ export const SupportSection = () => {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Dedicated Support Every Step of the Way
+                We Grow With You
               </h2>
-              <p className="text-muted-foreground text-lg mb-4">
-                We believe delivering AI solutions is only the beginning. That's why our support goes beyond the initial project launch.
-              </p>
-              <p className="text-muted-foreground text-lg mb-4">
-                Whether you need quick answers or in-depth strategic advice, our team is always ready to step in.
-              </p>
               <p className="text-muted-foreground text-lg mb-8">
-                With Automatos, you gain more than just a service provider—you gain a partner committed to your long-term success.
+                We're a small, dedicated team passionate about your success. As we build Automatos, we're here to help you build your business.
               </p>
-              <Button size="lg">
-                Connect With Us
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="rounded-full">
+                  Get In Touch
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
             </motion.div>
-
-            {/* Right Content - Feature Cards */}
-            <div className="space-y-4">
-              {supportFeatures.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/30 transition-all"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground">{feature.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

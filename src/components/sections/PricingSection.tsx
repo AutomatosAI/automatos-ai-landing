@@ -1,49 +1,53 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, X, ArrowRight } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
-    price: { monthly: 199, yearly: 159 },
-    description: "Ideal for small businesses starting their AI journey.",
+    name: "Personal",
+    price: { monthly: 29, yearly: 24 },
+    description: "Perfect for individuals automating daily tasks.",
     features: [
       { name: "Automatos RAG", included: true },
       { name: "Automatos Memory", included: true },
-      { name: "Automatos Agents", included: false },
+      { name: "Automatos Agents (Limted)", included: true },
       { name: "Automatos CodeGraph", included: false },
       { name: "Automatos NL2SQL", included: false },
     ],
-    cta: "Connect With Us",
+    cta: "Start Free Trial",
+    href: "https://ui.automatos.app",
     popular: false,
   },
   {
-    name: "Professional",
-    price: { monthly: 699, yearly: 559 },
-    description: "For growing businesses needing advanced AI tools.",
+    name: "Business",
+    price: { monthly: 99, yearly: 79 },
+    description: "For small teams building a digital workforce.",
     features: [
       { name: "Automatos RAG", included: true },
       { name: "Automatos Memory", included: true },
-      { name: "Automatos Agents", included: true },
+      { name: "Automatos Agents (Unlimited)", included: true },
       { name: "Automatos CodeGraph", included: true },
-      { name: "Automatos NL2SQL", included: false },
+      { name: "Automatos NL2SQL", included: true },
     ],
-    cta: "Go Pro",
+    cta: "Get Started",
+    href: "https://ui.automatos.app",
     popular: true,
   },
   {
     name: "Enterprise",
-    price: { monthly: 1499, yearly: 1199 },
-    description: "Tailored for large organizations requiring fully customized AI solutions.",
+    price: { monthly: "Custom", yearly: "Custom" },
+    description: "Full-scale orchestration for large organizations.",
     features: [
       { name: "Automatos RAG", included: true },
       { name: "Automatos Memory", included: true },
       { name: "Automatos Agents", included: true },
       { name: "Automatos CodeGraph", included: true },
-      { name: "Automatos NL2SQL", included: true },
+      { name: "Source Code License", included: true },
     ],
-    cta: "Connect With Us",
+    cta: "Contact Sales",
+    href: "/contact",
     popular: false,
   },
 ];
@@ -108,9 +112,8 @@ export const PricingSection = () => {
           </span>
           <button
             onClick={() => setIsYearly(!isYearly)}
-            className={`relative w-14 h-7 rounded-full transition-colors ${
-              isYearly ? "bg-primary" : "bg-muted"
-            }`}
+            className={`relative w-14 h-7 rounded-full transition-colors ${isYearly ? "bg-primary" : "bg-muted"
+              }`}
           >
             <motion.div
               animate={{ x: isYearly ? 28 : 4 }}
@@ -131,9 +134,8 @@ export const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-card border rounded-2xl p-8 ${
-                plan.popular ? "border-primary shadow-lg shadow-primary/10" : "border-border"
-              }`}
+              className={`relative bg-card border rounded-2xl p-8 ${plan.popular ? "border-primary shadow-lg shadow-primary/10" : "border-border"
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -147,9 +149,11 @@ export const PricingSection = () => {
                 <h3 className="text-sm text-muted-foreground mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold">
-                    ${isYearly ? plan.price.yearly : plan.price.monthly}
+                    {/* @ts-ignore */}
+                    {typeof plan.price.monthly === 'number' ? `$${isYearly ? plan.price.yearly : plan.price.monthly}` : plan.price.monthly}
                   </span>
-                  <span className="text-muted-foreground">/month</span>
+                  {/* @ts-ignore */}
+                  {typeof plan.price.monthly === 'number' && <span className="text-muted-foreground">/month</span>}
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
               </div>
@@ -169,16 +173,31 @@ export const PricingSection = () => {
                 ))}
               </ul>
 
-              <Button
-                className={`w-full rounded-full ${
-                  plan.popular
-                    ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                    : "bg-muted hover:bg-muted/80 text-foreground"
-                }`}
-              >
-                {plan.cta}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              {plan.href.startsWith("/") ? (
+                <Link to={plan.href} className="w-full">
+                  <Button
+                    className={`w-full rounded-full ${plan.popular
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                      : "bg-muted hover:bg-muted/80 text-foreground"
+                      }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              ) : (
+                <a href={plan.href} target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button
+                    className={`w-full rounded-full ${plan.popular
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                      : "bg-muted hover:bg-muted/80 text-foreground"
+                      }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

@@ -5,27 +5,27 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     number: "01",
-    phase: "Define the Vision",
-    title: "Discovery & Strategy",
-    description: "We begin by understanding your business goals, challenges, and opportunities. Through consultation and research, we define a clear AI strategy tailored to your needs.",
+    phase: "Select Intelligence",
+    title: "Design Your Agents",
+    description: "Select from 400+ LLM models to find the perfect brain for your task. Add specialized skills, equip custom tools, and fine-tune behavior for your specific needs.",
   },
   {
     number: "02",
-    phase: "Design the Model",
-    title: "Data & Design",
-    description: "Our team analyzes your data, identifies patterns, and designs AI models or frameworks that align with your objectives. Every solution is built with scalability and accuracy in mind.",
+    phase: "Integration",
+    title: "Connect Your World",
+    description: "Instantly integrate with 850+ apps including Gmail, Slack, Dropbox, and more. Your agents work where you work, seamlessly bridging your entire tech stack.",
   },
   {
     number: "03",
-    phase: "Build the Solution",
-    title: "Development & Integration",
-    description: "We develop custom AI applications and integrate them seamlessly into your existing workflows, ensuring minimal disruption and maximum efficiency.",
+    phase: "Context Setup",
+    title: "Empower with Knowledge",
+    description: "Load up your knowledge bases. Connect Google Docs, upload PDFs, link databases via NL2SQL, or index your entire codebase with CodeGraph.",
   },
   {
     number: "04",
-    phase: "Build the Solution",
-    title: "Launch & Optimization",
-    description: "Once deployed, we continuously monitor performance, optimize for better results, and provide support to keep your AI solutions running at peak potential.",
+    phase: "Execution",
+    title: "Automate Workflows",
+    description: "Create complex, multi-step workflows using our recipes or design your own. Schedule them to run autonomously, 24/7.",
   },
 ];
 
@@ -47,10 +47,10 @@ export const HowItWorksSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            The Steps to Smarter AI
+            Power in Simplicity
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We follow a clear, step-by-step approach to deliver AI solutions that align with your business goals.
+            Four steps to your fully autonomous workforce.
           </p>
         </motion.div>
 

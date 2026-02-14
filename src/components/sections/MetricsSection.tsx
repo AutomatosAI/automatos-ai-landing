@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const metrics = [
-  { value: "85", suffix: "%", label: "faster customer resolutions" },
-  { value: "3", suffix: "x", label: "ROI in first year" },
-  { value: "92", suffix: "%", label: "higher user satisfaction" },
+  { value: "No", suffix: "Lock-in", label: "Swap LLMs and tools as you please" },
+  { value: "Cost", suffix: "Efficient", label: "Pay only for what you use" },
+  { value: "Self", suffix: "Learning", label: "System improves with every interaction" },
 ];
 
 export const MetricsSection = () => {
@@ -24,8 +24,11 @@ export const MetricsSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-            Powered by innovation and strategy, Automatos delivers AI-driven solutions that redefine how industries achieve success.
+            Smarter Every Day
           </h2>
+          <p className="text-muted-foreground text-lg mt-4">
+            Our goal is a self-optimizing system that saves you time and money.
+          </p>
         </motion.div>
 
         {/* Metrics Grid */}
@@ -39,19 +42,19 @@ export const MetricsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="flex items-baseline justify-center gap-1 mb-4">
+              <div className="flex flex-col items-center justify-center gap-1 mb-4">
                 <motion.span
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="text-6xl sm:text-7xl lg:text-8xl font-bold text-primary"
+                  className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary"
                 >
                   {metric.value}
                 </motion.span>
-                <span className="text-4xl sm:text-5xl font-bold text-primary">{metric.suffix}</span>
+                <span className="text-3xl sm:text-4xl font-bold text-primary/80">{metric.suffix}</span>
               </div>
-              <p className="text-muted-foreground text-lg">{metric.label}</p>
+              <p className="text-muted-foreground text-lg px-4">{metric.label}</p>
             </motion.div>
           ))}
         </div>

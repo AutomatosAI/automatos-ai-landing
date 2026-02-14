@@ -20,10 +20,10 @@ export const SolutionsSection = () => {
           className="mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            AI Solutions for Business Growth
+            Scaling Intelligence, Not Headcount
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            From intelligent automation to data-driven insights, our team helps you level up customer experiences.
+            A complete AI ecosystem for small to medium businesses. Automate routine tasks, save costs, and let your team focus on what matters.
           </p>
         </motion.div>
 
@@ -39,10 +39,10 @@ export const SolutionsSection = () => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Business Process Automation with AI
+                Autonomous Business Operations
               </h3>
               <p className="text-muted-foreground mb-8">
-                Streamline repetitive processes with AI-powered automation. Save time, cut costs, and focus on the work that drives impact.
+                Whether you need a single personal assistant or a full digital workforce, Automatos adapts to your needs without the enterprise price tag.
               </p>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
                 Get Started
@@ -58,26 +58,26 @@ export const SolutionsSection = () => {
                   whileHover={{ scale: 1.02 }}
                   className="bg-muted/50 rounded-2xl p-6 text-center"
                 >
-                  <p className="text-sm text-muted-foreground mb-2">Costs Saved</p>
-                  <p className="text-3xl font-bold text-primary">$60k/wk</p>
+                  <p className="text-sm text-muted-foreground mb-2">Vendors Replaced</p>
+                  <p className="text-3xl font-bold text-primary">5+</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="bg-muted/50 rounded-2xl p-6 text-center"
                 >
-                  <p className="text-sm text-muted-foreground mb-2">Time Saved</p>
-                  <p className="text-3xl font-bold text-primary">60 hrs/wk</p>
+                  <p className="text-sm text-muted-foreground mb-2">Monthly Savings</p>
+                  <p className="text-3xl font-bold text-primary">~€2,000</p>
                 </motion.div>
               </div>
 
               {/* Feature Highlights */}
               <div className="bg-muted/30 rounded-2xl p-6">
-                <p className="text-sm font-semibold mb-4">Save Time & Money</p>
+                <p className="text-sm font-semibold mb-4">Business Benefits</p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { icon: Zap, label: "Smart Automation" },
-                    { icon: BarChart3, label: "Data Insights" },
-                    { icon: Code, label: "AI Development" },
+                    { icon: Zap, label: "No Vendor Lock-in" },
+                    { icon: BarChart3, label: "Self-Learning System" },
+                    { icon: Code, label: "850+ Integrations" },
                   ].map((item) => (
                     <div
                       key={item.label}

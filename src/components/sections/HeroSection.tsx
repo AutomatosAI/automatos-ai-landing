@@ -31,13 +31,26 @@ export const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             AI Services That
           </h1>
-          <div className="flex items-center justify-center gap-3 mt-2">
+          <div className="flex items-center justify-center gap-3 mt-2 flex-wrap">
             <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">[Elevate]</span>
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-lg rotate-3">
-              <svg className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l6.9 3.45-6.9 3.45-6.9-3.45L12 4.18zM4 8.64l7 3.5v7.5l-7-3.5v-7.5zm9 11v-7.5l7-3.5v7.5l-7 3.5z"/>
-              </svg>
-            </div>
+            <span className="inline-flex align-middle px-1">
+              <span
+                className={[
+                  'inline-flex h-10 w-10 md:h-14 md:w-14 items-center justify-center',
+                  'rounded-2xl bg-white/95 ring-2 ring-orange-500/60',
+                  'shadow-[0_0_0_1px_rgba(249,115,22,0.25),0_18px_45px_rgba(0,0,0,0.35),0_0_40px_rgba(249,115,22,0.25)]',
+                  '-rotate-12',
+                ].join(' ')}
+                aria-hidden="true"
+              >
+                <img
+                  src="/brand/automatos-mark-hi.png"
+                  alt=""
+                  className="h-6 w-6 md:h-8 md:w-8 object-contain drop-shadow-[0_0_10px_rgba(249,115,22,0.35)]"
+                  draggable={false}
+                />
+              </span>
+            </span>
             <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">Your Workflow</span>
           </div>
         </motion.div>
@@ -49,7 +62,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-10"
         >
-          Transforming ideas into intelligent solutions, empowering your business to lead with AI-driven growth.
+          Empower your business with autonomous agents that learn, adapt, and execute. From personal assistance to full-scale operations, Automatos grows with you.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -59,13 +72,17 @@ export const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex items-center justify-center gap-4"
         >
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-6 text-base">
-            Connect With Us
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-          <Button variant="ghost" className="text-foreground hover:bg-muted rounded-full px-6 py-6 text-base">
-            View Plans
-          </Button>
+          <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-6 text-base">
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </a>
+          <a href="#pricing">
+            <Button variant="ghost" className="text-foreground hover:bg-muted rounded-full px-6 py-6 text-base">
+              View Pricing
+            </Button>
+          </a>
         </motion.div>
 
         {/* Visual Element - Task Automation Card */}
@@ -76,7 +93,7 @@ export const HeroSection = () => {
           className="mt-16 relative h-[500px] sm:h-[550px]"
         >
           <div className="relative max-w-4xl mx-auto h-full flex items-center justify-center">
-            
+
             {/* Curved Lines with Orange Shimmer Animation - Left Side */}
             <svg
               className="absolute left-0 top-1/2 -translate-y-1/2 w-[45%] h-[400px]"
@@ -208,10 +225,10 @@ export const HeroSection = () => {
               <h3 className="font-semibold text-lg mb-4">Tasks Automated</h3>
               <div className="space-y-3">
                 {[
-                  "32 queries answered",
-                  "13 emails sent",
-                  "7 tasks completed",
-                  "3 workflows analyzed",
+                  "32 customer tickets resolved",
+                  "13 invoices processed",
+                  "7 social posts scheduled",
+                  "3 workflows optimized",
                 ].map((task, index) => (
                   <motion.div
                     key={task}

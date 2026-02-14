@@ -10,28 +10,24 @@ import {
 
 const faqs = [
   {
-    question: "What industries do you work with?",
-    answer: "We work with businesses across a wide range of industries, including finance, retail, healthcare, education, and technology. Our AI solutions are adaptable and designed to create measurable impact in any sector.",
+    question: "How does the pricing work?",
+    answer: "We offer flexible monthly plans starting at €29/mo for individuals. For larger teams, our Business plan provides unlimited agents and advanced tools. Enterprise plans are custom-quoted.",
   },
   {
-    question: "How quickly can I get started with Automatos?",
-    answer: "Getting started is simple. After an initial consultation, we can begin implementation within 2-4 weeks depending on the complexity of your project. Our streamlined onboarding process ensures you see results quickly.",
+    question: "Can I customize the agents?",
+    answer: "Absolutely. You can choose from 400+ LLMs, add specialized skills, and equip custom tools. Our 'Automatos Agents' tool makes this easy.",
   },
   {
-    question: "Do I need technical expertise?",
-    answer: "No technical expertise is required. Our solutions are designed to be user-friendly, and our team provides comprehensive training and ongoing support to ensure your team can leverage our AI tools effectively.",
+    question: "Is my data secure?",
+    answer: "Yes. We use enterprise-grade encryption and ensuring your proprietary data (and your customers' data) remains private and protected.",
   },
   {
-    question: "What kind of support does Automatos offer?",
-    answer: "We offer 24/7 support, dedicated account managers, comprehensive documentation, and a knowledge hub with tutorials and best practices. Our team is always available to help you maximize the value of our solutions.",
+    question: "Do I need technical skills to use Automatos?",
+    answer: "No. Our platform is designed for ease of use. You can use natural language to interact with your data and pre-built recipes to automate workflows.",
   },
   {
-    question: "Can your solutions integrate with our systems?",
-    answer: "Yes, our AI solutions are designed to integrate seamlessly with your existing tech stack. We support integrations with popular tools like Slack, Salesforce, HubSpot, and many more through our flexible API.",
-  },
-  {
-    question: "How do I know which package suits best?",
-    answer: "We recommend scheduling a consultation with our team. We'll assess your business needs, goals, and current infrastructure to recommend the package that delivers the best value for your specific situation.",
+    question: "What if I need more than standard integrations?",
+    answer: "Our Automatos Tools supports over 850 apps. If you need something bespoke, our Enterprise plan allows for custom development.",
   },
 ];
 
@@ -60,10 +56,12 @@ export const FAQSection = () => {
             <p className="text-muted-foreground text-lg mb-8">
               From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.
             </p>
-            <Button size="lg">
-              Start Automating
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="rounded-full">
+                Start Automating
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
           </motion.div>
 
           {/* Right Column - FAQ Accordion */}
