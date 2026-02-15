@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Lightbulb, FileText, Settings, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -212,30 +212,27 @@ export const HeroSection = () => {
             <div className="absolute left-1/2 -translate-x-1/2 w-20 h-[450px] overflow-hidden rounded-2xl bg-muted/50 border border-border/50">
               <motion.div
                 animate={{ y: ["0%", "-50%"] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                 className="flex flex-col items-center gap-4 py-4"
               >
-                {/* Duplicate icons for seamless loop */}
+                {/* Duplicate set for seamless loop */}
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex flex-col items-center gap-4">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <Lightbulb className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <FileText className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <Settings className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <Lightbulb className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <FileText className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30">
-                      <Settings className="w-7 h-7 text-primary" />
-                    </div>
+                    {[
+                      { name: "Discord", logo: "/logos/Discord.png" },
+                      { name: "Telegram", logo: "/logos/Telegram.png" },
+                      { name: "Slack", logo: "/logos/Slack.png" },
+                      { name: "Line", logo: "/logos/Line.png" },
+                      { name: "Teams", logo: "/logos/MicrosoftTeams.png" },
+                      { name: "WhatsApp", logo: "/logos/Whatsapp.png" },
+                    ].map((app) => (
+                      <div
+                        key={app.name}
+                        className="w-14 h-14 bg-card rounded-xl flex items-center justify-center border border-border/50 p-2"
+                      >
+                        <img src={app.logo} alt={app.name} className="w-full h-full object-contain" />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </motion.div>
