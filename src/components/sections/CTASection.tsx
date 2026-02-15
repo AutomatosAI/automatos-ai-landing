@@ -1,19 +1,60 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { useState, useRef } from "react";
+import { Clerk } from "@clerk/clerk-js";
+
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 export const CTASection = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const clerkRef = useRef<Clerk | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getClerk = async () => {
+    if (clerkRef.current) return clerkRef.current;
+    const clerk = new Clerk(clerkPubKey);
+    await clerk.load();
+    clerkRef.current = clerk;
+    return clerk;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // TODO: Connect to your backend/Mailchimp/Clerk waitlist API
-    console.log("Waitlist signup:", email);
-    setSubmitted(true);
-    setEmail("");
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const clerk = await getClerk();
+      await clerk.client?.signUp.create({ emailAddress: email });
+      await clerk.client?.signUp.prepareEmailAddressVerification?.({ strategy: "email_code" });
+      setSubmitted(true);
+      setEmail("");
+    } catch (err: any) {
+      // If waitlist mode is active, Clerk may auto-add to waitlist
+      const msg = err.errors?.[0]?.longMessage || err.errors?.[0]?.message || "";
+      if (msg.toLowerCase().includes("waitlist")) {
+        setSubmitted(true);
+        setEmail("");
+        return;
+      }
+      // Try joinWaitlist as fallback
+      try {
+        const clerk = await getClerk();
+        await clerk.joinWaitlist({ emailAddress: email });
+        setSubmitted(true);
+        setEmail("");
+      } catch (innerErr: any) {
+        const innerMsg = innerErr.errors?.[0]?.longMessage || innerErr.errors?.[0]?.message || "Something went wrong. Please try again.";
+        setError(innerMsg);
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -49,12 +90,30 @@ export const CTASection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 w-full sm:w-auto px-5 py-3 rounded-full bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  disabled={isLoading}
                 />
-                <Button type="submit" className="rounded-full px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap">
-                  Join Waitlist
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                <Button
+                  type="submit"
+                  className="rounded-full px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Joining...
+                    </>
+                  ) : (
+                    <>
+                      Join Waitlist
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </>
+                  )}
                 </Button>
               </form>
+
+              {error && (
+                <p className="text-sm text-red-400 mt-3">{error}</p>
+              )}
 
               <p className="text-xs text-muted-foreground mt-4">
                 No spam. We'll only email you when it's your turn.

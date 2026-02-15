@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, BarChart3, Code } from "lucide-react";
+import { Zap, Code, Brain, Cpu, Database, BookOpen } from "lucide-react";
 
 export const SolutionsSection = () => {
   return (
@@ -20,14 +20,14 @@ export const SolutionsSection = () => {
           className="mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Scaling Intelligence, Not Headcount
+            The Engine Behind the Intelligence
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            A complete AI ecosystem for small to medium businesses. Automate routine tasks, save costs, and let your team focus on what matters.
+            Most AI tools guess. Automatos calculates. Our 9-stage orchestration pipeline uses mathematical context engineering to deliver precise, cost-efficient results — not bloated token dumps.
           </p>
         </motion.div>
 
-        {/* Main Solution Card */}
+        {/* Technical Engine Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,59 +36,60 @@ export const SolutionsSection = () => {
           className="bg-card border border-border rounded-2xl p-8 lg:p-12"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+            {/* Left - The Math */}
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Autonomous Business Operations
-              </h3>
-              <p className="text-muted-foreground mb-8">
-                Whether you need a single personal assistant or a full digital workforce, Automatos adapts to your needs without the enterprise price tag.
-              </p>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                Get Started
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
-
-            {/* Right Content - Stats */}
-            <div className="space-y-6">
-              {/* Stats Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-muted/50 rounded-2xl p-6 text-center"
-                >
-                  <p className="text-sm text-muted-foreground mb-2">Vendors Replaced</p>
-                  <p className="text-3xl font-bold text-primary">5+</p>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-muted/50 rounded-2xl p-6 text-center"
-                >
-                  <p className="text-sm text-muted-foreground mb-2">Monthly Savings</p>
-                  <p className="text-3xl font-bold text-primary">~€2,000</p>
-                </motion.div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-4">
+                <Cpu className="w-3.5 h-3.5" />
+                Under the Hood
               </div>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                Built on Math, Not Magic
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Automatos uses mathematical context engineering — Shannon entropy, knapsack optimization, and MMR algorithms — to select the right information for every task. The result: 87% fewer tokens, 88% lower API costs, and dramatically better responses.
+              </p>
 
-              {/* Feature Highlights */}
-              <div className="bg-muted/30 rounded-2xl p-6">
-                <p className="text-sm font-semibold mb-4">Business Benefits</p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { icon: Zap, label: "No Vendor Lock-in" },
-                    { icon: BarChart3, label: "Self-Learning System" },
-                    { icon: Code, label: "850+ Integrations" },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center gap-2 bg-background rounded-full px-4 py-2 border border-border"
-                    >
-                      <item.icon className="w-4 h-4 text-primary" />
-                      <span className="text-sm">{item.label}</span>
-                    </div>
-                  ))}
+              {/* Before/After comparison */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="bg-muted/30 rounded-xl p-4 text-center">
+                  <p className="text-xs text-muted-foreground mb-1">Traditional AI</p>
+                  <p className="text-xl font-bold text-muted-foreground line-through">25,000</p>
+                  <p className="text-xs text-muted-foreground">tokens per task</p>
+                </div>
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 text-center">
+                  <p className="text-xs text-primary mb-1">Automatos</p>
+                  <p className="text-xl font-bold text-primary">3,200</p>
+                  <p className="text-xs text-muted-foreground">tokens per task</p>
                 </div>
               </div>
+
+              <a href="/Automatos-AI-Platform-Guide.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="rounded-full px-6 border-primary/20 hover:bg-primary/5">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Read the Platform Guide
+                </Button>
+              </a>
+            </div>
+
+            {/* Right - Architecture pillars */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: Brain, stat: "Shannon", label: "Entropy Filtering", desc: "Removes noise, retains high-value signal" },
+                { icon: Database, stat: "4-Tier", label: "Memory System", desc: "Working → Short-term → Long-term → Collective" },
+                { icon: Zap, stat: "MMR", label: "Diversity Scoring", desc: "Balances relevance with unique context" },
+                { icon: Code, stat: "94%", label: "Task Success", desc: "Up from 76% with traditional approaches" },
+              ].map((item) => (
+                <motion.div
+                  key={item.label}
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-muted/50 rounded-2xl p-5"
+                >
+                  <item.icon className="w-5 h-5 text-primary mb-2" />
+                  <p className="text-2xl font-bold text-primary">{item.stat}</p>
+                  <p className="text-sm font-semibold">{item.label}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>

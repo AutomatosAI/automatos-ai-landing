@@ -90,9 +90,10 @@ const Contact = () => {
                                     <p className="text-sm text-muted-foreground mb-4">Follow us for updates</p>
                                     <div className="flex gap-4">
                                         {[
-                                            { name: "X (Twitter)", href: "https://x.com/automatos" },
-                                            { name: "Instagram", href: "https://instagram.com/automatos" },
-                                            { name: "LinkedIn", href: "https://linkedin.com/company/automatos" },
+                                            { name: "X (Twitter)", href: "https://x.com/automatosai" },
+                                            { name: "Instagram", href: "https://www.instagram.com/automatosai" },
+                                            { name: "LinkedIn", href: "https://www.linkedin.com/company/automatos-ai" },
+                                            { name: "GitHub", href: "https://github.com/AutomatosAI/automatos-ai" },
                                         ].map((social) => (
                                             <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors text-sm font-medium">
                                                 {social.name}

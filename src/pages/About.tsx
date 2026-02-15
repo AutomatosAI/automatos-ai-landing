@@ -214,6 +214,43 @@ const About = () => {
                     </div>
                 </section>
 
+                {/* Featured At */}
+                <section className="container mx-auto px-4 max-w-7xl mb-24">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center mb-10"
+                    >
+                        <span className="text-primary font-mono text-sm">Featured At</span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2">
+                            Recognized on the Global Stage
+                        </h2>
+                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+                            Automatos AI presented at Function1 in Dubai — where the AI world gathers.
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="relative rounded-2xl overflow-hidden border border-border shadow-lg max-w-xl mx-auto"
+                    >
+                        <img
+                            src="/images/function1-dubai.jpg"
+                            alt="Automatos AI presenting at Function1, Dubai — Nov 18-19"
+                            className="w-full h-auto"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 sm:p-8">
+                            <p className="text-white font-semibold text-lg sm:text-xl">Function1 — Dubai</p>
+                            <p className="text-white/70 text-sm">Nov 2025 · Where the AI World Gathers</p>
+                        </div>
+                    </motion.div>
+                </section>
+
                 {/* Team / Culture Section */}
                 <section className="container mx-auto px-4 max-w-7xl">
                     <div className="relative bg-card border border-primary/20 rounded-2xl p-12 md:p-24 overflow-hidden text-center">
