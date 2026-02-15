@@ -303,7 +303,7 @@ const Marketplace = () => {
       <main className="pt-24 pb-16">
 
         {/* ── Hero Header ──────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -375,7 +375,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Featured Agents ──────────────────────────── */}
-        <section id="featured-agents" className="container mx-auto px-4 max-w-7xl mb-24">
+        <section id="featured-agents" className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">01</span>
             <span className="text-muted-foreground text-sm">Featured Agents</span>
@@ -384,7 +384,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Ready-Made AI Workers</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -392,7 +392,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredAgents.map((agent, index) => (
               <motion.div
                 key={agent.name}
@@ -441,7 +441,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Browse by Category ───────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">02</span>
             <span className="text-muted-foreground text-sm">Categories</span>
@@ -450,7 +450,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Browse by Category</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -458,7 +458,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
             {categories.map((cat, index) => {
               const Icon = cat.icon;
               return (
@@ -485,7 +485,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Recipes ──────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">03</span>
             <span className="text-muted-foreground text-sm">Recipes</span>
@@ -494,7 +494,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Workflow Recipes</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -502,7 +502,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {recipes.map((recipe, index) => {
               const badge = triggerBadge[recipe.trigger];
               const BadgeIcon = badge.icon;
@@ -545,7 +545,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Integrations Marquee ─────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">04</span>
             <span className="text-muted-foreground text-sm">Integrations</span>
@@ -554,7 +554,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">850+ Apps Connected</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -566,7 +566,7 @@ const Marketplace = () => {
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
-            <div className="flex animate-marquee items-center opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex animate-marquee items-center opacity-80 hover:opacity-100 transition-opacity w-max">
               {[...integrationLogos, ...integrationLogos, ...integrationLogos].map((name, index) => (
                 <motion.div
                   key={`${name}-${index}`}
@@ -587,7 +587,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── LLM Models ───────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">05</span>
             <span className="text-muted-foreground text-sm">Models</span>
@@ -596,7 +596,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Choose Your Intelligence</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -604,7 +604,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {llmProviders.map((provider, index) => (
               <motion.div
                 key={provider.name}
@@ -632,7 +632,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Use Cases ────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <section className="container mx-auto px-4 max-w-7xl mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">06</span>
             <span className="text-muted-foreground text-sm">Use Cases</span>
@@ -641,7 +641,7 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">How Teams Use Automatos</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -649,7 +649,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {useCases.map((uc, index) => (
               <motion.div
                 key={uc.name}

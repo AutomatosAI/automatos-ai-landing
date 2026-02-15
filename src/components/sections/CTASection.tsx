@@ -15,6 +15,7 @@ export const CTASection = () => {
 
   const getClerk = async () => {
     if (clerkRef.current) return clerkRef.current;
+    if (!clerkPubKey) throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY");
     const clerk = new Clerk(clerkPubKey);
     await clerk.load();
     clerkRef.current = clerk;
@@ -30,28 +31,18 @@ export const CTASection = () => {
 
     try {
       const clerk = await getClerk();
-      await clerk.client?.signUp.create({ emailAddress: email });
-      await clerk.client?.signUp.prepareEmailAddressVerification?.({ strategy: "email_code" });
+      const result = await clerk.joinWaitlist({ emailAddress: email });
+      console.log("Waitlist result:", result);
       setSubmitted(true);
       setEmail("");
     } catch (err: any) {
-      // If waitlist mode is active, Clerk may auto-add to waitlist
-      const msg = err.errors?.[0]?.longMessage || err.errors?.[0]?.message || "";
-      if (msg.toLowerCase().includes("waitlist")) {
-        setSubmitted(true);
-        setEmail("");
-        return;
-      }
-      // Try joinWaitlist as fallback
-      try {
-        const clerk = await getClerk();
-        await clerk.joinWaitlist({ emailAddress: email });
-        setSubmitted(true);
-        setEmail("");
-      } catch (innerErr: any) {
-        const innerMsg = innerErr.errors?.[0]?.longMessage || innerErr.errors?.[0]?.message || "Something went wrong. Please try again.";
-        setError(innerMsg);
-      }
+      console.error("Waitlist error:", err);
+      const msg =
+        err.errors?.[0]?.longMessage ||
+        err.errors?.[0]?.message ||
+        err.message ||
+        "Something went wrong. Please try again.";
+      setError(msg);
     } finally {
       setIsLoading(false);
     }

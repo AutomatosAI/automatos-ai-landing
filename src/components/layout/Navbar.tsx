@@ -66,11 +66,11 @@ export const Navbar = () => {
           {/* CTA Button & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <ModeToggle />
-            <Link to="/contact">
+            <a href="https://ui.automatos.app/sign-in" target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                Connect With Us
+                Sign In
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,11 +107,11 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <a href="https://ui.automatos.app/sign-in" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-                  Connect With Us
+                  Sign In
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
