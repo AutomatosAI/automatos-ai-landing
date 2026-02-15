@@ -85,32 +85,6 @@ export const HeroSection = () => {
           </a>
         </motion.div>
 
-        {/* Messaging Apps Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
-          className="flex items-center justify-center gap-3 mt-6"
-        >
-          <span className="text-xs text-muted-foreground">Talk to Automatos via</span>
-          <div className="flex items-center gap-2">
-            {[
-              { name: "WhatsApp", logo: "/logos/Whatsapp.png" },
-              { name: "Telegram", logo: "/logos/Telegram.png" },
-              { name: "Slack", logo: "/logos/Slack.png" },
-            ].map((app) => (
-              <div
-                key={app.name}
-                className="w-7 h-7 rounded-lg bg-card border border-border/50 flex items-center justify-center p-1 hover:border-primary/50 transition-colors"
-                title={app.name}
-              >
-                <img src={app.logo} alt={app.name} className="w-full h-full object-contain" />
-              </div>
-            ))}
-            <span className="text-xs text-muted-foreground ml-1">& more</span>
-          </div>
-        </motion.div>
-
         {/* Visual Element - Task Automation Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -225,12 +199,13 @@ export const HeroSection = () => {
                       { name: "Line", logo: "/logos/Line.png" },
                       { name: "Teams", logo: "/logos/MicrosoftTeams.png" },
                       { name: "WhatsApp", logo: "/logos/Whatsapp.png" },
+                      { name: "Mattermost", logo: "/logos/Mattermost.png" },
                     ].map((app) => (
                       <div
                         key={app.name}
-                        className="w-14 h-14 bg-card rounded-xl flex items-center justify-center border border-border/50 p-2"
+                        className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30 p-2.5"
                       >
-                        <img src={app.logo} alt={app.name} className="w-full h-full object-contain" />
+                        <img src={app.logo} alt={app.name} className="w-full h-full object-contain rounded-lg" />
                       </div>
                     ))}
                   </div>
@@ -248,10 +223,10 @@ export const HeroSection = () => {
               <h3 className="font-semibold text-lg mb-4">Tasks Automated</h3>
               <div className="space-y-3">
                 {[
-                  "32 customer tickets resolved",
-                  "13 invoices processed",
-                  "7 social posts scheduled",
-                  "3 workflows optimized",
+                  "847 messages handled",
+                  "156 tickets auto-resolved",
+                  "42 leads qualified",
+                  "18 workflows live",
                 ].map((task, index) => (
                   <motion.div
                     key={task}
