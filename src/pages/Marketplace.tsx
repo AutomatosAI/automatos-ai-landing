@@ -234,7 +234,7 @@ const InteractiveBackground = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden rounded-2xl">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent" />
       <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -298,12 +298,12 @@ const InteractiveBackground = () => {
 
 const Marketplace = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
       <Navbar />
       <main className="pt-24 pb-16">
 
         {/* ── Hero Header ──────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -314,8 +314,9 @@ const Marketplace = () => {
                 <Store className="w-4 h-4" />
                 <span>Marketplace</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                Pre-Built Agents, <span className="text-primary">[Ready to Deploy]</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                Pre-Built Agents,<br className="sm:hidden" />{" "}
+                <span className="text-primary">[Ready to Deploy]</span>
               </h1>
             </motion.div>
 
@@ -323,7 +324,7 @@ const Marketplace = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2"
             >
               Explore agents, recipes, integrations and LLMs built by our team and the community. Install in one click, customise to fit your workflow.
             </motion.p>
@@ -332,7 +333,7 @@ const Marketplace = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-center justify-center gap-4 pt-2"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2"
             >
               <a href="/marketplace">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-6 text-base">
@@ -352,7 +353,7 @@ const Marketplace = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="flex items-center justify-center gap-8 pt-6 text-sm text-muted-foreground"
+              className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-8 pt-6 text-sm text-muted-foreground"
             >
               <div className="flex items-center gap-2">
                 <Bot className="w-4 h-4 text-primary" />
@@ -375,7 +376,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Featured Agents ──────────────────────────── */}
-        <section id="featured-agents" className="container mx-auto px-4 max-w-7xl mb-32">
+        <section id="featured-agents" className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">01</span>
             <span className="text-muted-foreground text-sm">Featured Agents</span>
@@ -392,7 +393,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {featuredAgents.map((agent, index) => (
               <motion.div
                 key={agent.name}
@@ -441,7 +442,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Browse by Category ───────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">02</span>
             <span className="text-muted-foreground text-sm">Categories</span>
@@ -458,7 +459,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-5">
             {categories.map((cat, index) => {
               const Icon = cat.icon;
               return (
@@ -471,7 +472,7 @@ const Marketplace = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 cursor-pointer"
+                  className="group flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-5 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 cursor-pointer"
                   whileHover={{ y: -4 }}
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
@@ -485,7 +486,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Recipes ──────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">03</span>
             <span className="text-muted-foreground text-sm">Recipes</span>
@@ -502,7 +503,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {recipes.map((recipe, index) => {
               const badge = triggerBadge[recipe.trigger];
               const BadgeIcon = badge.icon;
@@ -545,7 +546,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Integrations Marquee ─────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">04</span>
             <span className="text-muted-foreground text-sm">Integrations</span>
@@ -563,8 +564,8 @@ const Marketplace = () => {
           </motion.div>
 
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
             <div className="flex animate-marquee items-center opacity-80 hover:opacity-100 transition-opacity w-max">
               {[...integrationLogos, ...integrationLogos, ...integrationLogos].map((name, index) => (
@@ -587,7 +588,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── LLM Models ───────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">05</span>
             <span className="text-muted-foreground text-sm">Models</span>
@@ -604,7 +605,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {llmProviders.map((provider, index) => (
               <motion.div
                 key={provider.name}
@@ -612,7 +613,7 @@ const Marketplace = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 text-center"
+                className="group bg-card border border-border rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition-all duration-300 text-center"
               >
                 <div className="w-14 h-14 rounded-xl bg-muted/50 border border-border/50 flex items-center justify-center p-2.5 mx-auto mb-4">
                   <img src={provider.logo} alt={provider.name} className="w-full h-full object-contain" />
@@ -632,7 +633,7 @@ const Marketplace = () => {
         </section>
 
         {/* ── Use Cases ────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-32">
+        <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">06</span>
             <span className="text-muted-foreground text-sm">Use Cases</span>
@@ -649,7 +650,7 @@ const Marketplace = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
             {useCases.map((uc, index) => (
               <motion.div
                 key={uc.name}
@@ -694,11 +695,11 @@ const Marketplace = () => {
 
         {/* ── CTA ──────────────────────────────────────── */}
         <section className="container mx-auto px-4 max-w-7xl">
-          <div className="relative bg-card border border-primary/20 rounded-2xl p-12 md:p-24 overflow-hidden text-center">
+          <div className="relative bg-card border border-primary/20 rounded-2xl p-6 sm:p-12 md:p-24 overflow-hidden text-center">
             <InteractiveBackground />
 
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-semibold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-6">
                 Start Building Your AI Workforce
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
