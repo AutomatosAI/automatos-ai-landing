@@ -56,9 +56,9 @@ export const FAQSection = () => {
             <p className="text-muted-foreground text-lg mb-8">
               From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.
             </p>
-            <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+            <a href="#waitlist">
               <Button size="lg" className="rounded-full">
-                Start Automating
+                Join the Waitlist
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>

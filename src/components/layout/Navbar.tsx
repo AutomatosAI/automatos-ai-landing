@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -9,12 +9,27 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const navLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "Pricing", href: "/#pricing", isAnchor: true },
   { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (link: typeof navLinks[0], e: React.MouseEvent) => {
+    if (link.isAnchor) {
+      e.preventDefault();
+      const hash = link.href.replace("/", "");
+      if (location.pathname === "/") {
+        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/" + hash);
+      }
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -40,6 +55,7 @@ export const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
+                onClick={(e) => handleNavClick(link, e)}
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
               >
                 {link.label}
@@ -86,7 +102,7 @@ export const Navbar = () => {
                   key={link.label}
                   to={link.href}
                   className="block text-muted-foreground hover:text-foreground transition-colors py-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => { handleNavClick(link, e); setIsOpen(false); }}
                 >
                   {link.label}
                 </Link>

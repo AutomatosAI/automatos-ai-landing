@@ -25,9 +25,9 @@ export const CTASection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
             Join the future of work with Automatos. Start building your autonomous workforce today.
           </p>
-          <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+          <a href="#waitlist">
             <Button size="lg" className="px-8 py-6 text-lg rounded-full">
-              Get Started Now
+              Join the Waitlist
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </a>

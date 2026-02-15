@@ -5,15 +5,16 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    quote: "I am building Automatos into Budstack.to ... the ease of integration and power of the agents is incredible.",
+    quote: "I am building Automatos into Budstacks.io ... the ease of integration and power of the agents is incredible.",
     name: "Scott",
-    role: "Founder at Budstack.to",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face", // Generic placeholder or user provided image if available
+    role: "Founder at Budstacks.io",
+    roleUrl: "https://budstacks.io",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   },
 ];
 
 const partners = [
-  "Budstack",
+  { name: "Budstacks.io", url: "https://budstacks.io" },
 ];
 
 export const TestimonialsSection = () => {
@@ -61,9 +62,15 @@ export const TestimonialsSection = () => {
           <p className="text-sm text-muted-foreground mb-4">Our Partners</p>
           <div className="flex flex-wrap gap-8 items-center justify-center">
             {partners.map((partner) => (
-              <span key={partner} className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                {partner}
-              </span>
+              <a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-semibold text-muted-foreground/50 hover:text-primary transition-colors"
+              >
+                {partner.name}
+              </a>
             ))}
           </div>
         </motion.div>
@@ -99,7 +106,18 @@ export const TestimonialsSection = () => {
                   </blockquote>
                   <div>
                     <p className="font-semibold text-lg">{testimonials[currentIndex].name}</p>
-                    <p className="text-muted-foreground">{testimonials[currentIndex].role}</p>
+                    {testimonials[currentIndex].roleUrl ? (
+                      <a
+                        href={testimonials[currentIndex].roleUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        {testimonials[currentIndex].role}
+                      </a>
+                    ) : (
+                      <p className="text-muted-foreground">{testimonials[currentIndex].role}</p>
+                    )}
                   </div>
                 </div>
               </div>

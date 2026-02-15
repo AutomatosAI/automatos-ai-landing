@@ -12,6 +12,8 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { VideoSection } from "@/components/sections/VideoSection";
+import { WaitlistSection } from "@/components/sections/WaitlistSection";
 
 const Index = () => {
   return (
@@ -19,6 +21,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <VideoSection />
         <SolutionsSection />
         <HowItWorksSection />
         <IndustriesSection />
@@ -29,6 +32,7 @@ const Index = () => {
         <PricingSection />
         <IntegrationsSection />
         <FAQSection />
+        <WaitlistSection />
         <CTASection />
       </main>
       <Footer />

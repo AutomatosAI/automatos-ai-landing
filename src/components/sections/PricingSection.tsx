@@ -16,8 +16,8 @@ const plans = [
       { name: "Automatos CodeGraph", included: false },
       { name: "Automatos NL2SQL", included: false },
     ],
-    cta: "Start Free Trial",
-    href: "https://ui.automatos.app",
+    cta: "Join Waitlist",
+    href: "#waitlist",
     popular: false,
   },
   {
@@ -31,8 +31,8 @@ const plans = [
       { name: "Automatos CodeGraph", included: true },
       { name: "Automatos NL2SQL", included: true },
     ],
-    cta: "Get Started",
-    href: "https://ui.automatos.app",
+    cta: "Join Waitlist",
+    href: "#waitlist",
     popular: true,
   },
   {
@@ -185,6 +185,18 @@ export const PricingSection = () => {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
+              ) : plan.href.startsWith("#") ? (
+                <a href={plan.href} className="w-full">
+                  <Button
+                    className={`w-full rounded-full ${plan.popular
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                      : "bg-muted hover:bg-muted/80 text-foreground"
+                      }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
               ) : (
                 <a href={plan.href} target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button

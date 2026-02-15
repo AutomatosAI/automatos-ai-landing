@@ -72,9 +72,9 @@ export const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex items-center justify-center gap-4"
         >
-          <a href="https://ui.automatos.app" target="_blank" rel="noopener noreferrer">
+          <a href="#waitlist">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-6 text-base">
-              Get Started
+              Join the Waitlist
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </a>
@@ -83,6 +83,32 @@ export const HeroSection = () => {
               View Pricing
             </Button>
           </a>
+        </motion.div>
+
+        {/* Messaging Apps Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="flex items-center justify-center gap-3 mt-6"
+        >
+          <span className="text-xs text-muted-foreground">Talk to Automatos via</span>
+          <div className="flex items-center gap-2">
+            {[
+              { name: "WhatsApp", logo: "/logos/Whatsapp.png" },
+              { name: "Telegram", logo: "/logos/Telegram.png" },
+              { name: "Slack", logo: "/logos/Slack.png" },
+            ].map((app) => (
+              <div
+                key={app.name}
+                className="w-7 h-7 rounded-lg bg-card border border-border/50 flex items-center justify-center p-1 hover:border-primary/50 transition-colors"
+                title={app.name}
+              >
+                <img src={app.logo} alt={app.name} className="w-full h-full object-contain" />
+              </div>
+            ))}
+            <span className="text-xs text-muted-foreground ml-1">& more</span>
+          </div>
         </motion.div>
 
         {/* Visual Element - Task Automation Card */}

@@ -86,7 +86,7 @@ export const HowItWorksSection = () => {
                 variant="outline"
                 className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/5"
               >
-                Get Started
+                Learn More
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </motion.div>

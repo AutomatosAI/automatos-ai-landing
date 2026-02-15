@@ -23,7 +23,7 @@ const Contact = () => {
                                 <MessageSquare className="w-4 h-4" />
                                 <span>Get in Touch</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                                 Let's <span className="text-primary">[Elevate]</span> Your Workflow
                             </h1>
                         </motion.div>
@@ -89,10 +89,13 @@ const Contact = () => {
                                 <div className="pt-8 border-t border-border">
                                     <p className="text-sm text-muted-foreground mb-4">Follow us for updates</p>
                                     <div className="flex gap-4">
-                                        {/* Social placeholders */}
-                                        {['Twitter', 'LinkedIn', 'GitHub'].map((platform) => (
-                                            <a key={platform} href="#" className="text-foreground/60 hover:text-primary transition-colors text-sm font-medium">
-                                                {platform}
+                                        {[
+                                            { name: "X (Twitter)", href: "https://x.com/automatos" },
+                                            { name: "Instagram", href: "https://instagram.com/automatos" },
+                                            { name: "LinkedIn", href: "https://linkedin.com/company/automatos" },
+                                        ].map((social) => (
+                                            <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors text-sm font-medium">
+                                                {social.name}
                                             </a>
                                         ))}
                                     </div>
