@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Do I need technical skills to use Automatos?",
-    answer: "No. Our platform is designed for ease of use. You can use natural language to interact with your data and pre-built recipes to automate workflows.",
+    answer: "No. Our platform is designed for ease of use. You can use natural language to interact with your data and launch missions or install pre-built playbooks to automate workflows.",
   },
   {
     question: "What if I need more than standard integrations?",

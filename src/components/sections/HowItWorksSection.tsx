@@ -24,8 +24,8 @@ const steps = [
   {
     number: "04",
     phase: "Execution",
-    title: "Automate Workflows",
-    description: "Create complex, multi-step workflows using our recipes or design your own. Schedule them to run autonomously, 24/7.",
+    title: "Launch Missions & Playbooks",
+    description: "Define a goal, launch a mission, and watch your agents plan, execute, and verify each step. Save successful missions as reusable playbooks.",
   },
 ];
 

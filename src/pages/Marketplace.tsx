@@ -113,7 +113,7 @@ const categories = [
   { name: "Sales & CRM", icon: Store },
 ];
 
-const recipes = [
+const playbooks = [
   {
     name: "Morning Business Briefing",
     description: "Daily at 7 AM: emails, CRM changes, and KPI snapshot aggregated into one brief.",
@@ -207,8 +207,8 @@ const useCases = [
     name: "James",
     role: "Freelance Consultant",
     team: "Solo operator",
-    story: "James uses the Calendar Optimizer and Research Analyst agents to reclaim 10+ hours per week. The Inbox Zero recipe keeps his email under control while he focuses on client work.",
-    agents: ["Calendar Optimizer", "Research Analyst", "Inbox Zero Recipe"],
+    story: "James uses the Calendar Optimizer and Research Analyst agents to reclaim 10+ hours per week. The Inbox Zero playbook keeps his email under control while he focuses on client work.",
+    agents: ["Calendar Optimizer", "Research Analyst", "Inbox Zero Playbook"],
     result: "10+ hours reclaimed per week",
   },
 ];
@@ -326,7 +326,7 @@ const Marketplace = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2"
             >
-              Explore agents, recipes, integrations and LLMs built by our team and the community. Install in one click, customise to fit your workflow.
+              Explore agents, playbooks, integrations and LLMs built by our team and the community. Install in one click, customise to fit your workflow.
             </motion.p>
 
             <motion.div
@@ -361,7 +361,7 @@ const Marketplace = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Workflow className="w-4 h-4 text-primary" />
-                <span><strong className="text-foreground">15+</strong> Recipes</span>
+                <span><strong className="text-foreground">15+</strong> Playbooks</span>
               </div>
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
@@ -485,11 +485,11 @@ const Marketplace = () => {
           </div>
         </section>
 
-        {/* ── Recipes ──────────────────────────────────── */}
+        {/* ── Playbooks ──────────────────────────────────── */}
         <section className="container mx-auto px-4 max-w-7xl mb-16 sm:mb-32">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-primary font-mono text-sm">03</span>
-            <span className="text-muted-foreground text-sm">Recipes</span>
+            <span className="text-muted-foreground text-sm">Playbooks</span>
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -497,19 +497,19 @@ const Marketplace = () => {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Workflow Recipes</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Workflow Playbooks</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Multi-step automations that combine agents, tools and triggers. Install a recipe and it runs.
+              Multi-step automations that combine agents, tools and triggers. Install a playbook and it runs.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {recipes.map((recipe, index) => {
-              const badge = triggerBadge[recipe.trigger];
+            {playbooks.map((playbook, index) => {
+              const badge = triggerBadge[playbook.trigger];
               const BadgeIcon = badge.icon;
               return (
                 <motion.div
-                  key={recipe.name}
+                  key={playbook.name}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -524,12 +524,12 @@ const Marketplace = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold mb-2">{recipe.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{recipe.description}</p>
+                  <h3 className="text-lg font-semibold mb-2">{playbook.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{playbook.description}</p>
 
                   {/* Tool logos */}
                   <div className="flex items-center gap-2">
-                    {recipe.tools.map((tool) => (
+                    {playbook.tools.map((tool) => (
                       <div
                         key={tool}
                         className="w-7 h-7 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center p-1"
