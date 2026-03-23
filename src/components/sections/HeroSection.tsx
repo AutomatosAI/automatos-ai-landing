@@ -17,7 +17,7 @@ export const HeroSection = () => {
             <span className="bg-primary text-primary-foreground text-xs font-semibold px-2 py-0.5 rounded">
               Expert
             </span>
-            <span className="text-sm text-muted-foreground">Future-Ready AI Agency</span>
+            <span className="text-sm text-muted-foreground">Your AI-Powered Business OS</span>
           </div>
         </motion.div>
 
@@ -29,10 +29,10 @@ export const HeroSection = () => {
           className="text-center mb-6"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-            AI Services That
+            Run Your Business
           </h1>
           <div className="flex items-center justify-center gap-3 mt-2 flex-wrap">
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">[Elevate]</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">[On Autopilot]</span>
             <span className="inline-flex align-middle px-1">
               <span
                 className={[
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                 />
               </span>
             </span>
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">Your Workflow</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">With AI Agents</span>
           </div>
         </motion.div>
 
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-10"
         >
-          Empower your business with autonomous agents that learn, adapt, and execute. From personal assistance to full-scale operations, Automatos grows with you.
+          Launch missions, deploy playbooks, and let AI agents handle the work. From solo tasks to multi-agent operations, Automatos is the operating system for your AI workforce.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -223,10 +223,10 @@ export const HeroSection = () => {
               <h3 className="font-semibold text-lg mb-4">Tasks Automated</h3>
               <div className="space-y-3">
                 {[
-                  "847 messages handled",
-                  "156 tickets auto-resolved",
+                  "12 missions completed",
+                  "156 tasks auto-verified",
                   "42 leads qualified",
-                  "18 workflows live",
+                  "8 playbooks running",
                 ].map((task, index) => (
                   <motion.div
                     key={task}

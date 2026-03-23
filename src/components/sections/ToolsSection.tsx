@@ -37,12 +37,12 @@ const tools = [
     subtext: "Natural Language Queries",
   },
   {
-    title: "Automatos Workflows",
-    description: "9-stage complex workflows with self-learning and multi-agent coordination.",
+    title: "Automatos Missions",
+    description: "Define a goal, agents plan and execute tasks sequentially with built-in verification. Save as reusable playbooks.",
     icon: Workflow,
     metrics: [
-      { label: "Stages", value: "9 Complex" },
-      { label: "Learning", value: "Self-Optimizing" },
+      { label: "Planning", value: "Auto-Generated" },
+      { label: "Verification", value: "Per-Task" },
     ]
   },
   {
