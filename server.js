@@ -86,7 +86,7 @@ app.use(express.static(distPath, {
 }));
 
 // SPA fallback — all routes serve index.html (React Router handles routing)
-app.get("*", (_req, res) => {
+app.get("/{*splat}", (_req, res) => {
   res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
   res.sendFile(resolve(distPath, "index.html"));
 });
