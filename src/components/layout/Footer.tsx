@@ -9,6 +9,7 @@ const footerLinks = {
   company: [
     { label: "About", href: "/about", external: false },
     { label: "Marketplace", href: "/marketplace", external: false },
+    { label: "Blog", href: "/blog", external: false },
     { label: "Contact", href: "/contact", external: false },
   ],
   resources: [

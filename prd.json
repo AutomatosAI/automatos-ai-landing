@@ -1,0 +1,116 @@
+{
+  "project": "Automatos AI Landing",
+  "branchName": "ralph/blog-page",
+  "description": "Blog Page — Add /blog route to the landing site using the Automatos blog widget. Dog-food the blog widget to display agent-authored posts from the Automatos workspace.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add blog page route and layout",
+      "description": "As a visitor, I need a /blog page on the landing site with header, navigation, and footer.",
+      "acceptanceCriteria": [
+        "Create src/pages/Blog.tsx with Navbar, main content area, and Footer (same layout pattern as Contact.tsx or About.tsx)",
+        "Page header: motion-animated section with badge 'Blog', h1 'Insights from Our AI Agents', subtitle 'Research, analysis, and thought leadership — written and published by Automatos agents.'",
+        "Add route to React Router in src/App.tsx: path '/blog' renders Blog component",
+        "Add 'Blog' link to Navbar (src/components/layout/Navbar.tsx) in the main nav links array, between existing links",
+        "Add 'Blog' link to Footer (src/components/layout/Footer.tsx) in the company links section",
+        "Page renders without errors",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Install and embed blog widget on blog page",
+      "description": "As a visitor, I need to see blog posts rendered by the Automatos blog widget on the /blog page.",
+      "acceptanceCriteria": [
+        "Add @automatos/blog-widget and @automatos/core as dependencies in package.json (use workspace:* or latest published version)",
+        "In Blog.tsx, create a div with id='automatos-blog' in the main content area, styled with max-width 7xl and mx-auto padding to match other pages",
+        "Initialize the blog widget by importing BlogWidget from @automatos/blog-widget and AutomatosClient from @automatos/core, or use the script tag approach with AutomatosWidget.init({ widget: 'blog', apiKey: VITE_AUTOMATOS_PUBLIC_KEY, layout: 'featured', postsPerPage: 9, containerSelector: '#automatos-blog', theme: 'light' })",
+        "Add VITE_AUTOMATOS_PUBLIC_KEY to .env.example",
+        "If widget SDK is not yet published, use a fallback: fetch posts directly from the API (GET https://api.automatos.app/api/widgets/blog/posts?workspace_id=WORKSPACE_ID) and render a simple card grid as a temporary implementation until the widget package is available",
+        "Loading state while posts are fetching",
+        "npm run build succeeds",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "If @automatos/blog-widget is not yet published to npm, implement the fallback fetch approach. The widget integration can be swapped in later."
+    },
+    {
+      "id": "US-003",
+      "title": "Create blog post card component for fallback rendering",
+      "description": "As a visitor, I need blog posts displayed as attractive cards while the widget SDK may not be available yet.",
+      "acceptanceCriteria": [
+        "Create src/components/blog/blog-post-card.tsx component",
+        "Props: title (string), slug (string), excerpt (string), coverImageUrl (string | null), tags (string[]), authorName (string), publishedAt (string), readingTimeMinutes (number), onClick (callback)",
+        "Card layout: cover image (aspect-ratio 16/9 with rounded-xl overflow-hidden, gradient placeholder if no image), title (text-xl font-semibold, 2-line clamp), excerpt (text-muted-foreground, 3-line clamp), bottom row with author name, formatted date (use date-fns format), reading time badge, tag pills",
+        "Hover effect: subtle shadow lift and border-primary/30 transition",
+        "Uses Card from shadcn/ui as base",
+        "motion.div wrapper with whileHover scale and initial/animate fade-in",
+        "Typecheck passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Create blog post detail page",
+      "description": "As a visitor, I need to read a full blog post at /blog/:slug with proper typography.",
+      "acceptanceCriteria": [
+        "Create src/pages/BlogPost.tsx component",
+        "Add route to React Router: path '/blog/:slug' renders BlogPost component",
+        "Fetches post from GET https://api.automatos.app/api/widgets/blog/posts/{slug}?workspace_id=WORKSPACE_ID",
+        "Loading state: skeleton with header and content line placeholders",
+        "Error state: 'Post not found' with link back to /blog",
+        "Post header: full-width cover image (max-height 400px, object-fit cover, rounded-2xl), title (text-4xl font-bold), meta row (author, date formatted, reading time, category badge), tags as badges",
+        "Content area: rendered HTML from API (content field). Use a prose container div with tailwind typography plugin classes (prose prose-lg dark:prose-invert max-w-3xl mx-auto). Content is sanitized server-side by the backend",
+        "Back to Blog link at top with ArrowLeft icon",
+        "Navbar and Footer included (same layout as other pages)",
+        "Typecheck passes"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Wire blog list page with post cards and navigation",
+      "description": "As a visitor, I need the blog page to display post cards in a grid that links to individual posts.",
+      "acceptanceCriteria": [
+        "In Blog.tsx, fetch posts from GET https://api.automatos.app/api/widgets/blog/posts?workspace_id=WORKSPACE_ID&per_page=9 using React Query (useQuery)",
+        "Add VITE_AUTOMATOS_WORKSPACE_ID to .env.example for the workspace ID",
+        "Read workspace ID from import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID",
+        "Render posts in a responsive grid: 3 columns on lg, 2 on md, 1 on sm using CSS grid gap-8",
+        "First post uses a featured layout: col-span-full with larger image and bigger title",
+        "Remaining posts use BlogPostCard component",
+        "Clicking a card navigates to /blog/{slug} using react-router-dom useNavigate",
+        "Category filter bar above grid: fetch categories from API, render as clickable pills that filter the post list",
+        "Pagination at bottom if total_pages > 1: Previous/Next buttons with page indicator",
+        "Empty state when no posts: 'No posts published yet. Our agents are working on it!' with subtle animation",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Add SEO meta tags for blog pages",
+      "description": "As the Automatos team, I need SEO meta tags on blog pages so posts are discoverable by search engines.",
+      "acceptanceCriteria": [
+        "Install react-helmet-async (or check if already available) and add to package.json",
+        "In Blog.tsx, add Helmet with: title 'Blog | Automatos AI', meta description 'AI-powered insights, research, and analysis published by Automatos agents'",
+        "In BlogPost.tsx, add Helmet with: title '{post.title} | Automatos AI Blog', meta description from post.seo_description or post.excerpt, og:title, og:description, og:image from cover_image_url, og:type article, article:published_time from published_at, article:author from author_name, article:tag from tags",
+        "npm run build succeeds",
+        "Typecheck passes"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

@@ -1,12 +1,51 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, MessageSquare, Send } from "lucide-react";
+import { Mail, MessageSquare, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 const Contact = () => {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState<FormStatus>("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("sending");
+        setErrorMessage("");
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ firstName, lastName, email, message }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || "Something went wrong");
+            }
+
+            setStatus("success");
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setMessage("");
+        } catch (err) {
+            setStatus("error");
+            setErrorMessage(err instanceof Error ? err.message : "Failed to send message");
+        }
+    };
+
     return (
         <div className="min-h-screen bg-background">
             <Navbar />
@@ -66,22 +105,21 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="font-medium text-foreground">Email Us</p>
-                                            <a href="mailto:hello@automatos.ai" className="text-muted-foreground hover:text-primary transition-colors">
-                                                hello@automatos.ai
+                                            <a href="mailto:Gerard@automatos.app" className="text-muted-foreground hover:text-primary transition-colors">
+                                                Gerard@automatos.app
                                             </a>
                                         </div>
                                     </div>
 
                                     <div className="flex items-start gap-4">
                                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                            <MapPin className="w-5 h-5" />
+                                            <Phone className="w-5 h-5" />
                                         </div>
                                         <div>
-                                            <p className="font-medium text-foreground">Visit Us</p>
-                                            <p className="text-muted-foreground">
-                                                123 Innovation Drive,<br />
-                                                Tech Valley, CA 94043
-                                            </p>
+                                            <p className="font-medium text-foreground">Call Us</p>
+                                            <a href="tel:+447970433737" className="text-muted-foreground hover:text-primary transition-colors">
+                                                +44 7970 433737
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -116,36 +154,88 @@ const Contact = () => {
 
                             <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
 
-                            <form className="space-y-6 relative z-10">
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="first-name" className="text-sm font-medium">First name</label>
-                                        <Input id="first-name" placeholder="Jane" className="bg-background/50" />
+                            {status === "success" ? (
+                                <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                                    <CheckCircle className="w-12 h-12 text-green-500" />
+                                    <h4 className="text-xl font-semibold">Message Sent</h4>
+                                    <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+                                    <Button
+                                        variant="outline"
+                                        onClick={() => setStatus("idle")}
+                                        className="mt-4 rounded-full"
+                                    >
+                                        Send Another Message
+                                    </Button>
+                                </div>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                                    <div className="grid sm:grid-cols-2 gap-4">
+                                        <div className="space-y-2">
+                                            <label htmlFor="first-name" className="text-sm font-medium">First name</label>
+                                            <Input
+                                                id="first-name"
+                                                placeholder="Jane"
+                                                className="bg-background/50"
+                                                value={firstName}
+                                                onChange={(e) => setFirstName(e.target.value)}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label htmlFor="last-name" className="text-sm font-medium">Last name</label>
+                                            <Input
+                                                id="last-name"
+                                                placeholder="Doe"
+                                                className="bg-background/50"
+                                                value={lastName}
+                                                onChange={(e) => setLastName(e.target.value)}
+                                            />
+                                        </div>
                                     </div>
+
                                     <div className="space-y-2">
-                                        <label htmlFor="last-name" className="text-sm font-medium">Last name</label>
-                                        <Input id="last-name" placeholder="Doe" className="bg-background/50" />
+                                        <label htmlFor="email" className="text-sm font-medium">Email</label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            placeholder="jane@example.com"
+                                            className="bg-background/50"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
                                     </div>
-                                </div>
 
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                    <Input id="email" type="email" placeholder="jane@example.com" className="bg-background/50" />
-                                </div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="message" className="text-sm font-medium">Message</label>
+                                        <Textarea
+                                            id="message"
+                                            placeholder="Tell us about your project..."
+                                            className="min-h-[120px] bg-background/50 resize-none"
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}
+                                            required
+                                        />
+                                    </div>
 
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium">Message</label>
-                                    <Textarea
-                                        id="message"
-                                        placeholder="Tell us about your project..."
-                                        className="min-h-[120px] bg-background/50 resize-none"
-                                    />
-                                </div>
+                                    {status === "error" && (
+                                        <div className="flex items-center gap-2 text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3">
+                                            <AlertCircle className="w-4 h-4 shrink-0" />
+                                            <span>{errorMessage}</span>
+                                        </div>
+                                    )}
 
-                                <Button type="submit" size="lg" className="w-full rounded-full bg-primary hover:bg-primary/90">
-                                    Send Message <Send className="w-4 h-4 ml-2" />
-                                </Button>
-                            </form>
+                                    <Button
+                                        type="submit"
+                                        size="lg"
+                                        className="w-full rounded-full bg-primary hover:bg-primary/90"
+                                        disabled={status === "sending"}
+                                    >
+                                        {status === "sending" ? "Sending..." : "Send Message"}
+                                        <Send className="w-4 h-4 ml-2" />
+                                    </Button>
+                                </form>
+                            )}
                         </motion.div>
 
                     </div>
