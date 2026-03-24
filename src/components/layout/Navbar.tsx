@@ -10,6 +10,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Marketplace", href: "/marketplace" },
+  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/#pricing", isAnchor: true },
   { label: "Contact", href: "/contact" },
 ];
