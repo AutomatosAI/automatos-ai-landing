@@ -24,7 +24,7 @@ interface BlogPost {
 }
 
 interface BlogResponse {
-    data: BlogPost[];
+    posts: BlogPost[];
     total: number;
     page: number;
     per_page: number;
@@ -72,7 +72,7 @@ const Blog = () => {
         queryFn: () => fetchPosts(currentPage, activeCategory),
     });
 
-    const posts = data?.data ?? [];
+    const posts = data?.posts ?? [];
     const totalPages = data?.total_pages ?? 1;
 
     const handleCategoryClick = (category?: string) => {
