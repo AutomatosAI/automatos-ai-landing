@@ -14,6 +14,8 @@ import Cookies from "./pages/Cookies";
 import Marketplace from "./pages/Marketplace";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Research from "./pages/Research";
+import ResearchPaper from "./pages/ResearchPaper";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +38,8 @@ const App = () => (
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/research/:slug" element={<ResearchPaper />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
