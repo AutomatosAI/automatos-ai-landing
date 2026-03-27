@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
+import "@/styles/research-paper.css";
 
 const WORKSPACE_ID = import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID;
 
@@ -209,32 +210,9 @@ const ResearchPaper = () => {
                 <div className="border-t border-border mt-8" />
               </header>
 
-              {/* Paper content — academic prose styling */}
-              {/* Content is sanitized server-side and again client-side via DOMPurify */}
+              {/* Paper content — CSS handles all presentation */}
               <div
-                className="
-                  prose prose-lg dark:prose-invert
-                  max-w-3xl mx-auto
-                  prose-headings:font-bold
-                  prose-headings:tracking-tight
-                  prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                  prose-p:leading-relaxed prose-p:text-base
-                  prose-li:text-base
-                  prose-blockquote:border-l-primary
-                  prose-blockquote:bg-muted/50
-                  prose-blockquote:py-1 prose-blockquote:px-4
-                  prose-blockquote:rounded-r-lg
-                  prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-                  prose-code:text-sm prose-code:font-normal
-                  prose-pre:bg-[#1e1e2e] prose-pre:rounded-xl
-                  prose-table:text-sm
-                  prose-th:bg-muted prose-th:font-semibold
-                  prose-td:border-border
-                  prose-img:rounded-xl
-                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                  prose-strong:font-semibold
-                "
+                className="research-content max-w-3xl mx-auto"
                 dangerouslySetInnerHTML={{ __html: sanitizedContent }}
               />
 

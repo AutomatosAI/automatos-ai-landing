@@ -1,0 +1,301 @@
+/**
+ * Research paper content styling.
+ *
+ * Scoped under .research-content — styles standard semantic HTML
+ * (h2, h3, p, blockquote, table, pre, code, hr, ul, ol, etc.)
+ * into publication-quality academic formatting.
+ *
+ * The source is markdown rendered to HTML. This CSS is the
+ * presentation layer — same content can look different on
+ * different consumers.
+ */
+
+/* ── Base typography ─────────────────────────────────────── */
+
+.research-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Headings ────────────────────────────────────────────── */
+
+.research-content h1 {
+  display: none; /* title is in the page header, not in body */
+}
+
+.research-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: hsl(var(--foreground));
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.research-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+  color: hsl(var(--foreground));
+}
+
+.research-content h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* First h2 (usually TL;DR or intro) — less top margin */
+.research-content h2:first-child,
+.research-content h2:first-of-type {
+  margin-top: 0;
+}
+
+/* ── Paragraphs ──────────────────────────────────────────── */
+
+.research-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* ── Lists ───────────────────────────────────────────────── */
+
+.research-content ul,
+.research-content ol {
+  margin: 0.75rem 0 1.5rem 1.75rem;
+  line-height: 1.7;
+}
+
+.research-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.research-content li strong {
+  font-weight: 600;
+}
+
+.research-content li em {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Nested lists */
+.research-content li ul,
+.research-content li ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────── */
+
+.research-content blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  background: hsl(var(--muted));
+  padding: 1.25rem 1.75rem;
+  margin: 1.75rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.research-content blockquote p {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.research-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.research-content blockquote strong {
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+
+.research-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0 2rem;
+  font-size: 0.9375rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.research-content thead {
+  background: #1e1e2e;
+}
+
+:is(.dark) .research-content thead {
+  background: #1a1a2e;
+}
+
+.research-content th {
+  font-weight: 700;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: none;
+}
+
+.research-content td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.research-content tbody tr:nth-child(even) td {
+  background: hsl(var(--muted) / 0.4);
+}
+
+.research-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Bold rows in tables (often the "our approach" row) */
+.research-content td strong,
+.research-content td code {
+  font-weight: 600;
+}
+
+/* ── Code ────────────────────────────────────────────────── */
+
+.research-content code {
+  font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.9em;
+  background: hsl(var(--muted));
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.research-content pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  border: 1px solid hsl(var(--border) / 0.3);
+}
+
+.research-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 0;
+  font-weight: 400;
+}
+
+/* ── Horizontal rules (section dividers) ─────────────────── */
+
+.research-content hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 3.5rem 0;
+}
+
+/* ── Links ───────────────────────────────────────────────── */
+
+.research-content a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid hsl(var(--primary) / 0.3);
+  transition: border-color 0.2s;
+}
+
+.research-content a:hover {
+  border-bottom-color: hsl(var(--primary));
+}
+
+/* ── Strong / emphasis ───────────────────────────────────── */
+
+.research-content strong {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.research-content em {
+  font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────── */
+
+.research-content img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+/* ── References section (last ol in the document) ────────── */
+
+.research-content > ol:last-of-type {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: hsl(var(--muted-foreground));
+}
+
+.research-content > ol:last-of-type li {
+  margin-bottom: 0.625rem;
+}
+
+.research-content > ol:last-of-type em {
+  font-style: italic;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .research-content {
+    font-size: 1rem;
+  }
+
+  .research-content h2 {
+    font-size: 1.375rem;
+    margin-top: 2.5rem;
+  }
+
+  .research-content h3 {
+    font-size: 1.125rem;
+  }
+
+  .research-content blockquote {
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .research-content pre {
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .research-content table {
+    font-size: 0.8125rem;
+  }
+
+  .research-content th,
+  .research-content td {
+    padding: 0.625rem 0.75rem;
+  }
+}
