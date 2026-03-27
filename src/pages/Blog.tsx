@@ -51,7 +51,12 @@ const fetchCategories = async (): Promise<string[]> => {
         `https://api.automatos.app/api/widgets/blog/categories?workspace_id=${WORKSPACE_ID}`
     );
     if (!res.ok) return [];
-    return res.json();
+    const data = await res.json();
+    // API returns [{category, count}] — extract names
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === "object") {
+        return data.map((item: { category: string }) => item.category);
+    }
+    return data;
 };
 
 const Blog = () => {
