@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
 import { Helmet } from "react-helmet-async";
+import "@/styles/blog-content.css";
 
 const WORKSPACE_ID = import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID;
 
@@ -158,9 +159,9 @@ const BlogPost = () => {
                                 </div>
                             )}
 
-                            {/* Content — sanitized with DOMPurify (also sanitized server-side) */}
+                            {/* Content — CSS handles all presentation */}
                             <div
-                                className="prose prose-lg dark:prose-invert max-w-3xl mx-auto"
+                                className="blog-content max-w-3xl mx-auto"
                                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
                             />
                         </motion.article>

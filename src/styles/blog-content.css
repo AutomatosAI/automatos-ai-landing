@@ -1,0 +1,235 @@
+/**
+ * Blog post content styling.
+ *
+ * Scoped under .blog-content — styles standard semantic HTML
+ * into clean, readable blog formatting. Optimised for
+ * readability and scanning.
+ */
+
+/* ── Base typography ─────────────────────────────────────── */
+
+.blog-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Headings ────────────────────────────────────────────── */
+
+.blog-content h1 {
+  display: none; /* title is in the page header */
+}
+
+.blog-content h2 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: hsl(var(--foreground));
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+}
+
+.blog-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content h2:first-child,
+.blog-content h2:first-of-type {
+  margin-top: 0;
+}
+
+/* ── Paragraphs ──────────────────────────────────────────── */
+
+.blog-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* ── Lists ───────────────────────────────────────────────── */
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0.75rem 0 1.5rem 1.75rem;
+  line-height: 1.7;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.blog-content li strong {
+  font-weight: 600;
+}
+
+.blog-content li ul,
+.blog-content li ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────── */
+
+.blog-content blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  background: hsl(var(--muted));
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.blog-content blockquote p {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.blog-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-content blockquote strong {
+  color: hsl(var(--primary));
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 1.75rem;
+  font-size: 0.9375rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-content thead {
+  background: hsl(var(--muted));
+}
+
+.blog-content th {
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  border-bottom: 2px solid hsl(var(--border));
+}
+
+.blog-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.blog-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Code ────────────────────────────────────────────────── */
+
+.blog-content code {
+  font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.9em;
+  background: hsl(var(--muted));
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.blog-content pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  border: 1px solid hsl(var(--border) / 0.3);
+}
+
+.blog-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 0;
+  font-weight: 400;
+}
+
+/* ── Horizontal rules ────────────────────────────────────── */
+
+.blog-content hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 3rem 0;
+}
+
+/* ── Links ───────────────────────────────────────────────── */
+
+.blog-content a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid hsl(var(--primary) / 0.3);
+  transition: border-color 0.2s;
+}
+
+.blog-content a:hover {
+  border-bottom-color: hsl(var(--primary));
+}
+
+/* ── Strong / emphasis ───────────────────────────────────── */
+
+.blog-content strong {
+  font-weight: 600;
+}
+
+/* ── Images ──────────────────────────────────────────────── */
+
+.blog-content img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .blog-content {
+    font-size: 1rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.375rem;
+    margin-top: 2rem;
+  }
+
+  .blog-content pre {
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .blog-content table {
+    font-size: 0.8125rem;
+  }
+}
