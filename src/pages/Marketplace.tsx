@@ -369,7 +369,7 @@ const Marketplace = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Brain className="w-4 h-4 text-primary" />
-                <span><strong className="text-foreground">400+</strong> LLMs</span>
+                <span><strong className="text-foreground">340+</strong> LLMs</span>
               </div>
             </motion.div>
           </div>
@@ -601,7 +601,7 @@ const Marketplace = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Choose Your Intelligence</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              400+ language models from leading providers. Pick the right brain for every task.
+              340+ language models from leading providers. Pick the right brain for every task.
             </p>
           </motion.div>
 

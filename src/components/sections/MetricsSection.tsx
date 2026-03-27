@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const metrics = [
-  { value: "No", suffix: "Lock-in", label: "Swap LLMs and tools as you please" },
-  { value: "Cost", suffix: "Efficient", label: "Pay only for what you use" },
-  { value: "Self", suffix: "Learning", label: "System improves with every interaction" },
+  { value: "87%", suffix: "Fewer Tokens", label: "3,200 tokens per task vs 25,000 traditional" },
+  { value: "86%", suffix: "Context Recovery", label: "Semantic field memory across agent handoffs" },
+  { value: "850+", suffix: "Integrations", label: "Apps connected with 12,000+ tools ready to use" },
 ];
 
 export const MetricsSection = () => {
@@ -24,10 +24,10 @@ export const MetricsSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-            Smarter Every Day
+            Built Different, Measured Always
           </h2>
           <p className="text-muted-foreground text-lg mt-4">
-            Our goal is a self-optimizing system that saves you time and money.
+            Real numbers from real infrastructure — not benchmarks, not promises.
           </p>
         </motion.div>
 

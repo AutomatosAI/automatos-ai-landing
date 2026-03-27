@@ -1,27 +1,55 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Brain, BookOpen, Workflow } from "lucide-react";
+import { TrendingUp, Brain, BookOpen, Workflow, HardDrive, Mic, Orbit } from "lucide-react";
 
 const tools = [
   {
     title: "Automatos Agents",
-    description: "Design custom agents or select from the marketplace. Choose the best LLM, tools, and skills for the task to optimize costs.",
+    description: "Design custom agents or choose from 100+ in the marketplace. Pick the best LLM, tools, and skills for the task.",
     icon: Brain,
-    tags: ["Customizable", "Marketplace"],
+    tags: ["100+ Agents", "340+ LLMs"],
+  },
+  {
+    title: "Automatos Missions",
+    description: "Define a goal — agents decompose it into a task DAG, execute with cross-model verification, and auto-retry on failure.",
+    icon: Workflow,
+    metrics: [
+      { label: "Planning", value: "LLM-Generated DAG" },
+      { label: "Verification", value: "Cross-Model Judge" },
+    ]
+  },
+  {
+    title: "Automatos Workspace",
+    description: "Your AI file system. All agent output lands as .md files — reports, research, blog posts. Browse, edit, and manage from one place.",
+    icon: HardDrive,
+    tags: ["5GB Storage", "File Explorer"],
+  },
+  {
+    title: "Semantic Field Memory",
+    description: "Agents discover each other's findings by meaning, not forwarding chains. Temporal decay, reinforcement, and 86% context recovery.",
+    icon: Orbit,
+    stat: "86%",
+    statLabel: "Context Recovery",
   },
   {
     title: "Automatos RAG",
-    description: "Intelligent search for your knowledge bases. Ensure your agents always have the right context.",
+    description: "Shannon entropy filtering + MMR diversity scoring. Your agents get the right context — not bloated token dumps.",
     icon: BookOpen,
-    stat: "100%",
-    statLabel: "Context Accuracy",
+    stat: "87%",
+    statLabel: "Fewer Tokens",
   },
   {
     title: "Automatos Memory",
-    description: "Personal and Agent memory. Remembers your preferences and operational details.",
+    description: "4-tier memory system: working, short-term, long-term, and collective. Agents remember preferences and operational history.",
     icon: TrendingUp,
     progress: 85,
     progressLabel: "Memory Retention",
     timeLeft: "Active",
+  },
+  {
+    title: "Automatos Voice",
+    description: "Voice input and output for agent interactions. Talk to your agents, get spoken responses. Built on real-time voice pipelines.",
+    icon: Mic,
+    tags: ["Voice Input", "Voice Output"],
   },
   {
     title: "Automatos CodeGraph",
@@ -31,31 +59,22 @@ const tools = [
   },
   {
     title: "Automatos NL2SQL",
-    description: "Speak to your databases. 'How many new customers last month?'—no SQL needed.",
-    icon: BookOpen, // Reusing icons as imports are limited
+    description: "Speak to your databases. 'How many new customers last month?' — no SQL needed.",
+    icon: BookOpen,
     greeting: "Ask Data",
     subtext: "Natural Language Queries",
   },
   {
-    title: "Automatos Missions",
-    description: "Define a goal, agents plan and execute tasks sequentially with built-in verification. Save as reusable playbooks.",
-    icon: Workflow,
-    metrics: [
-      { label: "Planning", value: "Auto-Generated" },
-      { label: "Verification", value: "Per-Task" },
-    ]
-  },
-  {
     title: "Automatos Tools",
-    description: "One adapter, infinite possibilities. Connect to 850+ apps with over 12,000 tools.",
-    icon: TrendingUp, // Reusing
+    description: "One adapter, infinite possibilities. Connect to 850+ apps with over 12,000 tools via Composio.",
+    icon: TrendingUp,
     stat: "850+",
     statLabel: "Connected Apps",
   },
   {
     title: "Automatos Widgets",
-    description: "Embed Automatos tools directly into your sites or workspace via our SDK.",
-    icon: Brain, // Reusing
+    description: "Embed AI-powered tools directly into your sites or workspace via our SDK. Blog, chat, analytics — all embeddable.",
+    icon: Brain,
     tags: ["SDK", "Embeddable"],
   },
 ];
