@@ -7,25 +7,29 @@ const steps = [
     number: "01",
     phase: "Select Intelligence",
     title: "Design Your Agents",
-    description: "Select from 400+ LLM models to find the perfect brain for your task. Add specialized skills, equip custom tools, and fine-tune behavior for your specific needs.",
+    description: "Select from 340+ LLM models to find the perfect brain for your task. Add specialized skills, equip custom tools, and fine-tune behavior for your specific needs.",
+    href: "/marketplace",
   },
   {
     number: "02",
     phase: "Integration",
     title: "Connect Your World",
     description: "Instantly integrate with 850+ apps including Gmail, Slack, Dropbox, and more. Your agents work where you work, seamlessly bridging your entire tech stack.",
+    href: "/marketplace",
   },
   {
     number: "03",
     phase: "Context Setup",
     title: "Empower with Knowledge",
     description: "Load up your knowledge bases. Connect Google Docs, upload PDFs, link databases via NL2SQL, or index your entire codebase with CodeGraph.",
+    href: "/research",
   },
   {
     number: "04",
     phase: "Execution",
     title: "Launch Missions & Playbooks",
-    description: "Define a goal, launch a mission, and watch your agents plan, execute, and verify each step. Save successful missions as reusable playbooks.",
+    description: "Define a goal, launch a mission, and watch your agents decompose, execute, verify, and auto-retry each step. Save successful missions as reusable playbooks.",
+    href: "/research",
   },
 ];
 
@@ -82,13 +86,15 @@ export const HowItWorksSection = () => {
               </p>
 
               {/* CTA */}
-              <Button
-                variant="outline"
-                className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/5"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <a href={step.href}>
+                <Button
+                  variant="outline"
+                  className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/5"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </a>
             </motion.div>
           ))}
         </div>

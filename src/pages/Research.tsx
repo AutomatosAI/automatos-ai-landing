@@ -135,10 +135,10 @@ const Research = () => {
             >
               <FlaskConical className="w-12 h-12 text-primary mx-auto" />
               <h3 className="text-xl font-semibold">
-                Research papers coming soon
+                No research papers found
               </h3>
               <p className="text-muted-foreground">
-                We're preparing our first publications.
+                Check back soon — new research is published regularly.
               </p>
             </motion.div>
           )}
