@@ -13,6 +13,7 @@ const footerLinks = {
     { label: "Contact", href: "/contact", external: false },
   ],
   resources: [
+    { label: "Research", href: "/research", external: false },
     { label: "Documentation", href: "https://docs.automatos.app/", external: true },
     { label: "DeepWiki", href: "https://deepwiki.com/AutomatosAI/automatos-ai", external: true },
     { label: "Discord", href: "https://discord.com/channels/1400562549258453155/1400562550713880628", external: true },
