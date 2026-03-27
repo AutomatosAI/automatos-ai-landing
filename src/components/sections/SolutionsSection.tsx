@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Zap, Code, Brain, Cpu, Database, BookOpen } from "lucide-react";
+import { Zap, Orbit, Brain, Cpu, Database, BookOpen } from "lucide-react";
 
 export const SolutionsSection = () => {
   return (
@@ -46,7 +46,7 @@ export const SolutionsSection = () => {
                 Built on Math, Not Magic
               </h3>
               <p className="text-muted-foreground mb-6">
-                Automatos uses mathematical context engineering — Shannon entropy, knapsack optimization, and MMR algorithms — to select the right information for every task. The result: 87% fewer tokens, 88% lower API costs, and dramatically better responses.
+                Automatos uses mathematical context engineering — Shannon entropy, knapsack optimization, MMR algorithms, and semantic field memory — to select the right information for every task. The result: 87% fewer tokens, 88% lower API costs, and dramatically better responses.
               </p>
 
               {/* Before/After comparison */}
@@ -77,7 +77,7 @@ export const SolutionsSection = () => {
                 { icon: Brain, stat: "Shannon", label: "Entropy Filtering", desc: "Removes noise, retains high-value signal" },
                 { icon: Database, stat: "4-Tier", label: "Memory System", desc: "Working → Short-term → Long-term → Collective" },
                 { icon: Zap, stat: "MMR", label: "Diversity Scoring", desc: "Balances relevance with unique context" },
-                { icon: Code, stat: "94%", label: "Task Success", desc: "Up from 76% with traditional approaches" },
+                { icon: Orbit, stat: "Semantic", label: "Field Memory", desc: "Agents discover context by meaning — 86% recovery" },
               ].map((item) => (
                 <motion.div
                   key={item.label}
