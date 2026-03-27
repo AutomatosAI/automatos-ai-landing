@@ -23,7 +23,7 @@ export const SolutionsSection = () => {
             The Engine Behind the Intelligence
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Most AI tools guess. Automatos calculates. Our 9-stage orchestration pipeline uses mathematical context engineering to deliver precise, cost-efficient results — not bloated token dumps.
+            Most AI tools guess. Automatos calculates. Our mission engine decomposes goals into agent-coordinated task graphs — with mathematical context engineering, cross-model verification, and semantic field memory — to deliver precise, cost-efficient results.
           </p>
         </motion.div>
 
