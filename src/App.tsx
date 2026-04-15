@@ -12,6 +12,10 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import Marketplace from "./pages/Marketplace";
+import DesignYourAgents from "./pages/DesignYourAgents";
+import ConnectYourWorld from "./pages/ConnectYourWorld";
+import EmpowerWithKnowledge from "./pages/EmpowerWithKnowledge";
+import LaunchMissions from "./pages/LaunchMissions";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Research from "./pages/Research";
@@ -36,6 +40,10 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/design-your-agents" element={<DesignYourAgents />} />
+            <Route path="/connect-your-world" element={<ConnectYourWorld />} />
+            <Route path="/empower-with-knowledge" element={<EmpowerWithKnowledge />} />
+            <Route path="/launch-missions" element={<LaunchMissions />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/research" element={<Research />} />

@@ -25,7 +25,7 @@
 **Stats**:
 - Vendors Replaced: 5+
 - Monthly Savings: ~€2,000
-**Features**: No Vendor Lock-in, Self-Learning System, 850+ Integrations
+**Features**: No Vendor Lock-in, Self-Learning System, 1,000+ Integrations
 
 ---
 
@@ -34,10 +34,10 @@
 **Subheadline**: Four steps to your fully autonomous workforce.
 
 **Step 01**: Design Your Agents
-"Select from 400+ LLM models to find the perfect brain for your task. Add specialized skills, equip custom tools, and fine-tune behavior for your specific needs."
+"Select from 300+ LLM models to find the perfect brain for your task. Add specialized skills, equip custom tools, and fine-tune behavior for your specific needs."
 
 **Step 02**: Connect Your World
-"Instantly integrate with 850+ apps including Gmail, Slack, Dropbox, and more. Your agents work where you work, seamlessly bridging your entire tech stack."
+"Instantly integrate with 1,000+ apps including Gmail, Slack, Dropbox, and more. Your agents work where you work, seamlessly bridging your entire tech stack."
 
 **Step 03**: Empower with Knowledge
 "Load up your knowledge bases. Connect Google Docs, upload PDFs, link databases via NL2SQL, or index your entire codebase with CodeGraph."
@@ -82,7 +82,7 @@
 6. **Automatos Workflows**
    - "9-stage complex workflows with self-learning and multi-agent coordination. Use recipes or design your own."
 7. **Automatos Unified Adapter**
-   - "One adapter, infinite possibilities. Connect to 850+ apps with over 12,000 tools and features."
+   - "One adapter, infinite possibilities. Connect to 1,000+ apps with over 12,000 tools and features."
 8. **Automatos Widgets**
    - "Embed Automatos tools directly into your sites or workspace via our SDK and marketplace."
 
@@ -144,7 +144,7 @@
 
 ## 09 Integrations
 **Headline**: Connected to Everything
-**Subheadline**: Native support for 850+ apps including Slack, Notion, HubSpot, Salesforce, Google, and Microsoft.
+**Subheadline**: Native support for 1,000+ apps including Slack, Notion, HubSpot, Salesforce, Google, and Microsoft.
 
 ---
 

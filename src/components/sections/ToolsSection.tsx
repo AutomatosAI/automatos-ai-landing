@@ -6,7 +6,7 @@ const tools = [
     title: "Automatos Agents",
     description: "Design custom agents or choose from 100+ in the marketplace. Pick the best LLM, tools, and skills for the task.",
     icon: Brain,
-    tags: ["100+ Agents", "340+ LLMs"],
+    tags: ["100+ Agents", "300+ LLMs"],
   },
   {
     title: "Automatos Missions",
@@ -66,9 +66,9 @@ const tools = [
   },
   {
     title: "Automatos Tools",
-    description: "One adapter, infinite possibilities. Connect to 850+ apps with over 12,000 tools via Composio.",
+    description: "One adapter, infinite possibilities. Connect to 1,000+ apps with over 12,000 tools via Composio.",
     icon: TrendingUp,
-    stat: "850+",
+    stat: "1,000+",
     statLabel: "Connected Apps",
   },
   {

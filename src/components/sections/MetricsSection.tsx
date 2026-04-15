@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const metrics = [
   { value: "87%", suffix: "Fewer Tokens", label: "3,200 tokens per task vs 25,000 traditional" },
   { value: "86%", suffix: "Context Recovery", label: "Semantic field memory across agent handoffs" },
-  { value: "850+", suffix: "Integrations", label: "Apps connected with 12,000+ tools ready to use" },
+  { value: "1,000+", suffix: "Integrations", label: "Apps connected with 12,000+ tools ready to use" },
 ];
 
 export const MetricsSection = () => {

@@ -365,11 +365,11 @@ const Marketplace = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span><strong className="text-foreground">850+</strong> Integrations</span>
+                <span><strong className="text-foreground">1,000+</strong> Integrations</span>
               </div>
               <div className="flex items-center gap-2">
                 <Brain className="w-4 h-4 text-primary" />
-                <span><strong className="text-foreground">340+</strong> LLMs</span>
+                <span><strong className="text-foreground">300+</strong> LLMs</span>
               </div>
             </motion.div>
           </div>
@@ -557,7 +557,7 @@ const Marketplace = () => {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">850+ Apps Connected</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">1,000+ Apps Connected</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Gmail, Salesforce, Slack, GitHub — your agents plug into the tools you already use.
             </p>
@@ -601,7 +601,7 @@ const Marketplace = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Choose Your Intelligence</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              340+ language models from leading providers. Pick the right brain for every task.
+              300+ language models from leading providers. Pick the right brain for every task.
             </p>
           </motion.div>
 

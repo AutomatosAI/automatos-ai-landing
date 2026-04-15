@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Can I customize the agents?",
-    answer: "Absolutely. You can choose from 340+ LLMs, add specialized skills, and equip custom tools. Design agents in the platform or install from our marketplace of 100+ pre-built agents.",
+    answer: "Absolutely. You can choose from 300+ LLMs, add specialized skills, and equip custom tools. Design agents in the platform or install from our marketplace of 100+ pre-built agents.",
   },
   {
     question: "Is my data secure?",
