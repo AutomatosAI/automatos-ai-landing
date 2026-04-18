@@ -29,7 +29,7 @@ export const WaitlistSection = () => {
           {!submitted ? (
             <>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                Get Early Access
+                Get <span className="text-primary">Early Access</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
                 We're onboarding early users now. Join the waitlist to be first in line when we launch.

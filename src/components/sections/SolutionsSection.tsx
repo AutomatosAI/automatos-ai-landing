@@ -20,7 +20,7 @@ export const SolutionsSection = () => {
           className="mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            The Engine Behind the Intelligence
+            The Engine Behind the <span className="text-primary">Intelligence</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
             Most AI tools guess. Automatos calculates. Our mission engine decomposes goals into agent-coordinated task graphs — with mathematical context engineering, cross-model verification, and semantic field memory — to deliver precise, cost-efficient results.

@@ -97,7 +97,7 @@ export const ToolsSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            The Automatos Toolchain
+            The Automatos <span className="text-primary">Toolchain</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Everything you need to build, manage, and scale your AI workforce.

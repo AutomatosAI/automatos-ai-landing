@@ -45,7 +45,7 @@ export const TestimonialsSection = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Building the Future of SaaS
+            Building the Future of <span className="text-primary">SaaS</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Trusted by innovators building the next generation of platforms.

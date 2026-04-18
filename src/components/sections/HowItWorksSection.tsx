@@ -51,7 +51,7 @@ export const HowItWorksSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Power in Simplicity
+            Power in <span className="text-primary">Simplicity</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Four steps to your fully autonomous workforce.

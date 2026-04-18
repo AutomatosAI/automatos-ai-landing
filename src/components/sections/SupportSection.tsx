@@ -162,7 +162,7 @@ export const SupportSection = () => {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                We Grow With You
+                We Grow <span className="text-primary">With You</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
                 We're a small, dedicated team passionate about your success. As we build Automatos, we're here to help you build your business.

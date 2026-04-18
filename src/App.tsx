@@ -21,6 +21,7 @@ import BlogPost from "./pages/BlogPost";
 import Research from "./pages/Research";
 import ResearchPaper from "./pages/ResearchPaper";
 import EuAiAct from "./pages/EuAiAct";
+import AutomatosNotWrapper from "./pages/blog/AutomatosNotWrapper";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/empower-with-knowledge" element={<EmpowerWithKnowledge />} />
             <Route path="/launch-missions" element={<LaunchMissions />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/automatos-is-not-an-llm-wrapper" element={<AutomatosNotWrapper />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/research" element={<Research />} />
             <Route path="/research/:slug" element={<ResearchPaper />} />

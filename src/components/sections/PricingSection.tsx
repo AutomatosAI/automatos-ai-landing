@@ -78,7 +78,7 @@ export const PricingSection = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Plans Designed for Every Stage
+            Plans Designed for <span className="text-primary">Every Stage</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Whether you're just starting out or ready to scale, our packages give you clear options without the confusion. Choose what fits your goals, and know exactly what you're getting.

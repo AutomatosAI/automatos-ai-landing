@@ -55,7 +55,7 @@ export const FAQSection = () => {
             className="lg:sticky lg:top-24"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Turning Questions Into Confidence
+              Turning Questions Into <span className="text-primary">Confidence</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
               From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.

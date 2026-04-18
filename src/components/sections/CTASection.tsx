@@ -67,7 +67,7 @@ export const CTASection = () => {
           {!submitted ? (
             <>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Automate Your Success?
+                Ready to Automate <span className="text-primary">Your Success?</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
                 Join the future of work with Automatos. Start building your autonomous workforce today.

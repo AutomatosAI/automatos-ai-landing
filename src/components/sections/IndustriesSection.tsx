@@ -111,7 +111,7 @@ export const IndustriesSection = () => {
           className="mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Where AI Meets Your Needs
+            Where AI Meets <span className="text-primary">Your Needs</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
             Specialized agents ready to join your team today.

@@ -25,7 +25,7 @@ export const VideoSection = () => {
           className="text-center mb-10"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            See Automatos in Action
+            See Automatos <span className="text-primary">in Action</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Discover how autonomous AI agents work together to run your business — from idea to execution.

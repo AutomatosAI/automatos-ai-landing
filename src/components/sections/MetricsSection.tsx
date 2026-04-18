@@ -24,7 +24,7 @@ export const MetricsSection = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-            Built Different, Measured Always
+            Built Different, <span className="text-primary">Measured Always</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-4">
             Real numbers from real infrastructure — not benchmarks, not promises.
