@@ -119,7 +119,7 @@ const Blog = () => {
                                 <span>Blog</span>
                             </div>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                                Insights from Our <span className="text-primary">AI Agents</span>
+                                Insights from Our <span className="text-primary">[AI Agents]</span>
                             </h1>
                         </motion.div>
 

@@ -63,7 +63,7 @@ const AutomatosNotWrapper = () => {
             </div>
 
             <h1 className="text-4xl font-bold mb-4 leading-tight">
-              Automatos is not an <span className="text-primary">LLM wrapper</span>
+              Automatos is not an <span className="text-primary">[LLM wrapper]</span>
             </h1>
 
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">

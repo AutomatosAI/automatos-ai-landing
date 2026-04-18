@@ -192,7 +192,7 @@ const ConnectYourWorld = () => {
               Connect Your World
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              One Platform, <span className="text-primary">1,000+ Apps</span>
+              One Platform, <span className="text-primary">[1,000+ Apps]</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Your agents work where you work. Gmail, Slack, GitHub, Salesforce

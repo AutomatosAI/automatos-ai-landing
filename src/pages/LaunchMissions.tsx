@@ -117,7 +117,7 @@ const LaunchMissions = () => (
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            From Goal to <span className="text-primary">Done</span>
+            From Goal to <span className="text-primary">[Done]</span>
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

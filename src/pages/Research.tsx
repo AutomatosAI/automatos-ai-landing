@@ -90,7 +90,7 @@ const Research = () => {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 Practitioner{" "}
-                <span className="text-primary">Research</span>
+                <span className="text-primary">[Research]</span>
               </h1>
             </motion.div>
 

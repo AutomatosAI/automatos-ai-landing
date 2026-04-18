@@ -176,7 +176,7 @@ const EuAiAct = () => {
               EU AI Act posture
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Aligned with the EU AI Act — by design.
+              Aligned with the EU AI Act — <span className="text-primary">[by design]</span>.
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
               Automatos AI is built around the obligations the EU AI Act places

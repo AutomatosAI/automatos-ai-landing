@@ -175,7 +175,7 @@ const DesignYourAgents = () => {
                 <span>Design Your Agents</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                Build the <span className="text-primary">Perfect</span> AI Agent
+                Build the <span className="text-primary">[Perfect]</span> AI Agent
               </h1>
             </motion.div>
 

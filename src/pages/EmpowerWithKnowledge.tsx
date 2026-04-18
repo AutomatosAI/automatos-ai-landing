@@ -145,7 +145,7 @@ const EmpowerWithKnowledge = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               Give Your Agents{" "}
-              <span className="text-primary">Context</span>
+              <span className="text-primary">[Context]</span>
             </motion.h1>
 
             <motion.p
