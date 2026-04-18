@@ -577,10 +577,10 @@ const AutomatosNotWrapper = () => {
                   </a>
                   . Questions? Find me at{" "}
                   <a
-                    href="mailto:gerard@automatos.ai"
+                    href="mailto:gerard@automatos.app"
                     className="text-primary hover:underline"
                   >
-                    gerard@automatos.ai
+                    gerard@automatos.app
                   </a>{" "}
                   — I read everything, even the "isn't this just a wrapper"
                   emails.
