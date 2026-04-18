@@ -38,7 +38,7 @@ const Terms = () => {
 
                         <h2 className="text-2xl font-semibold text-foreground">6. Contact Us</h2>
                         <p>
-                            If you have any questions about these Terms, please contact us at: <a href="mailto:legal@automatos.ai" className="text-primary hover:underline">legal@automatos.ai</a>
+                            If you have any questions about these Terms, please contact us at: <a href="mailto:legal@automatos.app" className="text-primary hover:underline">legal@automatos.app</a>
                         </p>
                     </div>
                 </div>

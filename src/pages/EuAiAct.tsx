@@ -351,10 +351,10 @@ const EuAiAct = () => {
             <p>
               Questions about our posture?{" "}
               <a
-                href="mailto:compliance@automatos.ai"
+                href="mailto:compliance@automatos.app"
                 className="text-primary hover:underline"
               >
-                compliance@automatos.ai
+                compliance@automatos.app
               </a>
             </p>
           </section>

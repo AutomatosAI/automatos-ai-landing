@@ -38,7 +38,7 @@ const Privacy = () => {
 
                         <h2 className="text-2xl font-semibold text-foreground">6. Contact Us</h2>
                         <p>
-                            If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:privacy@automatos.ai" className="text-primary hover:underline">privacy@automatos.ai</a>
+                            If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:privacy@automatos.app" className="text-primary hover:underline">privacy@automatos.app</a>
                         </p>
                     </div>
                 </div>
