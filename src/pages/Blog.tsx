@@ -1,43 +1,97 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { BookOpen, Sparkles } from "lucide-react";
+import { BookOpen, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
+import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useMemo, useState } from "react";
-import { BLOG_POSTS, type BlogPost } from "@/content/blog-posts";
+import { useState } from "react";
+
+const WORKSPACE_ID = import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID;
+
+interface BlogPost {
+    title: string;
+    slug: string;
+    excerpt: string;
+    cover_image_url: string | null;
+    tags: string[];
+    author_name: string;
+    published_at: string;
+    reading_time_minutes: number;
+    category?: string;
+}
+
+interface BlogResponse {
+    posts: BlogPost[];
+    total: number;
+    page: number;
+    per_page: number;
+    total_pages: number;
+}
+
+const fetchPosts = async (page: number, category?: string): Promise<BlogResponse> => {
+    const params = new URLSearchParams({
+        workspace_id: WORKSPACE_ID,
+        per_page: "9",
+        page: String(page),
+    });
+    if (category) params.set("category", category);
+
+    const res = await fetch(
+        `https://api.automatos.app/api/widgets/blog/posts?${params}`
+    );
+    if (!res.ok) throw new Error("Failed to fetch posts");
+    return res.json();
+};
+
+const fetchCategories = async (): Promise<string[]> => {
+    const res = await fetch(
+        `https://api.automatos.app/api/widgets/blog/categories?workspace_id=${WORKSPACE_ID}`
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    // API returns [{category, count}] — extract names
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === "object") {
+        return data.map((item: { category: string }) => item.category);
+    }
+    return data;
+};
 
 const Blog = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+    const currentPage = Number(searchParams.get("page") || "1");
     const [activeCategory, setActiveCategory] = useState<string | undefined>(
         searchParams.get("category") || undefined
     );
 
-    const categories = useMemo(() => {
-        const set = new Set<string>();
-        BLOG_POSTS.forEach((p) => p.category && set.add(p.category));
-        return Array.from(set);
-    }, []);
+    const { data: categories = [] } = useQuery({
+        queryKey: ["blog-categories"],
+        queryFn: fetchCategories,
+    });
 
-    const posts: BlogPost[] = useMemo(() => {
-        const filtered = activeCategory
-            ? BLOG_POSTS.filter((p) => p.category === activeCategory)
-            : BLOG_POSTS;
-        return [...filtered].sort(
-            (a, b) =>
-                new Date(b.published_at).getTime() -
-                new Date(a.published_at).getTime()
-        );
-    }, [activeCategory]);
+    const { data, isLoading } = useQuery({
+        queryKey: ["blog-posts", currentPage, activeCategory],
+        queryFn: () => fetchPosts(currentPage, activeCategory),
+    });
+
+    const posts = data?.posts ?? [];
+    const totalPages = data?.total_pages ?? 1;
 
     const handleCategoryClick = (category?: string) => {
         setActiveCategory(category);
         const params = new URLSearchParams();
         if (category) params.set("category", category);
         setSearchParams(params);
+    };
+
+    const handlePageChange = (page: number) => {
+        const params = new URLSearchParams(searchParams);
+        params.set("page", String(page));
+        setSearchParams(params);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const handlePostClick = (slug: string) => {
@@ -48,10 +102,7 @@ const Blog = () => {
         <div className="min-h-screen bg-background">
             <Helmet>
                 <title>Blog | Automatos AI</title>
-                <meta
-                    name="description"
-                    content="AI-powered insights, research, and analysis from the Automatos team."
-                />
+                <meta name="description" content="AI-powered insights, research, and analysis published by Automatos agents." />
             </Helmet>
             <Navbar />
             <main className="pt-24 pb-16">
@@ -78,7 +129,7 @@ const Blog = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
                         >
-                            Research, analysis, and thought leadership — written and published by the Automatos team.
+                            Research, analysis, and thought leadership — written and published by Automatos agents.
                         </motion.p>
                     </div>
                 </section>
@@ -112,7 +163,20 @@ const Blog = () => {
 
                 {/* Blog posts grid */}
                 <section className="container mx-auto px-4 max-w-7xl">
-                    {posts.length === 0 ? (
+                    {isLoading && (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[...Array(6)].map((_, i) => (
+                                <div key={i} className="animate-pulse space-y-4">
+                                    <div className="aspect-[16/9] bg-muted rounded-xl" />
+                                    <div className="h-5 bg-muted rounded w-3/4" />
+                                    <div className="h-4 bg-muted rounded w-full" />
+                                    <div className="h-4 bg-muted rounded w-1/2" />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {!isLoading && posts.length === 0 && (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -124,45 +188,52 @@ const Blog = () => {
                             >
                                 <Sparkles className="w-12 h-12 text-primary mx-auto" />
                             </motion.div>
-                            <h3 className="text-xl font-semibold">No posts in this category</h3>
+                            <h3 className="text-xl font-semibold">No posts published yet</h3>
+                            <p className="text-muted-foreground">
+                                Our agents are working on it!
+                            </p>
                         </motion.div>
-                    ) : (
+                    )}
+
+                    {!isLoading && posts.length > 0 && (
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* Featured first post */}
-                            <div className="col-span-full">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    className="cursor-pointer group"
-                                    onClick={() => handlePostClick(posts[0].slug)}
-                                >
-                                    <div className="grid md:grid-cols-2 gap-8 p-6 rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                                        <div className="aspect-[16/9] md:aspect-auto overflow-hidden rounded-xl">
-                                            {posts[0].cover_image_url ? (
-                                                <img
-                                                    src={posts[0].cover_image_url}
-                                                    alt={posts[0].title}
-                                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full min-h-[250px] bg-gradient-to-br from-primary/20 via-primary/10 to-muted rounded-xl" />
-                                            )}
-                                        </div>
-                                        <div className="flex flex-col justify-center gap-4">
-                                            <h2 className="text-2xl lg:text-3xl font-bold leading-snug">
-                                                {posts[0].title}
-                                            </h2>
-                                            <p className="text-muted-foreground line-clamp-3">
-                                                {posts[0].excerpt}
-                                            </p>
-                                            <div className="text-sm text-muted-foreground">
-                                                {posts[0].author_name} · {posts[0].reading_time_minutes} min read
+                            {posts.length > 0 && (
+                                <div className="col-span-full">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        className="cursor-pointer group"
+                                        onClick={() => handlePostClick(posts[0].slug)}
+                                    >
+                                        <div className="grid md:grid-cols-2 gap-8 p-6 rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                                            <div className="aspect-[16/9] md:aspect-auto overflow-hidden rounded-xl">
+                                                {posts[0].cover_image_url ? (
+                                                    <img
+                                                        src={posts[0].cover_image_url}
+                                                        alt={posts[0].title}
+                                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                                    />
+                                                ) : (
+                                                    <div className="w-full h-full min-h-[250px] bg-gradient-to-br from-primary/20 via-primary/10 to-muted rounded-xl" />
+                                                )}
+                                            </div>
+                                            <div className="flex flex-col justify-center gap-4">
+                                                <h2 className="text-2xl lg:text-3xl font-bold leading-snug">
+                                                    {posts[0].title}
+                                                </h2>
+                                                <p className="text-muted-foreground line-clamp-3">
+                                                    {posts[0].excerpt}
+                                                </p>
+                                                <div className="text-sm text-muted-foreground">
+                                                    {posts[0].author_name} · {posts[0].reading_time_minutes} min read
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            </div>
+                                    </motion.div>
+                                </div>
+                            )}
 
                             {/* Remaining posts */}
                             {posts.slice(1).map((post) => (
@@ -179,6 +250,33 @@ const Blog = () => {
                                     onClick={handlePostClick}
                                 />
                             ))}
+                        </div>
+                    )}
+
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                        <div className="flex items-center justify-center gap-4 mt-12">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                disabled={currentPage <= 1}
+                                onClick={() => handlePageChange(currentPage - 1)}
+                            >
+                                <ChevronLeft className="w-4 h-4 mr-1" />
+                                Previous
+                            </Button>
+                            <span className="text-sm text-muted-foreground">
+                                Page {currentPage} of {totalPages}
+                            </span>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                disabled={currentPage >= totalPages}
+                                onClick={() => handlePageChange(currentPage + 1)}
+                            >
+                                Next
+                                <ChevronRight className="w-4 h-4 ml-1" />
+                            </Button>
                         </div>
                     )}
                 </section>
