@@ -23,6 +23,23 @@ interface BlogPost {
     category?: string;
 }
 
+// Posts published as static pages in this repo (src/pages/blog/*).
+// These are merged with posts from the CMS API so they show up in the list.
+const STATIC_POSTS: BlogPost[] = [
+    {
+        title: "Automatos is not an LLM wrapper",
+        slug: "automatos-is-not-an-llm-wrapper",
+        excerpt:
+            "An AI operating system, not another chat interface. Agents, missions, semantic field memory, heartbeats, and why we built it differently.",
+        cover_image_url: "/images/blog/automatos-not-wrapper-cover.png",
+        tags: ["Automatos", "Platform", "AI"],
+        author_name: "Gerard Kavanagh",
+        published_at: "2026-04-18T00:00:00Z",
+        reading_time_minutes: 12,
+        category: "Platform",
+    },
+];
+
 interface BlogResponse {
     posts: BlogPost[];
     total: number;
@@ -43,7 +60,23 @@ const fetchPosts = async (page: number, category?: string): Promise<BlogResponse
         `https://api.automatos.app/api/widgets/blog/posts?${params}`
     );
     if (!res.ok) throw new Error("Failed to fetch posts");
-    return res.json();
+    const data: BlogResponse = await res.json();
+
+    // Only merge static posts on page 1 so pagination still works correctly.
+    if (page === 1) {
+        const staticFiltered = category
+            ? STATIC_POSTS.filter((p) => p.category === category)
+            : STATIC_POSTS;
+        // Dedupe by slug in case the post also exists in the CMS.
+        const apiSlugs = new Set(data.posts.map((p) => p.slug));
+        const mergedStatic = staticFiltered.filter((p) => !apiSlugs.has(p.slug));
+        return {
+            ...data,
+            posts: [...mergedStatic, ...data.posts],
+            total: data.total + mergedStatic.length,
+        };
+    }
+    return data;
 };
 
 const fetchCategories = async (): Promise<string[]> => {

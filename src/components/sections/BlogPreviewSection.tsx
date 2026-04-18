@@ -35,8 +35,9 @@ const fetchLatestPosts = async (): Promise<BlogResponse> => {
   return res.json();
 };
 
-// Fallback static post (the published one) so the section always has content.
-const FALLBACK_POSTS: BlogPost[] = [
+// Posts published as static pages in this repo (src/pages/blog/*).
+// Merged with CMS posts so both show on the homepage.
+const STATIC_POSTS: BlogPost[] = [
   {
     title: "Automatos is not an LLM wrapper",
     slug: "automatos-is-not-an-llm-wrapper",
@@ -45,7 +46,7 @@ const FALLBACK_POSTS: BlogPost[] = [
     cover_image_url: "/images/blog/automatos-not-wrapper-cover.png",
     tags: ["Automatos", "Platform", "AI"],
     author_name: "Gerard Kavanagh",
-    published_at: new Date().toISOString(),
+    published_at: "2026-04-18T00:00:00Z",
     reading_time_minutes: 12,
   },
 ];
@@ -59,7 +60,18 @@ export const BlogPreviewSection = () => {
   });
 
   const apiPosts = data?.posts ?? [];
-  const posts = apiPosts.length > 0 ? apiPosts : FALLBACK_POSTS;
+  // Merge: static posts + CMS posts, dedupe by slug, sort by date, take top 3.
+  const apiSlugs = new Set(apiPosts.map((p) => p.slug));
+  const merged = [
+    ...STATIC_POSTS.filter((p) => !apiSlugs.has(p.slug)),
+    ...apiPosts,
+  ];
+  const posts = merged
+    .sort(
+      (a, b) =>
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+    )
+    .slice(0, 3);
 
   const handlePostClick = (slug: string) => {
     navigate(`/blog/${slug}`);
