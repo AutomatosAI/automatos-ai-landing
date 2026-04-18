@@ -23,6 +23,7 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy", external: false },
     { label: "Terms of Service", href: "/terms", external: false },
     { label: "Cookie Policy", href: "/cookies", external: false },
+    { label: "EU AI Act Posture", href: "/eu-ai-act", external: false },
   ],
 };
 

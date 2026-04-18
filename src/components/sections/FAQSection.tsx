@@ -29,6 +29,10 @@ const faqs = [
     question: "What if I need more than standard integrations?",
     answer: "Our Automatos Tools supports over 850 apps. If you need something bespoke, our Enterprise plan allows for custom development.",
   },
+  {
+    question: "Is Automatos EU AI Act compliant?",
+    answer: "Automatos is aligned with the EU AI Act by design — prohibited-practice guardrails, transparency, human oversight and traceability are built in. See our full posture and article-by-article mapping at /eu-ai-act.",
+  },
 ];
 
 export const FAQSection = () => {
