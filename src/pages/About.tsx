@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Zap, Rocket, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, organizationSchema } from "@/lib/seo/structured-data";
 
 // Interactive particle component
 const InteractiveBackground = () => {
@@ -117,6 +119,18 @@ const InteractiveBackground = () => {
 const About = () => {
     return (
         <div className="min-h-screen bg-background">
+            <SEO
+                title="About"
+                description="Automatos AI was founded to give every business a digital workforce — AI agents that own outcomes, not just answer questions. Learn about our mission, team, and the digital workforce thesis."
+                path="/about"
+                structuredData={[
+                    organizationSchema(),
+                    breadcrumbSchema([
+                        { name: "Home", url: "/" },
+                        { name: "About", url: "/about" },
+                    ]),
+                ]}
+            />
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Header Section */}

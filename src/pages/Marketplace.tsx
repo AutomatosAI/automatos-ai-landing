@@ -23,6 +23,8 @@ import {
   BarChart3,
   Store,
 } from "lucide-react";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 // ── Data ──────────────────────────────────────────────────────────────
 
@@ -299,6 +301,34 @@ const InteractiveBackground = () => {
 const Marketplace = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
+      <SEO
+        title="Marketplace"
+        description="Browse 100+ pre-built AI agents, skills, plugins and workspace templates. One-click install into your Automatos workspace with cascading dependency resolution."
+        path="/marketplace"
+        structuredData={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Marketplace", url: "/marketplace" },
+          ]),
+          faqSchema([
+            {
+              question: "What is the Automatos marketplace?",
+              answer:
+                "A catalogue of pre-built AI agents, skills, plugins and workspace templates. Install an agent and Automatos automatically installs its required LLM, skills and tools into your workspace in one click.",
+            },
+            {
+              question: "Are the agents free or paid?",
+              answer:
+                "The marketplace mixes free community agents with paid premium templates. LLM inference costs are always passed through at provider rates (or zero if you BYOK).",
+            },
+            {
+              question: "Can I publish my own agents or skills?",
+              answer:
+                "Yes. Authors can publish agents, skills and workspace templates to the marketplace with revenue share on paid installs.",
+            },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
 

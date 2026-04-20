@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
   Rocket,
   Target,
@@ -106,6 +108,34 @@ const ImagePlaceholder = ({ label }: { label: string }) => (
 
 const LaunchMissions = () => (
   <div className="min-h-screen bg-background">
+    <SEO
+      title="Launch Missions"
+      description="Sequential playbooks and multi-agent coordination with budgets, human-in-the-loop approvals, and full reporting. Run real business operations, not just chat loops."
+      path="/launch-missions"
+      structuredData={[
+        breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Launch Missions", url: "/launch-missions" },
+        ]),
+        faqSchema([
+          {
+            question: "What is a mission in Automatos AI?",
+            answer:
+              "A mission is a goal-oriented execution of one or more agents against a playbook. Missions have budgets, phases, reporting, and human-in-the-loop checkpoints. Sequential missions run step-by-step; parallel missions dispatch work across agents concurrently.",
+          },
+          {
+            question: "What is a playbook?",
+            answer:
+              "A playbook is a reusable sequence of steps — agent assignments, tool calls, verification gates — that can be parameterised and launched as a mission. Playbooks are installable from the marketplace or authored per workspace.",
+          },
+          {
+            question: "How do budgets work?",
+            answer:
+              "Each mission has a token and spend budget. When a mission nears its budget, the coordinator either soft-stops and escalates to a human or hard-stops and marks the mission halted — depending on configuration. BYOK inference is counted at provider rates; platform credits are counted at published rates.",
+          },
+        ]),
+      ]}
+    />
     <Navbar />
     <main className="pt-24 pb-16">
       {/* ── Hero ─────────────────────────────────────────────────── */}

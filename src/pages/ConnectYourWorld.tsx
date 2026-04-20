@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
   Plug,
   Link,
@@ -182,6 +184,34 @@ const cronExamples = [
 const ConnectYourWorld = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Connect Your World"
+        description="Plug Automatos AI agents into 850+ apps — Gmail, Slack, LinkedIn, GitHub, Shopify, Stripe, Notion, Google Drive, Salesforce, HubSpot and more — via Composio and native integrations."
+        path="/connect-your-world"
+        structuredData={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Connect Your World", url: "/connect-your-world" },
+          ]),
+          faqSchema([
+            {
+              question: "Which apps can Automatos AI agents connect to?",
+              answer:
+                "Over 850 apps including Gmail, Slack, LinkedIn, GitHub, Shopify, Stripe, Notion, Google Drive, Google Calendar, Salesforce, HubSpot, Airtable, Jira, Linear, Discord, and most major SaaS tools via Composio. Native workspace tools handle file I/O, git and shell.",
+            },
+            {
+              question: "How do tool integrations work?",
+              answer:
+                "Agents call Composio-backed tools through the unified tool executor. OAuth or API key connection is done once per workspace, then any agent assigned that tool can use it. All calls are logged and respect workspace isolation.",
+            },
+            {
+              question: "Can I add a custom integration?",
+              answer:
+                "Yes. Enterprise customers can ship custom tools via the plugin system; community authors can publish plugins to the marketplace.",
+            },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         {/* Hero */}

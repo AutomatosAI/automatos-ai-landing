@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -154,13 +155,34 @@ const EuAiAct = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>EU AI Act Alignment | Automatos AI</title>
-        <meta
-          name="description"
-          content="Automatos AI is aligned with the EU AI Act by design — prohibited-practice guardrails, transparency, human oversight, and logging built in. See our posture and article-by-article mapping."
-        />
-      </Helmet>
+      <SEO
+        title="EU AI Act Alignment"
+        description="Automatos AI is aligned with the EU AI Act by design — prohibited-practice guardrails, transparency, human oversight, and logging built in. See our posture and article-by-article mapping."
+        path="/eu-ai-act"
+        structuredData={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "EU AI Act Alignment", url: "/eu-ai-act" },
+          ]),
+          faqSchema([
+            {
+              question: "Is Automatos AI compliant with the EU AI Act?",
+              answer:
+                "Automatos is aligned with the EU AI Act by design. The platform ships prohibited-practice guardrails (Article 5), transparency markers for end-user interactions (Article 50), human-in-the-loop oversight (Article 14), and tamper-evident logging with incident reporting (Articles 12 and 73). Deployer-level compliance depends on how you configure your specific use case.",
+            },
+            {
+              question: "How does Automatos help with high-risk AI system classification?",
+              answer:
+                "Automatos provides mission-level risk classification, audit logs, and evidence export to support conformity assessment. We are customer #1 of our own compliance tooling.",
+            },
+            {
+              question: "Where is Automatos data hosted?",
+              answer:
+                "Documents, vectors and workspace data are hosted in the EU (eu-west-1). Inference runs against the LLM provider the customer selects; BYOK customers keep full model-location control.",
+            },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">

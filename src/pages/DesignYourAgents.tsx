@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
   ArrowRight,
   Bot,
@@ -159,6 +161,34 @@ const InteractiveBackground = () => {
 const DesignYourAgents = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Design Your Agents"
+        description="Author specialised AI agents with roles, skills, tools and your choice of LLM — no code required. 300+ models, 850+ tool integrations, per-workspace memory."
+        path="/design-your-agents"
+        structuredData={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Design Your Agents", url: "/design-your-agents" },
+          ]),
+          faqSchema([
+            {
+              question: "Do I need to write code to create an AI agent on Automatos?",
+              answer:
+                "No. Agents are authored through the platform UI — choose a role, add skills, pick an LLM, equip tools and save. Developers can optionally define skills via the SKILL.md contract.",
+            },
+            {
+              question: "Can a single Automatos agent use multiple LLMs?",
+              answer:
+                "Each agent has one primary LLM assignment, but workspaces can run heterogeneous teams — a GPT-powered researcher alongside a Claude-powered writer and a Grok-powered coder, for example.",
+            },
+            {
+              question: "What is a skill in Automatos?",
+              answer:
+                "A skill is a reusable capability package defined by a SKILL.md contract (frontmatter, instructions, tool mappings). Skills inject into the agent's context at runtime with priority ordering and a token budget.",
+            },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
 

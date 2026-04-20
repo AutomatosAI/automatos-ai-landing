@@ -7,7 +7,11 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/seo/SEO";
+import {
+  articleSchema,
+  breadcrumbSchema,
+} from "@/lib/seo/structured-data";
 import "@/styles/research-paper.css";
 
 const WORKSPACE_ID = import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID;
@@ -82,30 +86,30 @@ const ResearchPaper = () => {
   return (
     <div className="min-h-screen bg-background">
       {paper && (
-        <Helmet>
-          <title>{paper.title} | Automatos AI Research</title>
-          <meta
-            name="description"
-            content={paper.seo_description || paper.excerpt}
-          />
-          <meta property="og:title" content={paper.title} />
-          <meta
-            property="og:description"
-            content={paper.seo_description || paper.excerpt}
-          />
-          {paper.cover_image_url && (
-            <meta property="og:image" content={paper.cover_image_url} />
-          )}
-          <meta property="og:type" content="article" />
-          <meta
-            property="article:published_time"
-            content={paper.published_at}
-          />
-          <meta property="article:author" content={paper.author_name} />
-          {paper.tags.map((tag) => (
-            <meta key={tag} property="article:tag" content={tag} />
-          ))}
-        </Helmet>
+        <SEO
+          title={paper.title}
+          description={paper.seo_description || paper.excerpt}
+          path={`/research/${paper.slug}`}
+          image={paper.cover_image_url || undefined}
+          type="article"
+          structuredData={[
+            articleSchema({
+              title: paper.title,
+              description: paper.seo_description || paper.excerpt,
+              url: `https://automatos.app/research/${paper.slug}`,
+              image: paper.cover_image_url,
+              authorName: paper.author_name,
+              datePublished: paper.published_at,
+              articleSection: "Research",
+              keywords: paper.tags,
+            }),
+            breadcrumbSchema([
+              { name: "Home", url: "/" },
+              { name: "Research", url: "/research" },
+              { name: paper.title, url: `/research/${paper.slug}` },
+            ]),
+          ]}
+        />
       )}
       <Navbar />
       <main className="pt-24 pb-16">

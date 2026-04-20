@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
   BookOpen,
   FileText,
@@ -127,6 +129,34 @@ const staggerContainer = {
 const EmpowerWithKnowledge = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Empower With Knowledge"
+        description="Give AI agents the context they need to act on your real business. Document RAG over S3 Vectors, persistent field memory, cross-agent reports, and knowledge graphs."
+        path="/empower-with-knowledge"
+        structuredData={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Empower With Knowledge", url: "/empower-with-knowledge" },
+          ]),
+          faqSchema([
+            {
+              question: "How does Automatos AI handle agent memory?",
+              answer:
+                "Three layers: document RAG (S3 + S3 Vectors with Postgres metadata), semantic field memory keyed by topic for cross-run recall, and a persistent report store where agents publish markdown outputs that other agents can read.",
+            },
+            {
+              question: "Where are my documents stored?",
+              answer:
+                "In per-workspace prefixes on S3 (s3://automatos-ai/workspaces/{workspace_id}/documents/). Vectors live in S3 Vectors (eu-west-1). Metadata is in PostgreSQL. No cross-workspace access.",
+            },
+            {
+              question: "What embedding model does Automatos use?",
+              answer:
+                "qwen/qwen3-embedding-8b via OpenRouter (2048 dimensions), with plug-in support for alternative embeddings on Enterprise plans.",
+            },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         {/* ── Hero ──────────────────────────────────────────────────── */}

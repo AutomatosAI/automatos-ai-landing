@@ -4,33 +4,51 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/seo/SEO";
+import {
+  articleSchema,
+  breadcrumbSchema,
+} from "@/lib/seo/structured-data";
 import "@/styles/blog-content.css";
 
 const publishedAt = "April 18, 2026";
+const publishedIso = "2026-04-18";
 const readingTimeMinutes = 12;
 const authorName = "Gerard Kavanagh";
 const tags = ["Autonomous AI", "Platform", "Operating System", "Agents"];
 const coverImage = "/images/blog/automatos-not-wrapper-cover.png";
 const title = "Automatos is not an LLM wrapper";
+const slug = "automatos-is-not-an-llm-wrapper";
 const excerpt =
   "Every time I show Automatos, someone says 'so it's an LLM wrapper.' No. It's an operating system for autonomous work. Let me show you the difference.";
 
 const AutomatosNotWrapper = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{title} | Automatos AI Blog</title>
-        <meta name="description" content={excerpt} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={excerpt} />
-        <meta property="og:image" content={coverImage} />
-        <meta property="og:type" content="article" />
-        <meta property="article:author" content={authorName} />
-        {tags.map((tag) => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
-      </Helmet>
+      <SEO
+        title={title}
+        description={excerpt}
+        path={`/blog/${slug}`}
+        image={coverImage}
+        type="article"
+        structuredData={[
+          articleSchema({
+            title,
+            description: excerpt,
+            url: `https://automatos.app/blog/${slug}`,
+            image: coverImage,
+            authorName,
+            datePublished: publishedIso,
+            articleSection: "Blog",
+            keywords: tags,
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Blog", url: "/blog" },
+            { name: title, url: `/blog/${slug}` },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <section className="container mx-auto px-4 max-w-4xl">

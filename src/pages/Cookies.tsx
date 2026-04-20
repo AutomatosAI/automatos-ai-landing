@@ -1,9 +1,22 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 const Cookies = () => {
     return (
         <div className="min-h-screen bg-background">
+            <SEO
+                title="Cookie Policy"
+                description="How Automatos AI uses cookies and tracking technologies."
+                path="/cookies"
+                structuredData={[
+                    breadcrumbSchema([
+                        { name: "Home", url: "/" },
+                        { name: "Cookie Policy", url: "/cookies" },
+                    ]),
+                ]}
+            />
             <Navbar />
             <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">

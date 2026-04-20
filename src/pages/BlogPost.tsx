@@ -7,7 +7,11 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/seo/SEO";
+import {
+  articleSchema,
+  breadcrumbSchema,
+} from "@/lib/seo/structured-data";
 import "@/styles/blog-content.css";
 
 const WORKSPACE_ID = import.meta.env.VITE_AUTOMATOS_WORKSPACE_ID;
@@ -59,19 +63,30 @@ const BlogPost = () => {
     return (
         <div className="min-h-screen bg-background">
             {post && (
-                <Helmet>
-                    <title>{post.title} | Automatos AI Blog</title>
-                    <meta name="description" content={post.seo_description || post.excerpt} />
-                    <meta property="og:title" content={post.title} />
-                    <meta property="og:description" content={post.seo_description || post.excerpt} />
-                    {post.cover_image_url && <meta property="og:image" content={post.cover_image_url} />}
-                    <meta property="og:type" content="article" />
-                    <meta property="article:published_time" content={post.published_at} />
-                    <meta property="article:author" content={post.author_name} />
-                    {post.tags.map((tag) => (
-                        <meta key={tag} property="article:tag" content={tag} />
-                    ))}
-                </Helmet>
+                <SEO
+                    title={post.title}
+                    description={post.seo_description || post.excerpt}
+                    path={`/blog/${post.slug}`}
+                    image={post.cover_image_url || undefined}
+                    type="article"
+                    structuredData={[
+                        articleSchema({
+                            title: post.title,
+                            description: post.seo_description || post.excerpt,
+                            url: `https://automatos.app/blog/${post.slug}`,
+                            image: post.cover_image_url,
+                            authorName: post.author_name,
+                            datePublished: post.published_at,
+                            articleSection: "Blog",
+                            keywords: post.tags,
+                        }),
+                        breadcrumbSchema([
+                            { name: "Home", url: "/" },
+                            { name: "Blog", url: "/blog" },
+                            { name: post.title, url: `/blog/${post.slug}` },
+                        ]),
+                    ]}
+                />
             )}
             <Navbar />
             <main className="pt-24 pb-16">

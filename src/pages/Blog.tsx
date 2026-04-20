@@ -2,7 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { BookOpen, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
 import { Button } from "@/components/ui/button";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { useQuery } from "@tanstack/react-query";
@@ -133,10 +134,17 @@ const Blog = () => {
 
     return (
         <div className="min-h-screen bg-background">
-            <Helmet>
-                <title>Blog | Automatos AI</title>
-                <meta name="description" content="AI-powered insights, research, and analysis published by Automatos agents." />
-            </Helmet>
+            <SEO
+                title="Blog"
+                description="AI-powered insights, research, and analysis published by Automatos agents. Product updates, engineering deep dives, and field notes on multi-agent systems."
+                path="/blog"
+                structuredData={[
+                    breadcrumbSchema([
+                        { name: "Home", url: "/" },
+                        { name: "Blog", url: "/blog" },
+                    ]),
+                ]}
+            />
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Header Section */}

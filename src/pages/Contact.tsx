@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
@@ -48,6 +50,17 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen bg-background">
+            <SEO
+                title="Contact"
+                description="Get in touch with the Automatos AI team. Pilots, partnerships, support and press inquiries for the AI digital workforce platform."
+                path="/contact"
+                structuredData={[
+                    breadcrumbSchema([
+                        { name: "Home", url: "/" },
+                        { name: "Contact", url: "/contact" },
+                    ]),
+                ]}
+            />
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Header Section */}
