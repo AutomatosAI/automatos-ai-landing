@@ -6,27 +6,27 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 
 ## Product
 
-- [Platform Overview](https://automatos.ai/): What Automatos does, who it's for, and how the digital workforce model differs from a chatbot
-- [Design Your Agents](https://automatos.ai/design-your-agents): Author specialised agents with skills, tools, and a chosen LLM — no code required
-- [Connect Your World](https://automatos.ai/connect-your-world): Integrate Composio tools, workspaces, APIs, and knowledge sources
-- [Empower With Knowledge](https://automatos.ai/empower-with-knowledge): Field memory, documents, and retrieval so agents act on your real context
-- [Launch Missions](https://automatos.ai/launch-missions): Sequential playbooks and multi-agent coordination with budgets and reporting
-- [Marketplace](https://automatos.ai/marketplace): Pre-built agents, skills, plugins, and workspace templates installable in one click
+- [Platform Overview](https://automatos.app/): What Automatos does, who it's for, and how the digital workforce model differs from a chatbot
+- [Design Your Agents](https://automatos.app/design-your-agents): Author specialised agents with skills, tools, and a chosen LLM — no code required
+- [Connect Your World](https://automatos.app/connect-your-world): Integrate Composio tools, workspaces, APIs, and knowledge sources
+- [Empower With Knowledge](https://automatos.app/empower-with-knowledge): Field memory, documents, and retrieval so agents act on your real context
+- [Launch Missions](https://automatos.app/launch-missions): Sequential playbooks and multi-agent coordination with budgets and reporting
+- [Marketplace](https://automatos.app/marketplace): Pre-built agents, skills, plugins, and workspace templates installable in one click
 
 ## Company
 
-- [About](https://automatos.ai/about): Mission, team, and the digital workforce thesis
-- [Contact](https://automatos.ai/contact): Reach the team for pilots, partnerships, and support
+- [About](https://automatos.app/about): Mission, team, and the digital workforce thesis
+- [Contact](https://automatos.app/contact): Reach the team for pilots, partnerships, and support
 
 ## Content
 
-- [Blog](https://automatos.ai/blog): Product updates, engineering deep dives, and field notes on multi-agent systems
-- [Automatos Is Not An LLM Wrapper](https://automatos.ai/blog/automatos-is-not-an-llm-wrapper): How the platform differs from thin LLM wrappers — orchestration, memory, skills, and tool execution
-- [Research](https://automatos.ai/research): Original research on multi-agent orchestration, memory, and AI systems
+- [Blog](https://automatos.app/blog): Product updates, engineering deep dives, and field notes on multi-agent systems
+- [Automatos Is Not An LLM Wrapper](https://automatos.app/blog/automatos-is-not-an-llm-wrapper): How the platform differs from thin LLM wrappers — orchestration, memory, skills, and tool execution
+- [Research](https://automatos.app/research): Original research on multi-agent orchestration, memory, and AI systems
 
 ## Compliance
 
-- [EU AI Act Alignment](https://automatos.ai/eu-ai-act): How Automatos supports customers under the EU AI Act — risk classification, transparency, logging, and human oversight
+- [EU AI Act Alignment](https://automatos.app/eu-ai-act): How Automatos supports customers under the EU AI Act — risk classification, transparency, logging, and human oversight
 
 ## External
 
@@ -35,6 +35,6 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 
 ## Optional
 
-- [Privacy Policy](https://automatos.ai/privacy): Data handling and user rights
-- [Terms of Service](https://automatos.ai/terms): Platform terms
-- [Cookie Policy](https://automatos.ai/cookies): Cookies and tracking
+- [Privacy Policy](https://automatos.app/privacy): Data handling and user rights
+- [Terms of Service](https://automatos.app/terms): Platform terms
+- [Cookie Policy](https://automatos.app/cookies): Cookies and tracking
