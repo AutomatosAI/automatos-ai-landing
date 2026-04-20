@@ -353,12 +353,23 @@ const EuAiAct = () => {
                 dedicated compliance support. Talk to us about enabling it for
                 your workspace.
               </p>
-              <Link to="/contact?source=eu-ai-act">
-                <Button size="lg" className="rounded-full">
-                  Request Compliance Pack
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <Link to="/contact?source=eu-ai-act">
+                  <Button size="lg" className="rounded-full">
+                    Request Compliance Pack
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+                <Link to="/eu-ai-act/checker">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full"
+                  >
+                    Try the free checker
+                  </Button>
+                </Link>
+              </div>
             </div>
           </section>
 

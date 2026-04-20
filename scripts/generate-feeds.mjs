@@ -60,6 +60,7 @@ const STATIC_ROUTES = [
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/research", changefreq: "weekly", priority: "0.8" },
   { path: "/eu-ai-act", changefreq: "monthly", priority: "0.8" },
+  { path: "/eu-ai-act/checker", changefreq: "monthly", priority: "0.8" },
   { path: "/privacy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms", changefreq: "yearly", priority: "0.3" },
   { path: "/cookies", changefreq: "yearly", priority: "0.3" },

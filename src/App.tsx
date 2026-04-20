@@ -21,6 +21,7 @@ import BlogPost from "./pages/BlogPost";
 import Research from "./pages/Research";
 import ResearchPaper from "./pages/ResearchPaper";
 import EuAiAct from "./pages/EuAiAct";
+import EuAiActChecker from "./pages/EuAiActChecker";
 import AutomatosNotWrapper from "./pages/blog/AutomatosNotWrapper";
 import NotFound from "./pages/NotFound";
 
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/research" element={<Research />} />
             <Route path="/research/:slug" element={<ResearchPaper />} />
             <Route path="/eu-ai-act" element={<EuAiAct />} />
+            <Route path="/eu-ai-act/checker" element={<EuAiActChecker />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
