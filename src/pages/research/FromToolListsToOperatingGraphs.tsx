@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, User, FlaskConical } from "lucide-react";
+import { ArrowLeft, Clock, User, Calendar, FlaskConical } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 import { SEO } from "@/components/seo/SEO";
 import {
   articleSchema,
@@ -11,10 +12,14 @@ import {
 } from "@/lib/seo/structured-data";
 import "@/styles/research-paper.css";
 
-const publishedAt = "May 2, 2026";
-const publishedIso = "2026-05-02";
+const title = "From Tool Lists to Operating Graphs";
+const slug = "from-tool-lists-to-operating-graphs";
+const excerpt =
+  "Why the next bottleneck in AI agents isn't tool use — it's tool selection at scale. The pre-prompt intelligence layer that decides what deserves to enter the prompt at all.";
+const publishedAt = "2026-05-02T00:00:00Z";
 const readingTimeMinutes = 15;
 const authorName = "Gerard Kavanagh";
+const coverImage = "/images/tool-routing-operating-graphs-cover.png";
 const tags = [
   "Tool Routing",
   "Attention Budget",
@@ -22,11 +27,6 @@ const tags = [
   "Prompt Engineering",
   "Agent Architecture",
 ];
-const coverImage = "/images/tool-routing-operating-graphs-cover.png";
-const title = "From Tool Lists to Operating Graphs";
-const slug = "from-tool-lists-to-operating-graphs";
-const excerpt =
-  "Why the next bottleneck in AI agents isn't tool use — it's tool selection at scale. The pre-prompt intelligence layer that decides what deserves to enter the prompt at all.";
 
 const FromToolListsToOperatingGraphs = () => {
   return (
@@ -44,7 +44,7 @@ const FromToolListsToOperatingGraphs = () => {
             url: `https://automatos.app/research/${slug}`,
             image: coverImage,
             authorName,
-            datePublished: publishedIso,
+            datePublished: publishedAt,
             articleSection: "Research",
             keywords: tags,
           }),
@@ -57,12 +57,13 @@ const FromToolListsToOperatingGraphs = () => {
       />
       <Navbar />
       <main className="pt-24 pb-16">
-        <section className="container mx-auto px-4 max-w-4xl">
+        <article className="container mx-auto px-4 max-w-4xl">
+          {/* Back link */}
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3 }}
-            className="mb-8"
+            className="mb-10"
           >
             <Link
               to="/research"
@@ -73,98 +74,111 @@ const FromToolListsToOperatingGraphs = () => {
             </Link>
           </motion.div>
 
-          <motion.article
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="rounded-2xl overflow-hidden mb-8 max-h-[500px]">
-              <img
-                src={coverImage}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* Paper header */}
+            <header className="mb-10">
+              {/* Label */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider uppercase mb-6">
+                <FlaskConical className="w-3.5 h-3.5" />
+                <span>Practitioner Research</span>
+              </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              <FlaskConical className="w-4 h-4" />
-              <span>Research</span>
-            </div>
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-6">
+                {title}
+              </h1>
 
-            <h1 className="text-4xl font-bold mb-4 leading-tight">
-              From Tool Lists to{" "}
-              <span className="text-primary">[Operating Graphs]</span>
-            </h1>
+              {/* Subtitle / excerpt */}
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                {excerpt}
+              </p>
 
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Why the next bottleneck in AI agents isn't tool use — it's tool
-              selection at scale.
-            </p>
+              {/* Meta */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                <span className="flex items-center gap-1.5">
+                  <User className="w-4 h-4" />
+                  {authorName}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-4 h-4" />
+                  {format(new Date(publishedAt), "MMMM d, yyyy")}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4" />
+                  {readingTimeMinutes} min read
+                </span>
+              </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-              <span className="flex items-center gap-1.5">
-                <User className="w-4 h-4" />
-                {authorName}
-              </span>
-              <span>{publishedAt}</span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                {readingTimeMinutes} min read
-              </span>
-              <Badge variant="outline">Research</Badge>
-            </div>
+              {/* Tags */}
+              {tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {tags.map((tag) => (
+                    <Badge key={tag} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
 
-            <div className="flex flex-wrap gap-2 mb-8">
-              {tags.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+              {/* Cover image */}
+              <div className="rounded-xl overflow-hidden max-h-[420px] mb-2">
+                <img
+                  src={coverImage}
+                  alt={title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            <div className="research-paper-content max-w-3xl mx-auto">
+              {/* Divider */}
+              <div className="border-t border-border mt-8" />
+            </header>
+
+            {/* Paper content — CSS handles all presentation */}
+            <div className="research-content max-w-3xl mx-auto">
               <p>
-                For most of the last two years,{" "}
-                <em>tool use</em> has meant: hand the model a list of functions
-                and let it pick. That assumption is built into nearly every
-                popular agent framework — LangChain, AutoGen, CrewAI, off-the-shelf
-                function-calling APIs.
+                For most of the last two years, <em>tool use</em> has meant:
+                hand the model a list of functions and let it pick. That
+                assumption is built into nearly every popular agent framework —
+                LangChain, AutoGen, CrewAI, off-the-shelf function-calling
+                APIs.
               </p>
               <p>
-                It's also the assumption that breaks first when you build a real
-                AI operations platform.
+                It's also the assumption that breaks first when you build a
+                real AI operations platform.
               </p>
               <p>This post is about what replaces it.</p>
               <p>
                 We've been building Automatos as a multi-tenant AI operations
                 system: hundreds of internal capabilities, multiple specialist
                 agents, a marketplace, layered memory, user-installed skills,
-                workspace-scoped data, and a single orchestrator agent ("Auto")
-                that has to coordinate across all of them. The naive tool-list
-                pattern made it about ten percent of the way before falling
-                over.
+                workspace-scoped data, and a single orchestrator agent
+                ("Auto") that has to coordinate across all of them. The naive
+                tool-list pattern made it about ten percent of the way before
+                falling over.
               </p>
               <p>
-                What follows is the architectural arc we've worked through, the
-                research it connects to, and the direction we think serious
-                agent systems will move in.
+                What follows is the architectural arc we've worked through,
+                the research it connects to, and the direction we think
+                serious agent systems will move in.
               </p>
 
               <h2>The shift in what "tool use" means</h2>
               <p>
-                When tool calling was new, the question was whether models could
-                reliably invoke functions, parse the output, and continue
-                reasoning. That question is now mostly resolved. Frontier models
-                call tools accurately when the toolset is small and
-                well-described.
+                When tool calling was new, the question was whether models
+                could reliably invoke functions, parse the output, and
+                continue reasoning. That question is now mostly resolved.
+                Frontier models call tools accurately when the toolset is
+                small and well-described.
               </p>
               <p>
                 The unsolved problem is what happens when the toolset isn't
                 small.
               </p>
-              <p>
-                A working AI operations layer accumulates capability fast:
-              </p>
+              <p>A working AI operations layer accumulates capability fast:</p>
               <ul>
                 <li>
                   Core platform actions (analytics, agent management, memory
@@ -187,16 +201,16 @@ const FromToolListsToOperatingGraphs = () => {
               </ul>
               <p>
                 Anyone building seriously will hit a few hundred capabilities
-                within months. The naive solution — list them all in the prompt
-                and trust the model to pick — doesn't scale, and not for the
-                reasons most people assume.
+                within months. The naive solution — list them all in the
+                prompt and trust the model to pick — doesn't scale, and not
+                for the reasons most people assume.
               </p>
               <p>
-                It's not primarily that the model can't find the right tool in
-                a long list. It's that{" "}
+                It's not primarily that the model can't find the right tool
+                in a long list. It's that{" "}
                 <strong>
-                  the model's effective attention is degraded by the irrelevant
-                  tools
+                  the model's effective attention is degraded by the
+                  irrelevant tools
                 </strong>{" "}
                 before tool selection even happens. The capability surface is
                 wasting the attention budget the agent will need for actual
@@ -215,10 +229,11 @@ const FromToolListsToOperatingGraphs = () => {
               <p>
                 A 200k-token context window is not 200k tokens of
                 equally-attended reasoning surface. Long-context studies have
-                shown for years that effective attention degrades with position
-                and density. Stuff a critical tool definition in the middle of
-                a 50k-token system prompt and the model may register that the
-                tool exists without ever reaching for it during inference.
+                shown for years that effective attention degrades with
+                position and density. Stuff a critical tool definition in the
+                middle of a 50k-token system prompt and the model may
+                register that the tool exists without ever reaching for it
+                during inference.
               </p>
               <p>
                 That gap — between <em>available capability</em> and{" "}
@@ -227,16 +242,19 @@ const FromToolListsToOperatingGraphs = () => {
               </p>
               <p>
                 The implication is uncomfortable for the standard agent-stack
-                design: every additional tool in the prompt has a <em>cost</em>,
-                even if it's never invoked. The cost is paid by all the other
-                tools and reasoning the prompt was supposed to enable.
+                design: every additional tool in the prompt has a{" "}
+                <em>cost</em>, even if it's never invoked. The cost is paid
+                by all the other tools and reasoning the prompt was supposed
+                to enable.
               </p>
               <p>
                 You don't escape this by enlarging the context window. Bigger
                 windows let you put more in. They don't change the fact that
                 putting more in dilutes attention to any specific part.
               </p>
-              <p>The cure has to come <em>before</em> the prompt is built.</p>
+              <p>
+                The cure has to come <em>before</em> the prompt is built.
+              </p>
 
               <h2>The research backdrop</h2>
               <p>
@@ -255,7 +273,6 @@ const FromToolListsToOperatingGraphs = () => {
                   href="https://huggingface.co/papers/2302.04761"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   paper
                 </a>
@@ -264,14 +281,14 @@ const FromToolListsToOperatingGraphs = () => {
                 <strong>Gorilla</strong> (Patil et al., 2023) added retrieval
                 over API documentation at inference time. This was the first
                 major signal that tool <em>selection</em> — not tool{" "}
-                <em>invocation</em> — was the limiting factor. Hallucinated API
-                calls dropped sharply when the model was handed the right
+                <em>invocation</em> — was the limiting factor. Hallucinated
+                API calls dropped sharply when the model was handed the right
                 documentation rather than expected to memorize it.
               </p>
               <p>
-                <strong>ToolLLM</strong> (Qin et al., 2023) scaled the question
-                to over 16,000 real-world APIs and built ToolEval as a
-                benchmarking framework. The framework essentially formalized
+                <strong>ToolLLM</strong> (Qin et al., 2023) scaled the
+                question to over 16,000 real-world APIs and built ToolEval as
+                a benchmarking framework. The framework essentially formalized
                 the move: at scale, retrieval-augmented tool calling is the
                 only viable design. Memorization-based approaches don't
                 compose.
@@ -279,37 +296,37 @@ const FromToolListsToOperatingGraphs = () => {
               <p>A more recent thread is even more pointed.</p>
               <p>
                 <strong>ToolGen</strong> (Microsoft Research) argues that
-                traditional approaches relying on tool descriptions in context
-                are fundamentally limited by context length and retrieval
-                overhead. The proposed direction is unified tool retrieval and
-                generation, where tool selection is part of the model's
-                generative process rather than an external preprocessing step.{" "}
+                traditional approaches relying on tool descriptions in
+                context are fundamentally limited by context length and
+                retrieval overhead. The proposed direction is unified tool
+                retrieval and generation, where tool selection is part of the
+                model's generative process rather than an external
+                preprocessing step.{" "}
                 <a
                   href="https://www.microsoft.com/en-us/research/publication/toolgen-unified-tool-retrieval-and-calling-via-generation/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   paper
                 </a>
               </p>
               <p>
-                <strong>SIT-Graph</strong> goes further. It represents tool-use
-                experience as a graph: nodes are tools and states; edges are
-                dependencies, sequences, and compact summaries drawn from prior
-                agent trajectories. The agent traverses learned structure
-                rather than reasoning over a flat list at every turn.
+                <strong>SIT-Graph</strong> goes further. It represents
+                tool-use experience as a graph: nodes are tools and states;
+                edges are dependencies, sequences, and compact summaries
+                drawn from prior agent trajectories. The agent traverses
+                learned structure rather than reasoning over a flat list at
+                every turn.
               </p>
               <p>
                 <strong>PlugMem</strong> applies an analogous argument to
-                memory: raw experience trajectories are too verbose to retrieve
-                over directly; the system needs to convert them into compact,
-                knowledge-centric memory graphs.{" "}
+                memory: raw experience trajectories are too verbose to
+                retrieve over directly; the system needs to convert them
+                into compact, knowledge-centric memory graphs.{" "}
                 <a
                   href="https://www.microsoft.com/en-us/research/publication/plugmem-a-task-agnostic-plugin-memory-module-for-llm-agents/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   paper
                 </a>
@@ -323,8 +340,8 @@ const FromToolListsToOperatingGraphs = () => {
                 </strong>
               </p>
               <p>
-                The product question — what we've been working on — is how to
-                bring that into a system that actually runs.
+                The product question — what we've been working on — is how
+                to bring that into a system that actually runs.
               </p>
 
               <h2>The Automatos architecture in layers</h2>
@@ -335,15 +352,16 @@ const FromToolListsToOperatingGraphs = () => {
 
               <h3>Dynamic capability assignment</h3>
               <p>
-                Originally, agent classes had hardcoded tool lists. A research
-                agent shipped with research tools, a code agent with code
-                tools, and so on. This worked at small scale but tied
-                capability to identity in a way that prevented composition.
+                Originally, agent classes had hardcoded tool lists. A
+                research agent shipped with research tools, a code agent
+                with code tools, and so on. This worked at small scale but
+                tied capability to identity in a way that prevented
+                composition.
               </p>
               <p>
                 The first refactor moved tool granting to runtime. Agents
-                request capabilities for a task; the orchestrator decides what
-                to grant based on the task type, agent role, workspace
+                request capabilities for a task; the orchestrator decides
+                what to grant based on the task type, agent role, workspace
                 permissions, and current context. Tool assignment became a
                 runtime decision, not a class definition.
               </p>
@@ -354,51 +372,57 @@ const FromToolListsToOperatingGraphs = () => {
 
               <h3>A unified tool catalog</h3>
               <p>
-                Once tools were brokered at runtime, the next problem was that
-                tool definitions were still scattered across the codebase.
-                Different consumers — agents, widgets, workflows, REST APIs —
-                held their own copies of tool schemas. Drift was inevitable.
+                Once tools were brokered at runtime, the next problem was
+                that tool definitions were still scattered across the
+                codebase. Different consumers — agents, widgets, workflows,
+                REST APIs — held their own copies of tool schemas. Drift was
+                inevitable.
               </p>
               <p>
                 We introduced a centralized tool catalog with structured
                 definitions: name, description, parameters, executor,
-                credentials, access rules, intended consumers, audit metadata.
-                Every consumer queries the catalog. The catalog is the source
-                of truth.
+                credentials, access rules, intended consumers, audit
+                metadata. Every consumer queries the catalog. The catalog is
+                the source of truth.
               </p>
               <p>
                 This sounds bureaucratic, and it is, but the payoff is
                 significant: anything you want to do across the platform's
                 tool surface (analyze usage, restrict access, version-bump a
-                schema, build a UI for tool management) requires <em>one</em>{" "}
-                operation, not a dozen.
+                schema, build a UI for tool management) requires{" "}
+                <em>one</em> operation, not a dozen.
               </p>
 
               <h3>Platform self-management</h3>
               <p>
-                Auto — the orchestrator agent — needed to operate the platform
-                itself. Install skills, query analytics, manage agents, run
-                missions, view memory. The naive approach would be to expose
-                every internal API endpoint as a tool.
+                Auto — the orchestrator agent — needed to operate the
+                platform itself. Install skills, query analytics, manage
+                agents, run missions, view memory. The naive approach would
+                be to expose every internal API endpoint as a tool.
               </p>
               <p>That's a category error.</p>
               <p>
-                Internal APIs are designed for service code, not for reasoning
-                agents. They have field names that are meaningful to engineers,
-                not to a model. They're often fine-grained where the agent
-                needs coarse-grained operations. They expose the platform's{" "}
-                <em>implementation</em>, not its <em>behavior</em>.
+                Internal APIs are designed for service code, not for
+                reasoning agents. They have field names that are meaningful
+                to engineers, not to a model. They're often fine-grained
+                where the agent needs coarse-grained operations. They expose
+                the platform's <em>implementation</em>, not its{" "}
+                <em>behavior</em>.
               </p>
               <p>
-                We introduced a curated <strong>Platform Action Registry</strong>:
-                a layer of service-level operations that represent things the
-                platform actually does, written in language that's meaningful
-                for a model to reason over. Each action is an{" "}
+                We introduced a curated{" "}
+                <strong>Platform Action Registry</strong>: a layer of
+                service-level operations that represent things the platform
+                actually does, written in language that's meaningful for a
+                model to reason over. Each action is an{" "}
                 <code>ActionDefinition</code> — name, description, parameters
                 with semantic descriptions, intent keywords, executor,
                 permission requirements.
               </p>
-              <p>The agent uses the platform. It doesn't pretend to be the API.</p>
+              <p>
+                The agent uses the platform. It doesn't pretend to be the
+                API.
+              </p>
 
               <h3>Tool exposure as routing design</h3>
               <p>
@@ -408,24 +432,25 @@ const FromToolListsToOperatingGraphs = () => {
                 <code>platform_execute(action, params)</code>)?
               </p>
               <p>
-                A dispatcher saves token budget — one schema instead of fifty.
-                But it adds a cognitive bridge: the model has to read action
-                documentation, infer the right action name, and wrap it in the
-                dispatcher call. Reliability suffers when the documentation is
-                sparse or the action mapping is non-obvious.
+                A dispatcher saves token budget — one schema instead of
+                fifty. But it adds a cognitive bridge: the model has to read
+                action documentation, infer the right action name, and wrap
+                it in the dispatcher call. Reliability suffers when the
+                documentation is sparse or the action mapping is non-obvious.
               </p>
               <p>
                 The right answer turned out to be:{" "}
-                <strong>both, deliberately.</strong> Some tools deserve to be
-                directly callable schemas — common, high-trust, frequently
-                invoked. Others can stay behind a dispatcher that resolves the
-                action lazily from a documented catalog.
+                <strong>both, deliberately.</strong> Some tools deserve to
+                be directly callable schemas — common, high-trust,
+                frequently invoked. Others can stay behind a dispatcher that
+                resolves the action lazily from a documented catalog.
               </p>
               <p>
                 We promoted a small set of high-value actions to first-class
-                schemas. Long-tail actions stayed behind the dispatcher. The
-                decision criterion: frequency of use, criticality of failure,
-                and how reliably the model could map intent to action.
+                schemas. Long-tail actions stayed behind the dispatcher.
+                The decision criterion: frequency of use, criticality of
+                failure, and how reliably the model could map intent to
+                action.
               </p>
               <p>
                 Tool exposure is not a binary. It's a routing design with
@@ -436,9 +461,9 @@ const FromToolListsToOperatingGraphs = () => {
               <p>
                 Routing intelligence rests on a stable foundation. If your
                 orchestrator model, embedding model, memory service, RAG
-                pipeline, and routing layer all have ambiguous or overlapping
-                configuration, the agent becomes unpredictable before the
-                prompt is even built.
+                pipeline, and routing layer all have ambiguous or
+                overlapping configuration, the agent becomes unpredictable
+                before the prompt is even built.
               </p>
               <p>
                 We collapsed model and parameter configuration into three
@@ -453,19 +478,19 @@ const FromToolListsToOperatingGraphs = () => {
                   consolidation, document processing)
                 </li>
                 <li>
-                  <strong>Embeddings</strong> — the embedding model used across
-                  all retrieval surfaces
+                  <strong>Embeddings</strong> — the embedding model used
+                  across all retrieval surfaces
                 </li>
               </ul>
               <p>
                 Each tier has one source of truth, read through a single
                 configuration module, with no scattered environment-variable
-                reads or duplicated model selection logic. Configuration drift
-                is now a build-time concern, not a runtime mystery.
+                reads or duplicated model selection logic. Configuration
+                drift is now a build-time concern, not a runtime mystery.
               </p>
               <p>
-                This sounds like infrastructure plumbing because it is. Routing
-                intelligence is impossible without it.
+                This sounds like infrastructure plumbing because it is.
+                Routing intelligence is impossible without it.
               </p>
 
               <h3>Prompt assembly as execution infrastructure</h3>
@@ -473,10 +498,11 @@ const FromToolListsToOperatingGraphs = () => {
                 The hardest lesson came from a regression. Auto's behavior
                 degraded over a couple of weeks through small, accumulated
                 errors: stale settings cached in memory, duplicate identity
-                blocks injected from two different places, a memory service URL
-                malformed in a config refactor, skills truncated below their
-                useful threshold, a legacy chat path still routing some queries
-                through the wrong pipeline, broken tool-loop iteration limits.
+                blocks injected from two different places, a memory service
+                URL malformed in a config refactor, skills truncated below
+                their useful threshold, a legacy chat path still routing
+                some queries through the wrong pipeline, broken tool-loop
+                iteration limits.
               </p>
               <p>
                 Each error was small. Together, they made the agent behave
@@ -485,18 +511,18 @@ const FromToolListsToOperatingGraphs = () => {
               <p>
                 The fix wasn't a single bug. It was reframing the prompt as{" "}
                 <strong>execution infrastructure</strong> — a deterministic
-                build pipeline whose output is the program the model runs. If
-                the wrong identity, the wrong skill, a stale memory, or a
-                duplicated tool block enters that build, the system has a bug,
-                even if no exception is raised.
+                build pipeline whose output is the program the model runs.
+                If the wrong identity, the wrong skill, a stale memory, or
+                a duplicated tool block enters that build, the system has a
+                bug, even if no exception is raised.
               </p>
               <p>
                 We rebuilt prompt assembly as a sectioned pipeline with
                 explicit inputs, deterministic ordering, and contract-style
                 invariants per section. Identity goes here. Skills go there.
-                Tools are constructed by this function. Memory is retrieved by
-                that function. Each section has a token budget and a fallback
-                strategy.
+                Tools are constructed by this function. Memory is retrieved
+                by that function. Each section has a token budget and a
+                fallback strategy.
               </p>
               <p>
                 Once prompt assembly was treated as deterministic
@@ -509,62 +535,65 @@ const FromToolListsToOperatingGraphs = () => {
 
               <h2>The semantic action index</h2>
               <p>
-                With everything else in place, an agent with roughly a hundred
-                platform actions still has to read about all of them on every
-                turn — unless we change what enters the prompt.
+                With everything else in place, an agent with roughly a
+                hundred platform actions still has to read about all of
+                them on every turn — unless we change what enters the
+                prompt.
               </p>
               <p>
-                If the user asks "how's my website doing?" the prompt shouldn't
-                allocate equal attention to agent deletion, marketplace
-                installation, file operations, and infrastructure logs. It
-                should rank actions semantically against the query and inject
-                only the documentation likely to matter.
+                If the user asks "how's my website doing?" the prompt
+                shouldn't allocate equal attention to agent deletion,
+                marketplace installation, file operations, and
+                infrastructure logs. It should rank actions semantically
+                against the query and inject only the documentation likely
+                to matter.
               </p>
               <p>The mechanics:</p>
               <ol>
                 <li>
-                  <strong>Embed each action</strong> at registration time. The
-                  embedding text is composed from the action's name,
+                  <strong>Embed each action</strong> at registration time.
+                  The embedding text is composed from the action's name,
                   description, parameter descriptions, and intent keywords.
                   Embeddings are computed using the configured embedding
                   provider.
                 </li>
                 <li>
                   <strong>Cache embeddings by content hash.</strong> If the
-                  action definition changes, the cache is invalidated for that
-                  action only. Cold-start cost is bounded; steady-state cost is
-                  near zero.
+                  action definition changes, the cache is invalidated for
+                  that action only. Cold-start cost is bounded; steady-state
+                  cost is near zero.
                 </li>
                 <li>
-                  <strong>At prompt-build time, embed the query</strong> (and a
-                  small recent-context window) using the same provider.
+                  <strong>At prompt-build time, embed the query</strong> (and
+                  a small recent-context window) using the same provider.
                 </li>
                 <li>
                   <strong>Rank actions by cosine similarity.</strong> Apply
-                  permission filters first (an action the agent isn't allowed
-                  to invoke shouldn't influence ranking), then return the top-N.
+                  permission filters first (an action the agent isn't
+                  allowed to invoke shouldn't influence ranking), then
+                  return the top-N.
                 </li>
                 <li>
                   <strong>Inject a focused action summary</strong> into the
-                  platform-actions section of the prompt, instead of the full
-                  catalog.
+                  platform-actions section of the prompt, instead of the
+                  full catalog.
                 </li>
               </ol>
               <p>
-                The dispatcher tool (<code>platform_execute</code>) remains in
-                the callable schema set. Capability is preserved end-to-end —
-                the dispatcher can still execute any permitted action — but the
-                prompt no longer has to <em>describe</em> every action every
-                time.
+                The dispatcher tool (<code>platform_execute</code>) remains
+                in the callable schema set. Capability is preserved
+                end-to-end — the dispatcher can still execute any permitted
+                action — but the prompt no longer has to <em>describe</em>{" "}
+                every action every time.
               </p>
               <p>
-                This is a small change in code. The effect on attention budget
-                is large.
+                This is a small change in code. The effect on attention
+                budget is large.
               </p>
               <p>
                 We're calling the embedding/ranking layer the{" "}
-                <strong>Action Semantic Index</strong>, and the prompt-construction
-                integration point is the{" "}
+                <strong>Action Semantic Index</strong>, and the
+                prompt-construction integration point is the{" "}
                 <strong>Platform Actions Section</strong> of the prompt
                 assembly pipeline. The split matters: the index is reusable
                 infrastructure; the section is one of several consumers.
@@ -572,8 +601,9 @@ const FromToolListsToOperatingGraphs = () => {
 
               <h2>Two levels of routing — and why the distinction matters</h2>
               <p>
-                Semantic action ranking is deliberately <strong>not</strong> a
-                redesign of tool calling. It separates two distinct levels:
+                Semantic action ranking is deliberately <strong>not</strong>{" "}
+                a redesign of tool calling. It separates two distinct
+                levels:
               </p>
               <ul>
                 <li>
@@ -584,23 +614,25 @@ const FromToolListsToOperatingGraphs = () => {
                 <li>
                   <strong>Action-summary filtering</strong> — which{" "}
                   <em>platform actions</em> are described inside the
-                  dispatcher's documentation when a dispatcher tool is present.
+                  dispatcher's documentation when a dispatcher tool is
+                  present.
                 </li>
               </ul>
               <p>
                 Conflating these is one of the major reasons agent stacks
-                struggle to scale. A <code>platform_execute</code> schema and
-                an <code>ActionDefinition</code> are not the same kind of
-                object:
+                struggle to scale. A <code>platform_execute</code> schema
+                and an <code>ActionDefinition</code> are not the same kind
+                of object:
               </p>
               <ul>
                 <li>
-                  The schema tells the model that platform execution exists as
-                  a callable interface.
+                  The schema tells the model that platform execution
+                  exists as a callable interface.
                 </li>
                 <li>
                   The action definitions tell the system which platform
-                  capabilities to <em>describe</em> in the prompt this turn.
+                  capabilities to <em>describe</em> in the prompt this
+                  turn.
                 </li>
               </ul>
               <p>
@@ -609,27 +641,28 @@ const FromToolListsToOperatingGraphs = () => {
                 stays large, dynamic, and ranked per turn.
               </p>
               <p>
-                Most production agent systems we've looked at are conflating
-                these and trying to optimize a single flat list. The
-                optimization ceiling on a flat list is much lower than the
-                ceiling on a properly separated two-level routing design.
+                Most production agent systems we've looked at are
+                conflating these and trying to optimize a single flat
+                list. The optimization ceiling on a flat list is much
+                lower than the ceiling on a properly separated two-level
+                routing design.
               </p>
 
               <h2>The operating graph thesis</h2>
               <p>Semantic ranking is the floor, not the ceiling.</p>
               <p>
-                Cosine similarity over action embeddings will surface the right{" "}
-                <em>category</em> of capability for a given query. It won't
-                capture the structure of how an agent actually operates. That
-                structure is sequential and relational.
+                Cosine similarity over action embeddings will surface the
+                right <em>category</em> of capability for a given query. It
+                won't capture the structure of how an agent actually
+                operates. That structure is sequential and relational.
               </p>
               <p>
-                A real agent doesn't pick one tool. It runs a <em>sequence</em>.
-                An analyst usually queries analytics before generating a
-                report. A marketer usually checks brand voice memory before
-                drafting. A platform admin usually verifies marketplace state
-                before installing. These are <em>patterns</em>, not single
-                calls.
+                A real agent doesn't pick one tool. It runs a{" "}
+                <em>sequence</em>. An analyst usually queries analytics
+                before generating a report. A marketer usually checks brand
+                voice memory before drafting. A platform admin usually
+                verifies marketplace state before installing. These are{" "}
+                <em>patterns</em>, not single calls.
               </p>
               <p>
                 The longer-term direction we're moving toward is{" "}
@@ -638,68 +671,72 @@ const FromToolListsToOperatingGraphs = () => {
               <p>Conceptually:</p>
               <ul>
                 <li>
-                  <strong>Nodes</strong> are tools, actions, skills, and memory
-                  entries.
+                  <strong>Nodes</strong> are tools, actions, skills, and
+                  memory entries.
                 </li>
                 <li>
                   <strong>Edges</strong> encode learned relationships:{" "}
                   <code>used_after</code>, <code>requires</code>,{" "}
-                  <code>succeeds_for_intent</code>, <code>fails_for_intent</code>,{" "}
+                  <code>succeeds_for_intent</code>,{" "}
+                  <code>fails_for_intent</code>,{" "}
                   <code>agent_prefers</code>.
                 </li>
                 <li>
-                  <strong>Edge weights</strong> are updated from successful and
-                  failed agent trajectories.
+                  <strong>Edge weights</strong> are updated from successful
+                  and failed agent trajectories.
                 </li>
                 <li>
-                  <strong>Per-agent subgraphs</strong> capture specialization —
-                  a research agent's graph is not a marketer agent's graph.
+                  <strong>Per-agent subgraphs</strong> capture
+                  specialization — a research agent's graph is not a
+                  marketer agent's graph.
                 </li>
               </ul>
               <p>
-                Semantic retrieval finds the entry points to the graph. The
-                graph expands them into the likely chain.
+                Semantic retrieval finds the entry points to the graph.
+                The graph expands them into the likely chain.
               </p>
               <p>
-                The implementation is non-trivial. Storage choices include a
-                property-graph database, a knowledge-graph extension to
+                The implementation is non-trivial. Storage choices include
+                a property-graph database, a knowledge-graph extension to
                 PostgreSQL, or a custom in-memory structure backed by JSON.
-                Edge maintenance requires a feedback loop from agent execution
-                telemetry, which we already collect for other reasons. The
-                hard part is not storage; it's the <em>design of the edge
-                schema</em> that captures genuinely useful operating patterns
-                without growing into noise.
+                Edge maintenance requires a feedback loop from agent
+                execution telemetry, which we already collect for other
+                reasons. The hard part is not storage; it's the{" "}
+                <em>design of the edge schema</em> that captures genuinely
+                useful operating patterns without growing into noise.
               </p>
               <p>
-                A tool list is what you <em>have</em>. An operating graph is
-                what you <em>know</em>.
+                A tool list is what you <em>have</em>. An operating graph
+                is what you <em>know</em>.
               </p>
 
               <h2>Skills and memory as parallel surfaces</h2>
               <p>
-                Tools are not the only thing being naively dumped into prompts.
+                Tools are not the only thing being naively dumped into
+                prompts.
               </p>
               <p>
-                <strong>Skills</strong> — the reusable behavioral guides agents
-                follow — face the same failure mode. A workspace might have 20
-                skills assigned to an agent. If every prompt loads all 20 in
-                full, you're spending the same attention budget rendering
-                instructions for skills the agent isn't going to use this turn.
+                <strong>Skills</strong> — the reusable behavioral guides
+                agents follow — face the same failure mode. A workspace
+                might have 20 skills assigned to an agent. If every prompt
+                loads all 20 in full, you're spending the same attention
+                budget rendering instructions for skills the agent isn't
+                going to use this turn.
               </p>
               <p>The natural progression is mixed-density skill loading:</p>
               <ul>
                 <li>
-                  <strong>Full inclusion</strong> for the most relevant skills
-                  (top 1-2 by semantic relevance to the task).
+                  <strong>Full inclusion</strong> for the most relevant
+                  skills (top 1-2 by semantic relevance to the task).
                 </li>
                 <li>
-                  <strong>Summary inclusion</strong> for the next tier (one or
-                  two lines per skill, enough for the model to know the skill
-                  exists and could be relevant).
+                  <strong>Summary inclusion</strong> for the next tier (one
+                  or two lines per skill, enough for the model to know the
+                  skill exists and could be relevant).
                 </li>
                 <li>
-                  <strong>Latent presence</strong> for the rest (the agent can
-                  request a skill by name; it loads on demand).
+                  <strong>Latent presence</strong> for the rest (the agent
+                  can request a skill by name; it loads on demand).
                 </li>
                 <li>
                   <strong>On-demand fetch</strong> for tasks that surface
@@ -707,29 +744,30 @@ const FromToolListsToOperatingGraphs = () => {
                 </li>
               </ul>
               <p>
-                This requires a skill semantic index analogous to the action
-                semantic index, plus a load-policy decision per skill per turn.
-                The infrastructure overlaps significantly with the action
-                layer; the policy logic is distinct.
+                This requires a skill semantic index analogous to the
+                action semantic index, plus a load-policy decision per
+                skill per turn. The infrastructure overlaps significantly
+                with the action layer; the policy logic is distinct.
               </p>
               <p>
                 <strong>Memory</strong> is the third axis. A layered memory
-                architecture with focus, working memory, short-term, long-term,
-                and organizational tiers is only useful if the system decides
-                which layer to retrieve from at each step. PlugMem makes a
-                related argument from the academic side: convert raw agent
-                experience into compact, knowledge-centric memory graphs so
-                retrieval surfaces decision-relevant knowledge, not verbose
-                trajectories.
+                architecture with focus, working memory, short-term,
+                long-term, and organizational tiers is only useful if the
+                system decides which layer to retrieve from at each step.
+                PlugMem makes a related argument from the academic side:
+                convert raw agent experience into compact, knowledge-centric
+                memory graphs so retrieval surfaces decision-relevant
+                knowledge, not verbose trajectories.
               </p>
               <p>
                 We're treating tools, skills, and memory as{" "}
                 <strong>
-                  three parallel surfaces with the same architectural pattern
+                  three parallel surfaces with the same architectural
+                  pattern
                 </strong>
                 : a semantic index for retrieval, a learned graph for
-                sequence/relational structure, and a per-turn load policy that
-                respects context budget.
+                sequence/relational structure, and a per-turn load policy
+                that respects context budget.
               </p>
 
               <h2>The pre-prompt intelligence layer as a product</h2>
@@ -747,17 +785,17 @@ const FromToolListsToOperatingGraphs = () => {
                   skills, and memories
                 </li>
                 <li>
-                  <strong>Permission-aware filtering</strong> — surface only
-                  what the agent is allowed to use
+                  <strong>Permission-aware filtering</strong> — surface
+                  only what the agent is allowed to use
                 </li>
                 <li>
-                  <strong>Model-tier-aware routing</strong> — frontier models
-                  need less hand-holding than smaller ones; the prompt depth
-                  and skill density should adapt
+                  <strong>Model-tier-aware routing</strong> — frontier
+                  models need less hand-holding than smaller ones; the
+                  prompt depth and skill density should adapt
                 </li>
                 <li>
-                  <strong>Per-agent usage history</strong> — agents specialize,
-                  and their tool histories diverge
+                  <strong>Per-agent usage history</strong> — agents
+                  specialize, and their tool histories diverge
                 </li>
                 <li>
                   <strong>Graph edges</strong> learned from successful and
@@ -765,73 +803,77 @@ const FromToolListsToOperatingGraphs = () => {
                   telemetry
                 </li>
                 <li>
-                  <strong>Context budgets</strong> that treat attention as a
-                  scarce resource and enforce prompt size by section, with
-                  explicit fallback policies
+                  <strong>Context budgets</strong> that treat attention as
+                  a scarce resource and enforce prompt size by section,
+                  with explicit fallback policies
                 </li>
               </ul>
               <p>
                 None of these threads are individually new. API retrieval
-                exists. Tool learning exists. Tool graphs exist. Memory graphs
-                exist. Trajectory reuse exists. What's largely missing in
-                production agent stacks is the{" "}
-                <strong>product architecture</strong> that combines them into
-                a coherent operations system.
+                exists. Tool learning exists. Tool graphs exist. Memory
+                graphs exist. Trajectory reuse exists. What's largely
+                missing in production agent stacks is the{" "}
+                <strong>product architecture</strong> that combines them
+                into a coherent operations system.
               </p>
               <p>
                 This is where the next round of agent capability will come
-                from. Not bigger models. Not bigger context windows. Not more
-                tools. A smarter pre-prompt layer that gives the model the
-                right slice of the operating system at the moment.
+                from. Not bigger models. Not bigger context windows. Not
+                more tools. A smarter pre-prompt layer that gives the
+                model the right slice of the operating system at the
+                moment.
               </p>
 
               <h2>Open problems</h2>
               <p>
-                A few things are still genuinely unresolved, and we'll write
-                about them as we work through them:
+                A few things are still genuinely unresolved, and we'll
+                write about them as we work through them:
               </p>
               <ol>
                 <li>
                   <strong>How aggressive should the pruning be?</strong>{" "}
                   Surfacing too few actions risks missing a needed one and
-                  forcing fallback discovery loops. Surfacing too many wastes
-                  attention. The right threshold is task-dependent and
-                  probably model-dependent.
+                  forcing fallback discovery loops. Surfacing too many
+                  wastes attention. The right threshold is task-dependent
+                  and probably model-dependent.
                 </li>
                 <li>
                   <strong>
-                    How does the operating graph initialize on a new agent?
+                    How does the operating graph initialize on a new
+                    agent?
                   </strong>{" "}
-                  Cold-start agents have no execution history. Bootstrapping
-                  from analogous agents' graphs (or from a generic prior) is a
-                  design choice with real consequences for early-life behavior.
+                  Cold-start agents have no execution history.
+                  Bootstrapping from analogous agents' graphs (or from a
+                  generic prior) is a design choice with real consequences
+                  for early-life behavior.
                 </li>
                 <li>
                   <strong>
                     How do you prevent the operating graph from ossifying?
                   </strong>{" "}
                   A graph that strongly weights past patterns can prevent
-                  agents from discovering new ones. Some exploration policy is
-                  required.
+                  agents from discovering new ones. Some exploration policy
+                  is required.
                 </li>
                 <li>
-                  <strong>How do you handle multi-turn drift?</strong> A query
-                  may start in one capability domain and migrate. Re-ranking
-                  on every turn is expensive; not re-ranking is wrong.
+                  <strong>How do you handle multi-turn drift?</strong> A
+                  query may start in one capability domain and migrate.
+                  Re-ranking on every turn is expensive; not re-ranking is
+                  wrong.
                 </li>
                 <li>
                   <strong>
                     How do you design edges that survive schema evolution?
                   </strong>{" "}
                   When an action gets renamed or replaced, the graph edges
-                  referencing it need a migration story. Otherwise the graph
-                  rots.
+                  referencing it need a migration story. Otherwise the
+                  graph rots.
                 </li>
               </ol>
               <p>
                 These are the kinds of problems that don't get attention in
-                agent demos and turn out to dominate the engineering of real
-                systems.
+                agent demos and turn out to dominate the engineering of
+                real systems.
               </p>
 
               <h2>Closing</h2>
@@ -848,44 +890,44 @@ const FromToolListsToOperatingGraphs = () => {
                 that run businesses.
               </p>
               <p>
-                What comes next is a layer that <em>thinks about the prompt
-                before the prompt thinks</em>. A layer that ranks, prunes,
-                expands, and orders. A layer that learns from every successful
-                and failed turn what to surface for the next one.
+                What comes next is a layer that{" "}
+                <em>thinks about the prompt before the prompt thinks</em>.
+                A layer that ranks, prunes, expands, and orders. A layer
+                that learns from every successful and failed turn what to
+                surface for the next one.
               </p>
               <p>
-                That's the build. We'll write the next post when the operating
-                graph layer is in production.
+                That's the build. We'll write the next post when the
+                operating graph layer is in production.
               </p>
+            </div>
 
-              <hr />
-              <p>
-                <em>
-                  Automatos AI is an autonomous AI operating system for teams
-                  and enterprises. You can explore the platform, install agents
-                  and skills from the marketplace, and connect your own tools
-                  and channels at{" "}
+            {/* Footer attribution */}
+            <footer className="max-w-3xl mx-auto mt-16 pt-8 border-t border-border">
+              <div className="bg-muted/50 rounded-xl p-6 text-sm text-muted-foreground space-y-2">
+                <p>
+                  This research was conducted on the{" "}
                   <a
-                    href="https://ui.automatos.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    href="https://automatos.app"
+                    className="text-primary hover:underline font-medium"
                   >
-                    automatos.app
+                    Automatos AI platform
                   </a>
-                  . Questions or pushback? Find me at{" "}
+                  , where multi-agent missions coordinate specialized agents
+                  across research, analysis, and content workflows. Questions
+                  or pushback?{" "}
                   <a
                     href="mailto:gerard@automatos.app"
-                    className="text-primary hover:underline"
+                    className="text-primary hover:underline font-medium"
                   >
                     gerard@automatos.app
                   </a>
                   .
-                </em>
-              </p>
-            </div>
-          </motion.article>
-        </section>
+                </p>
+              </div>
+            </footer>
+          </motion.div>
+        </article>
       </main>
       <Footer />
     </div>
