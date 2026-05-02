@@ -23,6 +23,7 @@ import ResearchPaper from "./pages/ResearchPaper";
 import EuAiAct from "./pages/EuAiAct";
 import EuAiActChecker from "./pages/EuAiActChecker";
 import AutomatosNotWrapper from "./pages/blog/AutomatosNotWrapper";
+import FromToolListsToOperatingGraphs from "./pages/research/FromToolListsToOperatingGraphs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/blog/automatos-is-not-an-llm-wrapper" element={<AutomatosNotWrapper />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/research/from-tool-lists-to-operating-graphs" element={<FromToolListsToOperatingGraphs />} />
             <Route path="/research/:slug" element={<ResearchPaper />} />
             <Route path="/eu-ai-act" element={<EuAiAct />} />
             <Route path="/eu-ai-act/checker" element={<EuAiActChecker />} />

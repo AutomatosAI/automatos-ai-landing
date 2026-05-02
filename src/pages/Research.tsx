@@ -31,6 +31,26 @@ interface ResearchResponse {
   total_pages: number;
 }
 
+const STATIC_POSTS: ResearchPost[] = [
+  {
+    title: "From Tool Lists to Operating Graphs",
+    slug: "from-tool-lists-to-operating-graphs",
+    excerpt:
+      "Why the next bottleneck in AI agents isn't tool use — it's tool selection at scale. The pre-prompt intelligence layer that decides what deserves to enter the prompt at all.",
+    cover_image_url: "/images/tool-routing-operating-graphs-cover.png",
+    tags: [
+      "Tool Routing",
+      "Attention Budget",
+      "Operating Graphs",
+      "Prompt Engineering",
+      "Agent Architecture",
+    ],
+    author_name: "Gerard Kavanagh",
+    published_at: "2026-05-02T00:00:00Z",
+    reading_time_minutes: 15,
+  },
+];
+
 const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
   const params = new URLSearchParams({
     workspace_id: WORKSPACE_ID,
@@ -43,7 +63,19 @@ const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
     `https://api.automatos.app/api/widgets/blog/posts?${params}`
   );
   if (!res.ok) throw new Error("Failed to fetch research papers");
-  return res.json();
+  const data: ResearchResponse = await res.json();
+
+  if (page === 1) {
+    const apiSlugs = new Set(data.posts.map((p) => p.slug));
+    const mergedStatic = STATIC_POSTS.filter((p) => !apiSlugs.has(p.slug));
+    return {
+      ...data,
+      posts: [...mergedStatic, ...data.posts],
+      total: data.total + mergedStatic.length,
+    };
+  }
+
+  return data;
 };
 
 const Research = () => {
