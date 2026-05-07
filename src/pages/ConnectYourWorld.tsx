@@ -272,11 +272,13 @@ const ConnectYourWorld = () => {
           </div>
 
           <motion.div {...fadeUp} className="mt-12">
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of the Tools &amp; Integrations page showing
-                the connected apps grid]
-              </p>
+            <div className="rounded-2xl border border-border overflow-hidden shadow-lg">
+              <img
+                src="/screenshots/tools-integrations-grid.png"
+                alt="Tools & Integrations dashboard showing 24 connected apps, 3256 available tools, and 117 triggers"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -320,11 +322,13 @@ const ConnectYourWorld = () => {
           </div>
 
           <motion.div {...fadeUp} className="mt-12">
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot showing app category filters with counts (api
-                services 67, api 51, crm 41, etc.)]
-              </p>
+            <div className="rounded-2xl border border-border overflow-hidden shadow-lg">
+              <img
+                src="/screenshots/app-category-filters.png"
+                alt="App integrations marketplace with category filters — developer tools 295, marketing automation 105, analytics 95, payment processing 80"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -369,12 +373,14 @@ const ConnectYourWorld = () => {
             </p>
           </motion.div>
 
-          <motion.div {...fadeUp} className="mt-8 max-w-2xl mx-auto">
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of tool execution logs showing action names,
-                status, and timing]
-              </p>
+          <motion.div {...fadeUp} className="mt-8">
+            <div className="rounded-2xl border border-border overflow-hidden shadow-lg">
+              <img
+                src="/screenshots/tool-execution-logs.png"
+                alt="Playbook execution showing tool calls with success status — workspace_html_to_png, workspace_write_file, scratchpad_write"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -413,10 +419,13 @@ const ConnectYourWorld = () => {
           </div>
 
           <motion.div {...fadeUp} className="mt-12">
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of Channel configuration panel in Settings]
-              </p>
+            <div className="rounded-2xl border border-border overflow-hidden shadow-lg">
+              <img
+                src="/screenshots/channel-config.png"
+                alt="Channel configuration — WhatsApp, Telegram, Slack, and Discord with connection status and setup guides"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -509,11 +518,13 @@ const ConnectYourWorld = () => {
               </ul>
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.1 }}>
-              <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-                <p className="text-muted-foreground text-sm text-center">
-                  [IMAGE: Screenshot of the Security tab in Tools showing auth
-                  health and scopes]
-                </p>
+              <div className="rounded-2xl border border-border overflow-hidden shadow-lg">
+                <img
+                  src="/screenshots/security-credentials.png"
+                  alt="Credentials management showing encrypted credential storage with health checks and environment tagging"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
