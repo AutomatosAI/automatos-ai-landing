@@ -301,7 +301,7 @@ const DesignYourAgents = () => {
               <img
                 src="/images/design-your-agents/llm-model-selection-grid.png"
                 alt="LLM model selection grid in Settings → Models"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -374,7 +374,7 @@ const DesignYourAgents = () => {
                 <img
                   src="/images/design-your-agents/agent-details-edit.png"
                   alt="Agent Details / Edit panel"
-                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                  className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -487,7 +487,7 @@ const DesignYourAgents = () => {
               <img
                 src="/images/design-your-agents/agent-tools-tab.png"
                 alt="Agent's Tools tab showing assigned apps"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -543,7 +543,7 @@ const DesignYourAgents = () => {
               <img
                 src="/images/design-your-agents/heartbeat-settings.png"
                 alt="Heartbeat Settings in Agent Configuration"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -599,7 +599,7 @@ const DesignYourAgents = () => {
               <img
                 src="/images/design-your-agents/agent-performance-dashboard.png"
                 alt="Agent Performance metrics dashboard"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>

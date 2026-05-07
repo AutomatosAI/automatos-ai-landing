@@ -283,7 +283,7 @@ const EmpowerWithKnowledge = () => {
                 <img
                   src="/images/empower-with-knowledge/knowledge-base-documents.png"
                   alt="Knowledge Base → Documents library showing uploaded files, sizes, and processing status"
-                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                  className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -293,7 +293,7 @@ const EmpowerWithKnowledge = () => {
                 <img
                   src="/images/empower-with-knowledge/document-processing.png"
                   alt="Document Processing sub-tab showing ingestion pipeline status"
-                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                  className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -358,7 +358,7 @@ const EmpowerWithKnowledge = () => {
               <img
                 src="/images/empower-with-knowledge/knowledge-base-search.png"
                 alt="Knowledge Base → Search sub-tab showing semantic search results"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -437,7 +437,7 @@ const EmpowerWithKnowledge = () => {
               <img
                 src="/images/empower-with-knowledge/nl2sql-interface.png"
                 alt="NL2SQL interface showing a natural language query and the generated SQL result"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -515,7 +515,7 @@ const EmpowerWithKnowledge = () => {
               <img
                 src="/images/empower-with-knowledge/codegraph-interface.png"
                 alt="CodeGraph interface showing an indexed repository with symbol graph"
-                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
+                className="w-full h-auto max-h-[640px] object-contain rounded-xl"
                 loading="lazy"
               />
             </div>

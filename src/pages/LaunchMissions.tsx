@@ -102,7 +102,7 @@ const ImagePlaceholder = ({ label, src }: { label: string; src?: string }) => {
   if (src) {
     return (
       <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
-        <img src={src} alt={label} className="max-h-[640px] w-auto max-w-full h-auto rounded-xl" loading="lazy" />
+        <img src={src} alt={label} className="w-full h-auto max-h-[640px] object-contain rounded-xl" loading="lazy" />
       </div>
     );
   }
