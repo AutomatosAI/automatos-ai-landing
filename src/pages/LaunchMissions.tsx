@@ -98,11 +98,20 @@ const fadeUp = {
   transition: { duration: 0.5 },
 };
 
-const ImagePlaceholder = ({ label }: { label: string }) => (
-  <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-    <p className="text-muted-foreground text-sm text-center">[IMAGE: {label}]</p>
-  </div>
-);
+const ImagePlaceholder = ({ label, src }: { label: string; src?: string }) => {
+  if (src) {
+    return (
+      <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+        <img src={src} alt={label} className="w-full h-auto rounded-xl" loading="lazy" />
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
+      <p className="text-muted-foreground text-sm text-center">[IMAGE: {label}]</p>
+    </div>
+  );
+};
 
 // ── Component ────────────────────────────────────────────────────────
 
@@ -203,7 +212,10 @@ const LaunchMissions = () => (
         </motion.p>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of a Mission showing the execution plan with task list and status indicators" />
+          <ImagePlaceholder
+            label="Mission showing the execution plan with task list and status indicators"
+            src="/images/launch-missions/mission-execution-plan.png"
+          />
         </motion.div>
       </section>
 
@@ -298,7 +310,10 @@ const LaunchMissions = () => (
         </motion.p>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of a Playbook showing steps, triggers, and schedule configuration" />
+          <ImagePlaceholder
+            label="Playbook showing steps, triggers, and schedule configuration"
+            src="/images/launch-missions/playbook-config.png"
+          />
         </motion.div>
       </section>
 
@@ -341,7 +356,10 @@ const LaunchMissions = () => (
         </motion.div>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of multi-agent mission execution showing agents collaborating on tasks" />
+          <ImagePlaceholder
+            label="Multi-agent mission execution showing agents collaborating on tasks"
+            src="/images/launch-missions/multi-agent-execution.png"
+          />
         </motion.div>
       </section>
 
@@ -389,7 +407,10 @@ const LaunchMissions = () => (
         </motion.div>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of the Command Centre Dashboard showing Schedule, Active Now, and Agent Reports sections" />
+          <ImagePlaceholder
+            label="Command Centre Dashboard showing Schedule, Active Now, and Agent Reports sections"
+            src="/images/launch-missions/command-centre-dashboard.png"
+          />
         </motion.div>
       </section>
 
@@ -422,7 +443,10 @@ const LaunchMissions = () => (
         </div>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of mission cost breakdown showing per-task token usage and total spend" />
+          <ImagePlaceholder
+            label="Mission cost breakdown showing per-task token usage and total spend"
+            src="/images/launch-missions/mission-cost-breakdown.png"
+          />
         </motion.div>
       </section>
 

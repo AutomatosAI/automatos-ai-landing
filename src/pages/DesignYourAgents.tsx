@@ -297,8 +297,13 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">[IMAGE: Screenshot of the LLM model selection grid in Settings &rarr; Models]</p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/design-your-agents/llm-model-selection-grid.png"
+                alt="LLM model selection grid in Settings → Models"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -365,8 +370,13 @@ const DesignYourAgents = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-                <p className="text-muted-foreground text-sm text-center">[IMAGE: Screenshot of the Agent Details / Edit panel]</p>
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+                <img
+                  src="/images/design-your-agents/agent-details-edit.png"
+                  alt="Agent Details / Edit panel"
+                  className="w-full h-auto rounded-xl"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
@@ -473,8 +483,13 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">[IMAGE: Screenshot of the Agent's Tools tab showing assigned apps]</p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/design-your-agents/agent-tools-tab.png"
+                alt="Agent's Tools tab showing assigned apps"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -524,8 +539,13 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">[IMAGE: Screenshot of Heartbeat Settings in Agent Configuration]</p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/design-your-agents/heartbeat-settings.png"
+                alt="Heartbeat Settings in Agent Configuration"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -575,8 +595,13 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">[IMAGE: Screenshot of Agent Performance metrics dashboard]</p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/design-your-agents/agent-performance-dashboard.png"
+                alt="Agent Performance metrics dashboard"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>

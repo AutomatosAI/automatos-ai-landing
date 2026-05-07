@@ -279,19 +279,23 @@ const EmpowerWithKnowledge = () => {
           {/* Image placeholders */}
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-                <p className="text-muted-foreground text-sm text-center">
-                  [IMAGE: Screenshot of the Knowledge Base &rarr; Documents
-                  library showing uploaded files, sizes, and processing status]
-                </p>
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+                <img
+                  src="/images/empower-with-knowledge/knowledge-base-documents.png"
+                  alt="Knowledge Base → Documents library showing uploaded files, sizes, and processing status"
+                  className="w-full h-auto rounded-xl"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-                <p className="text-muted-foreground text-sm text-center">
-                  [IMAGE: Screenshot of the Document Processing sub-tab showing
-                  ingestion pipeline status]
-                </p>
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+                <img
+                  src="/images/empower-with-knowledge/document-processing.png"
+                  alt="Document Processing sub-tab showing ingestion pipeline status"
+                  className="w-full h-auto rounded-xl"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
@@ -350,11 +354,13 @@ const EmpowerWithKnowledge = () => {
           </motion.p>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of the Knowledge Base &rarr; Search sub-tab
-                showing semantic search results]
-              </p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/empower-with-knowledge/knowledge-base-search.png"
+                alt="Knowledge Base → Search sub-tab showing semantic search results"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -427,11 +433,13 @@ const EmpowerWithKnowledge = () => {
           </div>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of the NL2SQL interface showing a natural
-                language query and the generated SQL result]
-              </p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/empower-with-knowledge/nl2sql-interface.png"
+                alt="NL2SQL interface showing a natural language query and the generated SQL result"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
@@ -503,11 +511,13 @@ const EmpowerWithKnowledge = () => {
           </motion.div>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of the CodeGraph interface showing an indexed
-                repository with symbol graph]
-              </p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/empower-with-knowledge/codegraph-interface.png"
+                alt="CodeGraph interface showing an indexed repository with symbol graph"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
