@@ -11,8 +11,8 @@ export const SITE = {
     "Expert AI agency and SaaS platform for building and deploying autonomous AI agents. Multi-agent orchestration with agents, skills, playbooks, and a marketplace to run business operations end-to-end.",
   defaultTitle: "Automatos AI | Elevate Your Workflow",
   titleTemplate: "%s | Automatos AI",
-  logo: "https://automatos.app/logos/automatos-ai-logo.png",
-  ogImage: "https://automatos.app/images/og-default.png",
+  logo: "https://automatos.app/logos/automatos-ai-logo.png?v=2",
+  ogImage: "https://automatos.app/images/og-default.png?v=2",
   themeColor: "#0a0a0a",
   locale: "en_US",
 
