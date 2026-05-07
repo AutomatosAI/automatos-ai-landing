@@ -279,21 +279,21 @@ const EmpowerWithKnowledge = () => {
           {/* Image placeholders */}
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden h-[360px]">
                 <img
                   src="/images/empower-with-knowledge/knowledge-base-documents.png"
                   alt="Knowledge Base → Documents library showing uploaded files, sizes, and processing status"
-                  className="w-full h-auto max-h-[640px] object-contain rounded-xl"
+                  className="w-full h-full object-cover object-top rounded-xl"
                   loading="lazy"
                 />
               </div>
             </motion.div>
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden h-[360px]">
                 <img
                   src="/images/empower-with-knowledge/document-processing.png"
                   alt="Document Processing sub-tab showing ingestion pipeline status"
-                  className="w-full h-auto max-h-[640px] object-contain rounded-xl"
+                  className="w-full h-full object-cover object-top rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -569,11 +569,13 @@ const EmpowerWithKnowledge = () => {
           </motion.div>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-8 flex items-center justify-center min-h-[300px]">
-              <p className="text-muted-foreground text-sm text-center">
-                [IMAGE: Screenshot of the Knowledge Graph visualization showing
-                entity relationships]
-              </p>
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <img
+                src="/images/empower-with-knowledge/knowledge-graph-visualization.png"
+                alt="CodeGraph visualization showing AgentFactory inheritance graph with module clusters"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </section>
