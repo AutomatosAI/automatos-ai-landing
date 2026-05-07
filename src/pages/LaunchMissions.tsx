@@ -272,7 +272,10 @@ const LaunchMissions = () => (
         </div>
 
         <motion.div {...fadeUp}>
-          <ImagePlaceholder label="Screenshot of a mission plan showing task decomposition with dependencies" />
+          <ImagePlaceholder
+            label="Mission plan showing task decomposition with dependencies"
+            src="/images/launch-missions/mission-decomposition.png"
+          />
         </motion.div>
       </section>
 
