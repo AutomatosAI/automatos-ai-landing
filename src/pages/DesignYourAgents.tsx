@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState } from "react";
+import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
@@ -89,72 +89,6 @@ const metrics = [
   { label: "Tasks Completed", unit: "with trends", icon: BarChart3 },
   { label: "Token Usage & Cost", unit: "$", icon: Sparkles },
 ];
-
-// ── Interactive Background ─────────────────────────────────────────────
-
-const InteractiveBackground = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      setMousePos({
-        x: (e.clientX - rect.left) / rect.width,
-        y: (e.clientY - rect.top) / rect.height,
-      });
-    };
-    const container = containerRef.current;
-    container?.addEventListener("mousemove", handleMouseMove);
-    return () => container?.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent" />
-      <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="dya-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#dya-grid)" />
-      </svg>
-      <motion.div
-        className="absolute w-96 h-96 rounded-full blur-3xl pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--primary) / 0.4) 0%, transparent 70%)",
-          left: `${mousePos.x * 100}%`,
-          top: `${mousePos.y * 100}%`,
-          transform: "translate(-50%, -50%)",
-        }}
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-primary/30 blur-xl"
-          style={{
-            width: 80 + i * 20,
-            height: 80 + i * 20,
-            left: `${15 + i * 15}%`,
-            top: `${20 + (i % 3) * 25}%`,
-          }}
-          animate={{
-            x: [0, 30 * (i % 2 === 0 ? 1 : -1), 0],
-            y: [0, 20 * (i % 2 === 0 ? -1 : 1), 0],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{ duration: 5 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-        />
-      ))}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/30 to-transparent rounded-bl-full" />
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary/20 to-transparent rounded-tr-full" />
-    </div>
-  );
-};
 
 // ── Page ──────────────────────────────────────────────────────────────
 
@@ -606,32 +540,11 @@ const DesignYourAgents = () => {
           </motion.div>
         </section>
 
-        {/* ── CTA ──────────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl">
-          <div className="relative bg-card border border-primary/20 rounded-2xl p-12 md:p-24 overflow-hidden text-center">
-            <InteractiveBackground />
-
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-semibold mb-6">
-                Ready to Design Your First Agent?
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Choose a model, pick a template, assign tools — your custom AI agent is minutes away.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="rounded-full px-8 text-base bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                <a href="/marketplace">
-                  <Button variant="outline" size="lg" className="rounded-full px-8 text-base border-primary/20 hover:bg-primary/5 bg-background/50 backdrop-blur-sm">
-                    View Marketplace
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CTASection
+          showEyebrow={false}
+          heading={<>Ready to Design Your <span className="text-primary">First Agent?</span></>}
+          subheading="Choose a model, pick a template, assign tools — your custom AI agent is minutes away. Join the waitlist for early access."
+        />
 
       </main>
       <Footer />

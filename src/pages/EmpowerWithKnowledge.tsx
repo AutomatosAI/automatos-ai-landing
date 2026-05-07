@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
@@ -12,12 +12,10 @@ import {
   Search,
   Brain,
   Network,
-  Upload,
   FileSearch,
   Table,
   GitBranch,
   Layers,
-  ArrowRight,
   CheckCircle2,
   Zap,
   Shield,
@@ -580,24 +578,11 @@ const EmpowerWithKnowledge = () => {
           </motion.div>
         </section>
 
-        {/* ── CTA ─────────────────────────────────────────────────── */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
-          <motion.div className="text-center" {...fadeUp}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Empower Your Agents?
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="rounded-full">
-                <Upload className="w-4 h-4 mr-2" />
-                Upload Your First Document
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full">
-                Explore Knowledge Features
-              </Button>
-            </div>
-          </motion.div>
-        </section>
+        <CTASection
+          showEyebrow={false}
+          heading={<>Ready to Empower <span className="text-primary">Your Agents?</span></>}
+          subheading="Bring your documents, databases, and code into context — give your agents the knowledge they need to act. Join the waitlist for early access."
+        />
       </main>
       <Footer />
     </div>

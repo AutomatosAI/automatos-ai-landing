@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
@@ -20,8 +20,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Zap,
-  Clock,
-  Lock,
   Key,
   Webhook,
   Bell,
@@ -530,23 +528,11 @@ const ConnectYourWorld = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="container mx-auto px-4 max-w-7xl mb-24">
-          <motion.div {...fadeUp} className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Connect Your Stack?
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="rounded-full">
-                Start Connecting
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full">
-                Browse 1,000+ Apps
-              </Button>
-            </div>
-          </motion.div>
-        </section>
+        <CTASection
+          showEyebrow={false}
+          heading={<>Ready to Connect <span className="text-primary">Your Stack?</span></>}
+          subheading="Slack, Salesforce, Linear, Stripe and 1,000+ more — your agents work where you already work. Join the waitlist for early access."
+        />
       </main>
       <Footer />
     </div>

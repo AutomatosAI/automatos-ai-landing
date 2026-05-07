@@ -1,12 +1,32 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import { Clerk } from "@clerk/clerk-js";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-export const CTASection = () => {
+type CTASectionProps = {
+  heading?: ReactNode;
+  subheading?: string;
+  eyebrowNumber?: string;
+  eyebrowLabel?: string;
+  showEyebrow?: boolean;
+};
+
+const defaultHeading = (
+  <>
+    Ready to Automate <span className="text-primary">Your Success?</span>
+  </>
+);
+
+export const CTASection = ({
+  heading = defaultHeading,
+  subheading = "Join the future of work with Automatos. Start building your autonomous workforce today.",
+  eyebrowNumber = "11",
+  eyebrowLabel = "AI That Drives Impact",
+  showEyebrow = true,
+}: CTASectionProps = {}) => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -51,11 +71,12 @@ export const CTASection = () => {
   return (
     <section id="waitlist" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">11</span>
-          <span className="text-muted-foreground text-sm">AI That Drives Impact</span>
-        </div>
+        {showEyebrow && (
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-primary font-mono text-sm">{eyebrowNumber}</span>
+            <span className="text-muted-foreground text-sm">{eyebrowLabel}</span>
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,10 +88,10 @@ export const CTASection = () => {
           {!submitted ? (
             <>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Automate <span className="text-primary">Your Success?</span>
+                {heading}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                Join the future of work with Automatos. Start building your autonomous workforce today.
+                {subheading}
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">

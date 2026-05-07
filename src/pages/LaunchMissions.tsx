@@ -1,20 +1,17 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import {
   Rocket,
-  Target,
-  ListTodo,
   Play,
   Calendar,
   MessageSquare,
   Webhook,
   Users,
   Network,
-  LayoutDashboard,
   Activity,
   BarChart3,
   Clock,
@@ -453,20 +450,11 @@ const LaunchMissions = () => (
         </motion.div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section className="container mx-auto px-4 max-w-7xl mb-24">
-        <motion.div {...fadeUp} className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Launch Your First Mission?</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="rounded-full">
-              Launch a Mission <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full" asChild>
-              <a href="/marketplace">Browse Playbook Templates</a>
-            </Button>
-          </div>
-        </motion.div>
-      </section>
+      <CTASection
+        showEyebrow={false}
+        heading={<>Ready to Launch Your <span className="text-primary">First Mission?</span></>}
+        subheading="From goal to done — sequential playbooks, multi-agent execution, full reporting and budgets. Join the waitlist for early access."
+      />
     </main>
     <Footer />
   </div>
