@@ -297,11 +297,11 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/design-your-agents/llm-model-selection-grid.png"
                 alt="LLM model selection grid in Settings → Models"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -370,11 +370,11 @@ const DesignYourAgents = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
                 <img
                   src="/images/design-your-agents/agent-details-edit.png"
                   alt="Agent Details / Edit panel"
-                  className="w-full h-auto rounded-xl"
+                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -483,11 +483,11 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/design-your-agents/agent-tools-tab.png"
                 alt="Agent's Tools tab showing assigned apps"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -539,11 +539,11 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/design-your-agents/heartbeat-settings.png"
                 alt="Heartbeat Settings in Agent Configuration"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -595,11 +595,11 @@ const DesignYourAgents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/design-your-agents/agent-performance-dashboard.png"
                 alt="Agent Performance metrics dashboard"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>

@@ -279,21 +279,21 @@ const EmpowerWithKnowledge = () => {
           {/* Image placeholders */}
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
                 <img
                   src="/images/empower-with-knowledge/knowledge-base-documents.png"
                   alt="Knowledge Base → Documents library showing uploaded files, sizes, and processing status"
-                  className="w-full h-auto rounded-xl"
+                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                   loading="lazy"
                 />
               </div>
             </motion.div>
             <motion.div {...fadeUp}>
-              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+              <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
                 <img
                   src="/images/empower-with-knowledge/document-processing.png"
                   alt="Document Processing sub-tab showing ingestion pipeline status"
-                  className="w-full h-auto rounded-xl"
+                  className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -354,11 +354,11 @@ const EmpowerWithKnowledge = () => {
           </motion.p>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/empower-with-knowledge/knowledge-base-search.png"
                 alt="Knowledge Base → Search sub-tab showing semantic search results"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -433,11 +433,11 @@ const EmpowerWithKnowledge = () => {
           </div>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/empower-with-knowledge/nl2sql-interface.png"
                 alt="NL2SQL interface showing a natural language query and the generated SQL result"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
@@ -511,11 +511,11 @@ const EmpowerWithKnowledge = () => {
           </motion.div>
 
           <motion.div {...fadeUp}>
-            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-border bg-card p-2 shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 src="/images/empower-with-knowledge/codegraph-interface.png"
                 alt="CodeGraph interface showing an indexed repository with symbol graph"
-                className="w-full h-auto rounded-xl"
+                className="max-h-[640px] w-auto max-w-full h-auto rounded-xl"
                 loading="lazy"
               />
             </div>
