@@ -136,6 +136,7 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Automatos AI. All rights reserved.
           </p>
+          <a href="https://www.linkedin.com/developers/apps/verification/b8fbe621-80ac-44a3-b5fe-984766aefb8e" className="sr-only">LinkedIn Developer Verification</a>
           <div className="flex items-center gap-6">
             <a href="https://x.com/automatosai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
