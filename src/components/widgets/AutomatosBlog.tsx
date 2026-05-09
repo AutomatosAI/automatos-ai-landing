@@ -60,8 +60,8 @@ export function AutomatosBlog({
                     category,
                 },
                 themeOverrides: {
-                    "--aw-primary": "#FF4500",
-                    "--aw-primary-hover": "#E63E00",
+                    "--aw-primary": "hsl(16, 100%, 60%)",
+                    "--aw-primary-hover": "hsl(16, 100%, 52%)",
                     "--aw-bg": "#0F0F0F",
                     "--aw-bg-secondary": "#1A1A1A",
                     "--aw-text": "#F5F5F5",

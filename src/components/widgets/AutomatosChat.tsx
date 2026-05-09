@@ -70,8 +70,9 @@ export function AutomatosChat() {
                     "Hi! I'm Auto — ask me anything about Automatos, our agents, or the platform.",
                 ...(CHAT_AGENT_ID ? { agentId: CHAT_AGENT_ID } : {}),
                 themeOverrides: {
-                    "--aw-primary": "#FF4500",
-                    "--aw-primary-hover": "#E63E00",
+                    // Match landing site dark-mode --primary: hsl(16 100% 60%)
+                    "--aw-primary": "hsl(16, 100%, 60%)",
+                    "--aw-primary-hover": "hsl(16, 100%, 52%)",
                     "--aw-bg": "#0F0F0F",
                     "--aw-bg-secondary": "#1A1A1A",
                     "--aw-text": "#F5F5F5",
