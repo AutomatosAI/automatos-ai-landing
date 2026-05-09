@@ -30,6 +30,7 @@ interface AutomatosInstance {
 }
 
 const PUBLIC_KEY = import.meta.env.VITE_AUTOMATOS_PUBLIC_KEY as string | undefined;
+const CHAT_AGENT_ID = import.meta.env.VITE_AUTOMATOS_CHAT_AGENT_ID as string | undefined;
 
 /**
  * Mounts the Automatos chat widget globally.
@@ -67,6 +68,7 @@ export function AutomatosChat() {
                 title: "Auto",
                 greeting:
                     "Hi! I'm Auto — ask me anything about Automatos, our agents, or the platform.",
+                ...(CHAT_AGENT_ID ? { agentId: CHAT_AGENT_ID } : {}),
                 themeOverrides: {
                     "--aw-primary": "#6366f1",
                 },
