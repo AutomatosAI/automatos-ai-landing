@@ -53,14 +53,20 @@ export function AutomatosBlog({
                 apiKey: PUBLIC_KEY,
                 widget: "blog",
                 containerSelector: `#${idRef.current}`,
-                theme: "light",
+                theme: "dark",
                 blogConfig: {
                     layout,
                     postsPerPage,
                     category,
                 },
                 themeOverrides: {
-                    "--aw-primary": "#6366f1",
+                    "--aw-primary": "#FF4500",
+                    "--aw-primary-hover": "#E63E00",
+                    "--aw-bg": "#0F0F0F",
+                    "--aw-bg-secondary": "#1A1A1A",
+                    "--aw-text": "#F5F5F5",
+                    "--aw-text-secondary": "#A0A0A0",
+                    "--aw-border": "#2A2A2A",
                 },
             });
         };

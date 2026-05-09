@@ -64,13 +64,19 @@ export function AutomatosChat() {
                 apiKey: PUBLIC_KEY,
                 widget: "chat",
                 position: "bottom-right",
-                theme: "light",
+                theme: "dark",
                 title: "Auto",
                 greeting:
                     "Hi! I'm Auto — ask me anything about Automatos, our agents, or the platform.",
                 ...(CHAT_AGENT_ID ? { agentId: CHAT_AGENT_ID } : {}),
                 themeOverrides: {
-                    "--aw-primary": "#6366f1",
+                    "--aw-primary": "#FF4500",
+                    "--aw-primary-hover": "#E63E00",
+                    "--aw-bg": "#0F0F0F",
+                    "--aw-bg-secondary": "#1A1A1A",
+                    "--aw-text": "#F5F5F5",
+                    "--aw-text-secondary": "#A0A0A0",
+                    "--aw-border": "#2A2A2A",
                 },
             });
         };
