@@ -15,9 +15,9 @@ export const HeroSection = () => {
         >
           <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-sm">
             <span className="bg-primary text-primary-foreground text-xs font-semibold px-2 py-0.5 rounded">
-              Expert
+              Open
             </span>
-            <span className="text-sm text-muted-foreground">Your AI-Powered Business OS</span>
+            <span className="text-sm text-muted-foreground">Platform for AI Workforces</span>
           </div>
         </motion.div>
 
@@ -29,10 +29,10 @@ export const HeroSection = () => {
           className="text-center mb-6"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-            Run Your Business
+            An operating system for
           </h1>
           <div className="flex items-center justify-center gap-3 mt-2 flex-wrap">
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">[On Autopilot]</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">autonomous</span>
             <span className="inline-flex align-middle px-1">
               <span
                 className={[
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                 />
               </span>
             </span>
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">With AI Agents</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">agent teams.</span>
           </div>
         </motion.div>
 
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-10"
         >
-          Launch missions, deploy playbooks, and let AI agents handle the work. From solo tasks to multi-agent operations, Automatos is the operating system for your AI workforce.
+          Automatos is the open platform for AI workforces — design specialised agents, equip them with skills and knowledge, schedule their work, and run the whole room from one command centre.
         </motion.p>
 
         {/* CTA Buttons */}
