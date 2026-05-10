@@ -6,13 +6,13 @@
 export const SITE = {
   url: "https://automatos.app",
   name: "Automatos AI",
-  tagline: "Scaling Intelligence, Not Headcount",
+  tagline: "An Operating System for Autonomous Agent Teams",
   description:
-    "Expert AI agency and SaaS platform for building and deploying autonomous AI agents. Multi-agent orchestration with agents, skills, playbooks, and a marketplace to run business operations end-to-end.",
-  defaultTitle: "Automatos AI | Elevate Your Workflow",
+    "Automatos is the open platform for AI workforces — design specialised agents, equip them with skills and knowledge, schedule their work, and run the whole room from one command centre.",
+  defaultTitle: "Automatos AI | An Operating System for Autonomous Agent Teams",
   titleTemplate: "%s | Automatos AI",
   logo: "https://automatos.app/logos/automatos-ai-logo.png?v=2",
-  ogImage: "https://automatos.app/images/og-default.png?v=2",
+  ogImage: "https://automatos.app/images/og-default.png?v=3",
   themeColor: "#0a0a0a",
   locale: "en_US",
 
