@@ -53,6 +53,7 @@ export const STUDIO_RINGS: Ring[] = [
       "Playbooks",
       "Marketplace",
       "Integrations",
+      "Channels",
     ],
   },
 ];

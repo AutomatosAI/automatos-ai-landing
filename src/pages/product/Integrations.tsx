@@ -4,7 +4,7 @@ import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 const Integrations = () => (
   <ProductPage
     path="/integrations"
-    seoTitle="Applications and integrations"
+    seoTitle="Applications, integrations and channels"
     seoDescription="Connect the apps you already use through your own accounts: mail, calendar, Shopify, Xero, LinkedIn and a thousand more. Agents use them with your permission."
     eyebrow="Applications"
     headline="Your accounts. Your permission."
@@ -30,6 +30,16 @@ const Integrations = () => (
           alt: "The Applications catalogue",
           caption: "Tools & Integrations",
         },
+      },
+      {
+        eyebrow: "Channels",
+        title: "Talk to Auto where you already talk.",
+        body: "Connect a channel in Studio and Auto answers there, with the same agents, the same brand and the same approvals as in the app. Questions from agents can be answered from your phone.",
+        points: [
+          "Live: WhatsApp, Telegram, Slack and Discord",
+          "Coming: Microsoft Teams, Google Chat, Signal, iMessage, IRC, Matrix and LINE",
+          "A webhook channel for anything else",
+        ],
       },
       {
         eyebrow: "Guardrails",

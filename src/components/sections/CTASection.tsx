@@ -55,12 +55,14 @@ export const CTASection = ({
       console.log("Waitlist result:", result);
       setSubmitted(true);
       setEmail("");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Waitlist error:", err);
+      // Clerk errors carry an `errors` array; anything else falls back to its message.
+      const e = err as { errors?: { longMessage?: string; message?: string }[]; message?: string };
       const msg =
-        err.errors?.[0]?.longMessage ||
-        err.errors?.[0]?.message ||
-        err.message ||
+        e.errors?.[0]?.longMessage ||
+        e.errors?.[0]?.message ||
+        e.message ||
         "Something went wrong. Please try again.";
       setError(msg);
     } finally {

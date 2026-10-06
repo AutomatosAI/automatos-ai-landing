@@ -53,6 +53,31 @@ const plans = [
   },
 ];
 
+/* Three ways to run Automatos Studio. */
+const editions = [
+  {
+    name: "Local",
+    badge: "Open source",
+    text: "Free, on your own machine, Apache-2.0. Agents work on your own Claude Code or other CLI subscription.",
+    cta: "Get it on GitHub",
+    href: "https://github.com/AutomatosAI/automatos-ai",
+  },
+  {
+    name: "SaaS",
+    badge: "Live",
+    text: "Hosted Automatos Studio. Nothing to install: sign in, upload your logo and tell Auto what you need.",
+    cta: "Sign in",
+    href: "https://ui.automatos.app/sign-in",
+  },
+  {
+    name: "Enterprise",
+    badge: "Coming",
+    text: "The same OS in your own Kubernetes cluster, with single sign-on, cloud plugins and monitoring.",
+    cta: "Talk to us",
+    href: "/contact",
+  },
+];
+
 const steps = [
   { title: "Sign in", description: "Create a workspace. Upload your logo and the kit fills itself in." },
   { title: "Connect", description: "Link the accounts you already use: mail, calendar, Shopify, LinkedIn." },
@@ -79,12 +104,40 @@ export const PricingSection = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
-            One price. <span className="brand-line">No seats, no tokens to count.</span>
+            Local, SaaS or Enterprise. <span className="brand-line">One Studio.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Agents run on your own accounts and subscriptions where they can. What you pay us for is the platform, the renders and the support.
+            Run it free on your own machine, use the hosted SaaS, or put it in your own cluster. On SaaS there are no seats and no tokens to count: you pay for the platform, the renders and the support.
           </p>
         </motion.div>
+
+        {/* Editions */}
+        <div className="grid md:grid-cols-3 gap-4 mb-14">
+          {editions.map((e) => (
+            <div key={e.name} className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-3">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-2xl">{e.name}</h3>
+                <span
+                  className={`text-[11px] font-mono uppercase tracking-wider px-2 py-1 rounded-md ${
+                    e.badge === "Live" ? "text-olive bg-secondary" : e.badge === "Open source" ? "text-accent bg-secondary" : "text-muted-foreground bg-secondary"
+                  }`}
+                >
+                  {e.badge}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground flex-grow">{e.text}</p>
+              {e.href.startsWith("/") ? (
+                <Link to={e.href} className="text-sm font-medium text-foreground inline-flex items-center gap-1 hover:underline">
+                  {e.cta} <ArrowRight className="w-4 h-4" />
+                </Link>
+              ) : (
+                <a href={e.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground inline-flex items-center gap-1 hover:underline">
+                  {e.cta} <ArrowRight className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
 
         {/* Steps */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -150,11 +203,9 @@ export const PricingSection = () => {
                 <h3 className="text-sm text-muted-foreground mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold">
-                    {/* @ts-ignore */}
-                    {typeof plan.price.monthly === 'number' ? `$${isYearly ? plan.price.yearly : plan.price.monthly}` : plan.price.monthly}
+                    {typeof plan.price.monthly === "number" ? `$${isYearly ? plan.price.yearly : plan.price.monthly}` : plan.price.monthly}
                   </span>
-                  {/* @ts-ignore */}
-                  {typeof plan.price.monthly === 'number' && <span className="text-muted-foreground">/month</span>}
+                  {typeof plan.price.monthly === "number" && <span className="text-muted-foreground">/month</span>}
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
               </div>

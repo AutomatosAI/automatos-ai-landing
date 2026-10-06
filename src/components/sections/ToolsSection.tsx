@@ -9,7 +9,7 @@ import {
   FileText,
   HardDrive,
   LayoutGrid,
-  Mic,
+  MessagesSquare,
   Orbit,
   Palette,
   Plug,
@@ -99,9 +99,9 @@ const tools: Tool[] = [
   },
   {
     title: "Memory & graphs",
-    description: "Agents remember preferences and history across threads, and a knowledge graph links people, companies and work.",
+    description: "Agents remember preferences and history across threads. A knowledge graph links people, companies and work, and CodeGraph maps a codebase.",
     icon: Orbit,
-    tags: ["Memory", "Knowledge graph"],
+    tags: ["Memory", "Knowledge graph", "CodeGraph"],
   },
   {
     title: "NL2SQL",
@@ -124,9 +124,9 @@ const tools: Tool[] = [
   },
   {
     title: "Integrations",
-    description: "Over a thousand apps through your own accounts, plus Telegram, Slack, Discord and WhatsApp channels.",
+    description: "Over a thousand apps through your own accounts: mail, calendar, storage, accounting, commerce and social.",
     icon: Plug,
-    tags: ["Your accounts", "Channels"],
+    tags: ["Your accounts", "1,000+ apps"],
     href: "/integrations",
   },
   {
@@ -136,10 +136,11 @@ const tools: Tool[] = [
     tags: ["Chat", "Blog", "Shopify"],
   },
   {
-    title: "Voice & CodeGraph",
-    description: "Talk to your agents and hear them back. Index a codebase so agents can trace and review it.",
-    icon: Mic,
-    tags: ["Voice", "Code"],
+    title: "Channels",
+    description: "Talk to Auto where you already are: WhatsApp, Telegram, Slack, Discord, Teams, Google Chat, Signal, iMessage, IRC, Matrix and LINE. Or by voice.",
+    icon: MessagesSquare,
+    tags: ["11 channels", "Voice"],
+    href: "/integrations",
   },
 ];
 
