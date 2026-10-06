@@ -11,11 +11,11 @@ import {
 const faqs = [
   {
     question: "How does the pricing work?",
-    answer: "We offer flexible monthly plans starting at €29/mo for individuals. For larger teams, our Business plan provides unlimited agents and advanced tools. Enterprise plans are custom-quoted.",
+    answer: "Three plans: Basic, Pro and Business. The price covers the platform, the renders and support. Agents use your own connected accounts and, where you have one, your own CLI subscription, so there is no token meter to watch.",
   },
   {
     question: "Can I customize the agents?",
-    answer: "Absolutely. You can choose from 300+ LLMs, add specialized skills, and equip custom tools. Design agents in the platform or install from our marketplace of 100+ pre-built agents.",
+    answer: "Yes. Install an agent or a whole package from the marketplace, or build your own with a persona, skills and tools. Choose any model from the catalogue. Templates and playbooks are yours to edit, and anything you build can be shared back.",
   },
   {
     question: "Is my data secure?",
@@ -41,7 +41,7 @@ export const FAQSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">10</span>
+          <span className="text-accent font-mono text-sm">10</span>
           <span className="text-muted-foreground text-sm">Frequently Asked Questions</span>
         </div>
 

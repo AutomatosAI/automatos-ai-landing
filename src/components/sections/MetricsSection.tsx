@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 
+/* Only things you can check: the licence, the catalogue, the channels, the formats. */
 const metrics = [
-  { value: "87%", suffix: "Fewer Tokens", label: "3,200 tokens per task vs 25,000 traditional" },
-  { value: "86%", suffix: "Context Recovery", label: "Semantic field memory across agent handoffs" },
-  { value: "1,000+", suffix: "Integrations", label: "Apps connected with 12,000+ tools ready to use" },
+  { value: "Open", suffix: "Apache-2.0", label: "The whole platform is on GitHub. Run it hosted, or on your own machine." },
+  { value: "1,000+", suffix: "Apps", label: "Connect Gmail, Shopify, Xero, Slack and the rest through your own accounts." },
+  { value: "5", suffix: "Social channels", label: "LinkedIn, X, Instagram, TikTok and YouTube, from one plan and one approval." },
+  { value: "1", suffix: "Brand kit", label: "PDF, Word, Excel, social image and video, all rendered from the same colours and type." },
 ];
 
 export const MetricsSection = () => {
@@ -12,8 +14,8 @@ export const MetricsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">05</span>
-          <span className="text-muted-foreground text-sm">Key Metrics</span>
+          <span className="text-accent font-mono text-sm">05</span>
+          <span className="text-muted-foreground text-sm">The facts</span>
         </div>
 
         <motion.div
@@ -23,16 +25,13 @@ export const MetricsSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-            Built Different, <span className="text-primary">Measured Always</span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl max-w-4xl mx-auto">
+            Nothing here is a benchmark. <span className="brand-line">You can check all of it.</span>
           </h2>
-          <p className="text-muted-foreground text-lg mt-4">
-            Real numbers from real infrastructure — not benchmarks, not promises.
-          </p>
         </motion.div>
 
         {/* Metrics Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
@@ -43,18 +42,12 @@ export const MetricsSection = () => {
               className="text-center"
             >
               <div className="flex flex-col items-center justify-center gap-1 mb-4">
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary"
-                >
+                <span className="text-5xl sm:text-6xl font-serif text-foreground">
                   {metric.value}
-                </motion.span>
-                <span className="text-3xl sm:text-4xl font-bold text-primary/80">{metric.suffix}</span>
+                </span>
+                <span className="text-lg font-mono text-accent">{metric.suffix}</span>
               </div>
-              <p className="text-muted-foreground text-lg px-4">{metric.label}</p>
+              <p className="text-muted-foreground px-2">{metric.label}</p>
             </motion.div>
           ))}
         </div>

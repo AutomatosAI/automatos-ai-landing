@@ -33,7 +33,7 @@ export const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">06</span>
+          <span className="text-accent font-mono text-sm">06</span>
           <span className="text-muted-foreground text-sm">Client Testimonials</span>
         </div>
 

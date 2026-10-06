@@ -4,58 +4,59 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, X, ArrowRight } from "lucide-react";
 
+/* Tiers mirror the platform's config (basic / pro / business). Prices are placeholders: Gerard's call. */
 const plans = [
   {
-    name: "Personal",
+    name: "Basic",
     price: { monthly: 29, yearly: 24 },
-    description: "Perfect for individuals automating daily tasks.",
+    description: "One person, one brand, the paperwork and the feed handled.",
     features: [
-      { name: "Automatos RAG", included: true },
-      { name: "Automatos Memory", included: true },
-      { name: "Automatos Agents (Limited)", included: true },
-      { name: "Automatos Missions", included: true },
-      { name: "Automatos Playbooks", included: false },
+      { name: "Auto plus the starter agents", included: true },
+      { name: "Branded documents and templates", included: true },
+      { name: "Socials on all five channels", included: true },
+      { name: "10 minutes of video render a month", included: true },
+      { name: "Marketplace packages", included: false },
     ],
-    cta: "Join Waitlist",
+    cta: "Join the waitlist",
     href: "#waitlist",
     popular: false,
   },
   {
-    name: "Business",
+    name: "Pro",
     price: { monthly: 99, yearly: 79 },
-    description: "For small teams building a digital workforce.",
+    description: "A small team. More agents, more channels, packages from the marketplace.",
     features: [
-      { name: "Automatos RAG", included: true },
-      { name: "Automatos Memory", included: true },
-      { name: "Automatos Agents (Unlimited)", included: true },
-      { name: "Automatos Missions & Playbooks", included: true },
-      { name: "Automatos CodeGraph & NL2SQL", included: true },
+      { name: "Everything in Basic", included: true },
+      { name: "Marketplace packages and playbooks", included: true },
+      { name: "60 minutes of video render a month", included: true },
+      { name: "Your own AI media accounts, capped", included: true },
+      { name: "Widgets for your site or store", included: true },
     ],
-    cta: "Join Waitlist",
+    cta: "Join the waitlist",
     href: "#waitlist",
     popular: true,
   },
   {
-    name: "Enterprise",
+    name: "Business",
     price: { monthly: "Custom", yearly: "Custom" },
-    description: "Full-scale orchestration for large organizations.",
+    description: "Several brands or sites, roles, and the option to run it on your own servers.",
     features: [
-      { name: "Automatos RAG", included: true },
-      { name: "Automatos Memory", included: true },
-      { name: "Automatos Agents (Unlimited)", included: true },
-      { name: "Automatos Missions & Playbooks", included: true },
-      { name: "Source Code License", included: true },
+      { name: "Everything in Pro", included: true },
+      { name: "240 minutes of video render a month", included: true },
+      { name: "Roles and approvals per team", included: true },
+      { name: "Self-hosted or local edition support", included: true },
+      { name: "Source code licence", included: true },
     ],
-    cta: "Contact Sales",
+    cta: "Talk to us",
     href: "/contact",
     popular: false,
   },
 ];
 
 const steps = [
-  { title: "Select", description: "Choose the package that fits your business goals." },
-  { title: "Connect", description: "Share your project requirements so our team can tailor the solution." },
-  { title: "Activate", description: "Get access to your package and start benefiting from our AI solutions." },
+  { title: "Sign in", description: "Create a workspace. Upload your logo and the kit fills itself in." },
+  { title: "Connect", description: "Link the accounts you already use: mail, calendar, Shopify, LinkedIn." },
+  { title: "Tell Auto", description: "Ask for an invoice, a plan, a brand board. Approve what comes back." },
 ];
 
 export const PricingSection = () => {
@@ -66,8 +67,8 @@ export const PricingSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">08</span>
-          <span className="text-muted-foreground text-sm">Packages & Pricing</span>
+          <span className="text-accent font-mono text-sm">08</span>
+          <span className="text-muted-foreground text-sm">Plans</span>
         </div>
 
         <motion.div
@@ -77,11 +78,11 @@ export const PricingSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Plans Designed for <span className="text-primary">Every Stage</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
+            One price. <span className="brand-line">No seats, no tokens to count.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Whether you're just starting out or ready to scale, our packages give you clear options without the confusion. Choose what fits your goals, and know exactly what you're getting.
+            Agents run on your own accounts and subscriptions where they can. What you pay us for is the platform, the renders and the support.
           </p>
         </motion.div>
 
@@ -96,8 +97,8 @@ export const PricingSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary font-bold">{index + 1}</span>
+              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-accent font-mono">{index + 1}</span>
               </div>
               <h3 className="font-semibold mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground">{step.description}</p>
@@ -134,13 +135,13 @@ export const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-card border rounded-2xl p-8 ${plan.popular ? "border-primary shadow-lg shadow-primary/10" : "border-border"
+              className={`relative bg-card border rounded-2xl p-8 ${plan.popular ? "border-foreground" : "border-border"
                 }`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                    Most Popular
+                  <span className="bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                    Most people start here
                   </span>
                 </div>
               )}
@@ -162,7 +163,7 @@ export const PricingSection = () => {
                 {plan.features.map((feature) => (
                   <li key={feature.name} className="flex items-center gap-3">
                     {feature.included ? (
-                      <Check className="w-5 h-5 text-primary" />
+                      <Check className="w-5 h-5 text-olive" />
                     ) : (
                       <X className="w-5 h-5 text-muted-foreground/30" />
                     )}

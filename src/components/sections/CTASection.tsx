@@ -16,15 +16,15 @@ type CTASectionProps = {
 
 const defaultHeading = (
   <>
-    Ready to Automate <span className="text-primary">Your Success?</span>
+    Your brand, <span className="brand-line">run by a team you can see.</span>
   </>
 );
 
 export const CTASection = ({
   heading = defaultHeading,
-  subheading = "Join the future of work with Automatos. Start building your autonomous workforce today.",
+  subheading = "Join the waitlist. When your workspace opens, upload a logo and tell Auto what you need.",
   eyebrowNumber = "11",
-  eyebrowLabel = "AI That Drives Impact",
+  eyebrowLabel = "Get started",
   showEyebrow = true,
 }: CTASectionProps = {}) => {
   const [email, setEmail] = useState("");
@@ -73,7 +73,7 @@ export const CTASection = ({
       <div className="max-w-7xl mx-auto">
         {showEyebrow && (
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-primary font-mono text-sm">{eyebrowNumber}</span>
+            <span className="text-accent font-mono text-sm">{eyebrowNumber}</span>
             <span className="text-muted-foreground text-sm">{eyebrowLabel}</span>
           </div>
         )}

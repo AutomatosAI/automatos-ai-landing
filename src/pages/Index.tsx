@@ -12,7 +12,7 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
-import { VideoSection } from "@/components/sections/VideoSection";
+import { ScreensSection } from "@/components/sections/ScreensSection";
 import { BlogPreviewSection } from "@/components/sections/BlogPreviewSection";
 import { SEO } from "@/components/seo/SEO";
 import {
@@ -85,7 +85,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <VideoSection />
+        <ScreensSection />
         <SolutionsSection />
         <HowItWorksSection />
         <IndustriesSection />
