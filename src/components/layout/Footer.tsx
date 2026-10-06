@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
-import logoDark from "@/assets/logo-dark.svg";
-import logoWhite from "@/assets/logo-white.svg";
+import { StudioWordmark } from "@/components/brand/StudioWordmark";
 
 const footerLinks = {
-  solutions: [
-    { label: "Automatos AI Platform", href: "https://ui.automatos.app", external: true },
+  /* This site sells Studio only. The family and cross-marketing live on automatos.app. */
+  product: [
+    { label: "Auto & agents", href: "/auto", external: false },
+    { label: "Command Centre", href: "/command-centre", external: false },
+    { label: "Documents & templates", href: "/documents", external: false },
+    { label: "Socials", href: "/socials", external: false },
+    { label: "Marketplace", href: "/marketplace", external: false },
+    { label: "Pricing", href: "/#pricing", external: false },
   ],
   company: [
-    { label: "About", href: "/about", external: false },
-    { label: "Marketplace", href: "/marketplace", external: false },
+    { label: "About Automatos AI", href: "https://automatos.app", external: true },
     { label: "Blog", href: "/blog", external: false },
     { label: "Contact", href: "/contact", external: false },
   ],
@@ -34,38 +38,30 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Logo Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center mb-4">
-              <img
-                src={logoDark}
-                alt="Automatos AI"
-                className="h-7 w-auto dark:hidden"
-              />
-              <img
-                src={logoWhite}
-                alt="Automatos AI"
-                className="h-7 w-auto hidden dark:block"
-              />
+            <Link to="/" className="flex items-center mb-4" aria-label="Automatos Studio home">
+              <StudioWordmark size="sm" />
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Orchestrate Intelligence with Context Engineering.
+            <p className="text-sm text-muted-foreground mb-4">
+              Run your business in your brand, on one OS.
             </p>
+            <a
+              href="https://automatos.app"
+              className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border rounded-full px-3 py-1.5"
+            >
+              <img src="/brand/automatos-mark-hi.png" alt="" className="h-3.5 w-3.5" />
+              Powered by <span className="text-foreground">Automatos AI</span>
+            </a>
           </div>
 
-          {/* Solutions */}
+          {/* Studio */}
           <div>
-            <h4 className="font-semibold mb-4">Solutions</h4>
+            <h4 className="font-semibold mb-4">Studio</h4>
             <ul className="space-y-2">
-              {footerLinks.solutions.map((link) => (
+              {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  {link.external ? (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -73,7 +69,7 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">Automatos AI</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -135,7 +131,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Automatos AI. All rights reserved.
+            © {new Date().getFullYear()} Automatos AI. Automatos Studio is a product of Automatos AI.
           </p>
           <a href="https://www.linkedin.com/developers/apps/verification/b8fbe621-80ac-44a3-b5fe-984766aefb8e" className="sr-only">LinkedIn Developer Verification</a>
           <div className="flex items-center gap-6">

@@ -3,17 +3,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoDark from "@/assets/logo-dark.svg";
-import logoWhite from "@/assets/logo-white.svg";
+import { StudioWordmark } from "@/components/brand/StudioWordmark";
 import { ModeToggle } from "@/components/mode-toggle";
 
 const navLinks = [
-  { label: "About Us", href: "/about" },
+  { label: "Auto", href: "/auto" },
+  { label: "Command Centre", href: "/command-centre" },
+  { label: "Documents", href: "/documents" },
+  { label: "Socials", href: "/socials" },
   { label: "Marketplace", href: "/marketplace" },
-  { label: "Research", href: "/research" },
-  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/#pricing", isAnchor: true },
-  { label: "Contact", href: "/contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const Navbar = () => {
@@ -38,17 +38,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img
-              src={logoDark}
-              alt="Automatos AI"
-              className="h-8 w-auto dark:hidden"
-            />
-            <img
-              src={logoWhite}
-              alt="Automatos AI"
-              className="h-8 w-auto hidden dark:block"
-            />
+          <Link to="/" className="flex items-center" aria-label="Automatos Studio home">
+            <StudioWordmark />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +61,7 @@ export const Navbar = () => {
             <ModeToggle />
             <a href="https://ui.automatos.app/sign-in" target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                Sign In
+                Sign in
               </Button>
             </a>
           </div>

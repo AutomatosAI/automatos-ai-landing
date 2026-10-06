@@ -2,93 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Automatos Studio tokens — ported from the platform's own stylesheet
+  (automatos-ai/frontend/app/globals.css, the Studio theme block).
+  Paper, ink, one sparing accent. No glass, no glow, no gradients.
+*/
 @layer base {
   :root {
-    /* Automatos AI Design System — matched to main app */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
+    /* Paper */
+    --background: 38 50% 92%;        /* cream paper */
+    --foreground: 30 12% 9%;         /* #1a1814 ink */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 100%;               /* white card surface */
+    --card-foreground: 30 12% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 30 12% 9%;
 
-    /* Primary orange — matched to app */
-    --primary: 16 100% 50%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary = ink. The default CTA is ink, not orange. */
+    --primary: 30 12% 9%;
+    --primary-foreground: 38 50% 96%;
+    --primary-light: 36 12% 22%;
 
-    /* Lighter orange for gradients */
-    --primary-light: 20 100% 60%;
+    /* Secondary surfaces — slightly darker cream */
+    --secondary: 38 40% 86%;         /* #ebe3d2 */
+    --secondary-foreground: 36 12% 22%;
 
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 12%;
+    --muted: 40 30% 80%;             /* #dcd2bd tan */
+    --muted-foreground: 36 12% 36%;  /* #5a5448 muted ink */
 
-    --muted: 0 0% 93%;
-    --muted-foreground: 0 0% 35%;
+    /* Accent — burnt orange, used sparingly */
+    --accent: 15 76% 44%;            /* #c44a1a */
+    --accent-foreground: 38 50% 96%;
 
-    --accent: 16 100% 50%;
-    --accent-foreground: 0 0% 98%;
+    --destructive: 15 76% 44%;
+    --destructive-foreground: 38 50% 96%;
 
-    --destructive: 0 84% 55%;
-    --destructive-foreground: 0 0% 98%;
+    /* Edges — tan borders; olive focus ring */
+    --border: 40 30% 80%;
+    --input: 40 30% 80%;
+    --ring: 82 30% 33%;              /* #5b6f3a olive */
 
-    --border: 0 0% 75%;
-    --input: 0 0% 75%;
-    --ring: 16 100% 55%;
+    --olive: 82 50% 22%;             /* live / positive ink */
+    --navy: 213 51% 23%;
+    --warn-ink: 38 78% 27%;
 
-    --radius: 0.375rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 38 50% 92%;
+    --sidebar-foreground: 30 12% 9%;
+    --sidebar-primary: 30 12% 9%;
+    --sidebar-primary-foreground: 38 50% 96%;
+    --sidebar-accent: 38 40% 86%;
+    --sidebar-accent-foreground: 30 12% 9%;
+    --sidebar-border: 40 30% 80%;
+    --sidebar-ring: 82 30% 33%;
+
+    --font-serif: "Newsreader", "Tiempos Headline", Charter, Georgia, serif;
+    --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   .dark {
-    /* Dark mode — background matched to app, cards keep original blue tint */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 95%;
+    /* Studio dark — warm near-black paper, accent lifted */
+    --background: 30 10% 9%;
+    --foreground: 38 30% 92%;
 
-    --card: 220 15% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 30 10% 12%;
+    --card-foreground: 38 30% 92%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 30 10% 12%;
+    --popover-foreground: 38 30% 92%;
 
-    --primary: 16 100% 60%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 38 30% 92%;
+    --primary-foreground: 30 12% 9%;
+    --primary-light: 38 20% 75%;
 
-    --primary-light: 22 95% 62%;
+    --secondary: 30 10% 15%;
+    --secondary-foreground: 38 30% 92%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 0 0% 95%;
+    --muted: 30 10% 18%;
+    --muted-foreground: 36 10% 62%;
 
-    --muted: 220 15% 16%;
-    --muted-foreground: 0 0% 60%;
+    --accent: 15 80% 56%;
+    --accent-foreground: 30 12% 9%;
 
-    --accent: 18 50% 18%;
-    --accent-foreground: 18 90% 70%;
+    --destructive: 15 80% 56%;
+    --destructive-foreground: 30 12% 9%;
 
-    --destructive: 0 65% 45%;
-    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
+    --ring: 82 45% 58%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 16 100% 60%;
+    --olive: 82 45% 58%;
+    --navy: 213 40% 55%;
+    --warn-ink: 38 70% 60%;
 
-    --sidebar-background: 220 15% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 16 100% 60%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 220 15% 16%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 16 100% 60%;
+    --sidebar-background: 30 10% 9%;
+    --sidebar-foreground: 38 30% 92%;
+    --sidebar-primary: 38 30% 92%;
+    --sidebar-primary-foreground: 30 12% 9%;
+    --sidebar-accent: 30 10% 15%;
+    --sidebar-accent-foreground: 38 30% 92%;
+    --sidebar-border: 30 10% 22%;
+    --sidebar-ring: 82 45% 58%;
   }
 }
 
@@ -99,11 +116,18 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
   }
 
-  /* Thinner font for headings */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-medium;
+  /* Studio type: serif display, sans body, mono for numbers */
+  h1, h2, h3, .heading {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
   }
 }
 
@@ -113,7 +137,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
+  background: hsl(var(--secondary));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -144,12 +168,13 @@ html {
   animation: marquee 30s linear infinite;
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* The brand line: serif italic, ink. Replaces the old gradient text. */
+.gradient-text,
+.brand-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: hsl(var(--foreground));
 }
 
 /* Section styling */
@@ -157,18 +182,12 @@ html {
   @apply bg-card rounded-lg;
 }
 
-/* Title styling - thinner font */
-h1, h2, h3, h4, h5, h6,
-.heading {
-  font-weight: 500;
+/* Eyebrow numbers and labels are mono */
+.eyebrow {
+  font-family: var(--font-mono);
 }
 
-/* Button glow effect */
+/* Buttons are flat paper/ink. No glow. */
 .btn-glow {
-  box-shadow: 0 0 20px 0 hsl(var(--primary) / 0.4);
-  transition: box-shadow 0.3s ease;
-}
-
-.btn-glow:hover {
   box-shadow: none;
 }

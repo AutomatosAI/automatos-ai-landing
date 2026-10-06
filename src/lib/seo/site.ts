@@ -6,11 +6,13 @@
 export const SITE = {
   url: "https://automatos.app",
   name: "Automatos AI",
-  tagline: "An Operating System for Autonomous Agent Teams",
+  /** The product this site sells. Titles and og:site_name use it; the organisation stays Automatos AI. */
+  product: "Automatos Studio",
+  tagline: "Run your business in your brand, on one OS",
   description:
-    "Automatos is the open platform for AI workforces — design specialised agents, equip them with skills and knowledge, schedule their work, and run the whole room from one command centre.",
-  defaultTitle: "Automatos AI | An Operating System for Autonomous Agent Teams",
-  titleTemplate: "%s | Automatos AI",
+    "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
+  defaultTitle: "Automatos Studio | Run your business in your brand",
+  titleTemplate: "%s | Automatos Studio",
   logo: "https://automatos.app/logos/automatos-ai-logo.png?v=2",
   ogImage: "https://automatos.app/images/og-default.png?v=3",
   themeColor: "#0a0a0a",
