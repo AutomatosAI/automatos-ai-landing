@@ -6,88 +6,88 @@ import { UseCasePill } from "@/components/ui/use-case-pill";
 
 const industries = [
   {
-    id: "personal-assistant",
-    label: "Personal Assistant",
+    id: "owner",
+    label: "The owner's assistant",
     icon: Stethoscope,
     logos: ["/logos/Gmail.png", "/logos/GoogleCalendar.png", "/logos/Zoom.png"],
     image: "/images/use-cases/personal-assistant.jpg",
     features: [
-      "Calendar Management",
-      "Email Organization",
-      "Meeting Summaries",
-      "Priority Reminders",
+      "Inbox and calendar through your own accounts",
+      "Questions come back to you on the board",
+      "Meeting notes as branded documents",
+      "Reminders and scheduled jobs",
     ],
-    modules: "Modules: Memory + Tools + Agents",
+    modules: "Auto + Board + Deliverables",
   },
   {
-    id: "customer-support",
-    label: "Customer Support",
+    id: "shop-cafe",
+    label: "Shop & café",
     icon: Megaphone,
-    logos: ["/logos/Zendesk.png", "/logos/Intercom.png", "/logos/Salesforce.png"],
+    logos: ["/logos/Facebook.png", "/logos/GoogleBusiness.png", "/logos/Square.png"],
     image: "/images/use-cases/customer-support.jpg",
     features: [
-      "24/7 Inquiry Handling",
-      "Order Information Lookup",
-      "FAQ Resolution",
-      "Smart Escalation",
+      "This week's posts, planned and made on the day",
+      "Offers and menus as branded cards",
+      "Customer replies you approve first",
+      "A content bank with real facts, not filler",
     ],
-    modules: "Modules: RAG + Agents + Integrations",
+    modules: "Socials + Brand kit + Templates",
   },
   {
     id: "accounting",
-    label: "Accounting & Invoice",
+    label: "Accountant & bookkeeper",
     icon: Building2,
     logos: ["/logos/Xero.png", "/logos/Quickbooks.png", "/logos/Stripe.png"],
     image: "/images/use-cases/accounting.png",
     features: [
-      "Invoice Recognition",
-      "Data Extraction",
-      "Purchase Order Review",
-      "Transaction Logging",
+      "Invoices and letters from your templates",
+      "Spreadsheets in your brand",
+      "Line items filled by an agent, checked by you",
+      "Every document saved with a share link",
     ],
-    modules: "Modules: OCR + Agents + Database",
+    modules: "Templates + Brand kit + Deliverables",
   },
   {
     id: "social-media",
-    label: "Social Media Manager",
-    icon: ShoppingCart, // Corrected icon mapping in next step if needed, keeping simple for now
+    label: "Salon, studio & creator",
+    icon: ShoppingCart,
     logos: ["/logos/Linkedin.png", "/logos/X.png", "/logos/Youtube.png"],
     image: "/images/use-cases/social-media.jpg",
     features: [
-      "Trend Analysis",
-      "Content Creation (Graphics/Video)",
-      "Optimal Scheduling",
-      "Performance Analytics",
+      "A cadence: images daily, a video a week",
+      "Your photos behind the words",
+      "Approve on the card, then it publishes",
+      "LinkedIn, X, Instagram, TikTok, YouTube",
     ],
-    modules: "Modules: Content Gen + Analytics",
+    modules: "Socials + Media render + Brand kit",
   },
   {
     id: "ecommerce",
-    label: "E-commerce Manager",
+    label: "Shopify store",
     icon: ShoppingCart,
     logos: ["/logos/Shopify.png", "/logos/Woocommerce.png", "/logos/PayPal.png"],
     image: "/images/use-cases/ecommerce.jpg",
     features: [
-      "Inventory Monitoring",
-      "Product Descriptions",
-      "Sales Analysis",
-      "Customer Follow-ups",
+      "A chat widget on your store, in your brand",
+      "Product descriptions and launch posts",
+      "Store facts in the content bank",
+      "Shopify agents from the marketplace",
     ],
-    modules: "Modules: Data Analysis + Agents",
+    modules: "Widgets + Packages + Socials",
   },
   {
     id: "developer",
-    label: "Develop & Engineer",
+    label: "Developer & agency",
     icon: Code,
     logos: ["/logos/GitHub.png", "/logos/GitLab.png", "/logos/Docker.png"],
     image: "/images/use-cases/developer.png",
     features: [
-      "Codebase intelligence",
-      "Documentation search",
-      "Code review automation",
-      "DevOps agents",
+      "Agents run as sessions on your own CLI subscription",
+      "The local edition on your machine",
+      "Playbooks and packages you can publish",
+      "Apache-2.0, on GitHub",
     ],
-    modules: "Modules: CodeGraph + Agents + RAG",
+    modules: "Sessions + Local edition + Marketplace",
   },
 ];
 
@@ -99,8 +99,8 @@ export const IndustriesSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-primary font-mono text-sm">03</span>
-          <span className="text-muted-foreground text-sm">Use Cases</span>
+          <span className="text-accent font-mono text-sm">03</span>
+          <span className="text-muted-foreground text-sm">Who it's for</span>
         </div>
 
         <motion.div
@@ -110,11 +110,11 @@ export const IndustriesSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Where AI Meets <span className="text-primary">Your Needs</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
+            Built for the business <span className="brand-line">with no IT department.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Specialized agents ready to join your team today.
+            A café, a salon, an accountant, a store. One person, a lot of paperwork and a feed to fill.
           </p>
         </motion.div>
 

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
@@ -12,10 +12,11 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import Marketplace from "./pages/Marketplace";
-import DesignYourAgents from "./pages/DesignYourAgents";
-import ConnectYourWorld from "./pages/ConnectYourWorld";
-import EmpowerWithKnowledge from "./pages/EmpowerWithKnowledge";
-import LaunchMissions from "./pages/LaunchMissions";
+import Auto from "./pages/product/Auto";
+import CommandCentre from "./pages/product/CommandCentre";
+import Documents from "./pages/product/Documents";
+import Socials from "./pages/product/Socials";
+import Integrations from "./pages/product/Integrations";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Research from "./pages/Research";
@@ -32,7 +33,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <HelmetProvider>
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="system" storageKey="automatos-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="automatos-ui-theme">
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -45,10 +46,16 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/design-your-agents" element={<DesignYourAgents />} />
-            <Route path="/connect-your-world" element={<ConnectYourWorld />} />
-            <Route path="/empower-with-knowledge" element={<EmpowerWithKnowledge />} />
-            <Route path="/launch-missions" element={<LaunchMissions />} />
+            <Route path="/auto" element={<Auto />} />
+            <Route path="/command-centre" element={<CommandCentre />} />
+            <Route path="/documents" element={<Documents />} />
+            <Route path="/socials" element={<Socials />} />
+            <Route path="/integrations" element={<Integrations />} />
+            {/* v1 pillar pages, kept for their links: redirect to the product pages */}
+            <Route path="/design-your-agents" element={<Navigate to="/auto" replace />} />
+            <Route path="/connect-your-world" element={<Navigate to="/integrations" replace />} />
+            <Route path="/empower-with-knowledge" element={<Navigate to="/documents" replace />} />
+            <Route path="/launch-missions" element={<Navigate to="/command-centre" replace />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/automatos-is-not-an-llm-wrapper" element={<AutomatosNotWrapper />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

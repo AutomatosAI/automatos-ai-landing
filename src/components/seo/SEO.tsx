@@ -61,7 +61,7 @@ export function SEO({
   const resolvedTitle = title
     ? titleOverride
       ? title
-      : `${title} | ${SITE.name}`
+      : `${title} | ${SITE.product}`
     : SITE.defaultTitle;
   const resolvedDescription = description || SITE.description;
   const resolvedUrl = path ? absoluteUrl(path) : SITE.url;
@@ -82,7 +82,7 @@ export function SEO({
       )}
 
       {/* OpenGraph */}
-      <meta property="og:site_name" content={SITE.name} />
+      <meta property="og:site_name" content={SITE.product} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={resolvedUrl} />
       <meta property="og:title" content={resolvedTitle} />
