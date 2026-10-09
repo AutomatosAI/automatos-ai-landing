@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # Every step runs even if an earlier one fails, so one red run shows every problem.
+      - name: Lint
+        if: ${{ !cancelled() }}
+        run: npm run lint
+      - name: Typecheck
+        if: ${{ !cancelled() }}
+        run: npm run typecheck
+      - name: Test
+        if: ${{ !cancelled() }}
+        run: npm test
+      - name: Build
+        if: ${{ !cancelled() }}
+        run: npm run build

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Check, X, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { GITHUB_URL, SIGN_IN_URL } from "@/lib/links";
+import { SectionEyebrow } from "./SectionEyebrow";
 
 /* Tiers mirror the platform's config (basic / pro / business). Prices are placeholders: Gerard's call. */
 const plans = [
@@ -38,7 +38,7 @@ const plans = [
   },
   {
     name: "Business",
-    price: { monthly: "Custom", yearly: "Custom" },
+    price: null,
     description: "Several brands or sites, roles, and the option to run it on your own servers.",
     features: [
       { name: "Everything in Pro", included: true },
@@ -57,212 +57,148 @@ const plans = [
 const editions = [
   {
     name: "Local",
-    badge: "Open source",
+    badge: "OPEN SOURCE",
+    badgeClass: "text-accent",
     text: "Free, on your own machine, Apache-2.0. Agents work on your own Claude Code or other CLI subscription.",
     cta: "Get it on GitHub",
-    href: "https://github.com/AutomatosAI/automatos-ai",
+    href: GITHUB_URL,
   },
   {
     name: "SaaS",
-    badge: "Live",
+    badge: "LIVE",
+    badgeClass: "text-olive",
     text: "Hosted Automatos Studio. Nothing to install: sign in, upload your logo and tell Auto what you need.",
     cta: "Sign in",
-    href: "https://ui.automatos.app/sign-in",
+    href: SIGN_IN_URL,
   },
   {
     name: "Enterprise",
-    badge: "Coming",
+    badge: "COMING",
+    badgeClass: "text-muted-foreground",
     text: "The same OS in your own Kubernetes cluster, with single sign-on, cloud plugins and monitoring.",
     cta: "Talk to us",
     href: "/contact",
   },
 ];
 
-const steps = [
-  { title: "Sign in", description: "Create a workspace. Upload your logo and the kit fills itself in." },
-  { title: "Connect", description: "Link the accounts you already use: mail, calendar, Shopify, LinkedIn." },
-  { title: "Tell Auto", description: "Ask for an invoice, a plan, a brand board. Approve what comes back." },
-];
+/* Internal routes go through the router, #anchors stay on the page, everything else opens in a new tab. */
+const SmartLink = ({ href, className, children }: { href: string; className: string; children: ReactNode }) => {
+  if (href.startsWith("/")) {
+    return (
+      <Link to={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
+  const external = !href.startsWith("#");
+  return (
+    <a
+      href={href}
+      className={className}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+    >
+      {children}
+    </a>
+  );
+};
 
 export const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="text-accent font-mono text-sm">08</span>
-          <span className="text-muted-foreground text-sm">Plans</span>
+    <section id="pricing" className="scroll-mt-16 border-t border-border">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-10 px-4 py-24 sm:px-8">
+        <div className="flex flex-col items-center gap-3.5 text-center">
+          <SectionEyebrow n="05" label="Plans" />
+          <h2 className="m-0 text-4xl font-medium leading-[1.05] sm:text-5xl">
+            Local, SaaS or Enterprise. <em className="font-normal">One Studio.</em>
+          </h2>
+          <p className="m-0 max-w-[680px] text-[17px] leading-relaxed text-muted-foreground">
+            Run it free on your own machine, use the hosted SaaS, or put it in your own cluster. On SaaS there are no
+            seats and no tokens to count.
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
-            Local, SaaS or Enterprise. <span className="brand-line">One Studio.</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Run it free on your own machine, use the hosted SaaS, or put it in your own cluster. On SaaS there are no seats and no tokens to count: you pay for the platform, the renders and the support.
-          </p>
-        </motion.div>
-
-        {/* Editions */}
-        <div className="grid md:grid-cols-3 gap-4 mb-14">
+        <div className="grid gap-4 md:grid-cols-3">
           {editions.map((e) => (
-            <div key={e.name} className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-3">
+            <div key={e.name} className="flex flex-col gap-2.5 rounded-2xl border border-border bg-card p-6">
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-2xl">{e.name}</h3>
-                <span
-                  className={`text-[11px] font-mono uppercase tracking-wider px-2 py-1 rounded-md ${
-                    e.badge === "Live" ? "text-olive bg-secondary" : e.badge === "Open source" ? "text-accent bg-secondary" : "text-muted-foreground bg-secondary"
-                  }`}
-                >
+                <span className="font-serif text-[26px]">{e.name}</span>
+                <span className={cn("rounded-md bg-secondary px-2 py-[3px] font-mono text-[11px] tracking-[0.06em]", e.badgeClass)}>
                   {e.badge}
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground flex-grow">{e.text}</p>
-              {e.href.startsWith("/") ? (
-                <Link to={e.href} className="text-sm font-medium text-foreground inline-flex items-center gap-1 hover:underline">
-                  {e.cta} <ArrowRight className="w-4 h-4" />
-                </Link>
-              ) : (
-                <a href={e.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground inline-flex items-center gap-1 hover:underline">
-                  {e.cta} <ArrowRight className="w-4 h-4" />
-                </a>
-              )}
+              <span className="text-[14.5px] leading-normal text-muted-foreground">{e.text}</span>
+              <SmartLink href={e.href} className="mt-auto text-sm font-medium text-foreground hover:text-accent">
+                {e.cta} →
+              </SmartLink>
             </div>
           ))}
         </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
-            >
-              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-accent font-mono">{index + 1}</span>
-              </div>
-              <h3 className="font-semibold mb-2">{step.title}</h3>
-              <p className="text-sm text-muted-foreground">{step.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Billing Toggle */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <span className={`text-sm ${!isYearly ? "text-foreground font-medium" : "text-muted-foreground"}`}>
-            Monthly
-          </span>
+        <div className="flex items-center justify-center gap-3.5 text-sm">
+          <span className={isYearly ? "text-muted-foreground" : "text-foreground"}>Monthly</span>
           <button
-            onClick={() => setIsYearly(!isYearly)}
-            className={`relative w-14 h-7 rounded-full transition-colors ${isYearly ? "bg-primary" : "bg-muted"
-              }`}
+            type="button"
+            role="switch"
+            aria-checked={isYearly}
+            aria-label="Bill yearly"
+            onClick={() => setIsYearly((y) => !y)}
+            className={cn("relative h-7 w-14 rounded-full transition-colors", isYearly ? "bg-foreground" : "bg-muted")}
           >
-            <motion.div
-              animate={{ x: isYearly ? 28 : 4 }}
-              className="absolute top-1 w-5 h-5 bg-white rounded-full shadow"
+            <span
+              className={cn(
+                "absolute top-1 h-5 w-5 rounded-full bg-white transition-[left] duration-200",
+                isYearly ? "left-8" : "left-1",
+              )}
             />
           </button>
-          <span className={`text-sm ${isYearly ? "text-foreground font-medium" : "text-muted-foreground"}`}>
-            Yearly (20% off)
-          </span>
+          <span className={isYearly ? "text-foreground" : "text-muted-foreground"}>Yearly (20% off)</span>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {plans.map((plan, index) => (
-            <motion.div
+        <div className="grid gap-5 md:grid-cols-3">
+          {plans.map((plan) => (
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-card border rounded-2xl p-8 ${plan.popular ? "border-foreground" : "border-border"
-                }`}
+              className={cn(
+                "relative flex flex-col gap-[18px] rounded-[18px] border bg-card p-8",
+                plan.popular ? "border-foreground" : "border-border",
+              )}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                    Most people start here
-                  </span>
-                </div>
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                  Most people start here
+                </span>
               )}
-
-              <div className="mb-6">
-                <h3 className="text-sm text-muted-foreground mb-2">{plan.name}</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold">
-                    {typeof plan.price.monthly === "number" ? `$${isYearly ? plan.price.yearly : plan.price.monthly}` : plan.price.monthly}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-sm text-muted-foreground">{plan.name}</span>
+                <span className="flex items-baseline gap-1">
+                  <span className="font-serif text-[46px] leading-none">
+                    {plan.price ? `€${isYearly ? plan.price.yearly : plan.price.monthly}` : "Custom"}
                   </span>
-                  {typeof plan.price.monthly === "number" && <span className="text-muted-foreground">/month</span>}
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
+                  {plan.price && <span className="text-muted-foreground">/month</span>}
+                </span>
+                <span className="text-sm leading-normal text-muted-foreground">{plan.description}</span>
               </div>
-
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature.name} className="flex items-center gap-3">
-                    {feature.included ? (
-                      <Check className="w-5 h-5 text-olive" />
-                    ) : (
-                      <X className="w-5 h-5 text-muted-foreground/30" />
-                    )}
-                    <span className={feature.included ? "text-foreground" : "text-muted-foreground/50"}>
-                      {feature.name}
-                    </span>
-                  </li>
+              <div className="flex flex-col gap-2.5">
+                {plan.features.map((f) => (
+                  <span key={f.name} className={cn("flex gap-2.5 text-[14.5px]", f.included ? "" : "opacity-45")}>
+                    <span className={f.included ? "text-olive" : "text-muted-foreground"}>{f.included ? "✓" : "×"}</span>
+                    {f.name}
+                  </span>
                 ))}
-              </ul>
-
-              {plan.href.startsWith("/") ? (
-                <Link to={plan.href} className="w-full">
-                  <Button
-                    className={`w-full rounded-full ${plan.popular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                      : "bg-muted hover:bg-muted/80 text-foreground"
-                      }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
-              ) : plan.href.startsWith("#") ? (
-                <a href={plan.href} className="w-full">
-                  <Button
-                    className={`w-full rounded-full ${plan.popular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                      : "bg-muted hover:bg-muted/80 text-foreground"
-                      }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </a>
-              ) : (
-                <a href={plan.href} target="_blank" rel="noopener noreferrer" className="w-full">
-                  <Button
-                    className={`w-full rounded-full ${plan.popular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                      : "bg-muted hover:bg-muted/80 text-foreground"
-                      }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </a>
-              )}
-            </motion.div>
+              </div>
+              <SmartLink
+                href={plan.href}
+                className={cn(
+                  "mt-auto rounded-full p-3 text-center text-[14.5px] font-medium transition-colors",
+                  plan.popular ? "bg-foreground text-background hover:bg-foreground/90" : "bg-muted text-foreground hover:bg-muted/80",
+                )}
+              >
+                {plan.cta} →
+              </SmartLink>
+            </div>
           ))}
         </div>
       </div>

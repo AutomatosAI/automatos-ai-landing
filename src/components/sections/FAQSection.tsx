@@ -1,99 +1,48 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { HOME_FAQS } from "./faqs";
+import { SectionEyebrow } from "./SectionEyebrow";
 
-const faqs = [
-  {
-    question: "How does the pricing work?",
-    answer: "Three plans: Basic, Pro and Business. The price covers the platform, the renders and support. Agents use your own connected accounts and, where you have one, your own CLI subscription, so there is no token meter to watch.",
-  },
-  {
-    question: "Can I customize the agents?",
-    answer: "Yes. Install an agent or a whole package from the marketplace, or build your own with a persona, skills and tools. Choose any model from the catalogue. Templates and playbooks are yours to edit, and anything you build can be shared back.",
-  },
-  {
-    question: "Is my data secure?",
-    answer: "Yes. We use enterprise-grade encryption and ensuring your proprietary data (and your customers' data) remains private and protected.",
-  },
-  {
-    question: "Do I need technical skills to use Automatos?",
-    answer: "No. Our platform is designed for ease of use. You can use natural language to interact with your data and launch missions or install pre-built playbooks to automate workflows.",
-  },
-  {
-    question: "What if I need more than standard integrations?",
-    answer: "Our Automatos Tools supports over 850 apps. If you need something bespoke, our Enterprise plan allows for custom development.",
-  },
-  {
-    question: "Is Automatos EU AI Act compliant?",
-    answer: "Automatos is aligned with the EU AI Act by design — prohibited-practice guardrails, transparency, human oversight and traceability are built in. See our full posture and article-by-article mapping at /eu-ai-act.",
-  },
-];
-
-export const FAQSection = () => {
-  return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-accent font-mono text-sm">10</span>
-          <span className="text-muted-foreground text-sm">Frequently Asked Questions</span>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Title, Description, CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:sticky lg:top-24"
-          >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Turning Questions Into <span className="text-primary">Confidence</span>
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              From exploring our AI solutions to getting started with your first project, we've got straightforward answers that clear the path forward.
-            </p>
-            <a href="#waitlist">
-              <Button size="lg" className="rounded-full">
-                Join the Waitlist
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </a>
-          </motion.div>
-
-          {/* Right Column - FAQ Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30"
-                >
-                  <AccordionTrigger className="text-left font-medium hover:no-underline py-6">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-        </div>
+/* Single-open accordion; the first answer starts open. */
+export const FAQSection = () => (
+  <section id="faq" className="border-t border-border">
+    <div className="mx-auto grid max-w-[1280px] items-start gap-14 px-4 py-24 sm:px-8 lg:grid-cols-2">
+      <div className="flex flex-col gap-[18px] lg:sticky lg:top-24">
+        <SectionEyebrow n="06" label="Questions" />
+        <h2 className="m-0 text-4xl font-medium leading-[1.05] sm:text-5xl">
+          Straight answers, <em className="font-normal">before you sign up.</em>
+        </h2>
+        <a
+          href="#waitlist"
+          className="self-start rounded-full bg-primary px-[22px] py-[13px] text-[15px] font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Join the waitlist →
+        </a>
       </div>
-    </section>
-  );
-};
+
+      <AccordionPrimitive.Root type="single" collapsible defaultValue="faq-0" className="flex flex-col gap-2.5">
+        {HOME_FAQS.map((faq, i) => (
+          <AccordionPrimitive.Item
+            key={faq.question}
+            value={`faq-${i}`}
+            className="rounded-[14px] border border-border bg-card data-[state=open]:border-foreground"
+          >
+            <AccordionPrimitive.Header>
+              <AccordionPrimitive.Trigger className="group flex w-full justify-between gap-4 px-[22px] py-5 text-left text-base font-medium text-foreground">
+                {faq.question}
+                <span className="text-muted-foreground group-data-[state=open]:hidden" aria-hidden>
+                  +
+                </span>
+                <span className="hidden text-muted-foreground group-data-[state=open]:inline" aria-hidden>
+                  −
+                </span>
+              </AccordionPrimitive.Trigger>
+            </AccordionPrimitive.Header>
+            <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+              <p className="m-0 px-[22px] pb-5 text-[15px] leading-relaxed text-muted-foreground">{faq.answer}</p>
+            </AccordionPrimitive.Content>
+          </AccordionPrimitive.Item>
+        ))}
+      </AccordionPrimitive.Root>
+    </div>
+  </section>
+);

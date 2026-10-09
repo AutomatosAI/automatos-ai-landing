@@ -1,10 +1,12 @@
 import { ProductPage } from "@/components/product/ProductPage";
+import { PackageInstallDemo } from "@/components/demos/PackageInstallDemo";
 
 /*
   The six categories here are the ones the platform actually renders
   (Packages · Applications · Agents · Playbooks · LLMs · Capabilities).
   Templates is the seventh, in progress.
 */
+
 const Marketplace = () => (
   <ProductPage
     path="/marketplace"
@@ -13,17 +15,27 @@ const Marketplace = () => (
     eyebrow="Marketplace"
     headline="Install, don't build."
     brandLine="Lego, for a business."
-    lede="A package is a starter team: the agents, the playbooks, the setup questions and the connections, installed together. Pick one that matches your business, answer a few questions, and the work starts. Share what you make back to the community."
-    hero={{
-      src: "/images/studio/10-marketplace.png",
-      alt: "The Community Marketplace with featured packages and the six category tabs",
-      caption: "Marketplace · packages first, then applications, agents, playbooks, models and capabilities",
+    lede="A package is a starter team: the agents, the playbooks, the setup questions and the connections, installed together. Pick one that matches your business, answer a few questions, and the work starts."
+    demo={{
+      label: "INSTALL A PACKAGE",
+      hint: "SANDBOXED TO YOUR WORKSPACE · REVERSIBLE",
+      node: <PackageInstallDemo />,
     }}
     sections={[
       {
+        eyebrow: "The shelf",
+        title: "Packages first, then everything else.",
+        body: "Applications, agents, playbooks, models and capabilities, built by Automatos and by the community.",
+        shot: {
+          src: "/images/studio/10-marketplace.png",
+          alt: "The Community Marketplace with featured packages and the six category tabs",
+          caption: "Marketplace · packages first, then applications, agents, playbooks, models and capabilities",
+        },
+      },
+      {
         eyebrow: "Packages",
         title: "A whole team in one install.",
-        body: "The Socials package brings the Social Media Director, the Brand Designer, four playbooks and a guided setup. The Shopify packages bring a support agent, an inventory watchdog, an SEO writer and an operations manager. Dependencies resolve themselves.",
+        body: "The Socials package brings the Social Media Director, the Brand Designer, four playbooks and a guided setup. Dependencies resolve themselves.",
         points: [
           "Setup questions, required connections and a first-week guide",
           "Everything sandboxed to your workspace and reversible",
@@ -44,12 +56,11 @@ const Marketplace = () => (
           alt: "The Playbooks tab of the marketplace",
           caption: "Marketplace · Playbooks",
         },
-        flip: true,
       },
       {
         eyebrow: "Applications, models, capabilities",
         title: "The rest of the shelf.",
-        body: "Applications are the apps you connect. LLMs are the models an agent can think with, from a catalogue you can bring your own keys to. Capabilities are skills and plugins that teach an agent a trade.",
+        body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills and plugins that teach an agent a trade.",
         points: [
           "Over a thousand applications through your own accounts",
           "Any model from the catalogue, routed per agent",
@@ -58,15 +69,15 @@ const Marketplace = () => (
         shot: {
           src: "/images/studio/26-marketplace-capabilities.png",
           alt: "The Capabilities tab: skills and plugins",
-          caption: "Marketplace · Capabilities",
+          caption: "Marketplace · Capabilities · the skills library, imported from GitHub",
         },
       },
       {
         eyebrow: "Templates",
         title: "Coming: the seventh shelf.",
-        body: "Document and social templates shared by the community, rendered in your brand the moment you install them. A hairdresser's price list, an accountant's engagement letter, a café's weekly specials card. Built by someone who knows the trade, finished by your kit.",
+        body: "Document and social templates shared by the community, rendered in your brand the moment you install them.",
         points: [
-          "Templates are brand-agnostic by design: a shared template can't carry someone else's colours",
+          "A shared template can't carry someone else's colours",
           "Publish from the Template Studio, install to yours",
           "Packages will ship with their paperwork included",
         ],
@@ -75,7 +86,6 @@ const Marketplace = () => (
           alt: "Template Studio",
           caption: "Deliverables · Templates · the studio the shelf will publish from",
         },
-        flip: true,
       },
     ]}
     runs={{
@@ -90,9 +100,9 @@ const Marketplace = () => (
       ],
     }}
     related={[
-      { label: "Auto & the board", href: "/auto" },
+      { label: "Auto & agents", href: "/auto" },
       { label: "Documents & templates", href: "/documents" },
-      { label: "Integrations", href: "/integrations" },
+      { label: "Socials", href: "/socials" },
     ]}
     ctaHeading={<>Pick a package. <span className="brand-line">Meet your team.</span></>}
     ctaSub="Join the waitlist. The first package we'll suggest is the one for your trade."

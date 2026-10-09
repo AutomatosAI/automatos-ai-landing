@@ -83,7 +83,7 @@ export function softwareApplicationSchema() {
     offers: {
       "@type": "Offer",
       category: SITE.offers.category,
-      priceCurrency: "USD",
+      priceCurrency: "EUR",
       priceSpecification: {
         "@type": "PriceSpecification",
         description: SITE.offers.priceModel,
@@ -98,7 +98,7 @@ export function softwareApplicationSchema() {
       "Composio tool integration (250+ services)",
       "Persistent memory and report sharing across agents",
       "Human-in-the-loop approvals and audit logging",
-      "EU AI Act aligned governance",
+      "Risk classes with matching human oversight",
     ],
     creator: { "@id": `${SITE.url}/#organization` },
     publisher: { "@id": `${SITE.url}/#organization` },

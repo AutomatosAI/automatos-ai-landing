@@ -55,7 +55,6 @@ const Integrations = () => (
           alt: "Governance approvals: an unclassified action waiting for a human grant or deny",
           caption: "Command Centre · Governance · an action nobody classified waits for a person",
         },
-        flip: true,
       },
     ]}
     related={[

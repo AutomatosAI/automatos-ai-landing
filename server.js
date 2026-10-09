@@ -72,6 +72,14 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+// Sign in lives in the app; keep in step with SIGN_IN_URL in src/lib/links.ts
+const SIGN_IN_URL = process.env.SIGN_IN_URL || "https://ui.automatos.app/sign-in";
+app.get("/login", (_req, res) => res.redirect(302, SIGN_IN_URL));
+
+// The EU AI Act posture lives on the company site (REDESIGN-PLAN §10); keep in step with src/lib/links.ts
+app.get("/eu-ai-act", (_req, res) => res.redirect(301, "https://automatos.app/eu-ai-act"));
+app.get("/eu-ai-act/checker", (_req, res) => res.redirect(301, "https://automatos.app/eu-ai-act/checker"));
+
 // Serve static files from Vite build output
 const distPath = resolve(__dirname, "dist");
 app.use(express.static(distPath, {

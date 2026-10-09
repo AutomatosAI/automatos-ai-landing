@@ -5,12 +5,14 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { StudioWordmark } from "@/components/brand/StudioWordmark";
 import { ModeToggle } from "@/components/mode-toggle";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Auto", href: "/auto" },
   { label: "Command Centre", href: "/command-centre" },
   { label: "Documents", href: "/documents" },
   { label: "Socials", href: "/socials" },
+  { label: "Your store", href: "/your-store" },
   { label: "Marketplace", href: "/marketplace" },
   { label: "Pricing", href: "/#pricing", isAnchor: true },
   { label: "Blog", href: "/blog" },
@@ -20,6 +22,8 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const isActive = (link: typeof navLinks[0]) => !link.isAnchor && location.pathname === link.href;
 
   const handleNavClick = (link: typeof navLinks[0], e: React.MouseEvent) => {
     if (link.isAnchor) {
@@ -43,13 +47,17 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.href}
                 onClick={(e) => handleNavClick(link, e)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+                aria-current={isActive(link) ? "page" : undefined}
+                className={cn(
+                  "whitespace-nowrap border-b-[1.5px] py-1 text-sm font-medium transition-colors hover:text-foreground",
+                  isActive(link) ? "border-accent text-foreground" : "border-transparent text-muted-foreground",
+                )}
               >
                 {link.label}
               </Link>
@@ -57,17 +65,17 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Button & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <ModeToggle />
-            <a href="https://ui.automatos.app/sign-in" target="_blank" rel="noopener noreferrer">
+            <Link to="/login">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
                 Sign in
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-4 lg:hidden">
             <ModeToggle />
             <button
               className="p-2"
@@ -87,7 +95,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="lg:hidden bg-background border-b border-border"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -100,11 +108,11 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="https://ui.automatos.app/sign-in" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+              <Link to="/login" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-                  Sign In
+                  Sign in
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

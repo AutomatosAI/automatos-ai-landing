@@ -1,4 +1,5 @@
 import { ProductPage } from "@/components/product/ProductPage";
+import { BrandKitDemo } from "@/components/demos/BrandKitDemo";
 
 const Documents = () => (
   <ProductPage
@@ -9,16 +10,26 @@ const Documents = () => (
     headline="Paperwork that looks like you made it."
     brandLine="Because your brand made it."
     lede="One brand kit: your logo, colours, type, voice and sign-off. Every PDF, Word document and spreadsheet renders from it. Ask for an invoice and get one you'd send, not a draft you'd fix."
-    hero={{
-      src: "/images/studio/06-deliverables.png",
-      alt: "Deliverables showing a brand board, a trading report, a proposal and a letter, all in the same brand",
-      caption: "Deliverables · a brand board, a report, a proposal and a letter made this morning, one kit",
+    demo={{
+      label: "REAL RENDERS, BY BRAND KIT",
+      hint: "PAGE 1 OF EACH · STRAIGHT FROM STUDIO",
+      node: <BrandKitDemo />,
     }}
     sections={[
       {
+        eyebrow: "Deliverables",
+        title: "A brand board, a report, a proposal, a letter.",
+        body: "Made this morning, all from one kit. Every output lands with a thumbnail, the template it used and a share link that works without a login.",
+        shot: {
+          src: "/images/studio/06-deliverables.png",
+          alt: "Deliverables showing a brand board, a trading report, a proposal and a letter, all in the same brand",
+          caption: "Deliverables · a brand board, a report, a proposal and a letter made this morning, one kit",
+        },
+      },
+      {
         eyebrow: "Brand kit",
         title: "Set it once. It reaches everything.",
-        body: "Colour roles, a type scale, spacing, logo rules, currency and date style, tone words and a sign-off. Contrast is checked when you save. The brand board shows the whole kit on one page you can hand to anyone.",
+        body: "Colour roles, a type scale, spacing, logo rules, currency and date style, tone words and a sign-off. Contrast is checked when you save.",
         points: [
           "Upload a logo and the kit fills itself from your profile",
           "Ask Auto for \"less orange\" or \"warmer\" and the Brand Designer proposes a change you approve",
@@ -33,7 +44,7 @@ const Documents = () => (
       {
         eyebrow: "Template Studio",
         title: "Start from a layout, not a blank page.",
-        body: "Letter, invoice, report, proposal, agreement, data sheet. Each starter is a complete branded layout with the fields an agent fills: line items, totals, a bill-to block. Edit the blocks, keep the brand.",
+        body: "Letter, invoice, report, proposal, agreement, data sheet. Each starter is a complete branded layout with the fields an agent fills. Edit the blocks, keep the brand.",
         points: [
           "No code. Blocks, chips and a live preview",
           "A document with an unfilled field is never delivered",
@@ -44,12 +55,11 @@ const Documents = () => (
           alt: "Template cards showing the fields each one needs: client, line items, totals, payment terms",
           caption: "Deliverables · Templates · each starter says exactly what an agent must fill",
         },
-        flip: true,
       },
       {
-        eyebrow: "Deliverables",
+        eyebrow: "Outputs",
         title: "Every output in one place, with a link.",
-        body: "Chat, a playbook, a scheduled job or a mission: whatever makes a document, it lands here with a thumbnail, the template it used and a share link that works without a login. Add it to your knowledge only if you choose to.",
+        body: "Chat, a playbook, a scheduled job or a mission: whatever makes a document, it lands here. Add it to your knowledge only if you choose to.",
         shot: {
           src: "/images/studio/33-deliverables-scrolled.png",
           alt: "The Deliverables feed with reports and task reports",
@@ -70,7 +80,7 @@ const Documents = () => (
     }}
     related={[
       { label: "Socials", href: "/socials" },
-      { label: "Auto & the board", href: "/auto" },
+      { label: "Auto & agents", href: "/auto" },
       { label: "Marketplace", href: "/marketplace" },
     ]}
     ctaHeading={<>Upload a logo. <span className="brand-line">Send an invoice an hour later.</span></>}

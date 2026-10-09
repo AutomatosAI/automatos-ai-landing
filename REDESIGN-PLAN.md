@@ -42,7 +42,7 @@ Source of truth: `automatos-ai/frontend/app/globals.css` (Studio theme block) an
 | `/socials` | Socials Studio | Plan a cadence, content bank with sourced facts, made on the day, approve, publish to LinkedIn/X/Instagram/TikTok/YouTube. Shots: editor (Brief/Format/Channels/Look/When), template gallery with photo cards, plan view, calendar. |
 | `/marketplace` | Marketplace | The real six categories; packages first ("install Socials: two agents, four playbooks, guided setup"). Templates as "coming". Shot: Packages tab, Capabilities tab. |
 | `/integrations` | Applications | Composio logos (reuse `ToolsSection`/`IntegrationsSection` and `public/logos`). Shot: Applications tab. |
-| `/widgets` | Your site, AI-driven | Chat + blog widgets, "paste one snippet"; Shopify as the store case. **Gate:** `automatos-widget-sdk` and `automatos-shopify` last moved 1 Jun 2026 and are marked paused. Page goes live only when they move again; until then it's one section on Home. |
+| `/your-store` | Your site and store, run by your agents | The Shopify app, the chat and blog widgets on any site, Shopify packages and skills, store data in the knowledge graph. **8 Oct: built now** (Studio is not live yet); the Shopify app and widgets get an end-to-end test before launch. Was `/widgets`, gated while the repos were paused. |
 | `/local` | Runs on your machine | Local edition, Apache-2.0, same product; CLI sessions on your own subscription. Shot: Session mode. |
 | `/pricing` | Pricing | Basic / Pro / Business from config: render minutes 10/60/240, AI media caps, channels, agents. Enterprise = contact. |
 | keep | `/blog`, `/research`, `/eu-ai-act`, `/eu-ai-act/checker`, `/privacy`, `/terms`, `/cookies`, `/contact` | Research and EU AI Act move to the footer. |
@@ -124,3 +124,37 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 - The product's own columns (Academy: Learn, Account; Studio: product pages; Markets: cockpit, ledger).
 - One disclaimer line: Academy "not affiliated with any certification body"; Markets "not financial advice"; Studio EU AI Act posture.
 - Tagline. automatos.app still reads "An operating system for autonomous agent teams"; the agreed line is "One OS. Any interface."
+
+## 10. Site map for the family (agreed 8 Oct 2026, to tune)
+
+Each product site sells only itself and carries its own pricing. The "Powered by Automatos AI" pill is the only bridge. Everything about the company, the OS and the family lives on automatos.app.
+
+| Site | Repo | State | What it owns |
+|---|---|---|---|
+| **automatos.app** | `automatos-ai-landingV2` | live, last commit July | The company and the OS. See below. |
+| **studio.automatos.app** | `automatos-ai-landing` (this repo) | local only | Studio, the UI a business runs on: Auto, Command Centre, Documents, Socials, Marketplace, Integrations, **Your store** (Shopify app + widgets), Studio pricing, waitlist. |
+| **academy.automatos.app** | `automatos-academy` (+ the app) | live | Courses, tutor, the app. Its own pricing. |
+| **markets.automatos.app** | `automatos-markets` | live | The cockpit, plans, replay, journal, research. Free during the pilot. |
+
+**automatos.app keeps or gains**
+
+- Hero: "One OS. Any interface." with the family ring hub (`FAMILY_RINGS` in this repo's `osHubRings.ts`, see §7).
+- The OS: API-first, the modules (agents, memory, RAG, NL2SQL, graphs, documents, socials, the harness), MCP, Apache-2.0 open source.
+- Enterprise: OIDC, Kubernetes, Azure and AWS plugins, monitoring. The bank PoC and Web Summit audience.
+- The family: Studio, Academy, Markets, Widgets & Shopify (a Studio surface), BudStacks as a partner. Each card links out.
+- Developers: the widget SDK as code, the API, MCP, docs, GitHub, DeepWiki.
+- Research, field notes, the EU AI Act posture, About, Contact.
+- The one canonical legal set (privacy, terms, cookies). Today privacy and cookies are `#` there while this repo has real pages: move them, and point product sites at them.
+
+**Draft content already exists:** the 6 Oct team brief "One OS, Any interface" (claude.ai/artifact/YVxTRa4ZZjNd1c5UdjRcFT) is most of this page: the family hub hero, the brand map (brand → OS → Studio → products, each with buyer / promise / button / status), the editions, "A Jarvis is an app. We're what apps run on." (the comparison table), "Lego, for a business" (partners, verticals, app stores, own front end, enterprise, community). Port those; drop the internal parts ("Tonight", PR links, Web Summit plan, the feedback form). Verify before publishing: "over ten thousand backend tests", "17 feature modules whose boundaries CI enforces", "a Helm chart exists", and the Shopify app's status (the brief says "Built"; the 8 Oct research found the App Store app paused with stub pages).
+
+**automatos.app drops**
+
+- `pricing.html`: each product prices itself (Studio on studio.automatos.app, Academy and Markets on theirs).
+- `marketplace.html` and the agent walkthrough (hire agents, Command Centre, costs): Studio's site covers them with real captures.
+
+**Open**
+
+- One blog or two? Studio's `/blog` runs on the blog widget (dogfood); automatos.app has field notes.
+- Where research and the EU AI Act pages live canonically (proposal: automatos.app; Studio links to them).
+- `SITE.url` in this repo is still `https://automatos.app` (canonical, sitemap, structured data). Switch to `https://studio.automatos.app` when the domain is set.
