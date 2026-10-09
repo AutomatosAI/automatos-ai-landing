@@ -67,4 +67,4 @@ User-agent: *
 Allow: /
 
 # Discovery hints
-Sitemap: https://automatos.app/sitemap.xml
+Sitemap: https://studio.automatos.app/sitemap.xml

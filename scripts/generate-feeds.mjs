@@ -41,7 +41,7 @@ for (const name of [".env.local", ".env"]) {
   }
 }
 
-const SITE_URL = "https://automatos.app";
+const SITE_URL = "https://studio.automatos.app";
 const API_BASE = process.env.AUTOMATOS_API_BASE || "https://api.automatos.app";
 const WORKSPACE_ID =
   process.env.VITE_AUTOMATOS_WORKSPACE_ID ||
@@ -50,17 +50,17 @@ const WORKSPACE_ID =
 
 const STATIC_ROUTES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/auto", changefreq: "monthly", priority: "0.9" },
+  { path: "/command-centre", changefreq: "monthly", priority: "0.9" },
+  { path: "/documents", changefreq: "monthly", priority: "0.9" },
+  { path: "/socials", changefreq: "monthly", priority: "0.9" },
+  { path: "/marketplace", changefreq: "weekly", priority: "0.9" },
+  { path: "/your-store", changefreq: "monthly", priority: "0.9" },
+  { path: "/integrations", changefreq: "monthly", priority: "0.8" },
   { path: "/about", changefreq: "monthly", priority: "0.7" },
   { path: "/contact", changefreq: "monthly", priority: "0.6" },
-  { path: "/marketplace", changefreq: "weekly", priority: "0.9" },
-  { path: "/design-your-agents", changefreq: "monthly", priority: "0.9" },
-  { path: "/connect-your-world", changefreq: "monthly", priority: "0.9" },
-  { path: "/empower-with-knowledge", changefreq: "monthly", priority: "0.9" },
-  { path: "/launch-missions", changefreq: "monthly", priority: "0.9" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/research", changefreq: "weekly", priority: "0.8" },
-  { path: "/eu-ai-act", changefreq: "monthly", priority: "0.8" },
-  { path: "/eu-ai-act/checker", changefreq: "monthly", priority: "0.8" },
   { path: "/privacy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms", changefreq: "yearly", priority: "0.3" },
   { path: "/cookies", changefreq: "yearly", priority: "0.3" },

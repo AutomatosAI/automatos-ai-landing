@@ -4,7 +4,9 @@
  */
 
 export const SITE = {
-  url: "https://automatos.app",
+  url: "https://studio.automatos.app",
+  /** The organisation (Automatos AI) lives on the company site. */
+  companyUrl: "https://automatos.app",
   name: "Automatos AI",
   /** The product this site sells. Titles and og:site_name use it; the organisation stays Automatos AI. */
   product: "Automatos Studio",
@@ -13,7 +15,7 @@ export const SITE = {
     "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
   defaultTitle: "Automatos Studio | Run your business in your brand",
   titleTemplate: "%s | Automatos Studio",
-  logo: "https://automatos.app/logos/automatos-ai-logo.png?v=2",
+  logo: "https://studio.automatos.app/logos/automatos-ai-logo.png",
   ogImage: "https://studio.automatos.app/images/og-studio.png",
   themeColor: "#0a0a0a",
   locale: "en_US",
@@ -32,13 +34,6 @@ export const SITE = {
   founder: {
     name: "Gerard Kavanagh",
     url: "https://www.linkedin.com/in/gerardkavanagh/",
-  },
-
-  // Legal / company
-  legal: {
-    name: "Automatos AI Ltd",
-    foundingDate: "2025",
-    country: "IE",
   },
 
   // Pricing (tier marker, not price)
