@@ -26,7 +26,7 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 
 ## Compliance
 
-- [EU AI Act Alignment](https://automatos.app/eu-ai-act): How Automatos supports customers under the EU AI Act — risk classification, transparency, logging, and human oversight
+- [EU AI Act posture](https://automatos.app/eu-ai-act): What is built today (human approval, risk classes with matching oversight, an append-only audit log, EU data storage, GDPR export and erasure) and what is not yet
 
 ## External
 

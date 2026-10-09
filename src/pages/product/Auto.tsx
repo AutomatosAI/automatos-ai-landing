@@ -1,4 +1,5 @@
 import { ProductPage } from "@/components/product/ProductPage";
+import { AutoRouterDemo } from "@/components/demos/AutoRouterDemo";
 
 const Auto = () => (
   <ProductPage
@@ -9,12 +10,22 @@ const Auto = () => (
     headline="One voice to talk to."
     brandLine="A whole team behind it."
     lede="You don't learn Automatos. You tell Auto what you need, the way you'd tell a good office manager. Auto decides who does it, files the ticket, and brings back the result or the question."
-    hero={{
-      src: "/images/studio/01-auto-chat.png",
-      alt: "Auto in chat making a branded invoice for a café, with questions from agents on the right",
-      caption: "Chat · a branded invoice from one message, and the questions agents are asking on the right",
+    demo={{
+      label: "WHO DOES IT?",
+      hint: "PICK A REQUEST · AUTO ROUTES IT",
+      node: <AutoRouterDemo />,
     }}
     sections={[
+      {
+        eyebrow: "Chat",
+        title: "One message. A branded invoice.",
+        body: "Ask in plain words. Auto works out who should do it, and the questions agents need answered wait on the right, not in your inbox.",
+        shot: {
+          src: "/images/studio/01-auto-chat.png",
+          alt: "Auto in chat making a branded invoice for a café, with questions from agents on the right",
+          caption: "Chat · a branded invoice from one message, and the questions agents are asking on the right",
+        },
+      },
       {
         eyebrow: "Agents",
         title: "A roster, not a single bot.",
@@ -39,12 +50,11 @@ const Auto = () => (
           alt: "Assignments with Mission, Playbook, Plan and Task and the list of missions",
           caption: "Assignments · Missions",
         },
-        flip: true,
       },
       {
         eyebrow: "Knowledge",
         title: "Auto reads your business before it writes.",
-        body: "Documents, databases, code, a knowledge graph and memory, in one place. Sync Google Drive or Dropbox, search by meaning and by keyword, and agents cite what they used. Their own output stays out unless you add it.",
+        body: "Documents, databases, code, a knowledge graph and memory, in one place. Sync Google Drive or Dropbox, search by meaning and by keyword, and agents cite what they used.",
         points: [
           "RAG with hybrid search and citations",
           "NL2SQL over your own database",

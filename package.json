@@ -11,6 +11,7 @@
     "feeds": "node scripts/generate-feeds.mjs",
     "og": "node scripts/generate-og.mjs",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"

@@ -8,7 +8,9 @@ const footerLinks = {
     { label: "Command Centre", href: "/command-centre", external: false },
     { label: "Documents & templates", href: "/documents", external: false },
     { label: "Socials", href: "/socials", external: false },
+    { label: "Your store & site", href: "/your-store", external: false },
     { label: "Marketplace", href: "/marketplace", external: false },
+    { label: "Integrations", href: "/integrations", external: false },
     { label: "Pricing", href: "/#pricing", external: false },
   ],
   company: [
@@ -27,7 +29,7 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy", external: false },
     { label: "Terms of Service", href: "/terms", external: false },
     { label: "Cookie Policy", href: "/cookies", external: false },
-    { label: "EU AI Act Posture", href: "/eu-ai-act", external: false },
+    { label: "EU AI Act Posture", href: "https://automatos.app/eu-ai-act", external: true },
   ],
 };
 

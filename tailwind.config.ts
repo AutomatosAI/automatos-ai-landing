@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -22,6 +23,26 @@ export default {
         olive: "hsl(var(--olive))",
         navy: "hsl(var(--navy))",
         "warn-ink": "hsl(var(--warn-ink))",
+        /* The product board renders dark in both themes, like the app's board. */
+        board: {
+          DEFAULT: "#1b1916",
+          column: "#211e1a",
+          field: "#24211d",
+          card: "#2a2621",
+          pill: "#2c2823",
+          border: "#36322c",
+          text: "#efe8dc",
+          muted: "#a39b8c",
+          working: "#6f9fd6",
+          review: "#d9a93a",
+          needs: "#e8683a",
+          done: "#a3c46a",
+        },
+        /* Tour callouts sit on screenshots, so they keep light paper in both themes. */
+        callout: {
+          DEFAULT: "#f3ecdd",
+          ink: "#1a1814",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -89,11 +110,18 @@ export default {
           },
         },
       },
+      /* Screenshot hover zoom (design handoff): 1.6s on the Studio ease. */
+      transitionDuration: {
+        1600: "1600ms",
+      },
+      transitionTimingFunction: {
+        studio: "cubic-bezier(.45,.05,.25,1)",
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

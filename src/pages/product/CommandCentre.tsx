@@ -1,4 +1,5 @@
 import { ProductPage } from "@/components/product/ProductPage";
+import { BoardDemo } from "@/components/demos/BoardDemo";
 
 const CommandCentre = () => (
   <ProductPage
@@ -9,25 +10,20 @@ const CommandCentre = () => (
     headline="Where you run the business."
     brandLine="Not where you chase it."
     lede="Open the Command Centre and you know where everything stands: what finished, what's running, what's waiting for you and what it cost. Every job is a ticket. Every decision that matters comes to you."
-    hero={{
-      src: "/images/studio/30-cc-summary.png",
-      alt: "The Command Centre summary with Auto's read, live counters and the needs-you list",
-      caption: "Command Centre · Summary · Auto's read, live counters and what needs you",
+    demo={{
+      label: "THE BOARD, LIVE",
+      hint: "TICKETS MOVE ON THEIR OWN · “NEEDS YOU” WAITS FOR A CLICK",
+      node: <BoardDemo />,
     }}
     sections={[
       {
-        eyebrow: "Board",
-        title: "Every job is a ticket.",
-        body: "Inbox, assigned, in progress, review, blocked. Each card says who has it, what it's waiting on and what it made. Group by column or by agent, comfortable or compact.",
-        points: [
-          "Drag a card to reassign, approve or send it back",
-          "Tasks, missions and agent sessions on one board",
-          "File missing, question, approval: the reason a card is stuck, in plain words",
-        ],
+        eyebrow: "Summary",
+        title: "Auto's read, before your coffee.",
+        body: "One paragraph on where things stand, live counters for working, queued and needs-you, and the cost per request, all on one screen.",
         shot: {
-          src: "/images/studio/02-board.png",
-          alt: "The board with tickets in columns",
-          caption: "Command Centre · Board",
+          src: "/images/studio/30-cc-summary.png",
+          alt: "The Command Centre summary with Auto's read, live counters and the needs-you list",
+          caption: "Command Centre · Summary · Auto's read, live counters and what needs you",
         },
       },
       {
@@ -39,7 +35,6 @@ const CommandCentre = () => (
           alt: "The calendar",
           caption: "Command Centre · Calendar",
         },
-        flip: true,
       },
       {
         eyebrow: "Questions",
@@ -65,12 +60,11 @@ const CommandCentre = () => (
           alt: "The Activity tab",
           caption: "Command Centre · Activity",
         },
-        flip: true,
       },
       {
         eyebrow: "Governance · the Harness",
         title: "Budgets, standards and approvals.",
-        body: "An action nobody has classified waits for a person. Money actions are denied by default. Plans carry render minutes and AI media caps. Audit, policy and compliance sit beside the approvals.",
+        body: "An action nobody has classified waits for a person. Money actions are denied by default. Plans carry render minutes and AI media caps.",
         points: [
           "Fail-safe: unknown means ask, never allow",
           "Grant or deny with an expiry",
@@ -85,13 +79,12 @@ const CommandCentre = () => (
       {
         eyebrow: "Analytics",
         title: "Know what it costs, and what to fix.",
-        body: "Cost per agent, cost per decision, plan usage and the cache paying for itself. Recommendations tell you what to change: agents with no skills, agents with no tools, where the money went.",
+        body: "Cost per agent, cost per decision, plan usage and the cache paying for itself. Recommendations tell you what to change.",
         shot: {
           src: "/images/studio/38-analytics-scrolled.png",
           alt: "Analytics recommendations: spend across requests, agents with no skills, agents with no tools",
           caption: "Analytics · Recommendations",
         },
-        flip: true,
       },
     ]}
     runs={{

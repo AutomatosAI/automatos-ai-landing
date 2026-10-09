@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Loader2 } from "lucide-react";
 import { useState, useRef, type ReactNode } from "react";
 import { Clerk } from "@clerk/clerk-js";
+import { SectionEyebrow } from "./SectionEyebrow";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -16,7 +16,7 @@ type CTASectionProps = {
 
 const defaultHeading = (
   <>
-    Your brand, <span className="brand-line">run by a team you can see.</span>
+    Your brand, <em className="font-normal">run by a team you can see.</em>
   </>
 );
 
@@ -25,13 +25,14 @@ export const CTASection = ({
   subheading = "Join the waitlist. When your workspace opens, upload a logo and tell Auto what you need.",
   eyebrowNumber = "11",
   eyebrowLabel = "Get started",
-  showEyebrow = true,
+  showEyebrow = false,
 }: CTASectionProps = {}) => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const clerkRef = useRef<Clerk | null>(null);
+  const reduced = useReducedMotion();
 
   const getClerk = async () => {
     if (clerkRef.current) return clerkRef.current;
@@ -51,19 +52,14 @@ export const CTASection = ({
 
     try {
       const clerk = await getClerk();
-      const result = await clerk.joinWaitlist({ emailAddress: email });
-      console.log("Waitlist result:", result);
+      await clerk.joinWaitlist({ emailAddress: email });
       setSubmitted(true);
       setEmail("");
     } catch (err: unknown) {
       console.error("Waitlist error:", err);
-      // Clerk errors carry an `errors` array; anything else falls back to its message.
-      const e = err as { errors?: { longMessage?: string; message?: string }[]; message?: string };
-      const msg =
-        e.errors?.[0]?.longMessage ||
-        e.errors?.[0]?.message ||
-        e.message ||
-        "Something went wrong. Please try again.";
+      // Clerk errors carry a user-facing `errors` array; anything else (config, network) stays in the console.
+      const e = err as { errors?: { longMessage?: string; message?: string }[] };
+      const msg = e.errors?.[0]?.longMessage || e.errors?.[0]?.message || "Something went wrong. Please try again.";
       setError(msg);
     } finally {
       setIsLoading(false);
@@ -71,84 +67,62 @@ export const CTASection = ({
   };
 
   return (
-    <section id="waitlist" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {showEyebrow && (
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-accent font-mono text-sm">{eyebrowNumber}</span>
-            <span className="text-muted-foreground text-sm">{eyebrowLabel}</span>
-          </div>
+    <section id="waitlist" className="mx-auto max-w-[1280px] scroll-mt-16 px-4 pb-24 pt-6 sm:px-8">
+      {showEyebrow && (
+        <div className="mb-6">
+          <SectionEyebrow n={eyebrowNumber} label={eyebrowLabel} />
+        </div>
+      )}
+      <motion.div
+        initial={reduced ? false : { opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center gap-5 rounded-[22px] border border-border bg-card px-6 py-14 text-center sm:px-12 sm:py-[72px]"
+      >
+        <h2 className="m-0 text-4xl font-medium leading-[1.05] sm:text-[54px]">{heading}</h2>
+        <p className="m-0 max-w-[600px] text-[17px] text-muted-foreground">{subheading}</p>
+
+        {submitted ? (
+          <span className="font-serif text-[26px] text-olive" role="status">
+            You're on the list. We'll email you when it's your turn.
+          </span>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex w-full max-w-[460px] flex-col gap-2.5 sm:flex-row">
+            <input
+              type="email"
+              required
+              aria-label="Email address"
+              placeholder="you@company.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isLoading}
+              className="flex-1 rounded-full border border-border bg-secondary px-5 py-[13px] text-[15px] text-foreground outline-none placeholder:text-muted-foreground focus:ring-2 focus:ring-ring"
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-primary px-[22px] py-[13px] text-[15px] font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-70"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Joining…
+                </>
+              ) : (
+                "Join waitlist →"
+              )}
+            </button>
+          </form>
         )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-card border border-primary/20 rounded-2xl p-8 lg:p-16 text-center"
-        >
-          {!submitted ? (
-            <>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                {heading}
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                {subheading}
-              </p>
-
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  required
-                  placeholder="you@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 w-full sm:w-auto px-5 py-3 rounded-full bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
-                  disabled={isLoading}
-                />
-                <Button
-                  type="submit"
-                  className="rounded-full px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap"
-                  disabled={isLoading}
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Joining...
-                    </>
-                  ) : (
-                    <>
-                      Join Waitlist
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </>
-                  )}
-                </Button>
-              </form>
-
-              {error && (
-                <p className="text-sm text-red-400 mt-3">{error}</p>
-              )}
-
-              <p className="text-xs text-muted-foreground mt-4">
-                No spam. We'll only email you when it's your turn.
-              </p>
-            </>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              className="py-4"
-            >
-              <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl sm:text-4xl font-bold mb-3">You're on the list!</h2>
-              <p className="text-muted-foreground text-lg">
-                We'll be in touch soon. Thanks for your interest in Automatos.
-              </p>
-            </motion.div>
-          )}
-        </motion.div>
-      </div>
+        {error && (
+          <p className="m-0 text-sm text-destructive" role="alert">
+            {error}
+          </p>
+        )}
+        <span className="text-[12.5px] text-muted-foreground">No spam. We'll only email you when it's your turn.</span>
+      </motion.div>
     </section>
   );
 };

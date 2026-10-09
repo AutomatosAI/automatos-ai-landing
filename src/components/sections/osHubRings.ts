@@ -1,4 +1,4 @@
-/* Ring sets for the hub hero (OsHub). */
+/* Ring sets for the hub hero (OsHub). Retired from this site's home (replaced by OsUnderneath); FAMILY_RINGS is for automatos.app, see REDESIGN-PLAN §7. */
 
 export type Ring = {
   key: "os" | "studio" | "outlets";

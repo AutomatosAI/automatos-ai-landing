@@ -1,0 +1,25 @@
+# studio.automatos.app: one host, two apps (REDESIGN-PLAN §11).
+# Railway terminates TLS; Caddy only routes plain HTTP to the two services
+# over the private network. The app is the default, so new app routes just
+# work; a new marketing page needs a line in @site.
+{
+	auto_https off
+	admin off
+}
+
+:{$PORT:8080} {
+	# Paths both apps use: signed-in visitors get the app, everyone else the site.
+	# Clerk sets __client_uat to a non-zero timestamp while a session is active.
+	@app_signed_in {
+		path / /marketplace /documents
+		header_regexp Cookie __client_uat=[1-9]
+	}
+
+	@site path / /marketplace /documents /auto /command-centre /socials /your-store /integrations /about /contact /privacy /terms /cookies /login /blog /blog/* /research /research/* /eu-ai-act /eu-ai-act/* /api/contact /site/*
+
+	route {
+		reverse_proxy @app_signed_in {$APP_UPSTREAM}
+		reverse_proxy @site {$SITE_UPSTREAM}
+		reverse_proxy {$APP_UPSTREAM}
+	}
+}
