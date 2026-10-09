@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { GITHUB_URL, SIGN_IN_URL } from "@/lib/links";
+import { GITHUB_URL } from "@/lib/links";
 import { SectionEyebrow } from "./SectionEyebrow";
 
 /* Tiers mirror the platform's config (basic / pro / business). Prices are placeholders: Gerard's call. */
@@ -65,11 +65,11 @@ const editions = [
   },
   {
     name: "SaaS",
-    badge: "LIVE",
+    badge: "BETA IN NOVEMBER",
     badgeClass: "text-olive",
-    text: "Hosted Automatos Studio. Nothing to install: sign in, upload your logo and tell Auto what you need.",
-    cta: "Sign in",
-    href: SIGN_IN_URL,
+    text: "Hosted Automatos Studio, opening as a beta in November. Nothing to install: sign in, upload your logo and tell Auto what you need.",
+    cta: "Join the waitlist",
+    href: "#waitlist",
   },
   {
     name: "Enterprise",
