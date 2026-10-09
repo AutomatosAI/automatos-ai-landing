@@ -33,7 +33,7 @@ export const SITE = {
   // Founder
   founder: {
     name: "Gerard Kavanagh",
-    url: "https://www.linkedin.com/in/gerardkavanagh/",
+    url: "https://www.linkedin.com/in/grkavanagh/",
   },
 
   // Pricing (tier marker, not price)
