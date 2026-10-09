@@ -67,11 +67,9 @@ export const Navbar = () => {
           {/* CTA Button & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
             <ModeToggle />
-            <Link to="/login">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                Sign in
-              </Button>
-            </Link>
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+              <Link to="/login">Sign in</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,11 +106,11 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/login" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+                <Link to="/login" onClick={() => setIsOpen(false)}>
                   Sign in
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         )}

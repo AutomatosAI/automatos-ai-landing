@@ -17,16 +17,14 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${SITE.url}/#organization`,
+    "@id": `${SITE.companyUrl}/#organization`,
     name: SITE.name,
-    legalName: SITE.legal.name,
-    url: SITE.url,
+    url: SITE.companyUrl,
     logo: {
       "@type": "ImageObject",
       url: SITE.logo,
     },
     description: SITE.description,
-    foundingDate: SITE.legal.foundingDate,
     founder: {
       "@type": "Person",
       name: SITE.founder.name,
