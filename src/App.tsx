@@ -27,6 +27,7 @@ import FromToolListsToOperatingGraphs from "./pages/research/FromToolListsToOper
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import { ExternalRedirect } from "@/components/ExternalRedirect";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { EU_AI_ACT_CHECKER_URL, EU_AI_ACT_URL } from "@/lib/links";
 import { AutomatosChat } from "@/components/widgets/AutomatosChat";
 
@@ -40,6 +41,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
