@@ -37,7 +37,7 @@ export const FAQSection = () => (
                 </span>
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
-            <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+            <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down motion-reduce:animate-none">
               <p className="m-0 px-[22px] pb-5 text-[15px] leading-relaxed text-muted-foreground">{faq.answer}</p>
             </AccordionPrimitive.Content>
           </AccordionPrimitive.Item>

@@ -14,7 +14,7 @@ export const SITE = {
   defaultTitle: "Automatos Studio | Run your business in your brand",
   titleTemplate: "%s | Automatos Studio",
   logo: "https://automatos.app/logos/automatos-ai-logo.png?v=2",
-  ogImage: "https://automatos.app/images/og-default.png?v=3",
+  ogImage: "https://studio.automatos.app/images/og-studio.png",
   themeColor: "#0a0a0a",
   locale: "en_US",
 
