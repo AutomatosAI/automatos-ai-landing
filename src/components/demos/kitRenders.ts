@@ -3,8 +3,10 @@
   To add a kit: render the same document types in it, crop page 1 to
   400×520 into public/images/documents/<kit>/, and add an entry here.
   19 Oct 2026: the address line was cut from the Automatos letterhead in
-  invoice.jpg and weekly-report.jpg (public copy gives no street address);
-  re-render with the brand kit's address empty to replace them.
+  invoice.jpg and weekly-report.jpg (public copy gives no street address),
+  saved as invoice-v2.jpg and weekly-report-v2.jpg: static files outside
+  dist/assets were served immutable for a year, so an edit needs a new URL.
+  Re-render with the brand kit's address empty to replace them.
 */
 export type KitRender = {
   name: string;
@@ -19,8 +21,8 @@ export const KIT_RENDERS: KitRender[] = [
     logo: "/brand/automatos-mark-hi.png",
     note: "RENDERED 6–7 OCT 2026",
     docs: [
-      { src: "/images/documents/invoice.jpg", label: "Invoice", alt: "Invoice INV-0101 on the Automatos letterhead, with a tinted line-item header" },
-      { src: "/images/documents/weekly-report.jpg", label: "Weekly report", alt: "Weekly Market Report with revenue, new customers and NPS figures in the accent colour" },
+      { src: "/images/documents/invoice-v2.jpg", label: "Invoice", alt: "Invoice INV-0101 on the Automatos letterhead, with a tinted line-item header" },
+      { src: "/images/documents/weekly-report-v2.jpg", label: "Weekly report", alt: "Weekly Market Report with revenue, new customers and NPS figures in the accent colour" },
       { src: "/images/documents/harbour-log.jpg", label: "Newsletter", alt: "The Harbour Log, a coffee roaster's newsletter with a large sailboat mark" },
       { src: "/images/documents/brand-board.jpg", label: "Brand board", alt: "The Automatos brand board: colours, logo, type scale and spacing on cream paper" },
     ],

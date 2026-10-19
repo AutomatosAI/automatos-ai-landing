@@ -1,6 +1,6 @@
 import express from "express";
 import { createTransport } from "nodemailer";
-import { resolve, dirname } from "path";
+import { resolve, dirname, sep } from "path";
 import { fileURLToPath } from "url";
 import { readFileSync, existsSync } from "fs";
 import compression from "compression";
@@ -82,13 +82,20 @@ app.get("/eu-ai-act/checker", (_req, res) => res.redirect(301, "https://automato
 
 // Serve static files from Vite build output
 const distPath = resolve(__dirname, "dist");
+// Vite content-hashes everything under dist/assets, so a changed file gets a new name.
+const hashedAssetsPath = resolve(distPath, "assets") + sep;
+const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
 app.use(express.static(distPath, {
-  maxAge: "1y",
-  immutable: true,
   setHeaders(res, filePath) {
-    // Don't cache index.html so deploys take effect immediately
     if (filePath.endsWith("index.html")) {
+      // Don't cache index.html so deploys take effect immediately
       res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+    } else if (filePath.startsWith(hashedAssetsPath)) {
+      res.setHeader("Cache-Control", IMMUTABLE_CACHE);
+    } else {
+      // Files copied from public/ keep their names across deploys (images, llms.txt):
+      // revalidate with the ETag so an edit in place reaches browsers.
+      res.setHeader("Cache-Control", "no-cache");
     }
   },
 }));

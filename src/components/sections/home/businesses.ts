@@ -7,7 +7,8 @@ import { GITHUB_URL } from "@/lib/links";
   19 Oct 2026: two renders were trimmed, not re-rendered: owner-letter.jpg lost
   its letterhead address line, and developer-apache.jpg lost "Prefer not to run
   it yourself? The hosted edition is at automatos.app." (hosted opens as a beta
-  in November). Re-render both in Studio to replace them.
+  in November). Both are saved under -v2 names so browsers holding the old
+  immutable copies fetch the new ones. Re-render both in Studio to replace them.
 */
 export type Business = {
   id: string;
@@ -38,7 +39,7 @@ export const BUSINESSES: Business[] = [
     ],
     logos: [logo("Gmail"), logo("Google Calendar", "GoogleCalendar"), logo("Zoom")],
     link: { label: "See Auto", href: "/auto" },
-    made: { src: "/images/use-cases/made/owner-letter.jpg", alt: "A branded letter on the Automatos letterhead, rendered by Studio" },
+    made: { src: "/images/use-cases/made/owner-letter-v2.jpg", alt: "A branded letter on the Automatos letterhead, rendered by Studio" },
   },
   {
     id: "shop-cafe",
@@ -118,6 +119,6 @@ export const BUSINESSES: Business[] = [
     ],
     logos: [logo("GitHub"), logo("GitLab"), logo("Docker")],
     link: { label: "Get it on GitHub", href: GITHUB_URL },
-    made: { src: "/images/use-cases/made/developer-apache.jpg", alt: "Social card: Apache 2.0, self-host it with docker compose" },
+    made: { src: "/images/use-cases/made/developer-apache-v2.jpg", alt: "Social card: Apache 2.0, self-host it with docker compose" },
   },
 ];

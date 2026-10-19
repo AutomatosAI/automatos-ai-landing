@@ -131,12 +131,13 @@ export const REQUESTS: { text: string; agent: number; reply: string }[] = [
   roaster) and Automatos. Each slot is a real 4:5 render from the platform
   (Socials, Sept–Oct 2026), resized to 432×540; SAT reuses the 360×450 café
   render from the home page. On 19 Oct 2026 the WED card's "On your machine or
-  hosted." line was cut from the image (hosted opens as a beta in November), and
+  hosted." line was cut from the image (hosted opens as a beta in November; saved
+  as wed-hire-an-ai-team-v2.jpg so cached copies are not reused), and
   the Web Summit card left the week (it gave the wrong day).
 */
 export const SLOTS: { day: string; src: string; alt: string }[] = [
   { day: "TUE", src: "/images/socials/tue-flat-white-review.jpg", alt: "Harbourline review card over a coffee photo: “Best flat white in town, and the beans are roasted down the road.”" },
-  { day: "WED", src: "/images/socials/wed-hire-an-ai-team.jpg", alt: "Automatos highlights card: Hire an AI team." },
+  { day: "WED", src: "/images/socials/wed-hire-an-ai-team-v2.jpg", alt: "Automatos highlights card: Hire an AI team." },
   { day: "THU", src: "/images/socials/thu-september-sales.jpg", alt: "Harbourline stat card: 46% of all retail bags sold in September were Harbour Blend." },
   { day: "FRI", src: "/images/socials/fri-grassy-to-chocolatey.jpg", alt: "Harbourline before-and-after card of roasted beans: From grassy to chocolatey." },
   { day: "SAT", src: "/images/use-cases/made/cafe-offer.jpg", alt: "Harbourline offer card for new café accounts: £16/kg for the first 5 kg of Harbour Blend." },
