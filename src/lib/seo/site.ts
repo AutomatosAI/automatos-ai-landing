@@ -7,7 +7,9 @@
  * The Automatos AI organisation: the same JSON-LD entity on automatos.app,
  * studio.automatos.app, academy.automatos.app and markets.automatos.app.
  * The logo is served by automatos.app; sameAs lists only the profiles in the
- * automatos.app footer (X, Instagram, LinkedIn, GitHub).
+ * automatos.app footer (X, Instagram, LinkedIn), with GitHub as the org profile,
+ * github.com/AutomatosAI. The footer's GitHub icon still links the repo; that is
+ * UI, not sameAs.
  */
 export const ORGANIZATION = {
   id: "https://automatos.app/#organization",
@@ -18,7 +20,7 @@ export const ORGANIZATION = {
     "https://x.com/automatosai",
     "https://www.instagram.com/automatosai",
     "https://www.linkedin.com/company/automatos-ai",
-    "https://github.com/AutomatosAI/automatos-ai",
+    "https://github.com/AutomatosAI",
   ],
 } as const;
 

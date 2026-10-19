@@ -41,7 +41,7 @@ describe("Organization structured data", () => {
         "https://x.com/automatosai",
         "https://www.instagram.com/automatosai",
         "https://www.linkedin.com/company/automatos-ai",
-        "https://github.com/AutomatosAI/automatos-ai",
+        "https://github.com/AutomatosAI",
       ],
     });
   });
