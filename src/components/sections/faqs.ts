@@ -1,5 +1,12 @@
-/* The home page FAQ. The FAQPage structured data reads the same list, so what crawlers see matches the page. */
-export const HOME_FAQS: { question: string; answer: string }[] = [
+import { EU_AI_ACT_URL } from "@/lib/links";
+import type { FaqItem } from "@/lib/seo/structured-data";
+
+/*
+  The home page FAQ. The FAQPage structured data reads the same list, so what
+  crawlers see matches the page; an item's link is rendered after its answer
+  and its absolute URL is appended to the structured-data answer.
+*/
+export const HOME_FAQS: FaqItem[] = [
   {
     question: "How does the pricing work?",
     answer:
@@ -27,6 +34,7 @@ export const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "Is Automatos EU AI Act compliant?",
     answer:
-      "Not as a whole, and we won't claim it. EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now. Our posture page at automatos.app/eu-ai-act says what is built and what isn't.",
+      "Not as a whole, and we won't claim it. EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now. Our posture page says what is built and what isn't.",
+    link: { label: "Our EU AI Act posture →", href: EU_AI_ACT_URL },
   },
 ];

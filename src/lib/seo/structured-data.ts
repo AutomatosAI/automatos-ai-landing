@@ -77,15 +77,20 @@ export function softwareApplicationSchema() {
     operatingSystem: "Web",
     url: SITE.url,
     image: SITE.ogImage,
-    offers: {
+    offers: SITE.offers.plans.map((plan) => ({
       "@type": "Offer",
+      name: plan.name,
       category: SITE.offers.category,
+      price: plan.monthlyUsd,
       priceCurrency: "USD",
+      description: SITE.offers.priceModel,
       priceSpecification: {
-        "@type": "PriceSpecification",
-        description: SITE.offers.priceModel,
+        "@type": "UnitPriceSpecification",
+        price: plan.monthlyUsd,
+        priceCurrency: "USD",
+        unitText: "MONTH",
       },
-    },
+    })),
     featureList: [
       "Multi-agent orchestration",
       "Sequential mission coordinator",
@@ -109,6 +114,8 @@ export function softwareApplicationSchema() {
 export interface FaqItem {
   question: string;
   answer: string;
+  /** Rendered after the answer on the page; its absolute URL ends the structured-data answer. */
+  link?: { label: string; href: string };
 }
 
 export function faqSchema(items: FaqItem[]) {
@@ -120,7 +127,7 @@ export function faqSchema(items: FaqItem[]) {
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: item.link ? `${item.answer} ${item.link.href}` : item.answer,
       },
     })),
   };
