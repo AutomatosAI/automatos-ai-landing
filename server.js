@@ -88,18 +88,22 @@ const distPath = resolve(__dirname, "dist");
 // Vite content-hashes everything under dist/assets, so a changed file gets a new name.
 const hashedAssetsPath = resolve(distPath, "assets") + sep;
 const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
-const PUBLIC_FILE_CACHE = "public, max-age=3600";
+const HTML_CACHE = "no-store, no-cache, must-revalidate";
+// Images, fonts and media copied from public/ keep the year-long cache they had before
+// 19 Oct 2026: an edited image gets a new file name (the 19 Oct trims are *-v2.jpg).
+const MEDIA_FILE = /\.(png|jpe?g|gif|webp|avif|svg|ico|mp4|webm|woff2?|ttf|otf|pdf)$/i;
+// Text files copied from public/ (llms.txt, robots.txt, sitemap.xml, rss.xml) are edited
+// in place, so they are cached for an hour.
+const TEXT_FILE_CACHE = "public, max-age=3600";
 app.use(express.static(distPath, {
   setHeaders(res, filePath) {
-    if (filePath.endsWith("index.html")) {
-      // Don't cache index.html so deploys take effect immediately
-      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
-    } else if (filePath.startsWith(hashedAssetsPath)) {
+    if (filePath.endsWith(".html")) {
+      // Don't cache HTML so deploys take effect immediately
+      res.setHeader("Cache-Control", HTML_CACHE);
+    } else if (filePath.startsWith(hashedAssetsPath) || MEDIA_FILE.test(filePath)) {
       res.setHeader("Cache-Control", IMMUTABLE_CACHE);
     } else {
-      // Files copied from public/ keep their names across deploys (images, llms.txt):
-      // cache for an hour so an edit in place reaches browsers within that hour.
-      res.setHeader("Cache-Control", PUBLIC_FILE_CACHE);
+      res.setHeader("Cache-Control", TEXT_FILE_CACHE);
     }
   },
 }));
@@ -111,7 +115,7 @@ app.use(STATIC_PREFIXES, (_req, res) => res.sendStatus(404));
 
 // SPA fallback — all routes serve index.html (React Router handles routing)
 app.get("/{*splat}", (_req, res) => {
-  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+  res.setHeader("Cache-Control", HTML_CACHE);
   res.sendFile(resolve(distPath, "index.html"));
 });
 
