@@ -117,7 +117,7 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 1. **Wordmark pattern:** sailboat mark + "Automatos" + product name. Decide one treatment. Today: Studio and automatos.app use the serif with an italic second word; Academy uses a sans two-weight wordmark. Mark is orange on Academy/Studio, white on automatos.app.
 2. **One copyright line:** "© 2026 Automatos AI" (brand only, no Ltd) + product line + licence where relevant. Today there are three names: "Automatos AI" (Studio), "AUTOMATOS" (Academy), "Automatos Labs" (automatos.app).
 3. **"Powered by Automatos AI"** pill linking to automatos.app. Studio has it; Academy has "Built on Automatos agents" (convert).
-4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Automatos Markets, Widgets, Shopify, Enterprise; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
+4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Automatos Markets, Widgets, Shopify, Enterprise · coming soon; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
 5. **Same social icons in the same order.** Legal links point to one canonical set on automatos.app unless a product needs its own.
 
 **Can differ per product**
@@ -142,7 +142,7 @@ Each product site sells only itself and carries its own pricing. The "Powered by
 
 - Hero: "One OS. Any interface." with the family ring hub (`FAMILY_RINGS` in this repo's `osHubRings.ts`, see §7).
 - The OS: API-first, the modules (agents, memory, RAG, NL2SQL, graphs, documents, socials, the harness), MCP, Apache-2.0 open source.
-- Enterprise: the standard card, Coming soon · Contact Automatos. OIDC, Kubernetes, Azure and AWS plugins and monitoring appear only as "planned", with no dates. The bank PoC and Web Summit audience.
+- Enterprise: the standard card, Coming soon · Contact Automatos. OIDC, Kubernetes, Azure and AWS plugins and monitoring appear only as "planned", with no dates.
 - The family: Studio, Academy, Markets, Widgets & Shopify (a Studio surface), BudStacks as a partner. Each card links out.
 - Developers: the widget SDK as code, the API, MCP, docs, GitHub, DeepWiki.
 - Research, field notes, the EU AI Act posture, About, Contact.
