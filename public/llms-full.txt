@@ -15,7 +15,7 @@ Automatos AI is a **digital workforce platform**. Instead of a single chatbot, c
 
 Each agent has:
 
-- A **role and persona** (e.g. Scout, Sentinel, Marketer, Recruiter)
+- A **role and persona** (for example a researcher, a writer or a Shopify specialist)
 - **Skills** — reusable capability packages defined in a `SKILL.md` contract (frontmatter + instructions + tool mappings)
 - **Tools** — real-world actions via Composio (Gmail, Slack, LinkedIn, GitHub, Notion, Shopify, Stripe, Google Drive and the rest of 1,000+ apps) plus workspace tools (file I/O, git, shell, grep) and platform tools (agent management, memory, reports)
 - **A chosen LLM** — 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others; BYOK supported
@@ -28,7 +28,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 1. **AI is a workforce, not a wrapper.** Chatbots answer questions; agents get work done. Automatos is built around ownership of outcomes — agents submit reports, hit budgets, escalate to humans when stuck, and improve over time.
 2. **Non-engineers should author AI workers.** The Mission Zero onboarding wizard sets up a workspace, picks agents, connects tools, and launches a first mission end-to-end with no code.
 3. **Governance you can see.** Every agent action goes to an append-only audit log, budgets hard-stop runaway spend, and anything that spends money or publishes waits for a person. EU AI Act work is in progress; the posture page says what is built and what is not.
-4. **Composable, not closed.** Skills, agents, playbooks, and whole workspace templates are installable marketplace packages. A workspace can be cloned and customised.
+4. **Composable, not closed.** Skills, agents, Playbooks and packages install from the marketplace. A workspace can be cloned and customised.
 
 ## Platform Surfaces
 
@@ -61,13 +61,13 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 - **Frontend** — Next.js app serving workspaces, chat, playbooks, marketplace, and admin consoles.
 - **Workspaces** — Per-tenant isolated environments with their own documents, agents, playbooks, tools, and budgets. Agents cannot cross workspace boundaries.
 - **Storage** — Documents on S3 (`s3://automatos-ai/workspaces/{workspace_id}/documents/`), vectors on S3 Vectors (eu-west-1), metadata on PostgreSQL.
-- **LLM Layer** — Unified `LLMManager` with providers: OpenAI, Anthropic, Google, Grok, Azure, AWS Bedrock, HuggingFace, OpenRouter. BYOK keys are encrypted per-workspace.
+- **LLM Layer** — Unified `LLMManager`: 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others. BYOK keys are encrypted per-workspace.
 - **Tool Layer** — `get_tools_for_agent()` unifies three registries: core ToolRegistry, platform ActionRegistry (agent management, reports, marketplace installs), and workspace tools (file I/O via the workspace worker).
 - **Memory** — Field memory (semantic KV by topic), document RAG (S3 Vectors + Postgres metadata), report store (persistent markdown reports in S3 with DB index), and scratchpad (ephemeral Redis).
 
 ## Use Cases & GTM
 
-- **Shopify operations** — the Shopify Management and Shopify Development packages in the Studio marketplace, covering catalogue, orders, marketing, customer ops (targeting 4.6M Shopify stores)
+- **Shopify operations** — the Shopify Management and Shopify Development packages in the Studio marketplace, covering catalogue, orders, marketing, customer ops
 - **LinkedIn recruitment** — Sourcing, outreach, and pipeline management agents
 - **Research & analysis** — Multi-agent research missions with cross-agent report reading
 - **Content & marketing** — Newsletter, social, SEO agents publishing via real platform tools
@@ -79,8 +79,8 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 - **Per-agent persistent reports** (`platform_submit_report`) readable across agents — the marketer can read the researcher's output
 - **Skill contracts** (`SKILL.md`) with priority-ordered context injection (max 3000 tokens per skill section)
 - **Budget-aware execution** with hard stops and human-in-the-loop escalation
-- **Workspace templates** — install an entire business function (agents + skills + playbooks + dashboards) in one click
-- **BYOK with cascading installs** — installing a marketplace agent auto-installs its required model, skills, plugins, and tool assignments to the target workspace
+- **Packages** — install a starter team (agents, Playbooks and a guided setup) in one go: Socials, Shopify Management and Shopify Development
+- **BYOK with cascading installs** — installing a marketplace agent auto-installs its required model, skills and tool assignments to the target workspace
 
 ## Pricing
 
