@@ -4,11 +4,14 @@ import { GITHUB_URL } from "@/lib/links";
   "Who it's for": the six businesses from the v1 Industries section, copy
   carried over from the redesign branch. Portraits are AI illustrations (the
   card says so); each `made` is a real render from Studio (c1 test workspace).
-  19 Oct 2026: two renders were trimmed, not re-rendered: owner-letter.jpg lost
-  its letterhead address line, and developer-apache.jpg lost "Prefer not to run
-  it yourself? The hosted edition is at automatos.app." (hosted opens as a beta
-  in November). Both are saved under -v2 names so browsers holding the old
-  immutable copies fetch the new ones. Re-render both in Studio to replace them.
+  19 Oct 2026: developer-apache.jpg was trimmed, not re-rendered: it lost
+  "Prefer not to run it yourself? The hosted edition is at automatos.app."
+  (hosted opens as a beta in November), saved as developer-apache-v2.jpg so
+  browsers holding the old immutable copy fetch the new one. The owner card's
+  letter (owner-letter.jpg, then owner-letter-v2.jpg) was removed because its
+  letterhead shows a personal phone number and email; the card shows the
+  Harbour Log newsletter until a letter is re-rendered in a brand kit with no
+  personal contact details.
 */
 export type Business = {
   id: string;
@@ -39,7 +42,7 @@ export const BUSINESSES: Business[] = [
     ],
     logos: [logo("Gmail"), logo("Google Calendar", "GoogleCalendar"), logo("Zoom")],
     link: { label: "See Auto", href: "/auto" },
-    made: { src: "/images/use-cases/made/owner-letter-v2.jpg", alt: "A branded letter on the Automatos letterhead, rendered by Studio" },
+    made: { src: "/images/documents/harbour-log.jpg", alt: "The Harbour Log, a coffee roaster's newsletter, rendered by Studio from its brand kit" },
   },
   {
     id: "shop-cafe",
