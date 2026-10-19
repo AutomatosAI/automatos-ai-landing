@@ -2,7 +2,7 @@
 
 Reviewed 6 Oct 2026 against this repo (last commit 16 Jul 2026, `b54f0bc`) and the platform on `main` `dfda0f027`. Nothing here is built yet; this is the map for working on it locally.
 
-> Superseded 18-19 Oct 2026 for prices, dates and the copyright line: Own keys $9 / Pro $29 / Business $99 a month / Enterprise coming soon (beta pricing, not charged until billing opens); Web Summit Lisbon is 10–12 November 2026 with opening night on 9 November; the copyright line is "© 2026 Automatos AI" with no Ltd.
+> Superseded 18-19 Oct 2026 for prices, dates, the copyright line and Enterprise wording (the standard coming-soon card): Own keys $9 / Pro $29 / Business $99 a month / Enterprise coming soon (beta pricing, not charged until billing opens); Web Summit Lisbon is 10–12 November 2026 with opening night on 9 November; the copyright line is "© 2026 Automatos AI" with no Ltd.
 
 ## 1. What's here and what's stale
 
@@ -91,7 +91,7 @@ Mechanics: a small Playwright script in `scripts/screenshots/` (own `package.jso
 ## 7. Brand architecture (agreed 6 Oct 2026)
 
 - **Automatos AI** is the brand. **automatos.app** is the marketing face.
-- **Automatos OS** is the headless backend that drives everything: API first, modules (RAG, NL2SQL, graphs, memory, agents, documents, socials), MCP soon, modules later swappable for your own. Enterprise to come: OIDC, Kubernetes, Azure and AWS plugins, monitoring.
+- **Automatos OS** is the headless backend that drives everything: API first, modules (RAG, NL2SQL, graphs, memory, agents, documents, socials), MCP soon, modules later swappable for your own. Enterprise is coming soon (planned: OIDC, Kubernetes, Azure and AWS plugins, monitoring).
 - **Studio** is the UI to manage the OS and your business. Because the OS is API-first, other UIs can follow.
 - **Powered by Automatos**, branded on every one: Market Intelligence, Academy (web and app), widgets, Shopify, BudStacks.
 - Line for the site: **one OS, any interface.**
@@ -142,7 +142,7 @@ Each product site sells only itself and carries its own pricing. The "Powered by
 
 - Hero: "One OS. Any interface." with the family ring hub (`FAMILY_RINGS` in this repo's `osHubRings.ts`, see §7).
 - The OS: API-first, the modules (agents, memory, RAG, NL2SQL, graphs, documents, socials, the harness), MCP, Apache-2.0 open source.
-- Enterprise: OIDC, Kubernetes, Azure and AWS plugins, monitoring. The bank PoC and Web Summit audience.
+- Enterprise: the standard card, Coming soon · Contact Automatos. OIDC, Kubernetes, Azure and AWS plugins and monitoring appear only as "planned", with no dates. The bank PoC and Web Summit audience.
 - The family: Studio, Academy, Markets, Widgets & Shopify (a Studio surface), BudStacks as a partner. Each card links out.
 - Developers: the widget SDK as code, the API, MCP, docs, GitHub, DeepWiki.
 - Research, field notes, the EU AI Act posture, About, Contact.
