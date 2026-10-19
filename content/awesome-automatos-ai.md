@@ -68,9 +68,9 @@ Automatos AI connects to 1,000+ apps through [Composio](https://composio.dev) pl
 
 ## Compliance
 
-- [EU AI Act posture](https://automatos.app/eu-ai-act) — EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now.
+- [EU AI Act posture](https://automatos.app/eu-ai-act) — EU AI Act work is in progress. Social posts wait for your approval before they publish, board work can be set to ask before it runs, and every action lands in an append-only audit log, all in the product today. The Article 50 notices and the marking of generated media are being built now.
 - [Free EU AI Act compliance checker](https://automatos.app/eu-ai-act/checker) — classify any AI system into prohibited / high / limited / minimal risk in 5 questions.
-- Platform controls — an append-only audit log, human approval before anything publishes or spends, and risk classes with matching oversight.
+- Platform controls — an append-only audit log, social posts that wait for your approval before they publish, board work that can be set to ask before it runs, and risk classes with matching oversight when the policy plane is switched on.
 
 ## Research
 

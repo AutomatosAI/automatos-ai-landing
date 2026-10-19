@@ -30,8 +30,8 @@ export const HeroDay = () => {
             Your business, <em className="font-normal">running all day</em> in your brand.
           </h1>
           <p className={heroLede}>
-            Tell Auto once. Agents handle invoices, replies, posts and reports around the clock, and anything that
-            leaves the building waits for your yes.
+            Tell Auto once. Agents handle invoices, replies, posts and reports around the clock. Social posts wait for
+            your yes, and board work can be set to ask before it runs.
           </p>
           <HeroCtas />
         </div>

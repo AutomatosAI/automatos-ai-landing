@@ -64,9 +64,9 @@ const CommandCentre = () => (
       {
         eyebrow: "Governance · the Harness",
         title: "Budgets, standards and approvals.",
-        body: "An action nobody has classified waits for a person. Money actions are denied by default. Plans carry render minutes and AI media caps.",
+        body: "Board work can be set to ask before it runs, and social posts wait for your approval before they publish. Money actions are denied by default. Plans carry render minutes and AI media caps.",
         points: [
-          "Fail-safe: unknown means ask, never allow",
+          "Risk classes and oversight tiers when the policy plane is on",
           "Grant or deny with an expiry",
           "Audit, policy and compliance tabs",
         ],

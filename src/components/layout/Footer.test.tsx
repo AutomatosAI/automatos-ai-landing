@@ -17,6 +17,14 @@ const mount = () =>
     </MemoryRouter>,
   );
 
+describe("Footer contact link", () => {
+  it("sends Contact to the company contact form, the one contact route (facts sheet 8b)", () => {
+    mount();
+    const contact = screen.getByRole("link", { name: "Contact" });
+    expect(contact.getAttribute("href")).toBe("https://automatos.app/contact");
+  });
+});
+
 describe("Footer family row", () => {
   it("lists the four family sites in order under its label", () => {
     mount();

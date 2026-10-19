@@ -27,7 +27,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 
 1. **AI is a workforce, not a wrapper.** Chatbots answer questions; agents get work done. Automatos is built around ownership of outcomes — agents submit reports, hit budgets and escalate to humans when stuck, and a person decides what changes.
 2. **Non-engineers should author AI workers.** A new hosted workspace starts with Auto and a Brand Designer. Auto builds the rest of your team during onboarding, from a package or from scratch. A fresh local install starts with five agents: Auto, a Brand Designer and a starter team of Researcher, Writer and Analyst.
-3. **Governance you can see.** Every agent action goes to an append-only audit log, budgets hard-stop runaway spend, and anything that spends money or publishes waits for a person. EU AI Act work is in progress; the posture page says what is built and what is not.
+3. **Governance you can see.** Every agent action goes to an append-only audit log, a mission pauses when it reaches its budget, social posts wait for your approval before they publish, and board work can be set to ask before it runs. EU AI Act work is in progress; the posture page says what is built and what is not.
 4. **Composable, not closed.** Skills, plugins, agents, Playbooks and packages install from the marketplace. Installed agents and Playbooks are your own copies to customise.
 
 ## Platform Surfaces
@@ -51,7 +51,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 ### Company & Compliance
 
 - `https://automatos.app` — About Automatos AI: the company site
-- `/contact` — Pilots, partnerships, support
+- `https://automatos.app/contact` — The contact form for pilots, partnerships and support (Studio's `/contact` redirects there)
 - `https://automatos.app/eu-ai-act` — The EU AI Act posture: what is built today and what is not yet
 - `/privacy`, `/terms`, `/cookies`
 

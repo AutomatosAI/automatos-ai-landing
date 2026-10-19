@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { GITHUB_URL } from "@/lib/links";
+import { CONTACT_URL, GITHUB_URL } from "@/lib/links";
 import { SectionEyebrow } from "./SectionEyebrow";
 
 /*
@@ -47,7 +47,7 @@ const plans = [
       { name: "A larger monthly credit allowance once billing opens", included: true },
     ],
     cta: "Contact Automatos",
-    href: "/contact",
+    href: CONTACT_URL,
     popular: false,
   },
 ];
@@ -76,7 +76,7 @@ const editions = [
     badgeClass: "text-muted-foreground",
     text: "The same OS in your own cluster, with a licence, committed credits and consultancy. We're building it now. Tell us what you need.",
     cta: "Contact Automatos",
-    href: "/contact",
+    href: CONTACT_URL,
   },
 ];
 

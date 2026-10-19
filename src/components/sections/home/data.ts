@@ -94,7 +94,7 @@ export const OS_MODULES: OsModule[] = [
   {
     name: "Harness",
     title: "Guardrails around every action.",
-    body: "Budgets, approvals and an append-only audit log wrap every agent action. Anything that spends money or publishes waits for a person.",
-    points: ["Stops cleanly at a budget", "Five risk classes, three levels of oversight", "Append-only audit log"],
+    body: "Budgets, approvals and an append-only audit log around agent work. Social posts wait for your approval before they publish, and board work can be set to ask before it runs.",
+    points: ["Stops cleanly at a budget", "Five risk classes, three levels of oversight, when the policy plane is on", "Append-only audit log"],
   },
 ];

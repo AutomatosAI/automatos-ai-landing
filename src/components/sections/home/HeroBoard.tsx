@@ -9,8 +9,8 @@ export const HeroBoard = () => (
         Tell Auto what you need. <em className="font-normal">Watch the board fill.</em>
       </h1>
       <p className={`${heroLede} max-w-[640px]`}>
-        Every job becomes a ticket. Agents pick it up, make it in your brand, and stop at your desk before anything goes
-        out.
+        Every job becomes a ticket. Agents pick it up and make it in your brand. Board work can be set to ask before it
+        runs, and social posts wait for your yes.
       </p>
       <HeroCtas />
     </div>
