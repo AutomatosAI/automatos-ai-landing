@@ -14,7 +14,7 @@ const WIDGET_SNIPPET = `<script src="https://widgets.automatos.app/v0/widget.glo
       apiKey: "ak_pub_…",        // locked to your domains
       widget: "chat",            // or "blog"
       position: "bottom-right",
-      greeting: "Hi! Ask us anything.",
+      greeting: "Hi, I'm the store's AI assistant. Ask me anything.",
     });
   });
 </script>`;
@@ -68,9 +68,9 @@ const YourStore = () => (
         },
       },
       {
-        eyebrow: "The Shopify app",
+        eyebrow: "The Shopify app, next",
         title: "Four blocks in your theme editor.",
-        body: "Install Automatos from Shopify and four blocks appear in your theme: a support chat, product Q&A, a blog and a review summary. The chat knows which product, collection and cart the shopper is looking at, and can open the conversation itself when a cart sits idle. Prefer your own setup? Connect your store with your own Admin token instead.",
+        body: "Today you connect your store with your own Admin token. Next: the Automatos app for the Shopify App Store, with four blocks for your theme: a support chat, product Q&A, a blog and a review summary. Its chat will know which product, collection and cart the shopper is looking at, and will be able to open the conversation itself when a cart sits idle.",
         points: [
           "Support chat with the page, product and cart in context",
           "Product Q&A on every product page",

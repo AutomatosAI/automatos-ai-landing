@@ -14,7 +14,7 @@ export const HeroTellAuto = () => {
           <span className="whitespace-nowrap rounded bg-accent px-[7px] py-0.5 text-[11px] font-semibold text-accent-foreground">
             Open source
           </span>
-          <span>Automatos Studio · powered by Automatos AI</span>
+          <span>Automatos OS underneath · Studio beta opens November 2026</span>
         </span>
         <h1 className={heroH1}>
           Tell Auto what you need. <em className="font-normal">Your business, in your brand.</em>

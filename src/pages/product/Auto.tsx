@@ -32,7 +32,7 @@ const Auto = () => (
         body: "Writers, a Brand Designer, a Social Media Director, Shopify specialists, builders. Each has its own model, skills and tools, and runs on your own CLI subscription where it can.",
         points: [
           "Swap any agent's model in one click",
-          "Skills and plugins from the marketplace",
+          "Skills from the marketplace",
           "Org chart, configuration and a success record per agent",
         ],
         shot: {

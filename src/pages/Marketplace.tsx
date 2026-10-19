@@ -60,7 +60,7 @@ const Marketplace = () => (
       {
         eyebrow: "Applications, models, capabilities",
         title: "The rest of the shelf.",
-        body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills and plugins that teach an agent a trade.",
+        body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills that teach an agent a trade.",
         points: [
           "1,000+ apps through Composio, connected with your own accounts",
           "Any model from the catalogue, routed per agent",
@@ -68,7 +68,7 @@ const Marketplace = () => (
         ],
         shot: {
           src: "/images/studio/26-marketplace-capabilities.png",
-          alt: "The Capabilities tab: skills and plugins",
+          alt: "The Capabilities tab: skills",
           caption: "Marketplace · Capabilities · the skills library, imported from GitHub",
         },
       },

@@ -361,7 +361,7 @@ const AutomatosNotWrapper = () => {
                 agent, per mission, per workspace.
               </p>
               <p>
-                This is why people who run real workloads on us stay. On day
+                This is the point of running real workloads on it: on day
                 one you save time. By day thirty you're saving money. By day
                 ninety the cost curve looks nothing like a chatbot bill.
               </p>
