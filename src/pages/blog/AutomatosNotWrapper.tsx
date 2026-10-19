@@ -118,10 +118,9 @@ const AutomatosNotWrapper = () => {
               <p>
                 A wrapper is a UI that calls an API. What we've built is an
                 operating system for autonomous work — agents, missions,
-                memory, scheduling, channels, governance, telemetry, an
-                economy of skills, and a self-improving loop that watches its
-                own behaviour and rewrites its own playbooks. That's not a
-                wrapper. That's infrastructure.
+                memory, scheduling, channels, governance, telemetry and an
+                economy of skills. That's not a wrapper. That's
+                infrastructure.
               </p>
               <p>
                 I'll walk you through what's actually inside, what the
@@ -170,10 +169,9 @@ const AutomatosNotWrapper = () => {
                 The fundamental unit. An Automatos agent is not a prompt with
                 a name. It's a configured entity with a persona, a set of
                 skills, a set of assigned tools, a memory scope, a cost
-                budget, an output contract, and a lifecycle. You can spin up
-                an agent in thirty seconds from the marketplace, or you can
-                design one from scratch with specific LLM routing rules per
-                task type.
+                budget, an output contract, and a lifecycle. You can install
+                an agent from the marketplace, or you can design one from
+                scratch with specific LLM routing rules per task type.
               </p>
               <p>
                 The platform's agent factory handles creation, registration,
@@ -282,23 +280,10 @@ const AutomatosNotWrapper = () => {
               <h3>The Harness</h3>
               <p>The harness is the part that gets me out of bed.</p>
               <p>
-                Most AI platforms ship, get feedback, and improve through
-                human engineers shipping code. The Automatos harness watches
-                what works, what fails, and what gets promoted to reuse —
-                then it rewrites the playbooks that agents use, on its own,
-                with the engineer in the loop only to approve.
-              </p>
-              <p>
-                When a pattern proves itself across multiple successful
-                missions, the harness promotes it to a first-class skill.
-                When a playbook keeps failing the same way, the harness flags
-                it, proposes a fix, and learns from the edit. The system is
-                built to compound. Every mission the platform runs makes
-                future missions a little better.
-              </p>
-              <p>
-                This is what "self-optimizing" actually means. Not "AI
-                buzzword." A feedback loop with teeth.
+                The harness is a weekly review loop over what the platform
+                did. Today it is report-only: it writes up what it found, and
+                a person decides what to change. It does not rewrite a
+                playbook, an agent or a skill on its own.
               </p>
 
               <h3>Integrations, channels, webhooks</h3>
@@ -360,26 +345,22 @@ const AutomatosNotWrapper = () => {
                 the stakes justify it. Budget controls let you cap spend per
                 agent, per mission, per workspace.
               </p>
-              <p>
-                This is the point of running real workloads on it: on day
-                one you save time. By day thirty you're saving money. By day
-                ninety the cost curve looks nothing like a chatbot bill.
-              </p>
 
               <h3>Shopify widgets, embeds, SDK</h3>
               <p>
-                We ship a widget SDK that drops the platform into any website.
-                Chat, agent, blog, documents, workflows — all pluggable. The
-                Shopify widget is the tip of a much larger wedge: commerce
-                merchants who don't want to build an AI stack, just want to
-                install one that already works.
+                We ship a widget SDK that puts the platform on any website:
+                a chat widget and a blog widget today, as a script tag or a
+                React component. A Shopify store connects with its own Admin
+                token today, and the Shopify App Store app is next. Commerce
+                is the first wedge: merchants who don't want to build an AI
+                stack, just want to install one that already works.
               </p>
               <p>
                 The widgets aren't iframes. They're live connections to the
                 platform, carrying the same memory, the same agents, the same
                 missions. Your merchant's support chatbot and your merchant's
                 analytics agent are the same system, reading the same
-                context, learning from the same interactions.
+                context and the same memory.
               </p>
 
               <h2>Where we stand in the market</h2>
@@ -496,8 +477,8 @@ const AutomatosNotWrapper = () => {
                 by themselves — a complete operating system where agents are
                 first-class citizens, missions are the unit of work, memory is
                 shared across surfaces, costs are managed, every action lands
-                on an append-only audit log, and the system gets smarter over
-                time without you asking.
+                on an append-only audit log, and a person decides what
+                changes.
               </p>
 
               <h2>What's coming next</h2>
@@ -514,14 +495,11 @@ const AutomatosNotWrapper = () => {
                 now is the foundation.
               </p>
               <p>
-                <strong>Self-building platform.</strong> The harness already
-                promotes patterns into skills. The next step is patterns into
-                agents. When a combination of skills keeps producing good
-                outcomes for a specific task type, the system should be able
-                to propose a new agent, evaluate it against a benchmark, and
-                add it to the marketplace if it wins. Auto becomes less a
-                user-facing assistant and more a platform engineer that
-                happens to answer questions.
+                <strong>From reports to proposals.</strong> Today the harness
+                only reports. The plan is for it to propose: when a
+                combination of skills keeps producing good outcomes for a
+                specific task type, the system should be able to suggest a
+                new skill or agent and evaluate it against a benchmark.
               </p>
               <p>
                 <strong>Business Knowledge Graph.</strong> Every workspace is

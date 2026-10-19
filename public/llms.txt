@@ -2,7 +2,7 @@
 
 > Automatos OS is the open-source engine (Apache 2.0, runs on your own machine today) and Automatos Studio is the hosted app (hosted beta opens November 2026). Scaling intelligence, not headcount — multi-agent orchestration with agents, skills, playbooks, and a marketplace to run business operations end-to-end.
 
-Automatos Studio is the hosted app where non-engineers design specialised AI agents, connect them to real tools (Composio, APIs, workspaces), and launch them on sequential or parallel missions. Agents learn from outcomes, collaborate through a coordinator, and are governed by budgets, human-in-the-loop approvals, and full audit trails. Customers bring their own LLM keys (BYOK); new hosted accounts start with a one-time 500-credit trial, and included platform credits start when billing opens.
+Automatos Studio is the hosted app where non-engineers design specialised AI agents, connect them to real tools (Composio, APIs, workspaces), and launch them on sequential or parallel missions. Agents keep memory and a success record, collaborate through a coordinator, and are governed by budgets, human-in-the-loop approvals, and full audit trails. Customers bring their own LLM keys (BYOK); new hosted accounts start with a one-time 500-credit trial, and included platform credits start when billing opens.
 
 ## Product
 
