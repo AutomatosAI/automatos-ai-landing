@@ -226,7 +226,7 @@ const ResearchPaper = () => {
                   <p>
                     This research was conducted on the{" "}
                     <a
-                      href="https://automatos.ai"
+                      href="https://automatos.app"
                       className="text-primary hover:underline font-medium"
                     >
                       Automatos AI platform

@@ -31,7 +31,7 @@ const YourStore = () => (
     path="/your-store"
     seoTitle="Shopify app and website widgets"
     seoDescription="Connect your Shopify store and your catalog lands in your knowledge graph. Shopify agents answer shoppers, watch stock and write product copy; the chat and blog widgets put them on any site."
-    eyebrow="Your store & site · early access"
+    eyebrow="Your store & site"
     headline="Your store, run by your agents."
     brandLine="On Shopify, or any site with one script tag."
     lede="Connect your Shopify store and your products, variants and stock land in your knowledge graph. Shopify agents answer shoppers, watch inventory and write your product copy, and the chat and blog widgets put them on any website you run."
@@ -121,7 +121,7 @@ const YourStore = () => (
       { label: "Socials", href: "/socials" },
     ]}
     ctaHeading={<>Connect your store. <span className="brand-line">Let the agents mind the shop.</span></>}
-    ctaSub="Join the waitlist. Shopify and widget early access opens first."
+    ctaSub="Join the waitlist. Hosted beta opens November 2026."
   />
 );
 

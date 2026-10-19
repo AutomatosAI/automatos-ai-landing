@@ -1,5 +1,4 @@
 import { ProductPage } from "@/components/product/ProductPage";
-import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 
 const Integrations = () => (
   <ProductPage
@@ -36,9 +35,8 @@ const Integrations = () => (
         title: "Talk to Auto where you already talk.",
         body: "Connect a channel in Studio and Auto answers there, with the same agents, the same brand and the same approvals as in the app. Questions from agents can be answered from your phone.",
         points: [
-          "Live: WhatsApp, Telegram, Slack and Discord",
-          "Coming: Microsoft Teams, Google Chat, Signal, iMessage, IRC, Matrix and LINE",
-          "A webhook channel for anything else",
+          "Telegram, Slack, Discord and WhatsApp",
+          "A generic webhook channel for anything else",
         ],
       },
       {

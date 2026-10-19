@@ -35,11 +35,11 @@ const Marketplace = () => (
       {
         eyebrow: "Packages",
         title: "A whole team in one install.",
-        body: "The Socials package brings the Social Media Director, the Brand Designer, four playbooks and a guided setup. Dependencies resolve themselves.",
+        body: "The Socials package brings the Social Media Director, the Brand Designer, five playbooks and a guided setup. Dependencies resolve themselves.",
         points: [
           "Setup questions, required connections and a first-week guide",
           "Everything sandboxed to your workspace and reversible",
-          "Vertical packages: retail, hospitality, services, commerce",
+          "Three packages today: Socials, Shopify Management and Shopify Development",
         ],
         shot: {
           src: "/images/studio/27-marketplace-packages-scrolled.png",
@@ -62,7 +62,7 @@ const Marketplace = () => (
         title: "The rest of the shelf.",
         body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills and plugins that teach an agent a trade.",
         points: [
-          "Over a thousand applications through your own accounts",
+          "1,000+ apps through Composio, connected with your own accounts",
           "Any model from the catalogue, routed per agent",
           "Skills imported from GitHub, scanned before they're listed",
         ],
@@ -91,12 +91,12 @@ const Marketplace = () => (
     runs={{
       title: "What's on the shelf today",
       items: [
-        "Packages: Socials, Shopify management, Shopify development",
-        "Agents: Brand Designer, Social Media Director, the Shopify roster, and the community's",
-        "Playbooks: weekly social posts, content bank research, brand kit from your website, and more",
+        "Packages: Socials, Shopify Management, Shopify Development",
+        "Agents: 100+ ready-made agents in the Studio marketplace, including the Brand Designer, the Social Media Director and the Shopify roster",
+        "Playbooks: 20+ Playbooks, including weekly social posts, content bank research and brand kit from your website",
         "Applications: the Composio catalogue, connected with your accounts",
-        "LLMs: the OpenRouter catalogue plus NVIDIA and DeepSeek, bring your own key",
-        "Capabilities: skills and plugins, admin-curated and scanned",
+        "LLMs: 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others",
+        "Capabilities: 400+ skills in the marketplace, admin-curated and scanned",
       ],
     }}
     related={[

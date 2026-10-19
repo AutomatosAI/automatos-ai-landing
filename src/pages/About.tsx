@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Zap, Rocket, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, organizationSchema } from "@/lib/seo/structured-data";
@@ -156,7 +157,7 @@ const About = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
                         >
-                            We’re an AI agency committed to building intelligent solutions that empower businesses to scale, innovate, and achieve measurable growth.
+                            We build Automatos AI: Automatos OS, the open-source engine, and Automatos Studio, the hosted app (beta opens November 2026).
                         </motion.p>
                     </div>
                 </section>
@@ -276,11 +277,10 @@ const About = () => {
                                 Join us on our journey to reshape the future of business operations.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Button size="lg" className="rounded-full px-8 text-base bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
-                                    Join Our Team
-                                </Button>
-                                <Button variant="outline" size="lg" className="rounded-full px-8 text-base border-primary/20 hover:bg-primary/5 bg-background/50 backdrop-blur-sm">
-                                    Contact Us <ArrowRight className="w-4 h-4 ml-2" />
+                                <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-primary/20 hover:bg-primary/5 bg-background/50 backdrop-blur-sm">
+                                    <Link to="/contact">
+                                        Contact Us <ArrowRight className="w-4 h-4 ml-2" />
+                                    </Link>
                                 </Button>
                             </div>
                         </div>

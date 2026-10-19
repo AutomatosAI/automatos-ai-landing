@@ -67,7 +67,7 @@ export function AutomatosChat() {
                 theme: "dark",
                 title: "Auto",
                 greeting:
-                    "Hi! I'm Auto — ask me anything about Automatos, our agents, or the platform.",
+                    "Hi, I'm Auto, Automatos's AI assistant. Ask me anything about Automatos, the agents or the platform.",
                 ...(CHAT_AGENT_ID ? { agentId: CHAT_AGENT_ID } : {}),
                 themeOverrides: {
                     // Match landing site dark-mode --primary: hsl(16 100% 60%)

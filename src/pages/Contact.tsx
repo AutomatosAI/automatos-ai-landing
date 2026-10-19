@@ -107,7 +107,7 @@ const Contact = () => {
                                 <div>
                                     <h3 className="text-2xl font-semibold mb-2">Contact Information</h3>
                                     <p className="text-muted-foreground">
-                                        Have a question or need support? We're here to help.
+                                        Have a question or need support? We reply within two working days.
                                     </p>
                                 </div>
 
@@ -171,7 +171,7 @@ const Contact = () => {
                                 <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
                                     <CheckCircle className="w-12 h-12 text-green-500" />
                                     <h4 className="text-xl font-semibold">Message Sent</h4>
-                                    <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+                                    <p className="text-muted-foreground">We reply within two working days.</p>
                                     <Button
                                         variant="outline"
                                         onClick={() => setStatus("idle")}

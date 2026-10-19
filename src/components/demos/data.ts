@@ -144,15 +144,15 @@ export const SLOTS: { day: string; src: string; alt: string }[] = [
 export type PackageGroup = { label: string; items: string[] };
 export type MarketPackage = { name: string; by: string; desc: string; groups: PackageGroup[] };
 
-/* Shopify packages as seeded (seed_packages.py); the Socials fourth playbook is still a placeholder (handoff). */
+/* Packages as seeded in automatos-ai (seed_packages.py and seed_socials_package.py). */
 export const PACKAGES: MarketPackage[] = [
   {
     name: "Socials",
     by: "BY AUTOMATOS",
-    desc: "A Social Media Director, a Brand Designer, four playbooks and a guided setup.",
+    desc: "A Social Media Director, a Brand Designer, five playbooks and a guided setup.",
     groups: [
       { label: "AGENTS", items: ["Social Media Director", "Brand Designer"] },
-      { label: "PLAYBOOKS", items: ["Weekly social posts", "Content bank research", "Brand kit from your website", "Evening-before reminder"] },
+      { label: "PLAYBOOKS", items: ["Brand kit from your website", "Launch video", "Weekly social posts", "Image carousel", "Content bank research"] },
       { label: "CONNECTIONS", items: ["Instagram", "LinkedIn", "X"] },
     ],
   },
