@@ -85,6 +85,7 @@ const distPath = resolve(__dirname, "dist");
 // Vite content-hashes everything under dist/assets, so a changed file gets a new name.
 const hashedAssetsPath = resolve(distPath, "assets") + sep;
 const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
+const PUBLIC_FILE_CACHE = "public, max-age=3600";
 app.use(express.static(distPath, {
   setHeaders(res, filePath) {
     if (filePath.endsWith("index.html")) {
@@ -94,11 +95,16 @@ app.use(express.static(distPath, {
       res.setHeader("Cache-Control", IMMUTABLE_CACHE);
     } else {
       // Files copied from public/ keep their names across deploys (images, llms.txt):
-      // revalidate with the ETag so an edit in place reaches browsers.
-      res.setHeader("Cache-Control", "no-cache");
+      // cache for an hour so an edit in place reaches browsers within that hour.
+      res.setHeader("Cache-Control", PUBLIC_FILE_CACHE);
     }
   },
 }));
+
+// Static files that are gone are 404s, not the SPA shell (19 Oct 2026 removed the platform guide PDF, the intro video and the v1 images).
+// express.static has already served every file that exists, so only missing files reach this handler.
+const STATIC_PREFIXES = ["/images", "/logos", "/brand", "/videos", "/screenshots", "/assets", "/Automatos-AI-Platform-Guide.pdf"];
+app.use(STATIC_PREFIXES, (_req, res) => res.sendStatus(404));
 
 // SPA fallback — all routes serve index.html (React Router handles routing)
 app.get("/{*splat}", (_req, res) => {
