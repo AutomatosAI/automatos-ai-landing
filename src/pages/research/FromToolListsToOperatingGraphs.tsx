@@ -535,9 +535,9 @@ const FromToolListsToOperatingGraphs = () => {
 
               <h2>The semantic action index</h2>
               <p>
-                With everything else in place, an agent with roughly a
-                hundred platform actions still has to read about all of
-                them on every turn — unless we change what enters the
+                With everything else in place, an agent with a large
+                catalogue of platform actions still has to read about all
+                of them on every turn — unless we change what enters the
                 prompt.
               </p>
               <p>
