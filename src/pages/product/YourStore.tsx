@@ -29,7 +29,7 @@ const GRAPH_SAMPLE = `shopify_product   Harbour Blend
 const YourStore = () => (
   <ProductPage
     path="/your-store"
-    seoTitle="Shopify app and website widgets"
+    seoTitle="Shopify store and website widgets"
     seoDescription="Connect your Shopify store and your catalog lands in your knowledge graph. Shopify agents answer shoppers, watch stock and write product copy; the chat and blog widgets put them on any site."
     eyebrow="Your store & site"
     headline="Your store, run by your agents."
@@ -57,7 +57,7 @@ const YourStore = () => (
         title: "A store team from the marketplace.",
         body: "Shopify Management brings an operations manager, a support agent, an inventory watchdog and a business analyst, with weekly numbers, inventory status and customer-service reports. Shopify Development brings an app architect, a storefront developer and an extension builder for your theme.",
         points: [
-          "Twelve Shopify agents, from support to SEO copy and gift finding",
+          "Shopify agents in the Studio marketplace, from support to SEO copy and gift finding",
           "Skills for order triage, returns, pricing, peak season and suppliers",
           "Each agent's model, skills and tools are yours to change",
         ],

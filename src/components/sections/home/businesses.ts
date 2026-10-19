@@ -112,7 +112,7 @@ export const BUSINESSES: Business[] = [
     imageAlt: "A developer in orange headphones working at a desktop monitor",
     modules: "Sessions + Local edition + Marketplace",
     features: [
-      "Agents run as sessions on your own CLI subscription",
+      "In the local edition, agents run as sessions on your own Claude Code / CLI subscription",
       "The local edition on your machine",
       "Playbooks and packages you can publish",
       "Apache-2.0, on GitHub",

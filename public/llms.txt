@@ -11,7 +11,7 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 - [Command Centre](https://studio.automatos.app/command-centre): The board, calendar, questions, activity, governance and analytics for everything agents do
 - [Documents & templates](https://studio.automatos.app/documents): Invoices, letters, reports and proposals rendered from one brand kit
 - [Socials](https://studio.automatos.app/socials): A posting plan that makes each post on its day and waits for approval before it publishes
-- [Your store & site](https://studio.automatos.app/your-store): The Shopify app and the chat and blog widgets for any website
+- [Your store & site](https://studio.automatos.app/your-store): Connect your Shopify store with your own Admin token (the Shopify app is next), and the chat and blog widgets for any website
 - [Integrations](https://studio.automatos.app/integrations): Connect the apps you already use through your own accounts
 - [Marketplace](https://studio.automatos.app/marketplace): 100+ ready-made agents in the Studio marketplace, 400+ skills, 20+ Playbooks and 3 packages (Socials, Shopify Management, Shopify Development)
 

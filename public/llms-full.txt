@@ -39,7 +39,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 - `/command-centre` — Board, calendar, questions, activity, governance, analytics
 - `/documents` — Branded documents rendered from one brand kit
 - `/socials` — Posting plans, approve before the slot, publish
-- `/your-store` — Shopify app and website widgets
+- `/your-store` — Shopify store connection (the Shopify app is next) and website widgets
 - `/integrations` — Apps connected through your own accounts
 - `/marketplace` — 100+ ready-made agents, 400+ skills, 20+ Playbooks and 3 packages in the Studio marketplace
 

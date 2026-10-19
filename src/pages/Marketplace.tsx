@@ -11,7 +11,7 @@ const Marketplace = () => (
   <ProductPage
     path="/marketplace"
     seoTitle="Marketplace"
-    seoDescription="Install a package and get the agents, playbooks, templates and connections it needs. Built by Automatos and by the community. Share what you build."
+    seoDescription="Install a package and get the agents, playbooks and connections it needs. Built by Automatos and by the community. Share what you build."
     eyebrow="Marketplace"
     headline="Install, don't build."
     brandLine="Lego, for a business."
