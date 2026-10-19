@@ -65,9 +65,16 @@ const fetchPosts = async (page: number, category?: string): Promise<BlogResponse
     });
     if (category) params.set("category", category);
 
-    const res = await fetch(
-        `https://api.automatos.app/api/widgets/blog/posts?${params}`
-    );
+    let res: Response;
+    try {
+        res = await fetch(
+            `https://api.automatos.app/api/widgets/blog/posts?${params}`
+        );
+    } catch {
+        // The CMS can't be reached (DNS, network or CORS): page 1 still lists the static posts.
+        if (page === 1) return staticPostsPage(category);
+        throw new Error("Failed to fetch posts");
+    }
     if (!res.ok) {
         // A CMS error (or a build without the workspace id) still lists the static posts.
         if (page === 1) return staticPostsPage(category);

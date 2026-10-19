@@ -68,9 +68,16 @@ const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
     category: "Research",
   });
 
-  const res = await fetch(
-    `https://api.automatos.app/api/widgets/blog/posts?${params}`
-  );
+  let res: Response;
+  try {
+    res = await fetch(
+      `https://api.automatos.app/api/widgets/blog/posts?${params}`
+    );
+  } catch {
+    // The CMS can't be reached (DNS, network or CORS): page 1 still lists the static papers.
+    if (page === 1) return staticResearchPage();
+    throw new Error("Failed to fetch research papers");
+  }
   if (!res.ok) {
     // A CMS error (or a build without the workspace id) still lists the static papers.
     if (page === 1) return staticResearchPage();
