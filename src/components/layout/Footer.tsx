@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { StudioWordmark } from "@/components/brand/StudioWordmark";
+import { FamilyRow } from "./FamilyRow";
 
 const footerLinks = {
-  /* This site sells Studio only. The family and cross-marketing live on automatos.app. */
+  /* The columns sell Studio. The family is the one row at the foot (FamilyRow), which also links automatos.app. */
   product: [
     { label: "Auto & agents", href: "/auto", external: false },
     { label: "Command Centre", href: "/command-centre", external: false },
@@ -14,7 +15,6 @@ const footerLinks = {
     { label: "Pricing", href: "/#pricing", external: false },
   ],
   company: [
-    { label: "About Automatos AI", href: "https://automatos.app", external: true },
     { label: "Blog", href: "/blog", external: false },
     { label: "Contact", href: "/contact", external: false },
   ],
@@ -157,6 +157,9 @@ export const Footer = () => {
             </a>
           </div>
         </div>
+
+        {/* The Automatos AI family */}
+        <FamilyRow />
       </div>
     </footer>
   );

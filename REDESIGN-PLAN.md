@@ -117,7 +117,7 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 1. **Wordmark pattern:** sailboat mark + "Automatos" + product name. Decide one treatment. Today: Studio and automatos.app use the serif with an italic second word; Academy uses a sans two-weight wordmark. Mark is orange on Academy/Studio, white on automatos.app.
 2. **One copyright line:** "© 2026 Automatos AI" (brand only, no Ltd) + product line + licence where relevant. Today there are three names: "Automatos AI" (Studio), "AUTOMATOS" (Academy), "Automatos Labs" (automatos.app).
 3. **"Powered by Automatos AI"** pill linking to automatos.app. Studio has it; Academy has "Built on Automatos agents" (convert).
-4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Automatos Markets, Widgets, Shopify (app next), Enterprise · coming soon; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
+4. **One family row, no family column** (Gerard, 19 Oct 2026, replacing the 6 Oct "no family column on product sites" rule). Every site ends its footer with one small row in its own style: "The Automatos AI family" then Automatos AI (automatos.app), Automatos Studio, Automatos Academy and Automatos Markets, in that order; the current site is shown with aria-current="page", not as a link. Any family or product column that repeats these links goes. The "Powered by Automatos AI" pill stays. Each site also carries the same Organization JSON-LD node (`@id` https://automatos.app/#organization) and points its own product at it by `@id`.
 5. **Same social icons in the same order.** Legal links point to one canonical set on automatos.app unless a product needs its own.
 
 **Can differ per product**
@@ -129,7 +129,7 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 
 ## 10. Site map for the family (agreed 8 Oct 2026, to tune)
 
-Each product site sells only itself and carries its own pricing. The "Powered by Automatos AI" pill is the only bridge. Everything about the company, the OS and the family lives on automatos.app.
+Each product site sells only itself and carries its own pricing. The bridges are the "Powered by Automatos AI" pill and the family row at the foot of the footer (19 Oct 2026). Everything about the company, the OS and the family lives on automatos.app.
 
 | Site | Repo | State | What it owns |
 |---|---|---|---|

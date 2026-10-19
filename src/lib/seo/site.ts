@@ -3,11 +3,30 @@
  * canonical URL, social handles, and feature dates.
  */
 
+/**
+ * The Automatos AI organisation: the same JSON-LD entity on automatos.app,
+ * studio.automatos.app, academy.automatos.app and markets.automatos.app.
+ * The logo is served by automatos.app; sameAs lists only the profiles in the
+ * automatos.app footer (X, Instagram, LinkedIn, GitHub).
+ */
+export const ORGANIZATION = {
+  id: "https://automatos.app/#organization",
+  name: "Automatos AI",
+  url: "https://automatos.app",
+  logo: "https://automatos.app/images/automatos-mark-black.png",
+  sameAs: [
+    "https://x.com/automatosai",
+    "https://www.instagram.com/automatosai",
+    "https://www.linkedin.com/company/automatos-ai",
+    "https://github.com/AutomatosAI/automatos-ai",
+  ],
+} as const;
+
 export const SITE = {
   url: "https://studio.automatos.app",
   /** The organisation (Automatos AI) lives on the company site. */
-  companyUrl: "https://automatos.app",
-  name: "Automatos AI",
+  companyUrl: ORGANIZATION.url,
+  name: ORGANIZATION.name,
   /** The product this site sells. Titles and og:site_name use it; the organisation stays Automatos AI. */
   product: "Automatos Studio",
   tagline: "Run your business in your brand, on one OS",
@@ -15,7 +34,6 @@ export const SITE = {
     "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
   defaultTitle: "Automatos Studio | Run your business in your brand",
   titleTemplate: "%s | Automatos Studio",
-  logo: "https://studio.automatos.app/logos/automatos-ai-logo.png",
   ogImage: "https://studio.automatos.app/images/og-studio-v2.png",
   themeColor: "#0a0a0a",
   locale: "en_US",
@@ -24,10 +42,8 @@ export const SITE = {
   app: "https://ui.automatos.app",
   docs: "https://docs.automatos.app",
 
-  // Social
+  // Social (meta tags; the organisation's profiles are ORGANIZATION.sameAs)
   twitter: "@AutomatosAI",
-  linkedin: "https://www.linkedin.com/company/automatos-ai",
-  github: "https://github.com/AutomatosAI",
 
   // Founder
   founder: {
