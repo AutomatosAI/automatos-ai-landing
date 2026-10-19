@@ -153,7 +153,7 @@ export const PACKAGES: MarketPackage[] = [
   {
     name: "Socials",
     by: "BY AUTOMATOS",
-    desc: "A Social Media Director, a Brand Designer, five playbooks and a guided setup.",
+    desc: "A Social Media Director, a Brand Designer, their Playbooks and a guided setup.",
     groups: [
       { label: "AGENTS", items: ["Social Media Director", "Brand Designer"] },
       { label: "PLAYBOOKS", items: ["Brand kit from your website", "Launch video", "Weekly social posts", "Image carousel", "Content bank research"] },

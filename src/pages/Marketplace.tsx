@@ -35,7 +35,7 @@ const Marketplace = () => (
       {
         eyebrow: "Packages",
         title: "A whole team in one install.",
-        body: "The Socials package brings the Social Media Director, the Brand Designer, five playbooks and a guided setup. Dependencies resolve themselves.",
+        body: "The Socials package brings the Social Media Director, the Brand Designer, their Playbooks and a guided setup. Dependencies resolve themselves.",
         points: [
           "Setup questions, required connections and a first-week guide",
           "Everything sandboxed to your workspace and reversible",
