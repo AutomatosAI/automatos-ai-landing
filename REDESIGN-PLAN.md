@@ -15,7 +15,7 @@ Reviewed 6 Oct 2026 against this repo (last commit 16 Jul 2026, `b54f0bc`) and t
 | Metrics | "87% fewer tokens", "86% context recovery", "1,000+ integrations" | Drop the first two (unverifiable research claims). Keep integrations with the real Composio count. |
 | Testimonial | Scott, Budstacks.io | Keep only with a relationship disclosure line. Better: replace with a real output (an invoice, a post) than a quote. |
 | Industries | Six stock photos (personal assistant, support, social, accounting, e-commerce, developer) | Re-cut as "who it's for": shop, café, accountant, hairdresser, Shopify store — the #895 brief. Use rendered outputs, not stock. |
-| Video | `automatos-intro.mp4`, 13.6 MB, old UI | Replace with a re-cut of the open-source launch ad (`automatos-ai/docs/assets/automatos-oss-launch-16x9.mp4`) once new screenshots exist. |
+| Video | `automatos-intro.mp4`, 13.6 MB, old UI (deleted 19 Oct 2026, unreferenced) | Replace with a re-cut of the open-source launch ad (`automatos-ai/docs/assets/automatos-oss-launch-16x9.mp4`) once new screenshots exist. |
 | Blog, Research, EU AI Act (+checker), legal | Fine | Keep. Blog stays on the widget (dogfood). Research/EU AI Act move down the nav; they're credibility, not product. |
 | About, Contact | Fine | About belongs to the company site (V2). Keep a short one here or link out — your call (§6). |
 | Chrome | Dark/light toggle, system fonts, orange `hsl(16 100% 50%)` everywhere | Replace with the Studio tokens (§2). The orange-on-everything is the same "orange problem" PRD-255 fixed in the product. |
@@ -42,8 +42,8 @@ Source of truth: `automatos-ai/frontend/app/globals.css` (Studio theme block) an
 | `/command-centre` | Board & calendar | Tickets, drags, consent grants, calendar with socials and schedules, activity. Shots: board tab, calendar month, calendar week with a social slot, activity. |
 | `/deliverables` | Documents & brand | Every output in one place; Template Studio (invoice preset); Brand kit tab with the board; a rendered invoice/letter PDF. Shots: outputs feed with thumbnails, Studio editor, Brand kit page, the brand board PNG. |
 | `/socials` | Socials Studio | Plan a cadence, content bank with sourced facts, made on the day, approve, publish to LinkedIn/X/Instagram/TikTok/YouTube. Shots: editor (Brief/Format/Channels/Look/When), template gallery with photo cards, plan view, calendar. |
-| `/marketplace` | Marketplace | The real six categories; packages first ("install Socials: two agents, four playbooks, guided setup"). Templates as "coming". Shot: Packages tab, Capabilities tab. |
-| `/integrations` | Applications | Composio logos (reuse `ToolsSection`/`IntegrationsSection` and `public/logos`). Shot: Applications tab. |
+| `/marketplace` | Marketplace | The real six categories; packages first ("install Socials: two agents, five playbooks, guided setup"). Templates as "coming". Shot: Packages tab, Capabilities tab. |
+| `/integrations` | Applications | Composio logos from `public/logos` (the old ToolsSection/IntegrationsSection are deleted). Shot: Applications tab. |
 | `/your-store` | Your site and store, run by your agents | The Shopify app, the chat and blog widgets on any site, Shopify packages and skills, store data in the knowledge graph. **8 Oct: built now** (Studio is not live yet); the Shopify app and widgets get an end-to-end test before launch. Was `/widgets`, gated while the repos were paused. |
 | `/local` | Runs on your machine | Local edition, Apache-2.0, same product; CLI sessions on your own subscription. Shot: Session mode. |
 | `/pricing` | Pricing | Basic / Pro / Business from config: render minutes 10/60/240, AI media caps, channels, agents. Enterprise = contact. |

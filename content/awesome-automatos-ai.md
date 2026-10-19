@@ -35,7 +35,7 @@ The [automatos-skills](https://github.com/AutomatosAI/automatos-skills) reposito
 
 - [SKILL-GUIDE.md](https://github.com/AutomatosAI/automatos-skills/blob/main/SKILL-GUIDE.md) — the author's guide for writing a new skill.
 - **Signature agents** — SENTINEL, SCOUT, HARPER, ECHO, ATLAS, FORGE, ORACLE, RALLY, PATCHER, each with their own `SKILL.md`.
-- **Domain packs** — Shopify & Commerce (21), Software Engineering (11), Quality / Security / Compliance (9), DevOps & SRE (6), Product & PM (8), Design & UX (11), Content & Editorial (7), Social Media (12), Marketing & Growth (7), Sales & Revenue (8), Analytics & BI (5), People & Ops (3), Research (2), Support (1), Integrations (8).
+- **Domain packs** — Shopify & Commerce, Software Engineering, Quality / Security / Compliance, DevOps & SRE, Product & PM, Design & UX, Content & Editorial, Social Media, Marketing & Growth, Sales & Revenue, Analytics & BI, People & Ops, Research, Support, Integrations.
 
 ## Agents
 

@@ -21,7 +21,7 @@ Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **compa
 - `README.md` is the Lovable boilerplate; the project no longer lives in Lovable. Replace it.
 - `@clerk/clerk-js` backs the waitlist form (`CTASection` → `joinWaitlist`, needs `VITE_CLERK_PUBLISHABLE_KEY`); sign-in itself links out.
 - Sign in goes to `/login`, which redirects to `SIGN_IN_URL` (`src/lib/links.ts`, mirrored in `server.js`): `https://ui.automatos.app/sign-in` — confirm the live app host before relaunch.
-- `public/logos/` (284 Composio app logos) is fine to keep; `public/videos/automatos-intro.mp4` is 13.6 MB and stale.
+- `public/logos/` (284 Composio app logos) is fine to keep. The stale, unreferenced `public/videos/automatos-intro.mp4` and the v1 pillar-page image folders were deleted on 19 Oct 2026 (git history has them).
 - `prd.json` is a finished Ralph kit for the blog page (July); historical only.
 - Brand: see `REDESIGN-PLAN.md` §2 — the site must take the app's Studio tokens, not invent its own.
 - EU AI Act: `/eu-ai-act` and `/eu-ai-act/checker` redirect to automatos.app (client route + `server.js` 301). The old unrouted `EuAiAct*.tsx` pages (and the four v1 pillar pages) were deleted on 19 Oct 2026 because they carried claims the public facts sheet forbids; they are in git history if the text is needed again.
