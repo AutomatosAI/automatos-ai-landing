@@ -79,9 +79,11 @@ describe("Studio structured data", () => {
     const site = websiteSchema();
     expect(site.name).toBe("Automatos Studio");
     expect(site.publisher).toEqual(ORG_REF);
-    const staticSite = staticJsonLd().find((block) => block["@type"] === "WebSite");
-    expect(staticSite?.name).toBe("Automatos Studio");
-    expect(staticSite?.publisher).toEqual(ORG_REF);
+  });
+
+  it("matches the static WebSite node in index.html, so the two never drift", () => {
+    const sites = staticJsonLd().filter((block) => block["@type"] === "WebSite");
+    expect(sites).toEqual([websiteSchema()]);
   });
 
   it("points articles and products at the organisation instead of a second Organization", () => {

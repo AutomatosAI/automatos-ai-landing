@@ -75,7 +75,8 @@
     }
     </script>
 
-    <!-- JSON-LD: WebSite -->
+    <!-- JSON-LD: WebSite (sitewide, pre-hydration). websiteSchema() in
+         src/lib/seo/structured-data.ts must match it (structured-data.test.ts). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -83,7 +84,7 @@
       "@id": "https://studio.automatos.app/#website",
       "url": "https://studio.automatos.app",
       "name": "Automatos Studio",
-      "description": "Automatos is an open platform where you tell Auto what you need and a team of agents does the work: branded documents and invoices, social posts on a plan, a board that asks before it acts, and a marketplace of packages to install. Real backend, real outputs, on your own machine today; hosted beta opens November 2026.",
+      "description": "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
       "publisher": { "@id": "https://automatos.app/#organization" },
       "inLanguage": "en-US"
     }

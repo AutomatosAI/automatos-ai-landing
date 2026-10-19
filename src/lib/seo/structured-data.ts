@@ -39,7 +39,11 @@ export function organizationRef() {
 // WebSite — enables sitelinks searchbox in Google + anchor for breadcrumbs
 // ---------------------------------------------------------------------------
 
-/** index.html serves the WebSite node statically on every route, so no page emits this again. */
+/**
+ * The Studio WebSite node. index.html carries the same node statically (a test
+ * keeps the two equal) and server.js serves index.html on every route, so no
+ * page emits it again.
+ */
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
