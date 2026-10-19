@@ -175,7 +175,7 @@ const AutomatosNotWrapper = () => {
               </p>
               <p>
                 The platform's agent factory handles creation, registration,
-                execution, negotiation between agents, and teardown. Multiple
+                execution and teardown. Multiple
                 agents can coordinate on a goal, share context, and hand work
                 to each other without you micromanaging any of it.
               </p>

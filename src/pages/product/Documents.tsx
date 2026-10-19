@@ -58,7 +58,7 @@ const Documents = () => (
       },
     ]}
     runs={{
-      title: "What you can ask for today",
+      title: "What you can ask for",
       items: [
         "An invoice with line items, totals and your payment terms, as a PDF",
         "A letter on your letterhead, signed off the way you sign",

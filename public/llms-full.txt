@@ -67,7 +67,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 
 ## Use Cases & GTM
 
-- **Shopify operations** — the Shopify Management and Shopify Development packages in the Studio marketplace, covering catalogue, orders, marketing, customer ops
+- **Shopify operations** — the Shopify Management and Shopify Development packages in the Studio marketplace, covering operations, orders, inventory, customer service and weekly numbers, plus theme, app and extension development
 - **LinkedIn recruitment** — Sourcing, outreach, and pipeline management agents
 - **Research & analysis** — Multi-agent research missions with cross-agent report reading
 - **Content & marketing** — Newsletter, social, SEO agents publishing via real platform tools
@@ -77,7 +77,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 
 - **Sequential mission coordinator** with explicit plan → verify → launch flow (plan-mode), not just a chat loop
 - **Per-agent persistent reports** (`platform_submit_report`) readable across agents — the marketer can read the researcher's output
-- **Skill contracts** (`SKILL.md`) with priority-ordered context injection (max 3000 tokens per skill section)
+- **Skill contracts** (`SKILL.md`), loaded on demand: each turn carries every attached skill's name and description, and the full skill loads when the task matches it
 - **Budget-aware execution** with hard stops and human-in-the-loop escalation
 - **Packages** — install a starter team (agents, Playbooks and a guided setup) in one go: Socials, Shopify Management and Shopify Development
 - **BYOK with cascading installs** — installing a marketplace agent auto-installs its required model, skills and tool assignments to the target workspace

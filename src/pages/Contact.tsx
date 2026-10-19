@@ -53,7 +53,7 @@ const Contact = () => {
         <div className="min-h-screen bg-background">
             <SEO
                 title="Contact"
-                description="Get in touch with the Automatos AI team. Pilots, partnerships, support and press inquiries for the AI digital workforce platform."
+                description="Questions about Automatos Studio, the hosted beta or the local edition, and partnerships. We reply within two working days."
                 path="/contact"
                 structuredData={[
                     breadcrumbSchema([
@@ -77,7 +77,7 @@ const Contact = () => {
                                 <span>Get in Touch</span>
                             </div>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                                Let's <span className="text-primary">[Elevate]</span> Your Workflow
+                                Contact <span className="text-primary">Automatos</span>
                             </h1>
                         </motion.div>
 
@@ -87,7 +87,7 @@ const Contact = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
                         >
-                            Reach out to explore how our AI solutions can streamline, scale, and strengthen your operations.
+                            Questions about Automatos Studio, the hosted beta or the open-source local edition? We reply within two working days.
                         </motion.p>
                     </div>
                 </section>
