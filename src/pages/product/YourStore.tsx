@@ -57,7 +57,7 @@ const YourStore = () => (
         title: "A store team from the marketplace.",
         body: "Shopify Management brings an operations manager, a support agent, an inventory watchdog and a business analyst, with weekly numbers, inventory status and customer-service reports. Shopify Development brings an app architect, a storefront developer and an extension builder for your theme.",
         points: [
-          "Shopify agents in the Studio marketplace, from support to SEO copy and gift finding",
+          "12 Shopify agent templates in the Studio marketplace, and two packages built from them: Shopify Management and Shopify Development",
           "Skills for order triage, returns, pricing, peak season and suppliers",
           "Each agent's model, skills and tools are yours to change",
         ],
@@ -69,12 +69,12 @@ const YourStore = () => (
       },
       {
         eyebrow: "The Shopify app, next",
-        title: "Four blocks in your theme editor.",
+        title: "Next: four blocks in your theme editor.",
         body: "Today you connect your store with your own Admin token. Next: the Automatos app for the Shopify App Store, with four blocks for your theme: a support chat, product Q&A, a blog and a review summary. Its chat will know which product, collection and cart the shopper is looking at, and will be able to open the conversation itself when a cart sits idle.",
         points: [
-          "Support chat with the page, product and cart in context",
-          "Product Q&A on every product page",
-          "Blog posts and review summaries rendered in your theme",
+          "Planned: support chat with the page, product and cart in context",
+          "Planned: product Q&A on every product page",
+          "Planned: blog posts and review summaries rendered in your theme",
         ],
       },
       {

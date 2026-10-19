@@ -60,7 +60,7 @@ const Marketplace = () => (
       {
         eyebrow: "Applications, models, capabilities",
         title: "The rest of the shelf.",
-        body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills that teach an agent a trade.",
+        body: "Applications are the apps you connect. LLMs are the models an agent can think with. Capabilities are skills and plugins that teach an agent a trade.",
         points: [
           "1,000+ apps through Composio, connected with your own accounts",
           "Any model from the catalogue, routed per agent",
@@ -68,17 +68,17 @@ const Marketplace = () => (
         ],
         shot: {
           src: "/images/studio/26-marketplace-capabilities.png",
-          alt: "The Capabilities tab: skills",
+          alt: "The Capabilities tab: plugins and skills",
           caption: "Marketplace · Capabilities · the skills library, imported from GitHub",
         },
       },
       {
         eyebrow: "Templates",
         title: "Coming: the seventh shelf.",
-        body: "Document and social templates shared by the community, rendered in your brand the moment you install them.",
+        body: "Document and social templates shared by the community, which will render in your brand when you install them.",
         points: [
-          "A shared template can't carry someone else's colours",
-          "Publish from the Template Studio, install to yours",
+          "A shared template won't carry someone else's colours",
+          "Publish from the Template Studio, install to yours (coming)",
           "Packages will ship with their paperwork included",
         ],
         shot: {
@@ -96,7 +96,7 @@ const Marketplace = () => (
         "Playbooks: 20+ Playbooks, including weekly social posts, content bank research and brand kit from your website",
         "Applications: the Composio catalogue, connected with your accounts",
         "LLMs: 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others",
-        "Capabilities: 400+ skills in the marketplace, admin-curated and scanned",
+        "Capabilities: 400+ skills and 70+ plugins in the Studio marketplace, admin-curated and scanned",
       ],
     }}
     related={[

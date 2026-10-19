@@ -19,12 +19,7 @@ const Documents = () => (
       {
         eyebrow: "Deliverables",
         title: "A brand board, a report, a proposal, a letter.",
-        body: "Made this morning, all from one kit. Every output lands with a thumbnail, the template it used and a share link that works without a login.",
-        shot: {
-          src: "/images/studio/06-deliverables.png",
-          alt: "Deliverables showing a brand board, a trading report, a proposal and a letter, all in the same brand",
-          caption: "Deliverables · a brand board, a report, a proposal and a letter made this morning, one kit",
-        },
+        body: "All from one kit. Every output lands with a thumbnail, the template it used and a share link that works without a login.",
       },
       {
         eyebrow: "Brand kit",
@@ -60,11 +55,6 @@ const Documents = () => (
         eyebrow: "Outputs",
         title: "Every output in one place, with a link.",
         body: "Chat, a playbook, a scheduled job or a mission: whatever makes a document, it lands here. Add it to your knowledge only if you choose to.",
-        shot: {
-          src: "/images/studio/33-deliverables-scrolled.png",
-          alt: "The Deliverables feed with reports and task reports",
-          caption: "Deliverables · Outputs · every file with its report of what was checked",
-        },
       },
     ]}
     runs={{
@@ -83,7 +73,7 @@ const Documents = () => (
       { label: "Auto & agents", href: "/auto" },
       { label: "Marketplace", href: "/marketplace" },
     ]}
-    ctaHeading={<>Upload a logo. <span className="brand-line">Send an invoice an hour later.</span></>}
+    ctaHeading={<>Upload a logo. <span className="brand-line">Send an invoice in your brand.</span></>}
     ctaSub="Join the waitlist and the brand kit is the first thing we set up with you."
   />
 );

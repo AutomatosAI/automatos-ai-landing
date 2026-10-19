@@ -1,13 +1,14 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { CONTACT_URL } from "@/lib/links";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
@@ -117,21 +118,9 @@ const Contact = () => {
                                             <Mail className="w-5 h-5" />
                                         </div>
                                         <div>
-                                            <p className="font-medium text-foreground">Email Us</p>
-                                            <a href="mailto:Gerard@automatos.app" className="text-muted-foreground hover:text-primary transition-colors">
-                                                Gerard@automatos.app
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                            <Phone className="w-5 h-5" />
-                                        </div>
-                                        <div>
-                                            <p className="font-medium text-foreground">Call Us</p>
-                                            <a href="tel:+447970433737" className="text-muted-foreground hover:text-primary transition-colors">
-                                                +44 7970 433737
+                                            <p className="font-medium text-foreground">Contact form</p>
+                                            <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                                automatos.app/contact
                                             </a>
                                         </div>
                                     </div>

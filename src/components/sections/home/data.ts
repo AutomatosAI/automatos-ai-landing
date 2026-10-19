@@ -23,14 +23,15 @@ export const CHAPTERS: Chapter[] = [
     callouts: [{ x: 38, y: 17, text: "124 need your eyes" }, { x: 72, y: 72, text: "Review, blocked, approval" }],
   },
   {
+    /* 19 Oct 2026: was 06-deliverables.png, whose letterhead thumbnails show a personal phone number and email. */
     eyebrow: "Documents",
-    title: "A brand board, a report, a proposal. One kit.",
-    desc: "Everything your team made today, rendered from your brand kit.",
+    title: "Templates your agents fill. One kit.",
+    desc: "Invoices, letters, agreements and data sheets, each a complete branded layout.",
     href: "/documents",
-    src: "/images/studio/06-deliverables.png",
-    alt: "Deliverables with branded documents",
-    focus: [{ x: 35, y: 33, s: 1.5 }, { x: 70, y: 52, s: 1.7 }],
-    callouts: [{ x: 22, y: 33, text: "Your team made 123 things today" }, { x: 66, y: 50, text: "Same letterhead, every document" }],
+    src: "/images/studio/22-template-editor.png",
+    alt: "The Template Studio: branded agreement, data sheet, invoice and letter templates with the fields each one needs",
+    focus: [{ x: 50, y: 40, s: 1.5 }, { x: 35, y: 65, s: 1.6 }],
+    callouts: [{ x: 47, y: 30, text: "A brand board, drawn from your kit" }, { x: 20, y: 62, text: "Each template says what it needs" }],
   },
   {
     eyebrow: "Socials",
@@ -58,7 +59,7 @@ export const OS_MODULES: OsModule[] = [
     name: "Agents",
     title: "A roster, not a single bot.",
     body: "Writers, a Brand Designer, a Social Media Director, Shopify specialists, builders. Each has its own model, skills and tools.",
-    points: ["Swap any agent’s model in one click", "Skills from the marketplace", "A success record per agent"],
+    points: ["Swap any agent’s model in one click", "Skills and plugins from the marketplace", "A success record per agent"],
   },
   {
     name: "Memory",
