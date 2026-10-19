@@ -63,7 +63,7 @@ const editions = [
   },
   {
     name: "SaaS",
-    badge: "BETA IN NOVEMBER",
+    badge: "BETA OPENS NOV 2026",
     badgeClass: "text-olive",
     text: "Hosted beta opens November 2026. Nothing to install: when your workspace opens, upload your logo and tell Auto what you need.",
     cta: "Join the waitlist",

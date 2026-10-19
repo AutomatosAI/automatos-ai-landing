@@ -2,7 +2,7 @@
 
 > A curated list of resources, skills, templates, agents and community projects for the [Automatos AI](https://automatos.app) multi-agent orchestration platform.
 
-Automatos AI is an open-source platform (hosted beta from November 2026) for building and deploying autonomous AI agents — agents, skills, playbooks, missions, a marketplace, an EU AI Act posture (work in progress), and semantic field memory all in one place.
+Automatos OS is the open-source engine of Automatos AI for building and deploying autonomous AI agents, and Automatos Studio is the hosted app (hosted beta opens November 2026). Agents, skills, playbooks, missions, a marketplace, an EU AI Act posture (work in progress) and semantic field memory, all in one place.
 
 ---
 
