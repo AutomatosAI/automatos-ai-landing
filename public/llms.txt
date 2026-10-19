@@ -1,8 +1,8 @@
 # Automatos AI
 
-> Expert AI agency and SaaS platform for building and deploying autonomous AI agents. Scaling intelligence, not headcount — multi-agent orchestration with agents, skills, playbooks, and a marketplace to run business operations end-to-end.
+> Automatos OS is the open-source engine (Apache 2.0, runs on your own machine today) and Automatos Studio is the hosted app (hosted beta opens November 2026). Scaling intelligence, not headcount — multi-agent orchestration with agents, skills, playbooks, and a marketplace to run business operations end-to-end.
 
-Automatos AI is a digital workforce platform where non-engineers can design specialised AI agents, connect them to real tools (Composio, APIs, workspaces), and launch them on sequential or parallel missions. Agents learn from outcomes, collaborate through a coordinator, and are governed by budgets, human-in-the-loop approvals, and full audit trails. Customers bring their own LLM keys (BYOK) or use platform credits.
+Automatos AI is a digital workforce platform where non-engineers can design specialised AI agents, connect them to real tools (Composio, APIs, workspaces), and launch them on sequential or parallel missions. Agents learn from outcomes, collaborate through a coordinator, and are governed by budgets, human-in-the-loop approvals, and full audit trails. Customers bring their own LLM keys (BYOK); new hosted accounts start with a one-time 500-credit trial, and included platform credits start when billing opens.
 
 ## Product
 
@@ -13,7 +13,11 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 - [Socials](https://studio.automatos.app/socials): A posting plan that makes each post on its day and waits for approval before it publishes
 - [Your store & site](https://studio.automatos.app/your-store): The Shopify app and the chat and blog widgets for any website
 - [Integrations](https://studio.automatos.app/integrations): Connect the apps you already use through your own accounts
-- [Marketplace](https://studio.automatos.app/marketplace): Pre-built agents, skills, plugins, and workspace templates installable in one click
+- [Marketplace](https://studio.automatos.app/marketplace): 100+ ready-made agents in the Studio marketplace, 400+ skills, 20+ Playbooks and 3 packages (Socials, Shopify Management, Shopify Development)
+
+## Pricing
+
+- [Plans](https://studio.automatos.app/#pricing): The local edition is free and open source, on your own keys or your Claude Code / CLI subscription. Hosted Studio opens as a beta in November with three plans: Own keys at $9 a month, Pro at $29 and Business at $99. That is beta pricing, not charged until billing opens. The plans differ in seats, agents, video render minutes and voice. New accounts get a one-time trial of 500 credits; a credit is one US cent of AI usage at our prices. During the beta, once the trial is used, the AI runs on your own Anthropic, OpenAI or OpenRouter key on every plan, and your provider bills you for it. Business is by invite during the beta. Included credits and top-ups start when billing opens. Enterprise is coming soon: contact us.
 
 ## Company
 
@@ -28,11 +32,11 @@ Automatos AI is a digital workforce platform where non-engineers can design spec
 
 ## Compliance
 
-- [EU AI Act posture](https://automatos.app/eu-ai-act): What is built today (human approval, risk classes with matching oversight, an append-only audit log, EU data storage, GDPR export and erasure) and what is not yet
+- [EU AI Act posture](https://automatos.app/eu-ai-act): EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now.
 
 ## External
 
-- [Automatos App](https://ui.automatos.app): Sign in and use the platform
+- [Automatos Studio waitlist](https://studio.automatos.app/#waitlist): Hosted beta opens November 2026 · Join the waitlist
 - [Documentation](https://docs.automatos.app): Developer and user documentation
 
 ## Optional
