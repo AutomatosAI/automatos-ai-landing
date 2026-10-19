@@ -83,6 +83,6 @@ export const FAMILY_RINGS: Ring[] = [
     font: "var(--font-sans)",
     size: 16,
     weight: 600,
-    items: ["Studio", "Academy", "Market Intelligence", "Shopify", "Widgets", "BudStacks", "Enterprise", "Your app · API · MCP"],
+    items: ["Studio", "Academy", "Markets", "Shopify", "Widgets", "BudStacks", "Enterprise · coming soon", "Your app · API · MCP"],
   },
 ];
