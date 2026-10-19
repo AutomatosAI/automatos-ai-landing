@@ -59,7 +59,7 @@ export const OS_MODULES: OsModule[] = [
     name: "Agents",
     title: "A roster, not a single bot.",
     body: "Writers, a Brand Designer, a Social Media Director, Shopify specialists, builders. Each has its own model, skills and tools.",
-    points: ["Swap any agent’s model in one click", "Skills from the marketplace", "A success record per agent"],
+    points: ["Swap any agent’s model in one click", "Skills and plugins from the marketplace", "A success record per agent"],
   },
   {
     name: "Memory",

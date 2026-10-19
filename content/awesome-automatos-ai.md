@@ -26,7 +26,7 @@ Automatos OS is the open-source engine of Automatos AI for building and deployin
 - [Automatos OS](https://github.com/AutomatosAI/automatos-ai) — the open-source engine (Apache 2.0); the local edition runs today on your own keys or your Claude Code / CLI subscription.
 - [Automatos Studio](https://studio.automatos.app) — the hosted app. Hosted beta opens November 2026 · [Join the waitlist](https://studio.automatos.app/#waitlist).
 - [Product guides](https://studio.automatos.app/auto) — Auto and agents, the Command Centre, documents, socials, integrations and your store.
-- [Marketplace](https://studio.automatos.app/marketplace) — 100+ ready-made agents in the Studio marketplace, 400+ skills, 20+ Playbooks and 3 packages.
+- [Marketplace](https://studio.automatos.app/marketplace) — 100+ ready-made agents in the Studio marketplace, 400+ skills, 70+ plugins, 20+ Playbooks and 3 packages.
 - [Widgets](https://studio.automatos.app/your-store) — serve agent-generated content into any site with no CMS.
 
 ## Skills

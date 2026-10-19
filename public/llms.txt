@@ -13,7 +13,7 @@ Automatos Studio is the hosted app where non-engineers design specialised AI age
 - [Socials](https://studio.automatos.app/socials): A posting plan that makes each post on its day and waits for approval before it publishes
 - [Your store & site](https://studio.automatos.app/your-store): Connect your Shopify store with your own Admin token (the Shopify app is next), and the chat and blog widgets for any website
 - [Integrations](https://studio.automatos.app/integrations): Connect the apps you already use through your own accounts
-- [Marketplace](https://studio.automatos.app/marketplace): 100+ ready-made agents in the Studio marketplace, 400+ skills, 20+ Playbooks and 3 packages (Socials, Shopify Management, Shopify Development)
+- [Marketplace](https://studio.automatos.app/marketplace): 100+ ready-made agents in the Studio marketplace, 400+ skills, 70+ plugins, 20+ Playbooks and 3 packages (Socials, Shopify Management, Shopify Development)
 
 ## Pricing
 

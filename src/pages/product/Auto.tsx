@@ -32,7 +32,7 @@ const Auto = () => (
         body: "Writers, a Brand Designer, a Social Media Director, Shopify specialists, builders. Each has its own model, skills and tools. In the local edition, agents can also run on your own Claude Code / CLI subscription.",
         points: [
           "Swap any agent's model in one click",
-          "Skills from the marketplace",
+          "Skills and plugins from the marketplace",
           "Org chart, configuration and a success record per agent",
         ],
         shot: {
