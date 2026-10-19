@@ -42,7 +42,7 @@ export const BUSINESSES: Business[] = [
     ],
     logos: [logo("Gmail"), logo("Google Calendar", "GoogleCalendar"), logo("Zoom")],
     link: { label: "See Auto", href: "/auto" },
-    made: { src: "/images/documents/harbour-log.jpg", alt: "The Harbour Log, a coffee roaster's newsletter, rendered by Studio from its brand kit" },
+    made: { src: "/images/documents/harbour-log.jpg", alt: "The Harbour Log, a coffee roaster's newsletter, rendered by Studio from a brand kit" },
   },
   {
     id: "shop-cafe",

@@ -75,10 +75,10 @@ const Marketplace = () => (
       {
         eyebrow: "Templates",
         title: "Coming: the seventh shelf.",
-        body: "Document and social templates shared by the community, rendered in your brand the moment you install them.",
+        body: "Document and social templates shared by the community, which will render in your brand when you install them.",
         points: [
-          "A shared template can't carry someone else's colours",
-          "Publish from the Template Studio, install to yours",
+          "A shared template won't carry someone else's colours",
+          "Publish from the Template Studio, install to yours (coming)",
           "Packages will ship with their paperwork included",
         ],
         shot: {

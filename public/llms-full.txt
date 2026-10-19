@@ -26,9 +26,9 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 ## Core Beliefs
 
 1. **AI is a workforce, not a wrapper.** Chatbots answer questions; agents get work done. Automatos is built around ownership of outcomes — agents submit reports, hit budgets and escalate to humans when stuck, and a person decides what changes.
-2. **Non-engineers should author AI workers.** The Mission Zero onboarding wizard sets up a workspace, picks agents, connects tools, and launches a first mission end-to-end with no code.
+2. **Non-engineers should author AI workers.** A new hosted workspace starts with Auto and a Brand Designer. Auto builds the rest of your team during onboarding, from a package or from scratch. A fresh local install starts with five agents: Auto, a Brand Designer and a starter team of Researcher, Writer and Analyst.
 3. **Governance you can see.** Every agent action goes to an append-only audit log, budgets hard-stop runaway spend, and anything that spends money or publishes waits for a person. EU AI Act work is in progress; the posture page says what is built and what is not.
-4. **Composable, not closed.** Skills, plugins, agents, Playbooks and packages install from the marketplace. A workspace can be cloned and customised.
+4. **Composable, not closed.** Skills, plugins, agents, Playbooks and packages install from the marketplace. Installed agents and Playbooks are your own copies to customise.
 
 ## Platform Surfaces
 
@@ -60,7 +60,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 - **Orchestrator** — Python/FastAPI service running on Railway. Hosts the agent factory, tool router, memory services, heartbeat scheduler, and mission/playbook engines.
 - **Frontend** — Next.js app serving workspaces, chat, playbooks, marketplace, and admin consoles.
 - **Workspaces** — Per-tenant isolated environments with their own documents, agents, playbooks, tools, and budgets. Agents cannot cross workspace boundaries.
-- **Storage** — Documents on S3 (`s3://automatos-ai/workspaces/{workspace_id}/documents/`), vectors on S3 Vectors (eu-west-1), metadata on PostgreSQL.
+- **Storage** — Documents and vectors are stored on AWS in Ireland (eu-west-1); metadata on PostgreSQL.
 - **LLM Layer** — Unified `LLMManager`: 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others. BYOK keys are encrypted per-workspace.
 - **Tool Layer** — `get_tools_for_agent()` unifies three registries: core ToolRegistry, platform ActionRegistry (agent management, reports, marketplace installs), and workspace tools (file I/O via the workspace worker).
 - **Memory** — Field memory (semantic KV by topic), document RAG (S3 Vectors + Postgres metadata), report store (persistent markdown reports in S3 with DB index), and scratchpad (ephemeral Redis).

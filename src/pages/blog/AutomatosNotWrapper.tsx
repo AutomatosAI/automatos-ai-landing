@@ -487,12 +487,13 @@ const AutomatosNotWrapper = () => {
                 architecture.
               </p>
               <p>
-                <strong>Mission Zero → Mission N.</strong> We're progressing
-                from a single onboarding mission (Mission Zero builds your
-                business profile and proposes a team) to arbitrary
-                user-launched missions that compose agents, skills, tools, and
-                memory automatically. The coordinator architecture shipping
-                now is the foundation.
+                <strong>From onboarding to any mission.</strong> A new hosted
+                workspace starts with Auto and a Brand Designer. Auto builds
+                the rest of your team during onboarding, from a package or
+                from scratch. The direction is arbitrary user-launched
+                missions that compose agents, skills, tools, and memory
+                automatically. The coordinator architecture shipping now is
+                the foundation.
               </p>
               <p>
                 <strong>From reports to proposals.</strong> Today the harness
