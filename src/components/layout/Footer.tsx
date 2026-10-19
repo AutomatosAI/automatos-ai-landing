@@ -69,7 +69,7 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Automatos AI</h4>
+            <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
