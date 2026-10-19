@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   articleSchema,
   organizationSchema,
@@ -12,11 +13,16 @@ import {
 const ORG_ID = "https://automatos.app/#organization";
 const ORG_REF = { "@id": ORG_ID };
 
+/** index.html at the repo root, resolved from this file so the test does not depend on the working directory. */
+const INDEX_HTML = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../index.html");
+
+/** Any <script> whose type is application/ld+json, whatever its other attributes or quote style. */
+const JSON_LD_SCRIPT = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/g;
+
 /** Every JSON-LD block that index.html serves before hydration, parsed. */
 function staticJsonLd(): Array<Record<string, unknown>> {
-  const html = readFileSync(path.resolve(process.cwd(), "index.html"), "utf8");
-  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-  return blocks.map((match) => JSON.parse(match[1]));
+  const html = readFileSync(INDEX_HTML, "utf8");
+  return [...html.matchAll(JSON_LD_SCRIPT)].map((match) => JSON.parse(match[1]));
 }
 
 /** Collects every node in a JSON-LD tree whose @type is Organization. */
