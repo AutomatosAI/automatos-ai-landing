@@ -2,6 +2,8 @@
 
 Reviewed 6 Oct 2026 against this repo (last commit 16 Jul 2026, `b54f0bc`) and the platform on `main` `dfda0f027`. Nothing here is built yet; this is the map for working on it locally.
 
+> Superseded 18-19 Oct 2026 for prices, dates and the copyright line: Own keys $9 / Pro $29 / Business $99 a month / Enterprise coming soon (beta pricing, not charged until billing opens); Web Summit Lisbon is 10–12 November 2026 with opening night on 9 November; the copyright line is "© 2026 Automatos AI" with no Ltd.
+
 ## 1. What's here and what's stale
 
 | Area | Today | Verdict |
@@ -96,7 +98,7 @@ Mechanics: a small Playwright script in `scripts/screenshots/` (own `package.jso
 
 The hub hero lives in `src/components/sections/OsHub.tsx` with its ring sets in `osHubRings.ts`. This site uses `STUDIO_RINGS` (the OS underneath, what you run in Studio), because product sites sell only their own product. `FAMILY_RINGS` (the OS, Studio, and every product Powered by Automatos) is the hero for automatos.app: port it to the core site.
 
-## 8. Before Web Summit (9 Nov 2026)
+## 8. Before Web Summit (opening night 9 Nov; conference 10–12 Nov 2026)
 
 Three launches move the picture from story to proof:
 
@@ -113,7 +115,7 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 **Must match on every site**
 
 1. **Wordmark pattern:** sailboat mark + "Automatos" + product name. Decide one treatment. Today: Studio and automatos.app use the serif with an italic second word; Academy uses a sans two-weight wordmark. Mark is orange on Academy/Studio, white on automatos.app.
-2. **One copyright line:** "© 2026 Automatos AI Ltd" (the legal name in the structured data) + product line + licence where relevant. Today there are three names: "Automatos AI" (Studio), "AUTOMATOS" (Academy), "Automatos Labs" (automatos.app).
+2. **One copyright line:** "© 2026 Automatos AI" (brand only, no Ltd) + product line + licence where relevant. Today there are three names: "Automatos AI" (Studio), "AUTOMATOS" (Academy), "Automatos Labs" (automatos.app).
 3. **"Powered by Automatos AI"** pill linking to automatos.app. Studio has it; Academy has "Built on Automatos agents" (convert).
 4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Market Intelligence, Widgets, Shopify, Enterprise; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
 5. **Same social icons in the same order.** Legal links point to one canonical set on automatos.app unless a product needs its own.

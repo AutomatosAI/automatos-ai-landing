@@ -1,8 +1,11 @@
 # Blog draft queue
 
-Markdown drafts that are ready to be published through the Automatos
-blog CMS (widget API). They are checked into the landing repo so they
-are versioned and reviewable as PRs before going live.
+Markdown drafts for the Automatos blog CMS (widget API). They are
+checked into the landing repo so they are versioned and reviewable as
+PRs before going live.
+
+**None of them is ready to publish.** Each carries a do-not-publish
+banner until it is rewritten to the public facts of 19 Oct 2026.
 
 ## Workflow
 

@@ -10,6 +10,8 @@ author_name: Gerard Kavanagh
 published_at: 2026-04-20
 ---
 
+> **Do not publish until rewritten** to the public facts of 19 Oct 2026. This draft still carries claims that are not built or not current (for example a compliance pack, auditor share links, tamper-evident retention tiers, SOC-style logging, "EU AI Act ready", sign-up today, production SaaS, or old agent counts).
+
 # Automatos AI vs LangChain: When to Use a Framework vs a Platform
 
 LangChain is a framework. Automatos AI is a platform. That one-line difference drives almost every other decision downstream.

@@ -10,6 +10,8 @@ author_name: Gerard Kavanagh
 published_at: 2026-04-20
 ---
 
+> **Do not publish until rewritten** to the public facts of 19 Oct 2026. This draft still carries claims that are not built or not current (for example a compliance pack, auditor share links, tamper-evident retention tiers, SOC-style logging, "EU AI Act ready", sign-up today, production SaaS, or old agent counts).
+
 # Automatos AI vs CrewAI vs AutoGen: Multi-Agent Orchestration Compared
 
 Multi-agent is now table stakes. Three projects get mentioned most often in that conversation: **CrewAI**, **AutoGen**, and **Automatos AI**. They solve overlapping problems with very different assumptions.

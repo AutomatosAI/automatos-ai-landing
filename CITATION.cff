@@ -2,10 +2,10 @@ cff-version: 1.2.0
 message: "If you reference Automatos AI in academic work, please cite it as follows."
 title: "Automatos AI"
 abstract: >
-  Automatos AI is a multi-tenant SaaS platform for building and deploying
-  autonomous AI agents. It provides multi-agent orchestration with agents,
-  skills, playbooks, missions, a marketplace, semantic field memory and
-  EU AI Act compliance posture.
+  Automatos AI is an open-source platform (hosted beta from November 2026)
+  for building and deploying autonomous AI agents. It provides multi-agent
+  orchestration with agents, skills, playbooks, missions, a marketplace,
+  semantic field memory and an EU AI Act posture (work in progress).
 type: software
 authors:
   - family-names: Kavanagh
