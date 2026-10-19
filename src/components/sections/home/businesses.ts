@@ -4,6 +4,10 @@ import { GITHUB_URL } from "@/lib/links";
   "Who it's for": the six businesses from the v1 Industries section, copy
   carried over from the redesign branch. Portraits are AI illustrations (the
   card says so); each `made` is a real render from Studio (c1 test workspace).
+  19 Oct 2026: two renders were trimmed, not re-rendered: owner-letter.jpg lost
+  its letterhead address line, and developer-apache.jpg lost "Prefer not to run
+  it yourself? The hosted edition is at automatos.app." (hosted opens as a beta
+  in November). Re-render both in Studio to replace them.
 */
 export type Business = {
   id: string;

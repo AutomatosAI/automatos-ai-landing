@@ -2,6 +2,9 @@
   Real page-1 renders from Studio, per brand kit (c1 test workspace).
   To add a kit: render the same document types in it, crop page 1 to
   400×520 into public/images/documents/<kit>/, and add an entry here.
+  19 Oct 2026: the address line was cut from the Automatos letterhead in
+  invoice.jpg and weekly-report.jpg (public copy gives no street address);
+  re-render with the brand kit's address empty to replace them.
 */
 export type KitRender = {
   name: string;
