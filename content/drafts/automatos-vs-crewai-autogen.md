@@ -69,7 +69,7 @@ Automatos AI is a full platform. The orchestration layer is one piece of a large
 - **Missions** — multi-agent orchestrations with budget, approvals, outputs and a board UI.
 - **Skills** — reusable capabilities; gold-standard `SKILL.md` format makes them composable across agents.
 - **Workspaces** — hard tenant isolation with its own agents, memory, credentials.
-- **Marketplace** — install agents, skills, plugins and full workspace templates in one click.
+- **Marketplace** — install agents, skills, plugins, Playbooks and packages from the Studio marketplace.
 - **Memory** — semantic field memory with provenance, not just vector search.
 - **Compliance** — EU AI Act risk tiering, tamper-evident logs, human oversight wired into missions.
 - **Widget API** — ship agent output as content into any website with no CMS.
@@ -88,8 +88,8 @@ Automatos AI is a full platform. The orchestration layer is one piece of a large
 | Human approvals | Custom | Custom | Built-in gates |
 | Audit logs | None | None | Tamper-evident, 180d–10y retention |
 | Budget enforcement | You build | You build | Per-mission hard caps |
-| Marketplace | No | No | Agents, skills, plugins, templates |
-| Template onboarding | Code | Code | One-click workspace templates |
+| Marketplace | No | No | Agents, skills, plugins, Playbooks, packages |
+| Starter teams | Code | Code | 3 packages: Socials, Shopify Management, Shopify Development |
 | EU AI Act posture | None | None | Risk tiering + compliance pack |
 | Best for | Custom in-app crews | Agent research | Production workforces |
 
@@ -125,7 +125,7 @@ If you know your endgame is a multi-tenant product, starting on a platform saves
 
 Frameworks are for engineers building orchestration. Platforms are for teams running a workforce.
 
-CrewAI and AutoGen are solid frameworks. Automatos AI is a platform — the compliance posture, marketplace, templates, memory and mission UX are the actual product.
+CrewAI and AutoGen are solid frameworks. Automatos AI is a platform — the compliance posture, marketplace, packages, memory and mission UX are the actual product.
 
 ---
 

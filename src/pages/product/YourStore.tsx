@@ -57,7 +57,7 @@ const YourStore = () => (
         title: "A store team from the marketplace.",
         body: "Shopify Management brings an operations manager, a support agent, an inventory watchdog and a business analyst, with weekly numbers, inventory status and customer-service reports. Shopify Development brings an app architect, a storefront developer and an extension builder for your theme.",
         points: [
-          "Shopify agents in the Studio marketplace, from support to SEO copy and gift finding",
+          "12 Shopify agent templates in the Studio marketplace, in two packages: Shopify Management and Shopify Development",
           "Skills for order triage, returns, pricing, peak season and suppliers",
           "Each agent's model, skills and tools are yours to change",
         ],

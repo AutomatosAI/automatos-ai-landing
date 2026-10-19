@@ -47,7 +47,7 @@ Automatos AI is a multi-tenant SaaS platform with the primitives already assembl
 - **Agents** — named, configurable operators with model, system prompt, skills and tools
 - **Skills** — reusable capability definitions that stack onto any agent
 - **Missions** — long-running, multi-agent orchestrations with budget, approvals and outputs
-- **Marketplace** — one-click install of agents, skills, plugins and workspace templates
+- **Marketplace** — install agents, skills, plugins, Playbooks and packages from the Studio marketplace
 - **Compliance posture** — EU AI Act risk tiering, tamper-evident logs, human oversight baked in
 - **Semantic memory** — field-scoped retrieval across documents, chat history and past missions
 - **Widget API** — serve agent-generated content into any site without writing a CMS
@@ -65,7 +65,7 @@ You do not build the runtime. You use it.
 | Workspaces / tenancy | You build | Hard-isolated by default |
 | Human approvals | Not provided | Built into missions |
 | Audit logs | LangSmith (paid add-on) | Tamper-evident, EU AI Act ready |
-| Marketplace | None | Skills, agents, plugins, templates |
+| Marketplace | None | Skills, agents, plugins, Playbooks, packages |
 | Time to first production agent | Weeks | Minutes |
 
 ## When LangChain wins
