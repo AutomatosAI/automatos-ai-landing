@@ -33,13 +33,12 @@ export function organizationSchema() {
     sameAs: [
       SITE.linkedin,
       SITE.github,
-      SITE.youtube,
       `https://twitter.com/${SITE.twitter.replace("@", "")}`,
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      url: absoluteUrl("/contact"),
+      url: `${SITE.companyUrl}/contact`,
       availableLanguage: ["en"],
     },
   };
@@ -55,15 +54,15 @@ export function websiteSchema() {
     "@type": "WebSite",
     "@id": `${SITE.url}/#website`,
     url: SITE.url,
-    name: SITE.name,
+    name: SITE.product,
     description: SITE.description,
-    publisher: { "@id": `${SITE.url}/#organization` },
+    publisher: { "@id": `${SITE.companyUrl}/#organization` },
     inLanguage: "en-US",
   };
 }
 
 // ---------------------------------------------------------------------------
-// SoftwareApplication — product-level schema for the Automatos platform
+// SoftwareApplication — Automatos Studio, the hosted app this site sells
 // ---------------------------------------------------------------------------
 
 export function softwareApplicationSchema() {
@@ -71,35 +70,40 @@ export function softwareApplicationSchema() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${SITE.url}/#software`,
-    name: SITE.name,
+    name: SITE.product,
     description: SITE.description,
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "AI Agent Platform",
     operatingSystem: "Web",
     url: SITE.url,
     image: SITE.ogImage,
-    offers: {
+    offers: SITE.offers.plans.map((plan) => ({
       "@type": "Offer",
+      name: plan.name,
       category: SITE.offers.category,
-      priceCurrency: "EUR",
+      price: plan.monthlyUsd,
+      priceCurrency: "USD",
+      description: SITE.offers.priceModel,
       priceSpecification: {
-        "@type": "PriceSpecification",
-        description: SITE.offers.priceModel,
+        "@type": "UnitPriceSpecification",
+        price: plan.monthlyUsd,
+        priceCurrency: "USD",
+        unitText: "MONTH",
       },
-    },
+    })),
     featureList: [
       "Multi-agent orchestration",
       "Sequential mission coordinator",
       "Playbook execution with budgets",
-      "BYOK support across OpenAI, Anthropic, Google, Grok, AWS Bedrock, OpenRouter",
+      "400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others",
       "Skills marketplace with one-click installs",
-      "Composio tool integration (250+ services)",
+      "1,000+ apps through Composio",
       "Persistent memory and report sharing across agents",
       "Human-in-the-loop approvals and audit logging",
       "Risk classes with matching human oversight",
     ],
-    creator: { "@id": `${SITE.url}/#organization` },
-    publisher: { "@id": `${SITE.url}/#organization` },
+    creator: { "@id": `${SITE.companyUrl}/#organization` },
+    publisher: { "@id": `${SITE.companyUrl}/#organization` },
   };
 }
 
@@ -110,6 +114,8 @@ export function softwareApplicationSchema() {
 export interface FaqItem {
   question: string;
   answer: string;
+  /** Rendered after the answer on the page; its absolute URL ends the structured-data answer. */
+  link?: { label: string; href: string };
 }
 
 export function faqSchema(items: FaqItem[]) {
@@ -121,7 +127,7 @@ export function faqSchema(items: FaqItem[]) {
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: item.link ? `${item.answer} ${item.link.href}` : item.answer,
       },
     })),
   };

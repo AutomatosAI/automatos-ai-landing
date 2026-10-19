@@ -110,7 +110,7 @@ export const CTASection = ({
                   Joining…
                 </>
               ) : (
-                "Join waitlist →"
+                "Join the waitlist →"
               )}
             </button>
           </form>

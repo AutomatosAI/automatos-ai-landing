@@ -10,6 +10,8 @@ author_name: Gerard Kavanagh
 published_at: 2026-04-20
 ---
 
+> **Do not publish until rewritten** to the public facts of 19 Oct 2026. This draft still carries claims that are not built or not current (for example a compliance pack, auditor share links, tamper-evident retention tiers, SOC-style logging, "EU AI Act ready", sign-up today, production SaaS, or old agent counts).
+
 # How to Build a Shopify AI Agent in 2026 (Without Writing Integrations)
 
 There are 4.6 million Shopify stores. Most owners do not have an engineering team. If you are one of them — or you build for them — this is the shortest path from zero to a working AI agent inside your store.

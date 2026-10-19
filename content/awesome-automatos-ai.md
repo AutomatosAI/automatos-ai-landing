@@ -2,7 +2,7 @@
 
 > A curated list of resources, skills, templates, agents and community projects for the [Automatos AI](https://automatos.app) multi-agent orchestration platform.
 
-Automatos AI is a multi-tenant SaaS platform for building and deploying autonomous AI agents — agents, skills, playbooks, missions, a marketplace, compliance posture, and semantic field memory all in one place.
+Automatos OS is the open-source engine of Automatos AI for building and deploying autonomous AI agents, and Automatos Studio is the hosted app (hosted beta opens November 2026). Agents, skills, playbooks, missions, a marketplace, an EU AI Act posture (work in progress) and semantic field memory, all in one place.
 
 ---
 
@@ -11,36 +11,37 @@ Automatos AI is a multi-tenant SaaS platform for building and deploying autonomo
 - [Platform](#platform)
 - [Skills](#skills)
 - [Agents](#agents)
-- [Workspace templates](#workspace-templates)
+- [Packages](#packages)
 - [Integrations](#integrations)
 - [Compliance](#compliance)
 - [Research](#research)
 - [Tools](#tools)
-- [Comparisons](#comparisons)
 - [Community](#community)
 
 ---
 
 ## Platform
 
-- [Automatos AI](https://automatos.app) — the platform.
-- [Product guides](https://automatos.app/design-your-agents) — design agents, connect your world, empower with knowledge, launch missions.
-- [Marketplace](https://automatos.app/marketplace) — install agents, skills, plugins and full workspace templates in one click.
-- [Widget API](https://automatos.app/blog) — serve agent-generated content into any site with no CMS.
+- [Automatos AI](https://automatos.app) — the company and brand site.
+- [Automatos OS](https://github.com/AutomatosAI/automatos-ai) — the open-source engine (Apache 2.0); the local edition runs today on your own keys or your Claude Code / CLI subscription.
+- [Automatos Studio](https://studio.automatos.app) — the hosted app. Hosted beta opens November 2026 · [Join the waitlist](https://studio.automatos.app/#waitlist).
+- [Product guides](https://studio.automatos.app/auto) — Auto and agents, the Command Centre, documents, socials, integrations and your store.
+- [Marketplace](https://studio.automatos.app/marketplace) — 100+ ready-made agents in the Studio marketplace, 400+ skills, 20+ Playbooks and 3 packages.
+- [Widgets](https://studio.automatos.app/your-store) — serve agent-generated content into any site with no CMS.
 
 ## Skills
 
-The [automatos-skills](https://github.com/AutomatosAI/automatos-skills) repository is the canonical skills library — 128 skills organised into 16 top-level groups.
+The [automatos-skills](https://github.com/AutomatosAI/automatos-skills) repository is the open automatos-skills library of 140 skills.
 
 - [SKILL-GUIDE.md](https://github.com/AutomatosAI/automatos-skills/blob/main/SKILL-GUIDE.md) — the author's guide for writing a new skill.
-- **Signature agents** — SENTINEL, SCOUT, HARPER, ECHO, ATLAS, FORGE, ORACLE, RALLY, PATCHER, each with their own `SKILL.md`.
-- **Domain packs** — Shopify & Commerce (21), Software Engineering (11), Quality / Security / Compliance (9), DevOps & SRE (6), Product & PM (8), Design & UX (11), Content & Editorial (7), Social Media (12), Marketing & Growth (7), Sales & Revenue (8), Analytics & BI (5), People & Ops (3), Research (2), Support (1), Integrations (8).
+- **Team personas** — SKILL.md personas in the library's `team/` folder: SENTINEL, SCOUT, HARPER, ECHO, ATLAS, FORGE, ORACLE, RALLY and PATCHER (`team/bug-fixer`). They are skills in the open library, not agents pre-installed in a workspace.
+- **Domain packs** — Shopify & Commerce, Software Engineering, Quality / Security / Compliance, DevOps & SRE, Product & PM, Design & UX, Content & Editorial, Social Media, Marketing & Growth, Sales & Revenue, Analytics & BI, People & Ops, Research, Support, Integrations.
 
 ## Agents
 
-- [The Automatos Team](https://github.com/AutomatosAI/automatos-skills/tree/main/team) — named agents with persona, beat, and UI home.
+- [The Automatos Team](https://github.com/AutomatosAI/automatos-skills/tree/main/team) — team personas as SKILL.md files; none is pre-installed in a workspace.
   - **SENTINEL** — infra watchdog (API health, deploys, cost anomalies).
-  - **PATCHER** — end-to-end bug fixing (ticket → fix → PR).
+  - **PATCHER** (`team/bug-fixer`) — end-to-end bug fixing (ticket → fix → PR).
   - **SCOUT** — lead intelligence and outreach.
   - **HARPER** — turns platform activity into content.
   - **ECHO** — customer support classifier and responder.
@@ -49,26 +50,27 @@ The [automatos-skills](https://github.com/AutomatosAI/automatos-skills) reposito
   - **ORACLE** — knowledge curator / RAG health.
   - **RALLY** — community growth.
 
-## Workspace templates
+## Packages
 
-Workspace templates bundle agents, skills, plugins, missions and dashboards into a one-click install. The first template is **Shopify** — 16 agents, 32 skills, ready for any Shopify store.
+Packages bundle agents, Playbooks and a guided setup into one install. The Studio marketplace has 3 packages:
 
-- Shopify template — merchandiser, inventory, customer support, marketer, analyst and more.
-- More templates coming — SaaS operator, content studio, consulting practice.
+- **Socials** — a Social Media Director, a Brand Designer and five Playbooks.
+- **Shopify Management** — an operations manager, a support agent, an inventory watchdog and a business analyst.
+- **Shopify Development** — an app architect, a storefront developer and an extension builder.
 
 ## Integrations
 
-Automatos AI integrates with 100+ tools via the [Composio](https://composio.dev) SDK plus native connectors:
+Automatos AI connects to 1,000+ apps through [Composio](https://composio.dev) plus native connectors (local edition: bring your own Composio key):
 
 - Gmail, Slack, Jira, Google Calendar, LinkedIn, Twitter, TikTok, Shopify, Stripe, GitHub, Linear, Notion, Airtable…
-- Bring-your-own-key for any LLM provider (OpenAI, Anthropic, Google, OpenRouter, AWS Bedrock, Azure, Groq, HuggingFace).
+- 400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others.
 - Embed any Composio toolkit as a skill — see [`integrations/`](https://github.com/AutomatosAI/automatos-skills/tree/main/integrations).
 
 ## Compliance
 
-- [EU AI Act posture](https://automatos.app/eu-ai-act) — how Automatos AI maps to Articles 5, 9, 10, 12, 13, 14, 15, 50, 71 and 73.
+- [EU AI Act posture](https://automatos.app/eu-ai-act) — EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now.
 - [Free EU AI Act compliance checker](https://automatos.app/eu-ai-act/checker) — classify any AI system into prohibited / high / limited / minimal risk in 5 questions.
-- Platform controls — tamper-evident logs, human approval gates, risk tiering on every agent/skill/mission, Compliance Pack for auditor share links.
+- Platform controls — an append-only audit log, human approval before anything publishes or spends, and risk classes with matching oversight.
 
 ## Research
 
@@ -77,22 +79,15 @@ Automatos AI integrates with 100+ tools via the [Composio](https://composio.dev)
 
 ## Tools
 
-- [llms.txt](https://automatos.app/llms.txt) — AI-crawler-friendly index of the site.
-- [llms-full.txt](https://automatos.app/llms-full.txt) — full platform briefing for LLM context ingestion.
-- [sitemap.xml](https://automatos.app/sitemap.xml) — XML sitemap.
-- [RSS feed](https://automatos.app/rss.xml) — blog autodiscovery.
-
-## Comparisons
-
-- [Automatos AI vs LangChain](https://automatos.app/blog/automatos-vs-langchain) — framework vs platform.
-- [Automatos AI vs CrewAI vs AutoGen](https://automatos.app/blog/automatos-vs-crewai-autogen) — multi-agent orchestration head-to-head.
-- [How to build a Shopify AI agent](https://automatos.app/blog/how-to-build-a-shopify-ai-agent) — the template walkthrough.
+- [llms.txt](https://studio.automatos.app/llms.txt) — AI-crawler-friendly index of the site.
+- [llms-full.txt](https://studio.automatos.app/llms-full.txt) — full platform briefing for LLM context ingestion.
+- [sitemap.xml](https://studio.automatos.app/sitemap.xml) — XML sitemap.
+- [RSS feed](https://studio.automatos.app/rss.xml) — blog autodiscovery.
 
 ## Community
 
 - [LinkedIn](https://www.linkedin.com/company/automatos-ai)
 - [GitHub](https://github.com/AutomatosAI)
-- [YouTube](https://www.youtube.com/@AutomatosAI)
 - [Twitter / X](https://twitter.com/AutomatosAI)
 
 ## Contributing

@@ -14,7 +14,7 @@ const WIDGET_SNIPPET = `<script src="https://widgets.automatos.app/v0/widget.glo
       apiKey: "ak_pub_…",        // locked to your domains
       widget: "chat",            // or "blog"
       position: "bottom-right",
-      greeting: "Hi! Ask us anything.",
+      title: "AI assistant",     // shown in the chat header
     });
   });
 </script>`;
@@ -29,9 +29,9 @@ const GRAPH_SAMPLE = `shopify_product   Harbour Blend
 const YourStore = () => (
   <ProductPage
     path="/your-store"
-    seoTitle="Shopify app and website widgets"
+    seoTitle="Shopify store and website widgets"
     seoDescription="Connect your Shopify store and your catalog lands in your knowledge graph. Shopify agents answer shoppers, watch stock and write product copy; the chat and blog widgets put them on any site."
-    eyebrow="Your store & site · early access"
+    eyebrow="Your store & site"
     headline="Your store, run by your agents."
     brandLine="On Shopify, or any site with one script tag."
     lede="Connect your Shopify store and your products, variants and stock land in your knowledge graph. Shopify agents answer shoppers, watch inventory and write your product copy, and the chat and blog widgets put them on any website you run."
@@ -57,7 +57,7 @@ const YourStore = () => (
         title: "A store team from the marketplace.",
         body: "Shopify Management brings an operations manager, a support agent, an inventory watchdog and a business analyst, with weekly numbers, inventory status and customer-service reports. Shopify Development brings an app architect, a storefront developer and an extension builder for your theme.",
         points: [
-          "Twelve Shopify agents, from support to SEO copy and gift finding",
+          "Shopify agents in the Studio marketplace, from support to SEO copy and gift finding",
           "Skills for order triage, returns, pricing, peak season and suppliers",
           "Each agent's model, skills and tools are yours to change",
         ],
@@ -68,9 +68,9 @@ const YourStore = () => (
         },
       },
       {
-        eyebrow: "The Shopify app",
+        eyebrow: "The Shopify app, next",
         title: "Four blocks in your theme editor.",
-        body: "Install Automatos from Shopify and four blocks appear in your theme: a support chat, product Q&A, a blog and a review summary. The chat knows which product, collection and cart the shopper is looking at, and can open the conversation itself when a cart sits idle. Prefer your own setup? Connect your store with your own Admin token instead.",
+        body: "Today you connect your store with your own Admin token. Next: the Automatos app for the Shopify App Store, with four blocks for your theme: a support chat, product Q&A, a blog and a review summary. Its chat will know which product, collection and cart the shopper is looking at, and will be able to open the conversation itself when a cart sits idle.",
         points: [
           "Support chat with the page, product and cart in context",
           "Product Q&A on every product page",
@@ -121,7 +121,7 @@ const YourStore = () => (
       { label: "Socials", href: "/socials" },
     ]}
     ctaHeading={<>Connect your store. <span className="brand-line">Let the agents mind the shop.</span></>}
-    ctaSub="Join the waitlist. Shopify and widget early access opens first."
+    ctaSub="Join the waitlist. Hosted beta opens November 2026."
   />
 );
 

@@ -1,14 +1,13 @@
 import { ProductPage } from "@/components/product/ProductPage";
-import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 
 const Integrations = () => (
   <ProductPage
     path="/integrations"
     seoTitle="Applications, integrations and channels"
-    seoDescription="Connect the apps you already use through your own accounts: mail, calendar, Shopify, Xero, LinkedIn and a thousand more. Agents use them with your permission."
+    seoDescription="Connect the apps you already use through your own accounts: mail, calendar, Shopify, Xero, LinkedIn and the rest of 1,000+ apps through Composio. Agents use them with your permission."
     eyebrow="Applications"
     headline="Your accounts. Your permission."
-    brandLine="A thousand apps, no new logins to invent."
+    brandLine="1,000+ apps through Composio, no new logins to invent."
     lede="Automatos doesn't rebuild Gmail, Shopify or Xero. You connect the account once, and agents use it within the limits you set. Anything that moves money is on a deny list unless you say otherwise."
     hero={{
       src: "/images/studio/11-applications.png",
@@ -36,9 +35,8 @@ const Integrations = () => (
         title: "Talk to Auto where you already talk.",
         body: "Connect a channel in Studio and Auto answers there, with the same agents, the same brand and the same approvals as in the app. Questions from agents can be answered from your phone.",
         points: [
-          "Live: WhatsApp, Telegram, Slack and Discord",
-          "Coming: Microsoft Teams, Google Chat, Signal, iMessage, IRC, Matrix and LINE",
-          "A webhook channel for anything else",
+          "Telegram, Slack, Discord and WhatsApp",
+          "A generic webhook channel for anything else",
         ],
       },
       {

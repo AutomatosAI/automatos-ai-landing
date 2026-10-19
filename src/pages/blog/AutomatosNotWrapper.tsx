@@ -120,9 +120,8 @@ const AutomatosNotWrapper = () => {
                 operating system for autonomous work — agents, missions,
                 memory, scheduling, channels, governance, telemetry, an
                 economy of skills, and a self-improving loop that watches its
-                own behaviour and rewrites its own playbooks. The codebase has
-                13,163 indexed nodes and 20,762 edges between them. That's not
-                a wrapper. That's infrastructure.
+                own behaviour and rewrites its own playbooks. That's not a
+                wrapper. That's infrastructure.
               </p>
               <p>
                 I'll walk you through what's actually inside, what the
@@ -304,14 +303,14 @@ const AutomatosNotWrapper = () => {
 
               <h3>Integrations, channels, webhooks</h3>
               <p>
-                We connect to 856 apps through Composio, plus native
+                We connect to over 1,000 apps through Composio, plus native
                 integrations. But the interesting layer isn't the count — it's
                 how the routing works.
               </p>
               <p>
-                A user message arrives through Slack, Teams, WhatsApp, LINE,
-                iMessage, Discord, Matrix, Signal, email, voice, a widget on
-                your website, or a mobile app. The channel adapter normalizes
+                A user message arrives through Telegram, Slack, Discord or
+                WhatsApp, a generic webhook, or a widget on your website.
+                The channel adapter normalizes
                 it into a universal request envelope. A router picks the
                 right agent based on intent, context, and rules you've set.
                 The agent runs. The response goes back out through the same
@@ -339,17 +338,19 @@ const AutomatosNotWrapper = () => {
                 across every agent, every mission, every tool call, every
                 channel. The dashboards layer on analytics — cost per
                 mission, success rate by skill, memory utilization, agent
-                utilization, channel volume, SLA adherence.
+                utilization and channel volume.
               </p>
               <p>
                 For compliance-conscious teams this matters even more. Every
                 action is logged. Every LLM call is traced. Every mission is
-                reconstructible. (We've written a separate PRD on{" "}
-                <Link to="/eu-ai-act" className="text-primary hover:underline">
-                  EU AI Act alignment
-                </Link>{" "}
-                covering this specifically — logging, traceability, and human
-                oversight are architectural, not bolted on.)
+                reconstructible. (Our{" "}
+                <a
+                  href="https://automatos.app/eu-ai-act"
+                  className="text-primary hover:underline"
+                >
+                  EU AI Act posture page
+                </a>{" "}
+                says what is built and what is in progress.)
               </p>
 
               <h3>Cost-aware execution</h3>
@@ -360,7 +361,7 @@ const AutomatosNotWrapper = () => {
                 agent, per mission, per workspace.
               </p>
               <p>
-                This is why people who run real workloads on us stay. On day
+                This is the point of running real workloads on it: on day
                 one you save time. By day thirty you're saving money. By day
                 ninety the cost curve looks nothing like a chatbot bill.
               </p>
@@ -433,7 +434,8 @@ const AutomatosNotWrapper = () => {
                         Python libraries to build agents
                       </td>
                       <td className="p-3 text-muted-foreground">
-                        Frameworks are code. We're a hosted platform with a
+                        Frameworks are code. We're a platform, open source
+                        today (the hosted beta opens November 2026), with a
                         marketplace, governance, memory, scheduling, channels,
                         telemetry, and a harness. Code is maybe 10% of what
                         you need.
@@ -493,9 +495,9 @@ const AutomatosNotWrapper = () => {
                 What Automatos gives you is something none of those give you
                 by themselves — a complete operating system where agents are
                 first-class citizens, missions are the unit of work, memory is
-                shared across surfaces, costs are managed, compliance is
-                architectural, and the system gets smarter over time without
-                you asking.
+                shared across surfaces, costs are managed, every action lands
+                on an append-only audit log, and the system gets smarter over
+                time without you asking.
               </p>
 
               <h2>What's coming next</h2>
@@ -530,12 +532,18 @@ const AutomatosNotWrapper = () => {
                 compounds instead of drifting.
               </p>
               <p>
-                <strong>EU AI Act alignment, by design.</strong> We've
-                published a full PRD. Prohibited-practice guardrails,
-                transparency, human oversight, and logging are shipping as
-                always-on platform features, with a Compliance Pack SKU for
-                regulated deployments. It's genuinely built in, not slapped on
-                for marketing.
+                <strong>EU AI Act work is in progress.</strong> Human approval
+                before anything publishes or spends, risk classes with matching
+                oversight, and an append-only audit log are in the product
+                today. The Article 50 notices and the marking of generated
+                media are being built now. The{" "}
+                <a
+                  href="https://automatos.app/eu-ai-act"
+                  className="text-primary hover:underline"
+                >
+                  posture page
+                </a>{" "}
+                says what is built and what isn't.
               </p>
               <p>
                 <strong>Voice, mobile, widget SDK maturity.</strong> The
@@ -581,17 +589,23 @@ const AutomatosNotWrapper = () => {
               <hr />
               <p>
                 <em>
-                  Automatos AI is an autonomous AI operating system for teams
-                  and enterprises. You can explore the platform, install
-                  agents and skills from the marketplace, and connect your own
-                  tools and channels at{" "}
+                  Automatos AI is an autonomous AI operating system. The
+                  hosted beta of Automatos Studio opens November 2026: join
+                  the waitlist at{" "}
                   <a
-                    href="https://ui.automatos.app"
+                    href="https://studio.automatos.app/#waitlist"
+                    className="text-primary hover:underline"
+                  >
+                    studio.automatos.app
+                  </a>
+                  , or run the open-source local edition today from{" "}
+                  <a
+                    href="https://github.com/AutomatosAI/automatos-ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
                   >
-                    automatos.app
+                    GitHub
                   </a>
                   . Questions? Find me at{" "}
                   <a

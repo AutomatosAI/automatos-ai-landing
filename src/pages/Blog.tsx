@@ -49,6 +49,14 @@ interface BlogResponse {
     total_pages: number;
 }
 
+// Page 1 from the static posts alone, for when the CMS can't be reached.
+const staticPostsPage = (category?: string): BlogResponse => {
+    const posts = category
+        ? STATIC_POSTS.filter((p) => p.category === category)
+        : STATIC_POSTS;
+    return { posts, total: posts.length, page: 1, per_page: 9, total_pages: 1 };
+};
+
 const fetchPosts = async (page: number, category?: string): Promise<BlogResponse> => {
     const params = new URLSearchParams({
         workspace_id: WORKSPACE_ID,
@@ -57,11 +65,30 @@ const fetchPosts = async (page: number, category?: string): Promise<BlogResponse
     });
     if (category) params.set("category", category);
 
-    const res = await fetch(
-        `https://api.automatos.app/api/widgets/blog/posts?${params}`
-    );
-    if (!res.ok) throw new Error("Failed to fetch posts");
-    const data: BlogResponse = await res.json();
+    let res: Response;
+    try {
+        res = await fetch(
+            `https://api.automatos.app/api/widgets/blog/posts?${params}`
+        );
+    } catch {
+        // The CMS can't be reached (DNS, network or CORS): page 1 still lists the static posts.
+        if (page === 1) return staticPostsPage(category);
+        throw new Error("Failed to fetch posts");
+    }
+    if (!res.ok) {
+        // A CMS error (or a build without the workspace id) still lists the static posts.
+        if (page === 1) return staticPostsPage(category);
+        throw new Error("Failed to fetch posts");
+    }
+    let data: BlogResponse;
+    try {
+        data = await res.json();
+        if (!Array.isArray(data?.posts)) throw new Error("Unexpected blog response shape");
+    } catch {
+        // A 200 that is not the posts JSON (an HTML proxy page, say) still lists the static posts.
+        if (page === 1) return staticPostsPage(category);
+        throw new Error("Failed to fetch posts");
+    }
 
     // Only merge static posts on page 1 so pagination still works correctly.
     if (page === 1) {

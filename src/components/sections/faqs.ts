@@ -1,9 +1,16 @@
-/* The home page FAQ. The FAQPage structured data reads the same list, so what crawlers see matches the page. */
-export const HOME_FAQS: { question: string; answer: string }[] = [
+import { EU_AI_ACT_URL } from "@/lib/links";
+import type { FaqItem } from "@/lib/seo/structured-data";
+
+/*
+  The home page FAQ. The FAQPage structured data reads the same list, so what
+  crawlers see matches the page; an item's link is rendered after its answer
+  and its absolute URL is appended to the structured-data answer.
+*/
+export const HOME_FAQS: FaqItem[] = [
   {
     question: "How does the pricing work?",
     answer:
-      "Three plans: Basic, Pro and Business. The price covers the platform, the renders and support. Agents use your own connected accounts and, where you have one, your own CLI subscription, so there is no token meter to watch.",
+      "The local edition is free and open source, on your own keys or your Claude Code / CLI subscription. Hosted Studio opens as a beta in November with three plans: Own keys at $9 a month, Pro at $29 and Business at $99. That is beta pricing, not charged until billing opens. The plans differ in seats, agents, video render minutes and voice. New accounts get a one-time trial of 500 credits; a credit is one US cent of AI usage at our prices. During the beta, once the trial is used, the AI runs on your own Anthropic, OpenAI or OpenRouter key on every plan, and your provider bills you for it. Business is by invite during the beta. Included credits and top-ups start when billing opens. Enterprise is coming soon: contact us.",
   },
   {
     question: "Can I customise the agents?",
@@ -22,11 +29,12 @@ export const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "What if I need more than the standard integrations?",
     answer:
-      "Over a thousand apps connect through your own accounts. For anything bespoke, the Business plan includes custom development.",
+      "Over 1,000 apps connect through Composio with your own accounts. For anything bespoke, contact us about Enterprise, which is coming soon.",
   },
   {
     question: "Is Automatos EU AI Act compliant?",
     answer:
-      "Not as a whole yet, and we won't claim it. What's built: a person approves anything that spends money or publishes, actions are sorted into risk classes with matching oversight, every action goes to an append-only audit log, data is stored in the EU, and GDPR export and erasure work. The posture page says what's built and what isn't.",
+      "Not as a whole, and we won't claim it. EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now. Our posture page says what is built and what isn't.",
+    link: { label: "Our EU AI Act posture →", href: EU_AI_ACT_URL },
   },
 ];

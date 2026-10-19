@@ -51,6 +51,15 @@ const STATIC_POSTS: ResearchPost[] = [
   },
 ];
 
+// Page 1 from the static papers alone, for when the CMS can't be reached.
+const staticResearchPage = (): ResearchResponse => ({
+  posts: STATIC_POSTS,
+  total: STATIC_POSTS.length,
+  page: 1,
+  per_page: 12,
+  total_pages: 1,
+});
+
 const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
   const params = new URLSearchParams({
     workspace_id: WORKSPACE_ID,
@@ -59,11 +68,30 @@ const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
     category: "Research",
   });
 
-  const res = await fetch(
-    `https://api.automatos.app/api/widgets/blog/posts?${params}`
-  );
-  if (!res.ok) throw new Error("Failed to fetch research papers");
-  const data: ResearchResponse = await res.json();
+  let res: Response;
+  try {
+    res = await fetch(
+      `https://api.automatos.app/api/widgets/blog/posts?${params}`
+    );
+  } catch {
+    // The CMS can't be reached (DNS, network or CORS): page 1 still lists the static papers.
+    if (page === 1) return staticResearchPage();
+    throw new Error("Failed to fetch research papers");
+  }
+  if (!res.ok) {
+    // A CMS error (or a build without the workspace id) still lists the static papers.
+    if (page === 1) return staticResearchPage();
+    throw new Error("Failed to fetch research papers");
+  }
+  let data: ResearchResponse;
+  try {
+    data = await res.json();
+    if (!Array.isArray(data?.posts)) throw new Error("Unexpected research response shape");
+  } catch {
+    // A 200 that is not the posts JSON (an HTML proxy page, say) still lists the static papers.
+    if (page === 1) return staticResearchPage();
+    throw new Error("Failed to fetch research papers");
+  }
 
   if (page === 1) {
     const apiSlugs = new Set(data.posts.map((p) => p.slug));

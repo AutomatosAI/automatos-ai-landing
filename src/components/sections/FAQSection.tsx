@@ -9,7 +9,7 @@ export const FAQSection = () => (
       <div className="flex flex-col gap-[18px] lg:sticky lg:top-24">
         <SectionEyebrow n="06" label="Questions" />
         <h2 className="m-0 text-4xl font-medium leading-[1.05] sm:text-5xl">
-          Straight answers, <em className="font-normal">before you sign up.</em>
+          Straight answers, <em className="font-normal">before you join the waitlist.</em>
         </h2>
         <a
           href="#waitlist"
@@ -38,7 +38,22 @@ export const FAQSection = () => (
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
             <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down motion-reduce:animate-none">
-              <p className="m-0 px-[22px] pb-5 text-[15px] leading-relaxed text-muted-foreground">{faq.answer}</p>
+              <p className="m-0 px-[22px] pb-5 text-[15px] leading-relaxed text-muted-foreground">
+                {faq.answer}
+                {faq.link && (
+                  <>
+                    {" "}
+                    <a
+                      href={faq.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground underline hover:text-accent"
+                    >
+                      {faq.link.label}
+                    </a>
+                  </>
+                )}
+              </p>
             </AccordionPrimitive.Content>
           </AccordionPrimitive.Item>
         ))}

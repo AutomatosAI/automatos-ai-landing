@@ -28,7 +28,6 @@ export const SITE = {
   twitter: "@AutomatosAI",
   linkedin: "https://www.linkedin.com/company/automatos-ai",
   github: "https://github.com/AutomatosAI",
-  youtube: "https://www.youtube.com/@AutomatosAI",
 
   // Founder
   founder: {
@@ -36,10 +35,16 @@ export const SITE = {
     url: "https://www.linkedin.com/in/grkavanagh/",
   },
 
-  // Pricing (tier marker, not price)
+  // Pricing: the hosted Studio beta plans in USD (public facts sheet, 19 Oct 2026)
   offers: {
     category: "SaaS",
-    priceModel: "Subscription + BYOK",
+    priceModel:
+      "Monthly plans from $9 (beta pricing, not charged until billing opens); after a one-time 500-credit trial the beta runs on your own AI keys",
+    plans: [
+      { name: "Own keys", monthlyUsd: 9 },
+      { name: "Pro", monthlyUsd: 29 },
+      { name: "Business", monthlyUsd: 99 },
+    ],
   },
 } as const;
 

@@ -129,14 +129,18 @@ export const REQUESTS: { text: string; agent: number; reply: string }[] = [
 /*
   One week of posts across two workspaces' brands: Harbourline (a coffee
   roaster) and Automatos. Each slot is a real 4:5 render from the platform
-  (Socials, Sept–Oct 2026), resized to 432×540.
+  (Socials, Sept–Oct 2026), resized to 432×540; SAT reuses the 360×450 café
+  render from the home page. On 19 Oct 2026 the WED card's "On your machine or
+  hosted." line was cut from the image (hosted opens as a beta in November; saved
+  as wed-hire-an-ai-team-v2.jpg so cached copies are not reused), and
+  the Web Summit card left the week (it gave the wrong day).
 */
 export const SLOTS: { day: string; src: string; alt: string }[] = [
   { day: "TUE", src: "/images/socials/tue-flat-white-review.jpg", alt: "Harbourline review card over a coffee photo: “Best flat white in town, and the beans are roasted down the road.”" },
-  { day: "WED", src: "/images/socials/wed-hire-an-ai-team.jpg", alt: "Automatos highlights card: Hire an AI team." },
+  { day: "WED", src: "/images/socials/wed-hire-an-ai-team-v2.jpg", alt: "Automatos highlights card: Hire an AI team." },
   { day: "THU", src: "/images/socials/thu-september-sales.jpg", alt: "Harbourline stat card: 46% of all retail bags sold in September were Harbour Blend." },
   { day: "FRI", src: "/images/socials/fri-grassy-to-chocolatey.jpg", alt: "Harbourline before-and-after card of roasted beans: From grassy to chocolatey." },
-  { day: "SAT", src: "/images/socials/sat-web-summit.jpg", alt: "Automatos announcement card: Meet us at Web Summit." },
+  { day: "SAT", src: "/images/use-cases/made/cafe-offer.jpg", alt: "Harbourline offer card for new café accounts: £16/kg for the first 5 kg of Harbour Blend." },
   { day: "SUN", src: "/images/socials/sun-team-never-sleeps.jpg", alt: "Automatos photo card: Your team never sleeps." },
   { day: "MON", src: "/images/socials/mon-house-blend-offer.jpg", alt: "Harbourline offer card: 20% off house blend, 1kg bags." },
 ];
@@ -144,15 +148,15 @@ export const SLOTS: { day: string; src: string; alt: string }[] = [
 export type PackageGroup = { label: string; items: string[] };
 export type MarketPackage = { name: string; by: string; desc: string; groups: PackageGroup[] };
 
-/* Shopify packages as seeded (seed_packages.py); the Socials fourth playbook is still a placeholder (handoff). */
+/* Packages as seeded in automatos-ai (seed_packages.py and seed_socials_package.py). */
 export const PACKAGES: MarketPackage[] = [
   {
     name: "Socials",
     by: "BY AUTOMATOS",
-    desc: "A Social Media Director, a Brand Designer, four playbooks and a guided setup.",
+    desc: "A Social Media Director, a Brand Designer, five playbooks and a guided setup.",
     groups: [
       { label: "AGENTS", items: ["Social Media Director", "Brand Designer"] },
-      { label: "PLAYBOOKS", items: ["Weekly social posts", "Content bank research", "Brand kit from your website", "Evening-before reminder"] },
+      { label: "PLAYBOOKS", items: ["Brand kit from your website", "Launch video", "Weekly social posts", "Image carousel", "Content bank research"] },
       { label: "CONNECTIONS", items: ["Instagram", "LinkedIn", "X"] },
     ],
   },

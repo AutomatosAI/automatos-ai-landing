@@ -4,6 +4,11 @@ import { GITHUB_URL } from "@/lib/links";
   "Who it's for": the six businesses from the v1 Industries section, copy
   carried over from the redesign branch. Portraits are AI illustrations (the
   card says so); each `made` is a real render from Studio (c1 test workspace).
+  19 Oct 2026: two renders were trimmed, not re-rendered: owner-letter.jpg lost
+  its letterhead address line, and developer-apache.jpg lost "Prefer not to run
+  it yourself? The hosted edition is at automatos.app." (hosted opens as a beta
+  in November). Both are saved under -v2 names so browsers holding the old
+  immutable copies fetch the new ones. Re-render both in Studio to replace them.
 */
 export type Business = {
   id: string;
@@ -34,7 +39,7 @@ export const BUSINESSES: Business[] = [
     ],
     logos: [logo("Gmail"), logo("Google Calendar", "GoogleCalendar"), logo("Zoom")],
     link: { label: "See Auto", href: "/auto" },
-    made: { src: "/images/use-cases/made/owner-letter.jpg", alt: "A branded letter on the Automatos letterhead, rendered by Studio" },
+    made: { src: "/images/use-cases/made/owner-letter-v2.jpg", alt: "A branded letter on the Automatos letterhead, rendered by Studio" },
   },
   {
     id: "shop-cafe",
@@ -48,7 +53,7 @@ export const BUSINESSES: Business[] = [
       "Customer replies you approve first",
       "A content bank with real facts, not filler",
     ],
-    logos: [logo("Facebook"), logo("Google Business", "GoogleBusiness"), logo("Square")],
+    logos: [logo("X"), logo("Google Business", "GoogleBusiness"), logo("Square")],
     link: { label: "See Socials", href: "/socials" },
     made: { src: "/images/use-cases/made/cafe-offer.jpg", alt: "Harbourline coffee offer post: £16/kg for the first 5 kg of Harbour Blend" },
   },
@@ -107,13 +112,13 @@ export const BUSINESSES: Business[] = [
     imageAlt: "A developer in orange headphones working at a desktop monitor",
     modules: "Sessions + Local edition + Marketplace",
     features: [
-      "Agents run as sessions on your own CLI subscription",
+      "In the local edition, agents run as sessions on your own Claude Code / CLI subscription",
       "The local edition on your machine",
       "Playbooks and packages you can publish",
       "Apache-2.0, on GitHub",
     ],
     logos: [logo("GitHub"), logo("GitLab"), logo("Docker")],
     link: { label: "Get it on GitHub", href: GITHUB_URL },
-    made: { src: "/images/use-cases/made/developer-apache.jpg", alt: "Social card: Apache 2.0, self-host it with docker compose" },
+    made: { src: "/images/use-cases/made/developer-apache-v2.jpg", alt: "Social card: Apache 2.0, self-host it with docker compose" },
   },
 ];

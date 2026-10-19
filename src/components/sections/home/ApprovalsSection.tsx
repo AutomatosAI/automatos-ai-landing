@@ -16,7 +16,7 @@ const CARDS = [
   {
     tag: "ON THE RECORD",
     title: "Every action on the record",
-    body: "An append-only audit log, grants you can revoke, and your data kept in the EU. Export or erase it on request.",
+    body: "An append-only audit log, grants you can revoke, and GDPR export or erasure on request.",
     link: { label: "Our EU AI Act posture →", href: EU_AI_ACT_URL },
   },
 ];
