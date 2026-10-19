@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { StudioWordmark } from "@/components/brand/StudioWordmark";
 import { FamilyRow } from "./FamilyRow";
+import { CONTACT_URL } from "@/lib/links";
 
 const footerLinks = {
   /* The columns sell Studio. The family is the one row at the foot (FamilyRow), which also links automatos.app. */
@@ -16,7 +17,7 @@ const footerLinks = {
   ],
   company: [
     { label: "Blog", href: "/blog", external: false },
-    { label: "Contact", href: "/contact", external: false },
+    { label: "Contact", href: CONTACT_URL, external: true },
   ],
   resources: [
     { label: "Research", href: "/research", external: false },

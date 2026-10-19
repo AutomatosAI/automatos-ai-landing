@@ -272,9 +272,9 @@ const AutomatosNotWrapper = () => {
                 you what you asked for.
               </p>
               <p>
-                An AI that can configure the platform when you ask it to,
-                with risk classes deciding which of its actions wait for a
-                person's approval.
+                An AI that can configure the platform when you ask it to.
+                Social posts wait for your approval before they publish, and
+                board work can be set to ask before it runs.
               </p>
 
               <h3>The Harness</h3>
@@ -511,11 +511,12 @@ const AutomatosNotWrapper = () => {
                 compounds instead of drifting.
               </p>
               <p>
-                <strong>EU AI Act work is in progress.</strong> Human approval
-                before anything publishes or spends, risk classes with matching
-                oversight, and an append-only audit log are in the product
-                today. The Article 50 notices and the marking of generated
-                media are being built now. The{" "}
+                <strong>EU AI Act work is in progress.</strong> Social posts
+                wait for your approval before they publish, board work can be
+                set to ask before it runs, and every action lands in an
+                append-only audit log, all in the product today. The Article 50
+                notices and the marking of generated media are being built now.
+                The{" "}
                 <a
                   href="https://automatos.app/eu-ai-act"
                   className="text-primary hover:underline"

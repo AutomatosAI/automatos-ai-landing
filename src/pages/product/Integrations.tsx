@@ -45,13 +45,13 @@ const Integrations = () => (
         body: "Actions that purchase, bill or change account settings are denied by default across the platform. A deny-list read that fails refuses the action rather than allowing it.",
         points: [
           "Deny list checked on every call, cached for speed",
-          "Publishing goes through approval, never straight from an agent",
+          "Social posts go through approval, never straight from an agent",
           "Every tool call is in the activity feed with its cost",
         ],
         shot: {
           src: "/images/studio/31-cc-governance.png",
           alt: "Governance approvals: an unclassified action waiting for a human grant or deny",
-          caption: "Command Centre · Governance · an action nobody classified waits for a person",
+          caption: "Command Centre · Governance · grant or deny from one inbox",
         },
       },
     ]}

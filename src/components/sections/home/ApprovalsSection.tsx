@@ -5,8 +5,8 @@ import { SectionEyebrow } from "../SectionEyebrow";
 const CARDS = [
   {
     tag: "NEEDS YOU",
-    title: "Asks before it acts",
-    body: "Approve, edit or deny from the board, the chat, or your phone. One click, logged.",
+    title: "Asks when you want it to",
+    body: "Set board work to ask before it runs. Approve, edit or deny from the board, the chat, or your phone. One click, logged.",
   },
   {
     tag: "THE BOARD",
@@ -28,11 +28,12 @@ export const ApprovalsSection = () => (
         <div className="flex max-w-[680px] flex-col gap-4">
           <SectionEyebrow n="04" label="You stay in charge" />
           <h2 className="m-0 text-4xl font-medium leading-[1.05] sm:text-5xl">
-            Nothing leaves the building <em className="font-normal">without your yes.</em>
+            You choose <em className="font-normal">what waits for your yes.</em>
           </h2>
         </div>
         <p className="m-0 max-w-[420px] text-[16.5px] leading-relaxed text-muted-foreground">
-          Agents can draft, design and plan all day. Sending, posting and paying always stop at your desk first.
+          Agents can draft, design and plan all day. Social posts wait for your approval before they publish, and board
+          work can be set to ask before it runs.
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">

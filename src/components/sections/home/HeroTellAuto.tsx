@@ -20,8 +20,8 @@ export const HeroTellAuto = () => {
           Tell Auto what you need. <em className="font-normal">Your business, in your brand.</em>
         </h1>
         <p className={heroLede}>
-          A team of agents makes the invoice, the letter, the posts and the sheet, all from your one brand kit. Nothing
-          is sent, posted or paid for until you say so.
+          A team of agents makes the invoice, the letter, the posts and the sheet, all from your one brand kit. Social
+          posts wait for your approval before they publish, and board work can be set to ask before it runs.
         </p>
         <HeroCtas />
         <div className="mt-2 flex flex-col gap-2.5">

@@ -34,7 +34,7 @@ export const HOME_FAQS: FaqItem[] = [
   {
     question: "Is Automatos EU AI Act compliant?",
     answer:
-      "Not as a whole, and we won't claim it. EU AI Act work is in progress. Human approval before anything publishes or spends, risk classes with matching oversight, and an append-only audit log are in the product today. The Article 50 notices and the marking of generated media are being built now. Our posture page says what is built and what isn't.",
+      "Not as a whole, and we won't claim it. EU AI Act work is in progress. Social posts wait for your approval before they publish, board work can be set to ask before it runs, and every action lands in an append-only audit log, all in the product today. The Article 50 notices and the marking of generated media are being built now. Our posture page says what is built and what isn't.",
     link: { label: "Our EU AI Act posture →", href: EU_AI_ACT_URL },
   },
 ];

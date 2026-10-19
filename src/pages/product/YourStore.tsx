@@ -91,16 +91,16 @@ const YourStore = () => (
       {
         eyebrow: "Safe by default",
         title: "Your keys, your domains, your yes.",
-        body: "Widget keys only work on the domains you list, and a request without a known origin is refused. Traffic is rate-limited per key and per visitor. Anything that spends money, like a refund, waits for a person.",
+        body: "Widget keys only work on the domains you list, and a request without a known origin is refused. Traffic is rate-limited per key and per visitor. Set board work like refunds to ask before it runs, and it waits for you.",
         points: [
           "Revoke a key in Studio and every widget using it stops",
           "Callback phone numbers go to you, never into storage",
-          "Refunds and price changes come to you as questions on the board",
+          "Refunds and price changes can be set to ask you on the board first",
         ],
         shot: {
           src: "/images/studio/31-cc-governance.png",
           alt: "Governance approvals with actions waiting for a human grant or deny",
-          caption: "Command Centre · Governance · anything that spends money waits for a person",
+          caption: "Command Centre · Governance · grant or deny from one inbox",
         },
       },
     ]}
@@ -112,7 +112,7 @@ const YourStore = () => (
         "The inventory watchdog flags low stock before you run out",
         "Cross-sells come from what your customers actually buy together",
         "Weekly numbers, inventory status and a customer-service summary",
-        "Refunds and anything else that spends money wait for your yes",
+        "Refunds you set to ask wait for your yes",
       ],
     }}
     related={[

@@ -33,7 +33,7 @@ export const SITE = {
   product: "Automatos Studio",
   tagline: "Run your business in your brand, on one OS",
   description:
-    "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
+    "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan that wait for your approval, a Command Centre that can be set to ask before work runs, and a marketplace of packages. Powered by Automatos AI, open source.",
   defaultTitle: "Automatos Studio | Run your business in your brand",
   titleTemplate: "%s | Automatos Studio",
   ogImage: "https://studio.automatos.app/images/og-studio-v2.png",
