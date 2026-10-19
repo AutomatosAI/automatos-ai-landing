@@ -50,7 +50,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 
 ### Company & Compliance
 
-- `/about` — Mission and team
+- `https://automatos.app` — About Automatos AI: the company site
 - `/contact` — Pilots, partnerships, support
 - `https://automatos.app/eu-ai-act` — The EU AI Act posture: what is built today and what is not yet
 - `/privacy`, `/terms`, `/cookies`

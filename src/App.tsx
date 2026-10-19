@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -28,7 +27,7 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import { ExternalRedirect } from "@/components/ExternalRedirect";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { EU_AI_ACT_CHECKER_URL, EU_AI_ACT_URL } from "@/lib/links";
+import { COMPANY_URL, EU_AI_ACT_CHECKER_URL, EU_AI_ACT_URL } from "@/lib/links";
 import { AutomatosChat } from "@/components/widgets/AutomatosChat";
 
 const queryClient = new QueryClient();
@@ -44,7 +43,8 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
+            {/* Company material lives on automatos.app; this site sells Studio. */}
+            <Route path="/about" element={<ExternalRedirect to={COMPANY_URL} label="About Automatos AI is on automatos.app" />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

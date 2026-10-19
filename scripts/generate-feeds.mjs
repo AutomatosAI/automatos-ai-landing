@@ -57,7 +57,6 @@ const STATIC_ROUTES = [
   { path: "/marketplace", changefreq: "weekly", priority: "0.9" },
   { path: "/your-store", changefreq: "monthly", priority: "0.9" },
   { path: "/integrations", changefreq: "monthly", priority: "0.8" },
-  { path: "/about", changefreq: "monthly", priority: "0.7" },
   { path: "/contact", changefreq: "monthly", priority: "0.6" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/research", changefreq: "weekly", priority: "0.8" },
