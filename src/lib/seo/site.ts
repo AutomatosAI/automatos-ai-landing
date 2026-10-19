@@ -28,7 +28,6 @@ export const SITE = {
   twitter: "@AutomatosAI",
   linkedin: "https://www.linkedin.com/company/automatos-ai",
   github: "https://github.com/AutomatosAI",
-  youtube: "https://www.youtube.com/@AutomatosAI",
 
   // Founder
   founder: {
@@ -39,7 +38,7 @@ export const SITE = {
   // Pricing (tier marker, not price)
   offers: {
     category: "SaaS",
-    priceModel: "Subscription + BYOK",
+    priceModel: "Monthly plans; the beta runs on your own AI keys",
   },
 } as const;
 

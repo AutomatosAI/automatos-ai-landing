@@ -33,7 +33,6 @@ export function organizationSchema() {
     sameAs: [
       SITE.linkedin,
       SITE.github,
-      SITE.youtube,
       `https://twitter.com/${SITE.twitter.replace("@", "")}`,
     ],
     contactPoint: {
@@ -81,7 +80,7 @@ export function softwareApplicationSchema() {
     offers: {
       "@type": "Offer",
       category: SITE.offers.category,
-      priceCurrency: "EUR",
+      priceCurrency: "USD",
       priceSpecification: {
         "@type": "PriceSpecification",
         description: SITE.offers.priceModel,
@@ -91,9 +90,9 @@ export function softwareApplicationSchema() {
       "Multi-agent orchestration",
       "Sequential mission coordinator",
       "Playbook execution with budgets",
-      "BYOK support across OpenAI, Anthropic, Google, Grok, AWS Bedrock, OpenRouter",
+      "400+ models through OpenRouter, plus direct keys for OpenAI, Anthropic, Google, DeepSeek and others",
       "Skills marketplace with one-click installs",
-      "Composio tool integration (250+ services)",
+      "1,000+ apps through Composio",
       "Persistent memory and report sharing across agents",
       "Human-in-the-loop approvals and audit logging",
       "Risk classes with matching human oversight",
