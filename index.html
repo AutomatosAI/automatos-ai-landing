@@ -55,7 +55,9 @@
     <meta name="twitter:image" content="https://studio.automatos.app/images/og-studio-v2.png" />
     <meta name="twitter:image:alt" content="Automatos Studio: run your business in your brand. Hosted beta opens November 2026. Automatos OS underneath, open source (Apache 2.0). 1,000+ apps through Composio." />
 
-    <!-- JSON-LD: Organization (sitewide, pre-hydration so LLM crawlers always see it) -->
+    <!-- JSON-LD: Organization (sitewide, pre-hydration so LLM crawlers always see it).
+         The same Automatos AI node on every Automatos site; organizationSchema() in
+         src/lib/seo/structured-data.ts must match it (structured-data.test.ts). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,31 +65,18 @@
       "@id": "https://automatos.app/#organization",
       "name": "Automatos AI",
       "url": "https://automatos.app",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://studio.automatos.app/logos/automatos-ai-logo.png"
-      },
-      "description": "Automatos is an open platform where you tell Auto what you need and a team of agents does the work: branded documents and invoices, social posts on a plan, a board that asks before it acts, and a marketplace of packages to install. Real backend, real outputs, on your own machine today; hosted beta opens November 2026.",
-      "founder": {
-        "@type": "Person",
-        "name": "Gerard Kavanagh",
-        "url": "https://www.linkedin.com/in/grkavanagh/"
-      },
+      "logo": "https://automatos.app/images/automatos-mark-black.png",
       "sameAs": [
+        "https://x.com/automatosai",
+        "https://www.instagram.com/automatosai",
         "https://www.linkedin.com/company/automatos-ai",
-        "https://github.com/AutomatosAI",
-        "https://twitter.com/AutomatosAI"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "url": "https://automatos.app/contact",
-        "availableLanguage": ["en"]
-      }
+        "https://github.com/AutomatosAI"
+      ]
     }
     </script>
 
-    <!-- JSON-LD: WebSite -->
+    <!-- JSON-LD: WebSite (sitewide, pre-hydration). websiteSchema() in
+         src/lib/seo/structured-data.ts must match it (structured-data.test.ts). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,7 +84,7 @@
       "@id": "https://studio.automatos.app/#website",
       "url": "https://studio.automatos.app",
       "name": "Automatos Studio",
-      "description": "Automatos is an open platform where you tell Auto what you need and a team of agents does the work: branded documents and invoices, social posts on a plan, a board that asks before it acts, and a marketplace of packages to install. Real backend, real outputs, on your own machine today; hosted beta opens November 2026.",
+      "description": "Automatos Studio: tell Auto what you need and a team of agents does the work. Branded documents and invoices, socials on a plan, a Command Centre that asks before it acts, and a marketplace of packages. Powered by Automatos AI, open source.",
       "publisher": { "@id": "https://automatos.app/#organization" },
       "inLanguage": "en-US"
     }

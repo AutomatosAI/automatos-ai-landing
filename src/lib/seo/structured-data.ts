@@ -7,47 +7,43 @@
  * them into <script type="application/ld+json"> tags.
  */
 
-import { SITE, absoluteUrl } from "./site";
+import { ORGANIZATION, SITE, absoluteUrl } from "./site";
 
 // ---------------------------------------------------------------------------
-// Organization — always present sitewide
+// Organization — always present sitewide (static in index.html)
 // ---------------------------------------------------------------------------
 
+/**
+ * The one Automatos AI Organization node, identical on every Automatos site.
+ * index.html carries the same node statically (a test keeps the two equal) and
+ * server.js serves index.html on every route, so no page emits it again.
+ */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${SITE.companyUrl}/#organization`,
-    name: SITE.name,
-    url: SITE.companyUrl,
-    logo: {
-      "@type": "ImageObject",
-      url: SITE.logo,
-    },
-    description: SITE.description,
-    founder: {
-      "@type": "Person",
-      name: SITE.founder.name,
-      url: SITE.founder.url,
-    },
-    sameAs: [
-      SITE.linkedin,
-      SITE.github,
-      `https://twitter.com/${SITE.twitter.replace("@", "")}`,
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      url: `${SITE.companyUrl}/contact`,
-      availableLanguage: ["en"],
-    },
+    "@id": ORGANIZATION.id,
+    name: ORGANIZATION.name,
+    url: ORGANIZATION.url,
+    logo: ORGANIZATION.logo,
+    sameAs: [...ORGANIZATION.sameAs],
   };
+}
+
+/** Points at the organisation by @id instead of describing a second one. */
+export function organizationRef() {
+  return { "@id": ORGANIZATION.id };
 }
 
 // ---------------------------------------------------------------------------
 // WebSite — enables sitelinks searchbox in Google + anchor for breadcrumbs
 // ---------------------------------------------------------------------------
 
+/**
+ * The Studio WebSite node. index.html carries the same node statically (a test
+ * keeps the two equal) and server.js serves index.html on every route, so no
+ * page emits it again.
+ */
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
@@ -56,7 +52,7 @@ export function websiteSchema() {
     url: SITE.url,
     name: SITE.product,
     description: SITE.description,
-    publisher: { "@id": `${SITE.companyUrl}/#organization` },
+    publisher: organizationRef(),
     inLanguage: "en-US",
   };
 }
@@ -102,8 +98,8 @@ export function softwareApplicationSchema() {
       "Human-in-the-loop approvals and audit logging",
       "Risk classes with matching human oversight",
     ],
-    creator: { "@id": `${SITE.companyUrl}/#organization` },
-    publisher: { "@id": `${SITE.companyUrl}/#organization` },
+    creator: organizationRef(),
+    publisher: organizationRef(),
   };
 }
 
@@ -163,14 +159,7 @@ export function articleSchema(article: ArticleInput) {
       "@type": "Person",
       name: article.authorName || SITE.founder.name,
     },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.name,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE.logo,
-      },
-    },
+    publisher: organizationRef(),
     datePublished: published,
     dateModified: modified,
     articleSection: article.articleSection,
@@ -257,10 +246,7 @@ export function productSchema(product: ProductInput) {
     description: product.description,
     url: product.url,
     image: product.image || SITE.ogImage,
-    brand: {
-      "@type": "Brand",
-      name: product.brand || SITE.name,
-    },
+    brand: product.brand ? { "@type": "Brand", name: product.brand } : organizationRef(),
     category: product.category,
   };
 }
