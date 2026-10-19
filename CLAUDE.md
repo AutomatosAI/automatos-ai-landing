@@ -1,6 +1,6 @@
 # CLAUDE.md — automatos-ai-landing (the PRODUCT site)
 
-Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **company** site (automatos.app). This repo becomes the **product** site for the platform itself (working name: Automatos Studio; domain TBD, `os.automatos.app` was v1's). Academy and Markets have their own sites, "powered by Automatos AI".
+Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **company** site (automatos.app). This repo becomes the **product** site for the platform itself (Automatos Studio, https://studio.automatos.app; `os.automatos.app` was v1's). Academy and Markets have their own sites, "powered by Automatos AI".
 
 ## Stack
 - Vite 5 + React 18 + TypeScript, shadcn/ui (Radix), Tailwind, framer-motion, React Router (`src/App.tsx`).
