@@ -915,12 +915,12 @@ const FromToolListsToOperatingGraphs = () => {
                   </a>
                   , where multi-agent missions coordinate specialized agents
                   across research, analysis, and content workflows. Questions
-                  or pushback?{" "}
+                  or pushback? Use the contact form at{" "}
                   <a
-                    href="mailto:gerard@automatos.app"
+                    href="https://automatos.app/contact"
                     className="text-primary hover:underline font-medium"
                   >
-                    gerard@automatos.app
+                    automatos.app/contact
                   </a>
                   .
                 </p>

@@ -22,7 +22,7 @@ Automatos Studio is the hosted app where non-engineers design specialised AI age
 ## Company
 
 - [About Automatos AI](https://automatos.app): The company site: Automatos OS and the products that run on it
-- [Contact](https://studio.automatos.app/contact): Reach the team for pilots, partnerships, and support
+- [Contact](https://automatos.app/contact): The contact form for pilots, partnerships and support. We reply within two working days.
 
 ## Content
 

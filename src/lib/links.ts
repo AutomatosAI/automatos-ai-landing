@@ -6,3 +6,5 @@ export const COMPANY_URL = "https://automatos.app";
 /* The EU AI Act posture lives on the company site (REDESIGN-PLAN §10). */
 export const EU_AI_ACT_URL = "https://automatos.app/eu-ai-act";
 export const EU_AI_ACT_CHECKER_URL = "https://automatos.app/eu-ai-act/checker";
+/* The one public contact route: the company contact form (facts sheet 8b). No personal phone or email on any site. */
+export const CONTACT_URL = "https://automatos.app/contact";

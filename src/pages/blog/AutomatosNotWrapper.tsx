@@ -607,15 +607,15 @@ const AutomatosNotWrapper = () => {
                   >
                     GitHub
                   </a>
-                  . Questions? Find me at{" "}
+                  . Questions? Use the contact form at{" "}
                   <a
-                    href="mailto:gerard@automatos.app"
+                    href="https://automatos.app/contact"
                     className="text-primary hover:underline"
                   >
-                    gerard@automatos.app
+                    automatos.app/contact
                   </a>{" "}
                   — I read everything, even the "isn't this just a wrapper"
-                  emails.
+                  messages.
                 </em>
               </p>
             </div>
