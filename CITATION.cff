@@ -11,10 +11,9 @@ authors:
   - family-names: Kavanagh
     given-names: Gerard
     affiliation: "Automatos AI"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
 url: "https://automatos.app"
-repository-code: "https://github.com/AutomatosAI"
-license: "Proprietary"
+repository-code: "https://github.com/AutomatosAI/automatos-ai"
+license: "Apache-2.0"
 keywords:
   - multi-agent systems
   - autonomous agents
