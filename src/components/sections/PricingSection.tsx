@@ -5,18 +5,19 @@ import { GITHUB_URL } from "@/lib/links";
 import { SectionEyebrow } from "./SectionEyebrow";
 
 /*
-  Tiers mirror the platform's plan keys basic / pro / business, shown as Own keys / Pro / Business.
+  Tiers map to the platform's plan keys basic / pro / business, shown as Own keys / Pro / Business.
   Own keys $9, Pro $29 and Business $99 a month; Enterprise coming soon. Beta pricing: not charged until billing opens.
+  Copy is the facts sheet's standard block (19 Oct 2026). Own keys and Pro are the same service: never give
+  Own keys fewer seats, agents, render minutes or features than Pro. The only difference is included credits.
 */
 const plans = [
   {
     name: "Own keys",
     price: { monthly: 9 },
-    description: "The platform on your own Anthropic, OpenAI or OpenRouter keys.",
+    description: "Everything in Pro, on your own Anthropic, OpenAI or OpenRouter keys. Your provider bills you for the AI.",
     features: [
-      { name: "1 seat, 5 agents", included: true },
-      { name: "10 minutes of video render a month", included: true },
-      { name: "Voice", included: false },
+      { name: "5 seats, 20 agents", included: true },
+      { name: "60 minutes of video render a month", included: true },
     ],
     cta: "Join the waitlist",
     href: "#waitlist",
@@ -25,11 +26,11 @@ const plans = [
   {
     name: "Pro",
     price: { monthly: 29 },
-    description: "More seats, more agents and more video render minutes.",
+    description: "With monthly AI credits included, so you don't need keys of your own.",
     features: [
       { name: "5 seats, 20 agents", included: true },
       { name: "60 minutes of video render a month", included: true },
-      { name: "Included monthly credits once billing opens", included: true },
+      { name: "Monthly AI credits included once billing opens", included: true },
     ],
     cta: "Join the waitlist",
     href: "#waitlist",
@@ -43,7 +44,7 @@ const plans = [
       { name: "25 seats, unlimited agents", included: true },
       { name: "240 minutes of video render a month", included: true },
       { name: "Voice", included: true },
-      { name: "Included monthly credits once billing opens", included: true },
+      { name: "A larger monthly credit allowance once billing opens", included: true },
     ],
     cta: "Contact Automatos",
     href: "/contact",
@@ -186,9 +187,9 @@ export const PricingSection = () => {
 
         <p className="mx-auto max-w-[760px] text-center text-sm leading-relaxed text-muted-foreground">
           New accounts start with a one-time 500-credit trial. A credit is one US cent of AI usage at Automatos prices.
-          During the beta, every plan runs on your own AI keys once the trial is used. Included monthly credits on Pro and
-          Business start when billing opens. Beta pricing: not charged until billing opens. The local edition is free and
-          open source (Apache 2.0), on your own keys or your Claude Code / CLI subscription.
+          Beta pricing: not charged until billing opens. During the beta every plan runs on the trial and then on your own
+          AI keys; monthly credits on Pro and Business start when billing opens. The local edition is free and open source
+          (Apache 2.0), on your own keys or your Claude Code / CLI subscription.
         </p>
       </div>
     </section>
