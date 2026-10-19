@@ -133,6 +133,12 @@ export const PricingSection = () => {
           ))}
         </div>
 
+        {/* Facts sheet 8b: the optional every-plan line; no widgets, AI-media accounts or custom development per tier. */}
+        <p className="mx-auto max-w-[760px] text-center text-[15px] leading-relaxed text-foreground">
+          Every plan: branded documents and templates, socials on five networks, and the marketplace's packages,
+          Playbooks and plugins.
+        </p>
+
         <div className="grid gap-5 md:grid-cols-3">
           {plans.map((plan) => (
             <div

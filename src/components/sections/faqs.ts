@@ -20,7 +20,7 @@ export const HOME_FAQS: FaqItem[] = [
   {
     question: "Is my data secure?",
     answer:
-      "Yes. Encryption, per-workspace isolation, bring-your-own keys, and a full audit log of every agent action.",
+      "Yes. Encryption, per-workspace isolation, bring-your-own keys, and a full audit log of every agent action. Documents and vectors are stored on AWS in Ireland (eu-west-1).",
   },
   {
     question: "Do I need technical skills?",
