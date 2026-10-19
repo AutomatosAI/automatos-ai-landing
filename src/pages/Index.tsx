@@ -10,25 +10,13 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { HOME_FAQS } from "@/components/sections/faqs";
 import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/seo/SEO";
-import {
-  organizationSchema,
-  websiteSchema,
-  softwareApplicationSchema,
-  faqSchema,
-} from "@/lib/seo/structured-data";
+import { softwareApplicationSchema, faqSchema } from "@/lib/seo/structured-data";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        path="/"
-        structuredData={[
-          organizationSchema(),
-          websiteSchema(),
-          softwareApplicationSchema(),
-          faqSchema(HOME_FAQS),
-        ]}
-      />
+      {/* Organization and WebSite are static in index.html, which server.js serves on every route. */}
+      <SEO path="/" structuredData={[softwareApplicationSchema(), faqSchema(HOME_FAQS)]} />
       <Navbar />
       <main>
         <HomeHero />

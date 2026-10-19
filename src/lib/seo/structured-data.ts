@@ -10,12 +10,13 @@
 import { ORGANIZATION, SITE, absoluteUrl } from "./site";
 
 // ---------------------------------------------------------------------------
-// Organization — always present sitewide
+// Organization — always present sitewide (static in index.html)
 // ---------------------------------------------------------------------------
 
 /**
  * The one Automatos AI Organization node, identical on every Automatos site.
- * index.html carries the same node statically (a test keeps the two equal).
+ * index.html carries the same node statically (a test keeps the two equal) and
+ * server.js serves index.html on every route, so no page emits it again.
  */
 export function organizationSchema() {
   return {
@@ -38,6 +39,7 @@ export function organizationRef() {
 // WebSite — enables sitelinks searchbox in Google + anchor for breadcrumbs
 // ---------------------------------------------------------------------------
 
+/** index.html serves the WebSite node statically on every route, so no page emits this again. */
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
