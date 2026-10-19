@@ -159,4 +159,3 @@ Each product site sells only itself and carries its own pricing. The bridges are
 
 - One blog or two? Studio's `/blog` runs on the blog widget (dogfood); automatos.app has field notes.
 - Where research and the EU AI Act pages live canonically (proposal: automatos.app; Studio links to them).
-- `SITE.url` in this repo is still `https://automatos.app` (canonical, sitemap, structured data). Switch to `https://studio.automatos.app` when the domain is set.
