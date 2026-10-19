@@ -3,6 +3,19 @@ import { cn } from "@/lib/utils";
 import { KIT_RENDERS } from "./kitRenders";
 
 /*
+  Desktop columns follow the kit's document count (up to four), so a kit with
+  two renders fills the row instead of leaving half of it empty. With one or
+  two renders, each column stays at most the 400 px render width. Whole class
+  names, for Tailwind.
+*/
+const DESKTOP_GRID: Record<number, string> = {
+  1: "lg:mx-auto lg:max-w-[400px] lg:grid-cols-1",
+  2: "lg:mx-auto lg:max-w-[814px] lg:grid-cols-2",
+  3: "lg:grid-cols-3",
+};
+const DESKTOP_GRID_FULL = "lg:grid-cols-4";
+
+/*
   /documents: real page-1 renders from Studio, grouped by the brand kit that
   made them. Each chip is a kit that has actually been rendered; switching
   shows that kit's documents. Add a kit in kitRenders.ts and it appears here.
@@ -34,7 +47,7 @@ export const BrandKitDemo = () => {
         ))}
         <span className="ml-auto font-mono text-[11px] text-muted-foreground">{kit.note}</span>
       </div>
-      <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-4">
+      <div className={cn("grid w-full grid-cols-2 gap-3.5", DESKTOP_GRID[kit.docs.length] ?? DESKTOP_GRID_FULL)}>
         {kit.docs.map((d) => (
           <figure key={d.src} className="m-0 flex flex-col gap-2">
             <img
