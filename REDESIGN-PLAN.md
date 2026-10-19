@@ -44,9 +44,9 @@ Source of truth: `automatos-ai/frontend/app/globals.css` (Studio theme block) an
 | `/socials` | Socials Studio | Plan a cadence, content bank with sourced facts, made on the day, approve, publish to LinkedIn/X/Instagram/TikTok/YouTube. Shots: editor (Brief/Format/Channels/Look/When), template gallery with photo cards, plan view, calendar. |
 | `/marketplace` | Marketplace | The real six categories; packages first ("install Socials: two agents, five playbooks, guided setup"). Templates as "coming". Shot: Packages tab, Capabilities tab. |
 | `/integrations` | Applications | Composio logos from `public/logos` (the old ToolsSection/IntegrationsSection are deleted). Shot: Applications tab. |
-| `/your-store` | Your site and store, run by your agents | The Shopify app, the chat and blog widgets on any site, Shopify packages and skills, store data in the knowledge graph. **8 Oct: built now** (Studio is not live yet); the Shopify app and widgets get an end-to-end test before launch. Was `/widgets`, gated while the repos were paused. |
+| `/your-store` | Your site and store, run by your agents | The Shopify app (next, not in the App Store yet), the chat and blog widgets on any site, Shopify packages and skills, store data in the knowledge graph. **8 Oct: built now** (Studio is not live yet); the Shopify app and widgets get an end-to-end test before launch. Was `/widgets`, gated while the repos were paused. |
 | `/local` | Runs on your machine | Local edition, Apache-2.0, same product; CLI sessions on your own subscription. Shot: Session mode. |
-| `/pricing` | Pricing | Own keys / Pro / Business ($9 / $29 / $99 a month, beta pricing; config keys basic / pro / business): seats, agents, render minutes 10/60/240, voice. Enterprise: coming soon · Contact Automatos. |
+| `/pricing` | Pricing | Own keys / Pro / Business ($9 / $29 / $99 a month, beta pricing; config keys basic / pro / business): Own keys = Pro on seats, agents and render minutes (5 / 20 / 60), on your own keys; Business 25 seats, unlimited agents, 240 minutes, voice. Enterprise: coming soon · Contact Automatos. |
 | keep | `/blog`, `/research`, `/eu-ai-act`, `/eu-ai-act/checker`, `/privacy`, `/terms`, `/cookies`, `/contact` | Research and EU AI Act move to the footer. |
 | redirects | the four pillar routes → `/auto`, `/integrations`, `/deliverables`, `/command-centre` | Keep the SEO. |
 
@@ -93,7 +93,7 @@ Mechanics: a small Playwright script in `scripts/screenshots/` (own `package.jso
 - **Automatos AI** is the brand. **automatos.app** is the marketing face.
 - **Automatos OS** is the headless backend that drives everything: API first, modules (RAG, NL2SQL, graphs, memory, agents, documents, socials), MCP soon, modules later swappable for your own. Enterprise is coming soon (planned: OIDC, Kubernetes, Azure and AWS plugins, monitoring).
 - **Studio** is the UI to manage the OS and your business. Because the OS is API-first, other UIs can follow.
-- **Powered by Automatos**, branded on every one: Automatos Markets, Academy (web and app), widgets, Shopify, BudStacks.
+- **Powered by Automatos**, branded on every one: Automatos Markets, Academy (web and app), widgets, Shopify (app next), BudStacks.
 - Line for the site: **one OS, any interface.**
 
 The hub hero lives in `src/components/sections/OsHub.tsx` with its ring sets in `osHubRings.ts`. This site uses `STUDIO_RINGS` (the OS underneath, what you run in Studio), because product sites sell only their own product. `FAMILY_RINGS` (the OS, Studio, and every product Powered by Automatos) is the hero for automatos.app: port it to the core site.
@@ -117,7 +117,7 @@ Every Automatos site gets a footer with the same skeleton and its own skin. Site
 1. **Wordmark pattern:** sailboat mark + "Automatos" + product name. Decide one treatment. Today: Studio and automatos.app use the serif with an italic second word; Academy uses a sans two-weight wordmark. Mark is orange on Academy/Studio, white on automatos.app.
 2. **One copyright line:** "© 2026 Automatos AI" (brand only, no Ltd) + product line + licence where relevant. Today there are three names: "Automatos AI" (Studio), "AUTOMATOS" (Academy), "Automatos Labs" (automatos.app).
 3. **"Powered by Automatos AI"** pill linking to automatos.app. Studio has it; Academy has "Built on Automatos agents" (convert).
-4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Automatos Markets, Widgets, Shopify, Enterprise · coming soon; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
+4. **No family column on product sites** (Gerard, 6 Oct: each site sells its own product; all cross and core marketing lives on automatos.app). The "Powered by Automatos AI" pill is the only bridge. The family column (Studio, Academy, Automatos Markets, Widgets, Shopify (app next), Enterprise · coming soon; BudStacks under Partners) appears on automatos.app only. One allowed exception: a single contextual next step where the audience genuinely moves on (Academy: "put it to work in Studio").
 5. **Same social icons in the same order.** Legal links point to one canonical set on automatos.app unless a product needs its own.
 
 **Can differ per product**
@@ -133,17 +133,17 @@ Each product site sells only itself and carries its own pricing. The "Powered by
 
 | Site | Repo | State | What it owns |
 |---|---|---|---|
-| **automatos.app** | `automatos-ai-landingV2` | live, last commit July | The company and the OS. See below. |
-| **studio.automatos.app** | `automatos-ai-landing` (this repo) | local only | Studio, the UI a business runs on: Auto, Command Centre, Documents, Socials, Marketplace, Integrations, **Your store** (Shopify app + widgets), Studio pricing, waitlist. |
-| **academy.automatos.app** | `automatos-academy` (+ the app) | live | Courses, tutor, the app. Its own pricing. |
-| **markets.automatos.app** | `automatos-markets` | live | The cockpit, plans, replay, journal, research. Free during the pilot. |
+| **automatos.app** | `automatos-ai-landingV2` | live, deployed from `feat/one-os-family` @ f83d7b8 (19 Oct 2026) | The company and the OS. See below. |
+| **studio.automatos.app** | `automatos-ai-landing` (this repo) | live, deployed from `main` @ c3d2866 (19 Oct 2026) | Studio, the UI a business runs on: Auto, Command Centre, Documents, Socials, Marketplace, Integrations, **Your store** (widgets; Shopify app next), Studio pricing, waitlist. |
+| **academy.automatos.app** | `automatos-academy` (+ the app) | live, deployed from `main` @ 82af560 (19 Oct 2026) | Courses, tutor, the app. Its own pricing. |
+| **markets.automatos.app** | `automatos-markets` | live, deployed from `main` @ fa6a50e (19 Oct 2026) | The cockpit, plans, replay, journal, research. Free during the pilot. |
 
 **automatos.app keeps or gains**
 
 - Hero: "One OS. Any interface." with the family ring hub (`FAMILY_RINGS` in this repo's `osHubRings.ts`, see §7).
 - The OS: API-first, the modules (agents, memory, RAG, NL2SQL, graphs, documents, socials, the harness), MCP, Apache-2.0 open source.
 - Enterprise: the standard card, Coming soon · Contact Automatos. OIDC, Kubernetes, Azure and AWS plugins and monitoring appear only as "planned", with no dates.
-- The family: Studio, Academy, Markets, Widgets & Shopify (a Studio surface), BudStacks as a partner. Each card links out.
+- The family: Studio, Academy, Markets, Widgets & Shopify (a Studio surface; the Shopify App Store app is next), BudStacks as a partner. Each card links out.
 - Developers: the widget SDK as code, the API, MCP, docs, GitHub, DeepWiki.
 - Research, field notes, the EU AI Act posture, About, Contact.
 - The one canonical legal set (privacy, terms, cookies). Today privacy and cookies are `#` there while this repo has real pages: move them, and point product sites at them.
