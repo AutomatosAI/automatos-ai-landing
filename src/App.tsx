@@ -68,8 +68,7 @@ const App = () => (
             <Route path="/research" element={<Research />} />
             <Route path="/research/from-tool-lists-to-operating-graphs" element={<FromToolListsToOperatingGraphs />} />
             <Route path="/research/:slug" element={<ResearchPaper />} />
-            {/* The honest posture lives on automatos.app. EuAiAct.tsx / EuAiActChecker.tsx are kept
-                as the target text (PRD-132) and come back here once the missing pieces are built. */}
+            {/* The honest posture lives on automatos.app. */}
             <Route path="/eu-ai-act" element={<ExternalRedirect to={EU_AI_ACT_URL} label="Our EU AI Act posture is on automatos.app" />} />
             <Route path="/eu-ai-act/checker" element={<ExternalRedirect to={EU_AI_ACT_CHECKER_URL} label="The EU AI Act checker is on automatos.app" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

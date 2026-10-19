@@ -24,4 +24,5 @@ Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **compa
 - `public/logos/` (284 Composio app logos) is fine to keep; `public/videos/automatos-intro.mp4` is 13.6 MB and stale.
 - `prd.json` is a finished Ralph kit for the blog page (July); historical only.
 - Brand: see `REDESIGN-PLAN.md` §2 — the site must take the app's Studio tokens, not invent its own.
-- EU AI Act: `/eu-ai-act` and `/eu-ai-act/checker` redirect to automatos.app (client route + `server.js` 301). `src/pages/EuAiAct*.tsx` are kept unrouted: they restate PRD-132, still a draft (no Art. 5 router guardrails, tamper-evident logs, agent cards, Annex IV PDFs, Art. 50 notices, Art. 73 workflow or kill switch). Re-route them only once those are built (8 Oct 2026).
+- EU AI Act: `/eu-ai-act` and `/eu-ai-act/checker` redirect to automatos.app (client route + `server.js` 301). The old unrouted `EuAiAct*.tsx` pages (and the four v1 pillar pages) were deleted on 19 Oct 2026 because they carried claims the public facts sheet forbids; they are in git history if the text is needed again.
+- Public copy follows the 19 Oct 2026 facts sheet: prices in USD (Own keys $9 / Pro $29 / Business $99, beta pricing), Enterprise "coming soon", hosted beta "opens November 2026 · Join the waitlist", per-edition counts, and the EU AI Act posture line.
