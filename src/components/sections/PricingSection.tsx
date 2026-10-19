@@ -1,21 +1,22 @@
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { GITHUB_URL } from "@/lib/links";
 import { SectionEyebrow } from "./SectionEyebrow";
 
-/* Tiers mirror the platform's config (basic / pro / business). Prices are placeholders: Gerard's call. */
+/*
+  Tiers mirror the platform's plan keys basic / pro / business, shown as Own keys / Pro / Business.
+  Own keys $9, Pro $29 and Business $99 a month; Enterprise coming soon. Beta pricing: not charged until billing opens.
+*/
 const plans = [
   {
-    name: "Basic",
-    price: { monthly: 29, yearly: 24 },
-    description: "One person, one brand, the paperwork and the feed handled.",
+    name: "Own keys",
+    price: { monthly: 9 },
+    description: "The platform on your own Anthropic, OpenAI or OpenRouter keys.",
     features: [
-      { name: "Auto plus the starter agents", included: true },
-      { name: "Branded documents and templates", included: true },
-      { name: "Socials on all five channels", included: true },
+      { name: "1 seat, 5 agents", included: true },
       { name: "10 minutes of video render a month", included: true },
-      { name: "Marketplace packages", included: false },
+      { name: "Voice", included: false },
     ],
     cta: "Join the waitlist",
     href: "#waitlist",
@@ -23,14 +24,12 @@ const plans = [
   },
   {
     name: "Pro",
-    price: { monthly: 99, yearly: 79 },
-    description: "A small team. More agents, more channels, packages from the marketplace.",
+    price: { monthly: 29 },
+    description: "More seats, more agents and more video render minutes.",
     features: [
-      { name: "Everything in Basic", included: true },
-      { name: "Marketplace packages and playbooks", included: true },
+      { name: "5 seats, 20 agents", included: true },
       { name: "60 minutes of video render a month", included: true },
-      { name: "Your own AI media accounts, capped", included: true },
-      { name: "Widgets for your site or store", included: true },
+      { name: "Included monthly credits once billing opens", included: true },
     ],
     cta: "Join the waitlist",
     href: "#waitlist",
@@ -38,16 +37,15 @@ const plans = [
   },
   {
     name: "Business",
-    price: null,
-    description: "Several brands or sites, roles, and the option to run it on your own servers.",
+    price: { monthly: 99 },
+    description: "By invite during the beta: contact Automatos.",
     features: [
-      { name: "Everything in Pro", included: true },
+      { name: "25 seats, unlimited agents", included: true },
       { name: "240 minutes of video render a month", included: true },
-      { name: "Roles and approvals per team", included: true },
-      { name: "Self-hosted or local edition support", included: true },
-      { name: "Source code licence", included: true },
+      { name: "Voice", included: true },
+      { name: "Included monthly credits once billing opens", included: true },
     ],
-    cta: "Talk to us",
+    cta: "Contact Automatos",
     href: "/contact",
     popular: false,
   },
@@ -59,7 +57,7 @@ const editions = [
     name: "Local",
     badge: "OPEN SOURCE",
     badgeClass: "text-accent",
-    text: "Free, on your own machine, Apache-2.0. Agents work on your own Claude Code or other CLI subscription.",
+    text: "Free and open source (Apache 2.0), on your own machine today. It runs on your own keys or your Claude Code / CLI subscription.",
     cta: "Get it on GitHub",
     href: GITHUB_URL,
   },
@@ -67,16 +65,16 @@ const editions = [
     name: "SaaS",
     badge: "BETA IN NOVEMBER",
     badgeClass: "text-olive",
-    text: "Hosted Automatos Studio, opening as a beta in November. Nothing to install: sign in, upload your logo and tell Auto what you need.",
+    text: "Hosted beta opens November 2026. Nothing to install: when your workspace opens, upload your logo and tell Auto what you need.",
     cta: "Join the waitlist",
     href: "#waitlist",
   },
   {
     name: "Enterprise",
-    badge: "COMING",
+    badge: "COMING SOON",
     badgeClass: "text-muted-foreground",
-    text: "The same OS in your own Kubernetes cluster, with single sign-on, cloud plugins and monitoring.",
-    cta: "Talk to us",
+    text: "The same OS in your own cluster, with a licence, committed credits and consultancy. We're building it now. Tell us what you need.",
+    cta: "Contact Automatos",
     href: "/contact",
   },
 ];
@@ -104,8 +102,6 @@ const SmartLink = ({ href, className, children }: { href: string; className: str
 };
 
 export const PricingSection = () => {
-  const [isYearly, setIsYearly] = useState(false);
-
   return (
     <section id="pricing" className="scroll-mt-16 border-t border-border">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-10 px-4 py-24 sm:px-8">
@@ -115,8 +111,8 @@ export const PricingSection = () => {
             Local, SaaS or Enterprise. <em className="font-normal">One Studio.</em>
           </h2>
           <p className="m-0 max-w-[680px] text-[17px] leading-relaxed text-muted-foreground">
-            Run it free on your own machine, use the hosted SaaS, or put it in your own cluster. On SaaS there are no
-            seats and no tokens to count.
+            Run it free on your own machine today, or join the waitlist for hosted Studio: the beta opens November 2026.
+            Enterprise in your own cluster is coming soon.
           </p>
         </div>
 
@@ -137,26 +133,6 @@ export const PricingSection = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-3.5 text-sm">
-          <span className={isYearly ? "text-muted-foreground" : "text-foreground"}>Monthly</span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={isYearly}
-            aria-label="Bill yearly"
-            onClick={() => setIsYearly((y) => !y)}
-            className={cn("relative h-7 w-14 rounded-full transition-colors", isYearly ? "bg-foreground" : "bg-muted")}
-          >
-            <span
-              className={cn(
-                "absolute top-1 h-5 w-5 rounded-full bg-white transition-[left] duration-200",
-                isYearly ? "left-8" : "left-1",
-              )}
-            />
-          </button>
-          <span className={isYearly ? "text-foreground" : "text-muted-foreground"}>Yearly (20% off)</span>
-        </div>
-
         <div className="grid gap-5 md:grid-cols-3">
           {plans.map((plan) => (
             <div
@@ -175,9 +151,9 @@ export const PricingSection = () => {
                 <span className="text-sm text-muted-foreground">{plan.name}</span>
                 <span className="flex items-baseline gap-1">
                   <span className="font-serif text-[46px] leading-none">
-                    {plan.price ? `€${isYearly ? plan.price.yearly : plan.price.monthly}` : "Custom"}
+                    {`$${plan.price.monthly}`}
                   </span>
-                  {plan.price && <span className="text-muted-foreground">/month</span>}
+                  <span className="text-muted-foreground">/month</span>
                 </span>
                 <span className="text-sm leading-normal text-muted-foreground">{plan.description}</span>
               </div>
@@ -201,6 +177,13 @@ export const PricingSection = () => {
             </div>
           ))}
         </div>
+
+        <p className="mx-auto max-w-[760px] text-center text-sm leading-relaxed text-muted-foreground">
+          New accounts start with a one-time 500-credit trial. A credit is one US cent of AI usage at Automatos prices.
+          During the beta, every plan runs on your own AI keys once the trial is used. Included monthly credits on Pro and
+          Business start when billing opens. Beta pricing: not charged until billing opens. The local edition is free and
+          open source (Apache 2.0), on your own keys or your Claude Code / CLI subscription.
+        </p>
       </div>
     </section>
   );
