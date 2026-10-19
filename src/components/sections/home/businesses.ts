@@ -117,7 +117,7 @@ export const BUSINESSES: Business[] = [
     features: [
       "In the local edition, agents run as sessions on your own Claude Code / CLI subscription",
       "The local edition on your machine",
-      "Playbooks and packages you can publish",
+      "Agents and Playbooks you can publish to the marketplace",
       "Apache-2.0, on GitHub",
     ],
     logos: [logo("GitHub"), logo("GitLab"), logo("Docker")],

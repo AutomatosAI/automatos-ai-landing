@@ -6,7 +6,7 @@ Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **compa
 - Vite 5 + React 18 + TypeScript, shadcn/ui (Radix), Tailwind, framer-motion, React Router (`src/App.tsx`).
 - `server.js` (Express) serves `dist/` and `POST /api/contact` (SMTP). `nginx.conf*` are leftovers from an older stage; the Dockerfile's run stage is `node server.js`. Deploy = Railway.
 - Dogfood widgets: `src/components/widgets/AutomatosChat.tsx` and `AutomatosBlog.tsx` use the widget SDK with `VITE_AUTOMATOS_PUBLIC_KEY` / `VITE_AUTOMATOS_WORKSPACE_ID` / `VITE_AUTOMATOS_CHAT_AGENT_ID` (build args in the Dockerfile). The public key is origin-allow-listed server-side: a new domain must be added to the key first.
-- `scripts/generate-feeds.mjs` runs on prebuild (RSS); `scripts/generate-og.mjs` makes OG images.
+- `scripts/generate-feeds.mjs` runs on prebuild (RSS). No OG image generator is checked in. `public/images/og-studio-v2.png` (1280x640) is the default social card (`SITE.ogImage` and the `index.html` meta tags); CMS blog posts and research papers (`BlogPost.tsx`, `ResearchPaper.tsx`) and the two static posts (`AutomatosNotWrapper.tsx`, `FromToolListsToOperatingGraphs.tsx`) pass their own cover image to `SEO` instead. The card was re-rendered on 19 Oct 2026 from the 9 Oct card, keeping its sail icon and app screenshot and redrawing the left column in Newsreader and Geist. A wording change means a new render under a new file name (images are cached immutable).
 
 ## Commands
 - `npm ci` · `npm run dev` · `npm run build` · `npm run lint` · `npm run typecheck` · `npm test` (vitest).

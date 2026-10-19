@@ -9,7 +9,6 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "feeds": "node scripts/generate-feeds.mjs",
-    "og": "node scripts/generate-og.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "preview": "vite preview",
