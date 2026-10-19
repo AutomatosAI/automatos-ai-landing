@@ -46,7 +46,7 @@ Source of truth: `automatos-ai/frontend/app/globals.css` (Studio theme block) an
 | `/integrations` | Applications | Composio logos from `public/logos` (the old ToolsSection/IntegrationsSection are deleted). Shot: Applications tab. |
 | `/your-store` | Your site and store, run by your agents | The Shopify app, the chat and blog widgets on any site, Shopify packages and skills, store data in the knowledge graph. **8 Oct: built now** (Studio is not live yet); the Shopify app and widgets get an end-to-end test before launch. Was `/widgets`, gated while the repos were paused. |
 | `/local` | Runs on your machine | Local edition, Apache-2.0, same product; CLI sessions on your own subscription. Shot: Session mode. |
-| `/pricing` | Pricing | Basic / Pro / Business from config: render minutes 10/60/240, AI media caps, channels, agents. Enterprise = contact. |
+| `/pricing` | Pricing | Own keys / Pro / Business ($9 / $29 / $99 a month, beta pricing; config keys basic / pro / business): seats, agents, render minutes 10/60/240, voice. Enterprise: coming soon · Contact Automatos. |
 | keep | `/blog`, `/research`, `/eu-ai-act`, `/eu-ai-act/checker`, `/privacy`, `/terms`, `/cookies`, `/contact` | Research and EU AI Act move to the footer. |
 | redirects | the four pillar routes → `/auto`, `/integrations`, `/deliverables`, `/command-centre` | Keep the SEO. |
 

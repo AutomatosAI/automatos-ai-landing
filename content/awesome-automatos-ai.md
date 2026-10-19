@@ -34,14 +34,14 @@ Automatos AI is an open-source platform (hosted beta from November 2026) for bui
 The [automatos-skills](https://github.com/AutomatosAI/automatos-skills) repository is the open automatos-skills library of 140 skills.
 
 - [SKILL-GUIDE.md](https://github.com/AutomatosAI/automatos-skills/blob/main/SKILL-GUIDE.md) — the author's guide for writing a new skill.
-- **Signature agents** — SENTINEL, SCOUT, HARPER, ECHO, ATLAS, FORGE, ORACLE, RALLY, PATCHER, each with their own `SKILL.md`.
+- **Team personas** — SKILL.md personas in the library's `team/` folder: SENTINEL, SCOUT, HARPER, ECHO, ATLAS, FORGE, ORACLE, RALLY and PATCHER (`team/bug-fixer`). They are skills in the open library, not agents pre-installed in a workspace.
 - **Domain packs** — Shopify & Commerce, Software Engineering, Quality / Security / Compliance, DevOps & SRE, Product & PM, Design & UX, Content & Editorial, Social Media, Marketing & Growth, Sales & Revenue, Analytics & BI, People & Ops, Research, Support, Integrations.
 
 ## Agents
 
-- [The Automatos Team](https://github.com/AutomatosAI/automatos-skills/tree/main/team) — named agents with persona, beat, and UI home.
+- [The Automatos Team](https://github.com/AutomatosAI/automatos-skills/tree/main/team) — team personas as SKILL.md files; none is pre-installed in a workspace.
   - **SENTINEL** — infra watchdog (API health, deploys, cost anomalies).
-  - **PATCHER** — end-to-end bug fixing (ticket → fix → PR).
+  - **PATCHER** (`team/bug-fixer`) — end-to-end bug fixing (ticket → fix → PR).
   - **SCOUT** — lead intelligence and outreach.
   - **HARPER** — turns platform activity into content.
   - **ECHO** — customer support classifier and responder.
