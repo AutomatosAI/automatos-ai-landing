@@ -80,7 +80,15 @@ const fetchPosts = async (page: number, category?: string): Promise<BlogResponse
         if (page === 1) return staticPostsPage(category);
         throw new Error("Failed to fetch posts");
     }
-    const data: BlogResponse = await res.json();
+    let data: BlogResponse;
+    try {
+        data = await res.json();
+        if (!Array.isArray(data?.posts)) throw new Error("Unexpected blog response shape");
+    } catch {
+        // A 200 that is not the posts JSON (an HTML proxy page, say) still lists the static posts.
+        if (page === 1) return staticPostsPage(category);
+        throw new Error("Failed to fetch posts");
+    }
 
     // Only merge static posts on page 1 so pagination still works correctly.
     if (page === 1) {

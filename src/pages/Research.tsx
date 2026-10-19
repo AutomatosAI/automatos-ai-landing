@@ -83,7 +83,15 @@ const fetchResearchPosts = async (page: number): Promise<ResearchResponse> => {
     if (page === 1) return staticResearchPage();
     throw new Error("Failed to fetch research papers");
   }
-  const data: ResearchResponse = await res.json();
+  let data: ResearchResponse;
+  try {
+    data = await res.json();
+    if (!Array.isArray(data?.posts)) throw new Error("Unexpected research response shape");
+  } catch {
+    // A 200 that is not the posts JSON (an HTML proxy page, say) still lists the static papers.
+    if (page === 1) return staticResearchPage();
+    throw new Error("Failed to fetch research papers");
+  }
 
   if (page === 1) {
     const apiSlugs = new Set(data.posts.map((p) => p.slug));
