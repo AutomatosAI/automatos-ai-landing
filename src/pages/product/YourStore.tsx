@@ -14,7 +14,7 @@ const WIDGET_SNIPPET = `<script src="https://widgets.automatos.app/v0/widget.glo
       apiKey: "ak_pub_…",        // locked to your domains
       widget: "chat",            // or "blog"
       position: "bottom-right",
-      greeting: "Hi, I'm the store's AI assistant. Ask me anything.",
+      title: "AI assistant",     // shown in the chat header
     });
   });
 </script>`;

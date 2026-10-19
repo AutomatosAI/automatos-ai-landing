@@ -435,7 +435,7 @@ const AutomatosNotWrapper = () => {
                       </td>
                       <td className="p-3 text-muted-foreground">
                         Frameworks are code. We're a platform, open source
-                        today and hosted from November 2026, with a
+                        today with a hosted beta from November 2026, with a
                         marketplace, governance, memory, scheduling, channels,
                         telemetry, and a harness. Code is maybe 10% of what
                         you need.

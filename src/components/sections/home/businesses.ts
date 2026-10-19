@@ -52,7 +52,7 @@ export const BUSINESSES: Business[] = [
       "Customer replies you approve first",
       "A content bank with real facts, not filler",
     ],
-    logos: [logo("Facebook"), logo("Google Business", "GoogleBusiness"), logo("Square")],
+    logos: [logo("X"), logo("Google Business", "GoogleBusiness"), logo("Square")],
     link: { label: "See Socials", href: "/socials" },
     made: { src: "/images/use-cases/made/cafe-offer.jpg", alt: "Harbourline coffee offer post: £16/kg for the first 5 kg of Harbour Blend" },
   },

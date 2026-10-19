@@ -64,7 +64,7 @@ export const StorefrontChatDemo = () => {
         <div className="flex items-center justify-between border-b border-border px-4 py-3">
           <span className="flex items-center gap-2 text-sm font-medium">
             <span className="h-[7px] w-[7px] rounded-full bg-olive" />
-            Harbourline · Chat
+            Harbourline · AI assistant
           </span>
           <span className="font-mono text-[11px] text-muted-foreground">ON YOUR STOREFRONT</span>
         </div>
