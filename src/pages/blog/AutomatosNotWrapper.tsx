@@ -155,7 +155,7 @@ const AutomatosNotWrapper = () => {
                 instead of user-clicked programs.
               </p>
               <p>
-                That's the bet we've been building toward for eighteen months.
+                That's the bet we've been building toward.
               </p>
 
               <h2>The anatomy of an AI operating system</h2>
@@ -238,8 +238,8 @@ const AutomatosNotWrapper = () => {
                 last 40 messages." It gets a composed context bundle: the
                 user's identity, relevant skills, pertinent facts from memory,
                 current tool state, and an estimated token budget for the
-                job. That bundle is assembled by a context engineering
-                pipeline with eight named stages. Not a wrapper move.
+                job. That bundle is assembled by a staged context
+                engineering pipeline. Not a wrapper move.
               </p>
 
               <h3>Heartbeats</h3>
@@ -272,9 +272,9 @@ const AutomatosNotWrapper = () => {
                 you what you asked for.
               </p>
               <p>
-                This is recursion. An AI that can configure AI. It's the
-                closest thing I've seen in production to a self-modifying
-                system that a non-technical person can actually operate.
+                An AI that can configure the platform when you ask it to,
+                with risk classes deciding which of its actions wait for a
+                person's approval.
               </p>
 
               <h3>The Harness</h3>
@@ -346,7 +346,7 @@ const AutomatosNotWrapper = () => {
                 agent, per mission, per workspace.
               </p>
 
-              <h3>Shopify widgets, embeds, SDK</h3>
+              <h3>Widgets, embeds, SDK</h3>
               <p>
                 We ship a widget SDK that puts the platform on any website:
                 a chat widget and a blog widget today, as a script tag or a
@@ -567,7 +567,7 @@ const AutomatosNotWrapper = () => {
               <hr />
               <p>
                 <em>
-                  Automatos AI is an autonomous AI operating system. The
+                  Automatos OS is the open-source engine of Automatos AI. The
                   hosted beta of Automatos Studio opens November 2026: join
                   the waitlist at{" "}
                   <a

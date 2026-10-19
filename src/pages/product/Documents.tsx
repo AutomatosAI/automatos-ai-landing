@@ -73,7 +73,7 @@ const Documents = () => (
       { label: "Auto & agents", href: "/auto" },
       { label: "Marketplace", href: "/marketplace" },
     ]}
-    ctaHeading={<>Upload a logo. <span className="brand-line">Send an invoice an hour later.</span></>}
+    ctaHeading={<>Upload a logo. <span className="brand-line">Send an invoice in your brand.</span></>}
     ctaSub="Join the waitlist and the brand kit is the first thing we set up with you."
   />
 );

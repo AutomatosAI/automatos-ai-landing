@@ -60,7 +60,7 @@ const Integrations = () => (
       { label: "Socials", href: "/socials" },
     ]}
     ctaHeading={<>Connect what you have. <span className="brand-line">Keep the keys.</span></>}
-    ctaSub="Join the waitlist. Your first connection takes a minute."
+    ctaSub="Join the waitlist. Connect the apps you already use."
   />
 );
 
