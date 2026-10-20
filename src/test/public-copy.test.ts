@@ -12,11 +12,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 
 const RETIRED: Array<[RegExp, string]> = [
   [/nothing is sent, posted or paid for/i, "no 'nothing is sent, posted or paid for until you say so'"],
-  [/nothing leaves the building/i, "no 'nothing leaves the building without your yes'"],
-  [/asks before it acts/i, "no 'a board that asks before it acts'"],
+  [/(nothing|anything)[^.]{0,40}leaves the building/i, "no 'nothing/anything leaves the building (without your yes)'"],
+  [/\bbefore it acts\b/i, "no '(a board that asks) before it acts' as an absolute"],
   [/human approval before anything/i, "no 'human approval before anything publishes or spends'"],
   [/anything that (spends money|publishes)[^.]{0,40}waits/i, "no 'anything that spends money or publishes waits for a person'"],
   [/stop at your desk/i, "no 'stop at your desk before anything goes out'"],
+  [/\b(anything|everything)\b[^.]{0,60}\bwaits for your yes\b/i, "no 'anything/everything ... waits for your yes' as a platform-wide absolute"],
 ];
 
 /** Every source file under src (tests excluded), plus the static shell and the llms files. */
