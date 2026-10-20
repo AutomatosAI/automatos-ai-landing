@@ -65,8 +65,8 @@ export function AutomatosChat() {
                 widget: "chat",
                 position: "bottom-right",
                 theme: "dark",
-                // The SDK renders `title` in the panel header; it does not render `greeting` yet.
-                title: "Auto · AI assistant",
+                // The SDK draws its own AI badge beside the title and an AI notice before the greeting (PRD-264 EUAI-02b).
+                title: "Auto",
                 greeting:
                     "Hi, I'm Auto, Automatos's AI assistant. Ask me anything about Automatos, the agents or the platform.",
                 ...(CHAT_AGENT_ID ? { agentId: CHAT_AGENT_ID } : {}),
