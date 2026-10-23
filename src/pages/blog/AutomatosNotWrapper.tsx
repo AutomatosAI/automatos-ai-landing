@@ -515,7 +515,7 @@ const AutomatosNotWrapper = () => {
                 wait for your approval before they publish, board work can be
                 set to ask before it runs, and every action lands in an
                 append-only audit log, all in the product today. The Article 50
-                notices and the marking of generated media are being built now.
+                notices and the marking of generated media are in the product too.
                 The{" "}
                 <a
                   href="https://automatos.app/eu-ai-act"
