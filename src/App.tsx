@@ -16,6 +16,7 @@ import Documents from "./pages/product/Documents";
 import Socials from "./pages/product/Socials";
 import Integrations from "./pages/product/Integrations";
 import YourStore from "./pages/product/YourStore";
+import Apps from "./pages/product/Apps";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Research from "./pages/Research";
@@ -56,6 +57,7 @@ const App = () => (
             <Route path="/socials" element={<Socials />} />
             <Route path="/integrations" element={<Integrations />} />
             <Route path="/your-store" element={<YourStore />} />
+            <Route path="/apps" element={<Apps />} />
             <Route path="/login" element={<Login />} />
             {/* v1 pillar pages, kept for their links: redirect to the product pages */}
             <Route path="/design-your-agents" element={<Navigate to="/auto" replace />} />

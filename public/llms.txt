@@ -12,6 +12,7 @@ Automatos Studio (hosted beta opens November 2026) is the hosted app where non-e
 - [Documents & templates](https://studio.automatos.app/documents): Invoices, letters, reports and proposals rendered from one brand kit
 - [Socials](https://studio.automatos.app/socials): A posting plan that makes each post on its day and waits for approval before it publishes
 - [Your store & site](https://studio.automatos.app/your-store): Connect your Shopify store with your own Admin token (the Shopify app is next), and the chat and blog widgets for any website
+- [Apps & themes](https://studio.automatos.app/apps): Studio in the browser in the Studio, Play or HUD theme; hold to talk to Auto on every plan, with live voice calls on supported plans; the Automatos Go phone app (in beta, coming to the App Store); and the open-source Automatos Design Kit (Apache-2.0) for building your own theme
 - [Integrations](https://studio.automatos.app/integrations): Connect the apps you already use through your own accounts
 - [Marketplace](https://studio.automatos.app/marketplace): 100+ ready-made agents in the Studio marketplace, 400+ skills, 70+ plugins, 20+ Playbooks and 3 packages (Socials, Shopify Management, Shopify Development)
 
