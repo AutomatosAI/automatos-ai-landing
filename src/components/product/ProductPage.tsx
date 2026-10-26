@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils";
 
 /*
   One layout for every product page: an eyebrow, a serif headline with an
-  italic brand line, a lede, then either a live demo ("Try it") or a hero
-  screenshot, alternating screenshot + copy sections, a "what runs" list,
+  italic brand line, a lede, then either a live demo ("Try it"), a hero
+  screenshot or a hero figure, alternating screenshot (or figure) + copy
+  sections with an optional link under the copy, a "what runs" list,
   related pages and the waitlist CTA. Screenshots are real captures of the
   local edition (public/images/studio).
 */
@@ -20,7 +21,13 @@ export type Shot = {
   src: string;
   alt: string;
   caption?: string;
+  /* The file's pixel size, so the browser reserves the space before it loads. */
+  width?: number;
+  height?: number;
 };
+
+/* A link under a section's copy: a path, an in-page #anchor or an outside https:// address (opens in a new tab). */
+export type SectionLink = { label: string; href: string; primary?: boolean };
 
 export type ProductSection = {
   eyebrow: string;
@@ -30,6 +37,9 @@ export type ProductSection = {
   shot?: Shot;
   /* A code sample shown where a screenshot would go (e.g. an install snippet). */
   code?: { label: string; text: string };
+  /* Any other figure shown where a screenshot would go (e.g. a laptop and a phone). */
+  media?: ReactNode;
+  link?: SectionLink;
 };
 
 export type ProductDemo = {
@@ -48,6 +58,8 @@ export type ProductPageProps = {
   lede: string;
   demo?: ProductDemo;
   hero?: Shot;
+  /* A hero figure other than one screenshot (e.g. two captures side by side). */
+  heroMedia?: ReactNode;
   sections: ProductSection[];
   runs?: { title: string; items: string[] };
   related?: { label: string; href: string }[];
@@ -73,6 +85,8 @@ export const Screenshot = ({ shot, priority = false, zoom = false }: { shot: Sho
         <img
           src={shot.src}
           alt={shot.alt}
+          width={shot.width}
+          height={shot.height}
           loading={priority ? "eager" : "lazy"}
           className={cn("h-auto w-full", zoom && cn("h-full object-cover object-left-top", ZOOM))}
         />
@@ -116,9 +130,42 @@ const CodeSample = ({ code }: { code: NonNullable<ProductSection["code"]> }) => 
   </figure>
 );
 
+const SECTION_LINK = "mt-2 self-start whitespace-nowrap rounded-full text-[15px] font-medium transition-colors";
+const SECTION_LINK_PRIMARY = "bg-primary px-6 py-3.5 text-primary-foreground hover:bg-primary/90";
+const SECTION_LINK_SECONDARY = "border border-border px-5 py-3 text-foreground hover:border-foreground";
+
+const SectionCta = ({ link }: { link: SectionLink }) => {
+  const className = cn(SECTION_LINK, link.primary ? SECTION_LINK_PRIMARY : SECTION_LINK_SECONDARY);
+  const label = `${link.label} →`;
+  if (link.href.startsWith("/")) {
+    return (
+      <Link to={link.href} className={className}>
+        {label}
+      </Link>
+    );
+  }
+  const external = /^https?:\/\//.test(link.href);
+  return (
+    <a
+      href={link.href}
+      className={className}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+    >
+      {label}
+    </a>
+  );
+};
+
+const SectionSide = ({ s }: { s: ProductSection }) => {
+  if (s.media) return <>{s.media}</>;
+  if (s.shot) return <Screenshot shot={s.shot} zoom />;
+  return s.code ? <CodeSample code={s.code} /> : null;
+};
+
 const SectionRow = ({ s, i }: { s: ProductSection; i: number }) => {
   const flipped = i % 2 === 1;
-  const side = s.shot || s.code;
+  const side = s.media || s.shot || s.code;
   return (
     <section className="border-t border-border">
       <div
@@ -141,10 +188,11 @@ const SectionRow = ({ s, i }: { s: ProductSection; i: number }) => {
               ))}
             </div>
           )}
+          {s.link && <SectionCta link={s.link} />}
         </Motion>
         {side && (
           <Motion className={cn("min-w-0", flipped && "lg:order-1")}>
-            {s.shot ? <Screenshot shot={s.shot} zoom /> : s.code && <CodeSample code={s.code} />}
+            <SectionSide s={s} />
           </Motion>
         )}
       </div>
@@ -162,6 +210,7 @@ export const ProductPage = ({
   lede,
   demo,
   hero,
+  heroMedia,
   sections,
   runs,
   related,
@@ -186,9 +235,9 @@ export const ProductPage = ({
         </Motion>
       </section>
 
-      {(demo || hero) && (
+      {(demo || hero || heroMedia) && (
         <section className="mx-auto max-w-[1280px] px-4 pb-24 sm:px-8">
-          {demo ? <TryIt demo={demo} /> : hero && <Screenshot shot={hero} priority />}
+          {demo ? <TryIt demo={demo} /> : heroMedia ?? (hero && <Screenshot shot={hero} priority />)}
         </section>
       )}
 
