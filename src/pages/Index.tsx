@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HomeHero } from "@/components/sections/home/HomeHero";
 import { ProductTour } from "@/components/sections/home/ProductTour";
+import { AppsStrip } from "@/components/sections/home/AppsStrip";
 import { WhoItsFor } from "@/components/sections/home/WhoItsFor";
 import { OsUnderneath } from "@/components/sections/home/OsUnderneath";
 import { ApprovalsSection } from "@/components/sections/home/ApprovalsSection";
@@ -22,6 +23,7 @@ const Index = () => {
         <HomeHero />
         <WhoItsFor />
         <ProductTour />
+        <AppsStrip />
         <OsUnderneath />
         <ApprovalsSection />
         <PricingSection />

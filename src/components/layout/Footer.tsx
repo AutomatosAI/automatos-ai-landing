@@ -11,6 +11,7 @@ const footerLinks = {
     { label: "Documents & templates", href: "/documents", external: false },
     { label: "Socials", href: "/socials", external: false },
     { label: "Your store & site", href: "/your-store", external: false },
+    { label: "Apps & themes", href: "/apps", external: false },
     { label: "Marketplace", href: "/marketplace", external: false },
     { label: "Integrations", href: "/integrations", external: false },
     { label: "Pricing", href: "/#pricing", external: false },
