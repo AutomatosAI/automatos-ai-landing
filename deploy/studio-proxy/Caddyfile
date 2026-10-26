@@ -15,7 +15,7 @@
 		header_regexp Cookie __client_uat=[1-9]
 	}
 
-	@site path / /marketplace /documents /auto /command-centre /socials /your-store /integrations /about /contact /privacy /terms /cookies /login /blog /blog/* /research /research/* /eu-ai-act /eu-ai-act/* /api/contact /site/*
+	@site path / /marketplace /documents /auto /command-centre /socials /your-store /apps /integrations /about /contact /privacy /terms /cookies /login /blog /blog/* /research /research/* /eu-ai-act /eu-ai-act/* /api/contact /site/*
 
 	route {
 		reverse_proxy @app_signed_in {$APP_UPSTREAM}

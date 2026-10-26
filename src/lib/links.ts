@@ -3,6 +3,8 @@ import { ORGANIZATION } from "@/lib/seo/site";
 
 export const SIGN_IN_URL = "https://ui.automatos.app/sign-in";
 export const GITHUB_URL = "https://github.com/AutomatosAI/automatos-ai";
+/* The open-source kit (Apache-2.0) for building installable themes, with Play and HUD inside. */
+export const DESIGN_KIT_URL = "https://github.com/AutomatosAI/automatos-design-kit";
 /* The company (Automatos AI) and its About material live on automatos.app (facts sheet 1).
    One host literal: the Organization node's url in src/lib/seo/site.ts. */
 export const COMPANY_URL = ORGANIZATION.url;

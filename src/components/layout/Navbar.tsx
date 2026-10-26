@@ -13,6 +13,7 @@ const navLinks = [
   { label: "Documents", href: "/documents" },
   { label: "Socials", href: "/socials" },
   { label: "Your store", href: "/your-store" },
+  { label: "Apps", href: "/apps" },
   { label: "Marketplace", href: "/marketplace" },
   { label: "Pricing", href: "/#pricing", isAnchor: true },
   { label: "Blog", href: "/blog" },
@@ -47,7 +48,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-5 lg:gap-8">
+          <div className="hidden lg:flex items-center gap-5 lg:gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}

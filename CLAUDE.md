@@ -13,9 +13,10 @@ Role in the family (decided 6 Oct 2026): `automatos-ai-landingV2` is the **compa
 - CI: `.github/workflows/ci.yml` (lint, typecheck, test, build; every step runs even after a failure) and `malware-scan.yml` (DPRK loader IOC check, after the July 2026 incident).
 
 ## Layout
-- Home (`src/pages/Index.tsx`): `HomeHero → WhoItsFor → ProductTour → OsUnderneath → ApprovalsSection → Pricing → FAQ → CTA`, from the Claude Design handoff (7 Oct 2026). Hero 1a ships; `?hero=1b` / `?hero=1c` show the other two directions.
+- Home (`src/pages/Index.tsx`): `HomeHero → WhoItsFor → ProductTour → AppsStrip → OsUnderneath → ApprovalsSection → Pricing → FAQ → CTA` (AppsStrip, unnumbered, links `/apps`), from the Claude Design handoff (7 Oct 2026). Hero 1a ships; `?hero=1b` / `?hero=1c` show the other two directions.
 - Interactive demos live in `src/components/demos/`: sample data in `data.ts`, the timing and state of each demo as pure functions in `frames/` (tested in `frames.test.ts`), one `useDemoClock` per demo (110 ms tick, paused off-screen, frozen on a resting frame under reduced motion).
 - Product pages use `ProductPage` with an optional `demo` ("Try it" card); sections alternate sides by index and their screenshots zoom on hover.
+- `/apps` (`src/pages/product/Apps.tsx`): Studio, Play, HUD, voice, Automatos Go and the Design Kit, on `ProductPage` with `heroMedia` and section `media` (phone frames in `src/components/product/DeviceShots.tsx`). Its captures are in `public/images/apps`: the 2x originals keep their source names, and the page shows resized copies (`-1440.png` laptop, `-390` phone); paths, sizes and alt text are in `appShots.ts`, which says how to remake a copy.
 
 ## Traps
 - `README.md` is the Lovable boilerplate; the project no longer lives in Lovable. Replace it.
