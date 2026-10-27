@@ -38,6 +38,20 @@ describe("public copy (facts sheet section 8)", () => {
     expect(files.filter(({ text }) => rx.test(text)).map(({ p }) => p)).toEqual([]);
   });
 
+  /*
+    Gerard, 27 Oct 2026: automatic detection in about 100 languages waits for a GPU, so it is never shown as
+    available. Every mention needs "Coming" or "Planned" within 120 characters before it or 80 after.
+  */
+  it("marks every mention of about 100 languages as coming or planned", () => {
+    const unmarked = files.flatMap(({ p, text }) =>
+      [...text.matchAll(/\b100 languages\b/gi)]
+        .map((m) => text.slice(Math.max(0, (m.index ?? 0) - 120), (m.index ?? 0) + 80))
+        .filter((around) => !/\b(coming|planned)\b/i.test(around))
+        .map((around) => `${p}: ${around.replace(/\s+/g, " ").trim()}`),
+    );
+    expect(unmarked).toEqual([]);
+  });
+
   it("states the EU AI Act posture line word for word wherever the posture is summarised", () => {
     const posture =
       "Social posts wait for your approval before they publish, board work can be set to ask before it runs, and every action lands in an append-only audit log, all in the product today.";
