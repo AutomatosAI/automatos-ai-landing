@@ -23,7 +23,10 @@ import { DESIGN_KIT_URL } from "@/lib/links";
   (Settings › Appearance › Themes, PRD-261), automatos-go (chat, Command Centre,
   push, hold to talk, three styles; beta) and automatos-design-kit (Apache-2.0,
   the automatos-theme CLI). Voice: hold to talk on every plan, live calls depend
-  on the plan; never a price or a plan name here.
+  on the plan; never a price or a plan name here. Languages (Gerard, 27 Oct
+  2026): Go talks in English and Portuguese (Brazil); the Kokoro
+  voice speaks 9 languages; detection in about 100 languages waits for a GPU,
+  so it is only ever "Coming".
 */
 const HERO = (
   <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
@@ -76,7 +79,12 @@ const Apps = () => (
       {
         eyebrow: "Voice",
         title: "Hold to talk. Auto answers out loud.",
-        body: "Hold the mic, say what you need and let go. Auto replies on screen and out loud, in every theme and on your phone. Hold to talk comes with every plan; live voice calls come with supported plans.",
+        body: "Hold the mic, say what you need and let go. Auto replies on screen and out loud, in every theme and on your phone. Hold to talk comes with every plan; live voice calls come with supported plans. Coming: automatic language detection. Speak in any of about 100 languages without choosing first.",
+        /* Points carry a check mark, so only what works today goes here; the coming item stays in the body. */
+        points: [
+          "Auto answers in the language you write or speak.",
+          "Auto's natural voice is self-hosted and open source (Kokoro). It speaks 9 languages: English (US and UK), Spanish, French, Italian, Portuguese (Brazil), Hindi, Japanese and Mandarin. Self-hosted installs include it.",
+        ],
         media: (
           <LaptopAndPhone
             laptop={PLAY_VOICE}
@@ -88,7 +96,7 @@ const Apps = () => (
       {
         eyebrow: "Automatos Go",
         title: "Auto in your pocket.",
-        body: "Automatos Go is the phone app for your workspace. Chat with Auto, check the Command Centre, get a push notification when something needs you, hold to talk, and pick the Studio, Play or HUD style. It's in beta now and coming to the App Store.",
+        body: "Automatos Go is the phone app for your workspace. Chat with Auto, check the Command Centre, get a push notification when something needs you, hold to talk, and pick the Studio, Play or HUD style. Talk to Auto in English and Portuguese (Brazil), and switch with one tap. It's in beta now and coming to the App Store.",
         link: { label: "Join the waitlist", href: "#waitlist", primary: true },
         media: (
           <PhonePair
@@ -124,6 +132,8 @@ const Apps = () => (
         "Themes install from Settings › Appearance › Themes, and each person picks the one they work in",
         "Hold to talk on every plan, in every theme",
         "Live voice calls on supported plans",
+        "Auto answers in the language you write or speak",
+        "Coming: automatic language detection in about 100 languages",
         "Automatos Go is in beta now, coming to the App Store",
         "The Design Kit is open source under Apache-2.0",
       ],

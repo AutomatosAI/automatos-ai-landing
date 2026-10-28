@@ -40,7 +40,7 @@ Agents are coordinated by playbooks (sequential missions) or a mission coordinat
 - `/documents` — Branded documents rendered from one brand kit
 - `/socials` — Posting plans, approve before the slot, publish
 - `/your-store` — Shopify store connection (the Shopify app is next) and website widgets
-- `/apps` — Studio on the web, the Play and HUD themes, voice (hold to talk on every plan), the Automatos Go phone app (beta) and the Design Kit for your own theme
+- `/apps` — Studio on the web, the Play and HUD themes, voice (hold to talk on every plan), the Automatos Go phone app (beta) and the Design Kit for your own theme. Languages: Auto answers in the language you write or speak. On Automatos Go (iPhone), talk to Auto in English and Portuguese (Brazil), and switch with one tap. Auto's natural voice is self-hosted and open source (Kokoro). It speaks 9 languages: English (US and UK), Spanish, French, Italian, Portuguese (Brazil), Hindi, Japanese and Mandarin. Self-hosted installs include it. Coming: automatic language detection. Speak in any of about 100 languages without choosing first.
 - `/integrations` — Apps connected through your own accounts
 - `/marketplace` — 100+ ready-made agents, 400+ skills, 70+ plugins, 20+ Playbooks and 3 packages in the Studio marketplace
 

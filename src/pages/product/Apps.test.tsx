@@ -75,4 +75,19 @@ describe("Apps page (/apps)", () => {
     expect(text).toContain("Settings › Appearance › Themes");
     expect(text).not.toMatch(/[$€£]\s?\d/);
   });
+
+  it("names the languages as they are and marks detection in about 100 languages as coming", () => {
+    const { container } = mount();
+    const text = (container.textContent ?? "").replace(/\s+/g, " ");
+    expect(text).toContain("Auto answers in the language you write or speak.");
+    expect(text).toContain("Talk to Auto in English and Portuguese (Brazil), and switch with one tap.");
+    expect(text).toContain(
+      "It speaks 9 languages: English (US and UK), Spanish, French, Italian, Portuguese (Brazil), Hindi, Japanese and Mandarin.",
+    );
+    expect(text).toContain("Coming: automatic language detection. Speak in any of about 100 languages without choosing first.");
+    /* A section point carries a check mark, so the planned detection must never be one. */
+    const checked = Array.from(container.querySelectorAll("span")).filter((el) => el.firstElementChild?.textContent === "✓");
+    expect(checked.length).toBeGreaterThan(0);
+    checked.forEach((el) => expect(el.textContent).not.toContain("100 languages"));
+  });
 });
