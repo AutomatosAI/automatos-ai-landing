@@ -69,10 +69,10 @@ export const HUD_LOOK_EDITOR_PHONE = phone(
 );
 
 export const GO_CHAT = goPhone(
-  "go-play-chat-thinking",
-  "Automatos Go on an iPhone in the Play style: a chat with Auto, who is thinking, under a bar showing what needs you and a link to the Command Centre",
+  "go-play-chat-laptop",
+  "Automatos Go on an iPhone in the Play style: Auto's pick of three light laptops for travel, under a bar showing what needs you and a link to the Command Centre",
 );
 export const GO_SHELF = goPhone(
-  "go-play-shelf",
-  "Automatos Go on an iPhone in the Play style: your shelf of the reports and documents Auto made, newest first",
+  "go-play-shelf-blog",
+  "Automatos Go on an iPhone in the Play style: your shelf, showing the blog posts Auto wrote, newest first",
 );
