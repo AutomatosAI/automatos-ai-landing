@@ -52,6 +52,11 @@ describe("public copy (facts sheet section 8)", () => {
     expect(unmarked).toEqual([]);
   });
 
+  /* Gerard, 27 Oct 2026: the phone offers English and Portuguese (Brazil); European Portuguese is dropped from it. */
+  it("never offers Portuguese (Portugal) on the phone", () => {
+    expect(files.filter(({ text }) => /Portugal and Brazil/i.test(text)).map(({ p }) => p)).toEqual([]);
+  });
+
   it("states the EU AI Act posture line word for word wherever the posture is summarised", () => {
     const posture =
       "Social posts wait for your approval before they publish, board work can be set to ask before it runs, and every action lands in an append-only audit log, all in the product today.";

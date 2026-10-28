@@ -24,7 +24,7 @@ import { DESIGN_KIT_URL } from "@/lib/links";
   push, hold to talk, three styles; beta) and automatos-design-kit (Apache-2.0,
   the automatos-theme CLI). Voice: hold to talk on every plan, live calls depend
   on the plan; never a price or a plan name here. Languages (Gerard, 27 Oct
-  2026): Go talks in English or Portuguese (Portugal and Brazil); the Kokoro
+  2026): Go talks in English and Portuguese (Brazil); the Kokoro
   voice speaks 9 languages; detection in about 100 languages waits for a GPU,
   so it is only ever "Coming".
 */
@@ -96,7 +96,7 @@ const Apps = () => (
       {
         eyebrow: "Automatos Go",
         title: "Auto in your pocket.",
-        body: "Automatos Go is the phone app for your workspace. Chat with Auto, check the Command Centre, get a push notification when something needs you, hold to talk, and pick the Studio, Play or HUD style. Talk to Auto in English or Portuguese (Portugal and Brazil), and switch with one tap. It's in beta now and coming to the App Store.",
+        body: "Automatos Go is the phone app for your workspace. Chat with Auto, check the Command Centre, get a push notification when something needs you, hold to talk, and pick the Studio, Play or HUD style. Talk to Auto in English and Portuguese (Brazil), and switch with one tap. It's in beta now and coming to the App Store.",
         link: { label: "Join the waitlist", href: "#waitlist", primary: true },
         media: (
           <PhonePair

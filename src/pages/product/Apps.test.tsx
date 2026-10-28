@@ -80,7 +80,7 @@ describe("Apps page (/apps)", () => {
     const { container } = mount();
     const text = (container.textContent ?? "").replace(/\s+/g, " ");
     expect(text).toContain("Auto answers in the language you write or speak.");
-    expect(text).toContain("Talk to Auto in English or Portuguese (Portugal and Brazil), and switch with one tap.");
+    expect(text).toContain("Talk to Auto in English and Portuguese (Brazil), and switch with one tap.");
     expect(text).toContain(
       "It speaks 9 languages: English (US and UK), Spanish, French, Italian, Portuguese (Brazil), Hindi, Japanese and Mandarin.",
     );
